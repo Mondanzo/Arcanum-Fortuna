@@ -21,7 +21,7 @@ func make_enemy():
 
 
 func flip():
-	$VBoxContainer/Artwork.flip_v = !$VBoxContainer/Artwork.flip_v
+	%Artwork.flip_v = !%Artwork.flip_v
 	var flipped_name = ""
 	for c in card_name:
 		flipped_name = flipped_name.insert(0, c)
@@ -30,10 +30,10 @@ func flip():
 	health = attack
 	attack = health_transfer
 	#cost = -cost
-	$Cost/Label.text = str(cost)
-	$VBoxContainer/Name/Label.text = card_name
-	$Attack/Label.text = str(attack)
-	$Health/Label.text = str(health)
+	%KarmaCost.text = str(cost)
+	%Name.text = card_name
+	%AttackCost.text = str(attack)
+	%HealthCost.text = str(health)
 
 
 func get_target_offsets():
@@ -49,14 +49,14 @@ func get_target_offsets():
 func apply_consume():
 	#attack += sigils.count(Card.Sigil.Consume)
 	#health += sigils.count(Card.Sigil.Consume)
-	$Attack/Label.text = str(attack)
-	$Health/Label.text = str(health)
+	%AttackCost.text = str(attack)
+	%HealthCost.text = str(health)
 
 
 #region damage functions
 func take_damage(amount : int):
 	health -= amount
-	$Health/Label.text = str(health)
+	%HealthCost.text = str(health)
 	$Health.modulate = attacked_color
 
 

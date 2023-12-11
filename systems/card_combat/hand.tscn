@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d11sabcwtgmsp"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_n4utx"]
-[ext_resource type="PackedScene" uid="uid://t6sockg0pnui" path="res://systems/card_combat/cards/hand_card.tscn" id="2_jowjm"]
+[ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="2_jowjm"]
 
 [node name="Hand" type="Control"]
 z_index = 100

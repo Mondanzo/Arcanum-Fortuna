@@ -34,6 +34,7 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 	for keyword in keywords:
 		keyword.init()
 
+
 func update_texts():
 	%Name.text = card_name
 	%AttackCost.text = str(attack)

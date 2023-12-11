@@ -1,10 +1,14 @@
 class_name CombatPhase
 extends Resource
 
-signal completed
+signal completed(exit_state : ExitState)
+
+enum ExitState {
+	DEFAULT,
+	ABORT
+}
 
 var combat : CardBattle
-
 
 func init(combat : CardBattle):
 	self.combat = combat
@@ -19,8 +23,8 @@ func get_corresponding_trigger() -> CombatPhaseTrigger.SourcePhases:
 	return CombatPhaseTrigger.SourcePhases.NONE
 
 
-func process_effect():
-	pass
+func process_effect() -> ExitState:
+	return ExitState.DEFAULT
 
 
 func reset():
@@ -29,10 +33,10 @@ func reset():
 
 func execute():
 	await process_start_keywords(self, combat.gameBoard.get_active_cards())
-	await process_effect()
+	var exit_state = await process_effect()
 	await process_end_keywords(self, combat.gameBoard.get_active_cards())
 	await Engine.get_main_loop().process_frame
-	completed.emit()
+	completed.emit(exit_state)
 
 #endregion
 

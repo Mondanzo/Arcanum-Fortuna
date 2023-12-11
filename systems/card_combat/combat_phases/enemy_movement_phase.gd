@@ -10,5 +10,6 @@ func get_corresponding_trigger():
 	return CombatPhaseTrigger.SourcePhases.ENEMY_MOVEMENT
 
 
-func process_effect():
+func process_effect() -> ExitState:
 	await combat.move_enemies()
+	return ExitState.DEFAULT

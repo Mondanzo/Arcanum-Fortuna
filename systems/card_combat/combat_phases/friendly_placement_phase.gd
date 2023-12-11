@@ -12,17 +12,18 @@ static func get_class_name():
 
 func execute():
 	await process_start_keywords(self, combat.gameBoard.get_active_cards())
-	await process_effect()
+	return await process_effect()
 
 func get_corresponding_trigger():
 	return CombatPhaseTrigger.SourcePhases.FRIENDLY_PLACEMENT
 
 
-func process_effect():
+func process_effect() -> ExitState:
 	combat.unlock_player_actions()
+	return ExitState.DEFAULT
 
 
 func _on_player_turn_ended():
 	await process_end_keywords(self, combat.gameBoard.get_active_cards())
 	combat.lock_player_actions()
-	completed.emit()
+	completed.emit(ExitState.DEFAULT)

@@ -19,12 +19,13 @@ func _on_karma_decreased(source):
 				card.get_node("KeyWords").get_child(i).scale = Vector2.ONE
 				card.keywords[i].trigger(source, card)
 
-func process_effect():
+func process_effect() -> ExitState:
 	for card : CombatCard in combat.gameBoard.get_friendly_cards():
 		await card.animate_karma(combat.player)
 		if card.cost < 0:
 			await _on_karma_decreased(card)
 	if await combat.player.process_karma_overflow():
 		combat.finished.emit(combat.player.health)
-		combat.is_battle_over = true
+		return ExitState.ABORT
+	return ExitState.DEFAULT
 

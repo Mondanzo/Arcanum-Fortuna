@@ -61,9 +61,12 @@ func process_next_phase():
 	if show_current_phase_text:
 		$CurrentPhaseLabel.text = "Current Phase: \n" + \
 		phases[phase_idx].get_class_name()
-	
 	phases[phase_idx].execute()
-	await phases[phase_idx].completed
+	match await phases[phase_idx].completed:
+		CombatPhase.ExitState.ABORT:
+			return
+		_:
+			pass
 	_on_phase_completed()
 
 

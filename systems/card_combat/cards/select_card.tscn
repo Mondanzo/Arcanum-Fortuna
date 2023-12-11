@@ -19,8 +19,8 @@ func _ready():
 	$Cost/Label.text = str(data.cost)
 	$Attack/Label.text = str(data.attack)
 	$Health/Label.text = str(data.health)
-	for i in range(data.sigils.size()):
-		$KeyWords.get_child(i).set_icon(data.sigils[i])
+	for i in range(data.keywords.size()):
+		$KeyWords.get_child(i).set_icon(data.keywords[i].id)
 	
 	mouse_entered.connect(mouse_entered_event)
 	mouse_exited.connect(mouse_exited_event)

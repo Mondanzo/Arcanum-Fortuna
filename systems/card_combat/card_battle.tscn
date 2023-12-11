@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_2m38c"]
 [ext_resource type="Resource" uid="uid://bey7oy462yo2s" path="res://data/player/debug_player.tres" id="2_42xvr"]
-[ext_resource type="PackedScene" uid="uid://dgdblxt0g8doq" path="res://systems/card_combat/cards/combat_card.tscn" id="3_1hhbj"]
+[ext_resource type="PackedScene" uid="uid://cdm4wb2e7afc1" path="res://systems/card_combat/cards/combat_card.tscn" id="3_1hhbj"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="3_mws33"]
 [ext_resource type="Texture2D" uid="uid://bqaoik2rrtkum" path="res://assets/sprites/backgrounds/battle_background.jpg" id="3_q3ccm"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="4_qhqtv"]

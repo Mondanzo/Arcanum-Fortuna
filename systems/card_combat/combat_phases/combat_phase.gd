@@ -23,6 +23,10 @@ func process_effect():
 	pass
 
 
+func reset():
+	pass
+
+
 func execute():
 	await process_start_keywords(self, combat.gameBoard.get_active_cards())
 	await process_effect()

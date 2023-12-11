@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://rd4s1jnxga1w"]
+
+[ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="1_e2aug"]
+[ext_resource type="PackedScene" uid="uid://cowyw3imwqrte" path="res://systems/ui/game_won_screen.tscn" id="2_aa5ll"]
+[ext_resource type="Texture2D" uid="uid://1ib8g0b3wmbv" path="res://systems/dungeon_exploration/node_sprites/victory.png" id="3_rour2"]
+
+[node name="FinalNode" instance=ExtResource("1_e2aug")]
+event = ExtResource("2_aa5ll")
+
+[node name="icon" parent="background" index="0"]
+texture = ExtResource("3_rour2")

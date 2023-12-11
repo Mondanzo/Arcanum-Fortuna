@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7qbbf3idp0cf"]
+
+[ext_resource type="Script" path="res://Systems/UI/tooltips/card_tooltip.gd" id="1_j2xxw"]
+[ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://Assets/Sprites/Cards/chariot.png" id="1_nnqwu"]
+[ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="3_ewx55"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h7yt"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh8de"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_mnpa1"]
+font_size = 24
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ps5yh"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_duoqj"]
+seamless = true
+normalize = false
+noise = SubResource("FastNoiseLite_ps5yh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rxk7"]
+shader = ExtResource("3_ewx55")
+shader_parameter/strength = 3.0
+shader_parameter/noise = SubResource("NoiseTexture2D_duoqj")
+
+[node name="CardTooltip" type="PanelContainer"]
+custom_minimum_size = Vector2(400, 0)
+offset_right = 400.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6h7yt")
+script = ExtResource("1_j2xxw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CardArtwork" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+texture = ExtResource("1_nnqwu")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="CardInformation" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CardName" type="Label" parent="HBoxContainer/CardInformation"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "The Chariot"
+label_settings = SubResource("LabelSettings_fh8de")
+
+[node name="CardDescription" type="Label" parent="HBoxContainer/CardInformation"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Lorem Ipsum dolor sit amet......"
+label_settings = SubResource("LabelSettings_mnpa1")
+autowrap_mode = 3
+
+[node name="Sigils" type="VBoxContainer" parent="HBoxContainer/CardInformation"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="."]
+show_behind_parent = true
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_2rxk7")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)

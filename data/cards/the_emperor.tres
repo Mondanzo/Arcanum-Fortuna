@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://q687abm80cnx"]
+
+[ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://Assets/Sprites/Cards/emperor.png" id="1_02swp"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u4j5u"]
+
+[resource]
+script = ExtResource("2_u4j5u")
+name = "The Emperor"
+artwork = ExtResource("1_02swp")
+cost = -5
+attack = 3
+health = 4
+sigils = Array[int]([1, 3])
+spawn_frequency = 100

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bk8j8nba8r18d"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nop2x"]
+[ext_resource type="Texture2D" uid="uid://kmb5fym80vkf" path="res://assets/sprites/cards/wheel_of_fortune.png" id="1_qotfe"]
+
+[resource]
+script = ExtResource("1_nop2x")
+name = "Wheel of Fortune"
+artwork = ExtResource("1_qotfe")
+cost = 2
+attack = 0
+health = 4
+sigils = Array[int]([2])
+spawn_frequency = 100

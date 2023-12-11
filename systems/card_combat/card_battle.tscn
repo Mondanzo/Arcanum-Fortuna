@@ -1,0 +1,213 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbqvu0uo5eaku"]
+
+[ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
+[ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
+[ext_resource type="Resource" uid="uid://bey7oy462yo2s" path="res://data/player/debug_player.tres" id="2_42xvr"]
+[ext_resource type="PackedScene" uid="uid://cdm4wb2e7afc1" path="res://systems/card_combat/cards/combat_card.tscn" id="3_1hhbj"]
+[ext_resource type="Texture2D" uid="uid://bqaoik2rrtkum" path="res://assets/sprites/backgrounds/battle_background.jpg" id="3_q3ccm"]
+[ext_resource type="Script" path="res://Systems/UI/tooltips/show_tooltip.gd" id="6_o6asy"]
+[ext_resource type="PackedScene" uid="uid://eo8nyis4kslg" path="res://systems/card_combat/card_player.tscn" id="6_tn8rr"]
+[ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="7_g0vvg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1vun5"]
+texture = ExtResource("3_q3ccm")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxg0t"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t3xx"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="CardBattle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7dv5d")
+debug_player_data = ExtResource("2_42xvr")
+gameBoard = Object(VBoxContainer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":1,"anchors_preset":-1,"anchor_left":0.0,"anchor_top":0.0,"anchor_right":1.0,"anchor_bottom":1.0,"offset_left":0.0,"offset_top":0.0,"offset_right":0.0,"offset_bottom":-256.0,"grow_horizontal":2,"grow_vertical":2,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":0,"mouse_filter":1,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":null,"theme_type_variation":&"","theme_override_constants/separation":100,"alignment":1,"script":ExtResource("2_2jjg6"),"combat_card_prefab":ExtResource("3_1hhbj"),"tile_disabled_color":Color(0.231373, 0.196078, 0.184314, 1),"tile_interactible_color":Color(0.341176, 0.294118, 0.278431, 1),"tile_hovered_color":Color(0.537255, 0.47451, 0.454902, 1),"enemy_player":Object(VBoxContainer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":1,"anchors_preset":-1,"anchor_left":1.0,"anchor_top":0.0,"anchor_right":1.0,"anchor_bottom":0.0,"offset_left":-300.0,"offset_top":30.0,"offset_right":-15.0,"offset_bottom":0.0,"grow_horizontal":0,"grow_vertical":1,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":0,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":0,"mouse_filter":1,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":null,"theme_type_variation":&"","alignment":0,"script":Resource("res://systems/card_combat/enemy_player.gd"))
+,"player":Object(ReferenceRect,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(300, 650),"layout_direction":0,"layout_mode":1,"anchors_preset":-1,"anchor_left":1.0,"anchor_top":1.0,"anchor_right":1.0,"anchor_bottom":1.0,"offset_left":-300.0,"offset_top":-500.0,"offset_right":-15.0,"offset_bottom":0.0,"grow_horizontal":0,"grow_vertical":0,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":0,"mouse_filter":0,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":null,"theme_type_variation":&"","border_color":Color(1, 0, 0, 1),"border_width":0.0,"editor_only":true,"script":Resource("res://systems/card_combat/card_player.gd"))
+)
+
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1vun5")
+
+[node name="GameBoard" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+script = ExtResource("2_2jjg6")
+combat_card_prefab = ExtResource("3_1hhbj")
+tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 1)
+tile_interactible_color = Color(0.341176, 0.294118, 0.278431, 1)
+tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
+enemy_player = Object(VBoxContainer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":1,"anchors_preset":-1,"anchor_left":1.0,"anchor_top":0.0,"anchor_right":1.0,"anchor_bottom":0.0,"offset_left":-300.0,"offset_top":30.0,"offset_right":-15.0,"offset_bottom":0.0,"grow_horizontal":0,"grow_vertical":1,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":0,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":0,"mouse_filter":1,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":null,"theme_type_variation":&"","alignment":0,"script":Resource("res://systems/card_combat/enemy_player.gd"))
+
+player = Object(ReferenceRect,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(300, 650),"layout_direction":0,"layout_mode":1,"anchors_preset":-1,"anchor_left":1.0,"anchor_top":1.0,"anchor_right":1.0,"anchor_bottom":1.0,"offset_left":-300.0,"offset_top":-500.0,"offset_right":-15.0,"offset_bottom":0.0,"grow_horizontal":0,"grow_vertical":0,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":0,"mouse_filter":0,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":null,"theme_type_variation":&"","border_color":Color(1, 0, 0, 1),"border_width":0.0,"editor_only":true,"script":Resource("res://systems/card_combat/card_player.gd"))
+
+
+[node name="EnemyTiles" type="VBoxContainer" parent="GameBoard"]
+layout_mode = 2
+theme_override_constants/separation = 29
+
+[node name="Row1" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Row2" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+
+[node name="PlayerTiles" type="HBoxContainer" parent="GameBoard"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Panel" type="Panel" parent="GameBoard/PlayerTiles"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+
+[node name="Panel2" type="Panel" parent="GameBoard/PlayerTiles"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+
+[node name="Panel3" type="Panel" parent="GameBoard/PlayerTiles"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+
+[node name="Panel4" type="Panel" parent="GameBoard/PlayerTiles"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+
+[node name="Panel5" type="Panel" parent="GameBoard/PlayerTiles"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+
+[node name="CardPlayer" parent="." instance=ExtResource("6_tn8rr")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -500.0
+offset_right = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="EndTurnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.4444
+offset_top = 562.222
+offset_right = 176.444
+offset_bottom = 630.222
+text = "EndTurn
+"
+
+[node name="ShowTooltip" type="Control" parent="EndTurnButton"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_o6asy")
+title = "End Turn Button"
+text = "Once you press this the following will happen:
+1. Your cards attack from left to right.
+2. The combined karma value of your cards is added to your karma.
+3. Enemy cards move down if possible.
+4. Enemy cards attack from left to rigtht.
+5. The next turn starts and you'll draw a card."
+
+[node name="EnemyPlayer" parent="." instance=ExtResource("7_g0vvg")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 30.0
+offset_right = -15.0
+offset_bottom = 0.0
+grow_horizontal = 0
+
+[connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
+[connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
+[connection signal="button_down" from="EndTurnButton" to="." method="_on_end_turn_button_button_down"]

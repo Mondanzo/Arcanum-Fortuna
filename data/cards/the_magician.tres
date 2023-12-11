@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://cqicyrydvy03e"]
+
+[ext_resource type="Texture2D" uid="uid://dkqjfttreclq5" path="res://assets/sprites/cards/magician.png" id="1_sfssk"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u3n2c"]
+
+[resource]
+script = ExtResource("2_u3n2c")
+name = "The Magician"
+artwork = ExtResource("1_sfssk")
+cost = -4
+attack = 2
+health = 5
+sigils = Array[int]([2, 1])
+spawn_frequency = 100

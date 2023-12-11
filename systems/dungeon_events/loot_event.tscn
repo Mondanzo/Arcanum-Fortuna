@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://bggcv7yipjcm7"]
+
+[ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
+[ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://Systems/card_combat/cards/select_card.tscn" id="1_panx4"]
+[ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_wtojk"]
+[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/audio/card_hover.ogg" id="5_dpvki"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wl2yu"]
+font_size = 151
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld1hp"]
+bg_color = Color(0.2, 0.176471, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7o83"]
+bg_color = Color(0.588235, 0.560784, 0.729412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56bhs"]
+bg_color = Color(0.545098, 0.388235, 0.658824, 1)
+
+[node name="LootEvent" type="Node"]
+script = ExtResource("1_dmmsx")
+possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+cardTemplate = ExtResource("1_panx4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+
+[node name="Cards" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wtojk")
+cardSpacing = 50
+cardHeight = 150
+cardHiddenHeight = 150
+cardArc = 0.001
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -392.0
+offset_right = 392.0
+offset_bottom = 210.0
+grow_horizontal = 2
+text = "Pick a card"
+label_settings = SubResource("LabelSettings_wl2yu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -137.0
+offset_right = 91.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
+text = "continue"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dpvki")

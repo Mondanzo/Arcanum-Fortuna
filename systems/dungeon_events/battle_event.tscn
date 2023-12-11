@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bml43x2miuf00"]
+
+[ext_resource type="Script" path="res://systems/dungeon_events/battle_event.gd" id="1_wmokr"]
+[ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://Systems/card_combat/card_battle.tscn" id="2_lypsq"]
+[ext_resource type="PackedScene" uid="uid://bggcv7yipjcm7" path="res://Systems/dungeon_events/loot_event.tscn" id="3_oo3s3"]
+[ext_resource type="PackedScene" uid="uid://sqcbrvq8vlwu" path="res://Systems/ui/game_over_screen.tscn" id="4_ig2d4"]
+
+[node name="BattleEvent" type="Node"]
+script = ExtResource("1_wmokr")
+battleField = ExtResource("2_lypsq")
+winEvent = ExtResource("3_oo3s3")
+loseEvent = ExtResource("4_ig2d4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

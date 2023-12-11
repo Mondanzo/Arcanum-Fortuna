@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://deonq2pnkifc2"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_3tngf"]
+[ext_resource type="Texture2D" uid="uid://cgyw6frftprrb" path="res://assets/sprites/cards/devil.png" id="1_a7en0"]
+
+[resource]
+script = ExtResource("1_3tngf")
+name = "The Devil"
+artwork = ExtResource("1_a7en0")
+cost = -6
+attack = 3
+health = 1
+sigils = Array[int]([5, 3])
+spawn_frequency = 100

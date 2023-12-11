@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://dt4d5c3p5t43v"]
+
+[ext_resource type="Script" path="res://Systems/UI/tooltips/keyword_info.gd" id="1_01h56"]
+[ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="1_yy5ck"]
+[ext_resource type="Shader" path="res://shaders/invert.gdshader" id="2_dniia"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://Assets/Sprites/Cards/Sigils.png" id="3_a3e81"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nftiq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_it2lc"]
+seamless = true
+normalize = false
+noise = SubResource("FastNoiseLite_nftiq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpfac"]
+shader = ExtResource("1_yy5ck")
+shader_parameter/strength = 0.5
+shader_parameter/noise = SubResource("NoiseTexture2D_it2lc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yjpao"]
+shader = ExtResource("2_dniia")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvw8w"]
+atlas = ExtResource("3_a3e81")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yrkwb"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_22l1k"]
+font_size = 24
+
+[node name="KeywordInfo" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_01h56")
+
+[node name="separator" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gpfac")
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="header" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="icon" type="TextureRect" parent="header"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yjpao")
+layout_mode = 2
+texture = SubResource("AtlasTexture_dvw8w")
+
+[node name="title" type="Label" parent="header"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Longest Possible Name"
+label_settings = SubResource("LabelSettings_yrkwb")
+vertical_alignment = 1
+
+[node name="description" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lorem Ipsum dolor sit amet...
+TWO LINES!"
+label_settings = SubResource("LabelSettings_22l1k")
+autowrap_mode = 3

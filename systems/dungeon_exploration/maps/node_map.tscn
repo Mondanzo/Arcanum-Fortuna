@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgbod0er521or"]
+
+[ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://Systems/DungeonExploration/Nodes/empty_node.tscn" id="1_jwvtv"]
+[ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://Systems/DungeonExploration/player/player.tscn" id="2_we5fp"]
+
+[node name="node-map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartNode" parent="." instance=ExtResource("1_jwvtv")]
+layout_mode = 1
+offset_left = -256.0
+offset_top = 413.0
+offset_right = -256.0
+offset_bottom = 413.0
+
+[node name="Player" parent="." node_paths=PackedStringArray("startNode") instance=ExtResource("2_we5fp")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -398.0
+offset_top = -11.0
+offset_right = -334.0
+offset_bottom = 53.0
+grow_horizontal = 1
+grow_vertical = 1
+startNode = NodePath("../StartNode")

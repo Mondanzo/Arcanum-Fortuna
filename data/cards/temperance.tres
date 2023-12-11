@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://buthwniwc7tav"]
+
+[ext_resource type="Texture2D" uid="uid://1rl1qodf353s" path="res://Assets/Sprites/Cards/temperance.png" id="1_x5mgk"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_t0sn8"]
+
+[resource]
+script = ExtResource("2_t0sn8")
+name = "Temperance"
+artwork = ExtResource("1_x5mgk")
+cost = -3
+attack = 2
+health = 3
+sigils = Array[int]([3, 2])
+spawn_frequency = 100

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://3t5jry37we2f"]
+
+[ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://assets/sprites/cards/chariot.png" id="1_p6ovo"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_h65kg"]
+
+[resource]
+script = ExtResource("2_h65kg")
+name = "The Chariot"
+artwork = ExtResource("1_p6ovo")
+cost = 1
+attack = 1
+health = 4
+sigils = Array[int]([])
+spawn_frequency = 100

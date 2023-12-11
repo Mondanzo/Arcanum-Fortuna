@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://sqcbrvq8vlwu"]
+
+[ext_resource type="Script" path="res://Systems/UI/game_over_screen.gd" id="1_04l8t"]
+[ext_resource type="Texture2D" uid="uid://h0448sn65e2l" path="res://Assets/Sprites/Cards/death.png" id="2_uawat"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j67a8"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttwj1"]
+font_size = 128
+
+[node name="GameOverScreen" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_04l8t")
+main_menu_scene = "res://Systems/UI/main_menu.tscn"
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j67a8")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 75.0
+offset_bottom = 250.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_ttwj1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btn_quit" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_right = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 64
+text = "Sulk (Quit)"
+
+[node name="btn_restart" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -48.0
+offset_right = -48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 64
+text = "Get Better (Restart)"
+
+[node name="btn_main_menu" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(1820, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -64.0
+grow_horizontal = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Go Back (Main Menu)"
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_uawat")
+
+[connection signal="pressed" from="Panel/btn_quit" to="." method="quit"]
+[connection signal="pressed" from="Panel/btn_restart" to="." method="restart"]
+[connection signal="button_down" from="Panel/btn_main_menu" to="." method="_on_btn_main_menu_button_down"]

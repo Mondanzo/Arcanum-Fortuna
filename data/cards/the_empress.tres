@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c81sp31vj3l2"]
+
+[ext_resource type="Texture2D" uid="uid://dsvokssfcwugn" path="res://Assets/Sprites/Cards/empress.png" id="1_kqrjl"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_hwoqx"]
+
+[resource]
+script = ExtResource("2_hwoqx")
+name = "The Empress"
+artwork = ExtResource("1_kqrjl")
+cost = -7
+attack = 1
+health = 1
+sigils = Array[int]([3, 4, 5])
+spawn_frequency = 100

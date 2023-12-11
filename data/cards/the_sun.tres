@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ccymn0mj5bdvy"]
+
+[ext_resource type="Texture2D" uid="uid://cwd3iw37x3k8w" path="res://assets/sprites/cards/sun.png" id="1_wr52r"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_y1k8m"]
+
+[resource]
+script = ExtResource("2_y1k8m")
+name = "The Sun"
+artwork = ExtResource("1_wr52r")
+cost = -1
+attack = 2
+health = 3
+sigils = Array[int]([2])
+spawn_frequency = 33

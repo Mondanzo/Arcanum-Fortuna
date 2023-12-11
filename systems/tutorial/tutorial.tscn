@@ -81,17 +81,12 @@ health = 666
 sigils = Array[int]([])
 spawn_frequency = 100
 
-[node name="Tutorial" node_paths=PackedStringArray("tutorial_steps", "gameBoard") instance=ExtResource("1_lco5q")]
+[node name="Tutorial" node_paths=PackedStringArray("tutorial_steps") instance=ExtResource("1_lco5q")]
 script = ExtResource("2_xmauc")
 enemy_data = SubResource("Resource_7as0j")
 tutorial_steps = NodePath("Steps")
 trigger_karma_on_turn_start = false
 debug_player_data = SubResource("Resource_wj3g8")
-gameBoard = NodePath("")
-
-[node name="GameBoard" parent="." index="1" node_paths=PackedStringArray("enemy_player", "player")]
-enemy_player = NodePath("")
-player = NodePath("")
 
 [node name="Panel" parent="GameBoard/EnemyTiles/Row1" index="0"]
 visible = false

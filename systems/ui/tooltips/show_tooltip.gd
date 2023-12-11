@@ -20,6 +20,11 @@ var instance: TooltipBase = null:
 
 static var tooltip_container = null
 
+
+func _exit_tree():
+	hide_tooltip()
+
+
 func create_instance(value):
 	if value == null:
 		return null

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Card Game Thingy"
+config/name="Tarot Dungeon"
 run/main_scene="res://utils/entry_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

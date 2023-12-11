@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Flip" load_steps=4 format=3 uid="uid://b7si7oceraga6"]
+
+[ext_resource type="Script" path="res://systems/card_combat/keywords/flip.gd" id="1_ekhnk"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_nhvvg"]
+
+[sub_resource type="Resource" id="Resource_74j2r"]
+script = ExtResource("1_nhvvg")
+source_phase = 7
+timing = 0
+
+[resource]
+script = ExtResource("1_ekhnk")
+combat_phase_triggers = Array[ExtResource("1_nhvvg")]([SubResource("Resource_74j2r")])
+triggers = null
+highlight_duration = 1.0

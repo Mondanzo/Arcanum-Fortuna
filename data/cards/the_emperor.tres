@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://q687abm80cnx"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://q687abm80cnx"]
 
-[ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://Assets/Sprites/Cards/emperor.png" id="1_02swp"]
+[ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://assets/sprites/cards/emperor.png" id="1_02swp"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u4j5u"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/split_attack.gd" id="2_ucnh3"]
+[ext_resource type="Resource" uid="uid://drtnl4dtcqfpq" path="res://data/keyword/consume.tres" id="3_db3jn"]
+
+[sub_resource type="Resource" id="Resource_mjt06"]
+script = ExtResource("2_ucnh3")
+highlight_duration = 1.0
 
 [resource]
 script = ExtResource("2_u4j5u")
@@ -10,5 +16,5 @@ artwork = ExtResource("1_02swp")
 cost = -5
 attack = 3
 health = 4
-sigils = Array[int]([1, 3])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_mjt06"), ExtResource("3_db3jn")])
 spawn_frequency = 100

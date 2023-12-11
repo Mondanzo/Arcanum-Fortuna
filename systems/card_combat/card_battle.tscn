@@ -1,13 +1,41 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=26 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_2m38c"]
 [ext_resource type="Resource" uid="uid://bey7oy462yo2s" path="res://data/player/debug_player.tres" id="2_42xvr"]
 [ext_resource type="PackedScene" uid="uid://cdm4wb2e7afc1" path="res://systems/card_combat/cards/combat_card.tscn" id="3_1hhbj"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="3_mws33"]
 [ext_resource type="Texture2D" uid="uid://bqaoik2rrtkum" path="res://assets/sprites/backgrounds/battle_background.jpg" id="3_q3ccm"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="4_qhqtv"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="5_0huhq"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="5_7hc2v"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_movement_phase.gd" id="5_lslbq"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="6_o6asy"]
 [ext_resource type="PackedScene" uid="uid://eo8nyis4kslg" path="res://systems/card_combat/card_player.tscn" id="6_tn8rr"]
 [ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="7_g0vvg"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="8_qbqvo"]
+
+[sub_resource type="Resource" id="Resource_26qbp"]
+script = ExtResource("2_2m38c")
+
+[sub_resource type="Resource" id="Resource_7owng"]
+script = ExtResource("3_mws33")
+
+[sub_resource type="Resource" id="Resource_4waph"]
+script = ExtResource("4_qhqtv")
+
+[sub_resource type="Resource" id="Resource_611yk"]
+script = ExtResource("5_0huhq")
+
+[sub_resource type="Resource" id="Resource_d62ed"]
+script = ExtResource("5_lslbq")
+
+[sub_resource type="Resource" id="Resource_4sdqi"]
+script = ExtResource("5_7hc2v")
+
+[sub_resource type="Resource" id="Resource_3vjfy"]
+script = ExtResource("8_qbqvo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1vun5"]
 texture = ExtResource("3_q3ccm")
@@ -20,7 +48,7 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t3xx"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="CardBattle" type="Control" node_paths=PackedStringArray("gameBoard")]
+[node name="CardBattle" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,8 +56,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7dv5d")
+phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_3vjfy")])
 debug_player_data = ExtResource("2_42xvr")
-gameBoard = NodePath("GameBoard")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -171,6 +199,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="EndTurnButton" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 24.4444
 offset_top = 562.222
@@ -202,6 +231,14 @@ offset_top = 30.0
 offset_right = -15.0
 offset_bottom = 0.0
 grow_horizontal = 0
+
+[node name="CurrentPhaseLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 20.0
+offset_right = 331.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 19
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]

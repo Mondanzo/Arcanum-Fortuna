@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://deonq2pnkifc2"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://deonq2pnkifc2"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_3tngf"]
 [ext_resource type="Texture2D" uid="uid://cgyw6frftprrb" path="res://assets/sprites/cards/devil.png" id="1_a7en0"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/triple_attack.gd" id="2_3f2u4"]
+[ext_resource type="Resource" uid="uid://drtnl4dtcqfpq" path="res://data/keyword/consume.tres" id="3_3hll7"]
+
+[sub_resource type="Resource" id="Resource_x6dkf"]
+script = ExtResource("2_3f2u4")
+highlight_duration = 1.0
 
 [resource]
 script = ExtResource("1_3tngf")
@@ -10,5 +16,5 @@ artwork = ExtResource("1_a7en0")
 cost = -6
 attack = 3
 health = 1
-sigils = Array[int]([5, 3])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_x6dkf"), ExtResource("3_3hll7")])
 spawn_frequency = 100

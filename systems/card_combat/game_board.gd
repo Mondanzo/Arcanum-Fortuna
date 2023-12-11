@@ -135,6 +135,10 @@ func get_back_enemies() -> Array[CombatCard]:
 	return res
 
 
+func get_active_cards() -> Array[CombatCard]:
+	return get_friendly_cards() + get_front_enemies()
+
+
 func highlight_tile(idx, friendly = false):
 	($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx).self_modulate = tile_hovered_color
 

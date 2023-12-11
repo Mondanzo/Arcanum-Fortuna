@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://cqicyrydvy03e"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://cqicyrydvy03e"]
 
 [ext_resource type="Texture2D" uid="uid://dkqjfttreclq5" path="res://assets/sprites/cards/magician.png" id="1_sfssk"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/split_attack.gd" id="2_5xscb"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u3n2c"]
+[ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/flip.tres" id="3_fdsh3"]
+
+[sub_resource type="Resource" id="Resource_52lwn"]
+script = ExtResource("2_5xscb")
+highlight_duration = 1.0
 
 [resource]
 script = ExtResource("2_u3n2c")
@@ -10,5 +16,5 @@ artwork = ExtResource("1_sfssk")
 cost = -4
 attack = 2
 health = 5
-sigils = Array[int]([2, 1])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_52lwn"), ExtResource("3_fdsh3")])
 spawn_frequency = 100

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgbod0er521or"]
 
-[ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/DungeonExploration/nodes/empty_node.tscn" id="1_jwvtv"]
-[ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/DungeonExploration/player/player.tscn" id="2_we5fp"]
+[ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="1_jwvtv"]
+[ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="2_we5fp"]
 
 [node name="node-map" type="Control"]
 layout_mode = 3
@@ -32,3 +32,19 @@ offset_bottom = 53.0
 grow_horizontal = 1
 grow_vertical = 1
 startNode = NodePath("../StartNode")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SeedLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -435.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 34.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Seed: 1337"
+horizontal_alignment = 2
+vertical_alignment = 1

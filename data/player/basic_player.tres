@@ -12,5 +12,4 @@ cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_m
 health = 50.0
 start_hand_size = 4
 draw_amount = 1
-karma = 0
-draw_rng_seed = 1337
+destiny = 0

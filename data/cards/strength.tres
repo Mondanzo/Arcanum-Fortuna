@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://lvxtgh2yl8"]
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://lvxtgh2yl8"]
 
 [ext_resource type="Texture2D" uid="uid://vhp6qhyxxw2w" path="res://assets/sprites/cards/strength.png" id="1_0dpls"]
+[ext_resource type="Resource" uid="uid://cdie0qb10eba1" path="res://data/keyword/drain.tres" id="2_ujyeh"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_xl1hd"]
+[ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/Flip.tres" id="3_hlb3w"]
 
 [resource]
 script = ExtResource("2_xl1hd")
 name = "Strength"
 artwork = ExtResource("1_0dpls")
-cost = -2
+cost = -1
 attack = 0
 health = 4
-sigils = Array[int]([4, 2])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_ujyeh"), ExtResource("3_hlb3w")])
 spawn_frequency = 100

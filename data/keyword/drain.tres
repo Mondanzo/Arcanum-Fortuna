@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Drain" load_steps=2 format=3 uid="uid://cdie0qb10eba1"]
+
+[ext_resource type="Script" path="res://systems/card_combat/keywords/drain.gd" id="1_tgv33"]
+
+[resource]
+script = ExtResource("1_tgv33")
+health_gain = 0
+attack_gain = 1
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 2
+highlight_duration = 1.0

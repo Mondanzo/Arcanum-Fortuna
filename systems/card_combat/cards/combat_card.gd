@@ -6,13 +6,17 @@ class_name CombatCard extends Card
 @export var highlight_color : Color
 @export var active_color : Color
 @export var move_speed = 0.5
+
+
+var target_offsets : Array[int] = [0]
 var is_enemy := false
 
 
 func make_enemy():
 	is_enemy = true
 	$Cost.hide()
-	if attack == 0 && not Sigil.Drain in sigils && not Sigil.Flip in sigils:
+	if attack == 0 and keywords.filter(func(keyword): 
+		return keyword is Drain or keyword is Flip).size() == 0:
 		flip()
 
 
@@ -32,9 +36,19 @@ func flip():
 	$Health/Label.text = str(health)
 
 
+func get_target_offsets():
+	for i in range(keywords.size()):
+		if not keywords[i] is ActivatedKeyword and keywords[i].has_method("get_new_targets"):
+			$KeyWords.get_child(i).scale = Vector2(1.2, 1.2)
+			await get_tree().create_timer(keywords[i].highlight_duration).timeout
+			$KeyWords.get_child(i).scale = Vector2.ONE
+			target_offsets = keywords[i].get_new_targets(target_offsets)
+	return target_offsets
+
+
 func apply_consume():
-	attack += sigils.count(Card.Sigil.Consume)
-	health += sigils.count(Card.Sigil.Consume)
+	#attack += sigils.count(Card.Sigil.Consume)
+	#health += sigils.count(Card.Sigil.Consume)
 	$Attack/Label.text = str(attack)
 	$Health/Label.text = str(health)
 
@@ -71,9 +85,19 @@ func animate_attack(target) -> bool:
 	target.take_damage(attack)
 	await get_tree().create_timer(attack_delay).timeout
 	target.restore_default_color()
-	var was_lethal = await target.proccess_death()
 	restore_default_color()
-	return was_lethal
+	var was_lethal = await target.proccess_death()
+	var is_battle_over = false
+	if was_lethal and (target is EnemyPlayer or target is CardPlayer):
+		is_battle_over = true
+	if was_lethal:
+		for i in range(keywords.size()):
+			if keywords[i] is ActivatedKeyword and keywords[i].triggers & 1:
+				keywords[i].trigger(target, self)
+				$KeyWords.get_child(i).scale = Vector2(1.2, 1.2)
+				await get_tree().create_timer(keywords[i].highlight_duration).timeout
+				$KeyWords.get_child(i).scale = Vector2.ONE
+	return is_battle_over
 
 
 func animate_karma(target):

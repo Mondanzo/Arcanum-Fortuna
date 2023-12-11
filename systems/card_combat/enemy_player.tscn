@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsd1p31nygox4"]
 
 [ext_resource type="Script" path="res://systems/card_combat/enemy_player.gd" id="1_bcv1h"]
-[ext_resource type="Script" path="res://Systems/UI/tooltips/show_tooltip.gd" id="2_w6n5h"]
+[ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="2_w6n5h"]
 
 [node name="EnemyPlayer" type="VBoxContainer"]
 offset_right = 250.0

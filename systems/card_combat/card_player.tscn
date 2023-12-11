@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://eo8nyis4kslg"]
 
-[ext_resource type="PackedScene" uid="uid://d11sabcwtgmsp" path="res://Systems/card_combat/hand.tscn" id="1_cbbcf"]
+[ext_resource type="PackedScene" uid="uid://d11sabcwtgmsp" path="res://systems/card_combat/hand.tscn" id="1_cbbcf"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_ifl70"]
-[ext_resource type="PackedScene" uid="uid://t6sockg0pnui" path="res://Systems/card_combat/cards/hand_card.tscn" id="2_yo3i5"]
-[ext_resource type="Script" path="res://Systems/UI/tooltips/show_tooltip.gd" id="5_bxaiy"]
-[ext_resource type="PackedScene" uid="uid://cnw2n821p8qt8" path="res://Systems/card_combat/card_stack.tscn" id="10_n68ae"]
+[ext_resource type="PackedScene" uid="uid://t6sockg0pnui" path="res://systems/card_combat/cards/hand_card.tscn" id="2_yo3i5"]
+[ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="5_bxaiy"]
+[ext_resource type="PackedScene" uid="uid://cnw2n821p8qt8" path="res://systems/card_combat/card_stack.tscn" id="10_n68ae"]
 
 [node name="CardPlayer" type="ReferenceRect"]
 custom_minimum_size = Vector2(300, 650)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://dt4d5c3p5t43v"]
 
-[ext_resource type="Script" path="res://Systems/UI/tooltips/keyword_info.gd" id="1_01h56"]
+[ext_resource type="Script" path="res://systems/ui/tooltips/keyword_info.gd" id="1_01h56"]
 [ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="1_yy5ck"]
 [ext_resource type="Shader" path="res://shaders/invert.gdshader" id="2_dniia"]
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://Assets/Sprites/Cards/Sigils.png" id="3_a3e81"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="3_a3e81"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nftiq"]
 

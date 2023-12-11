@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bey7oy462yo2s" path="res://data/player/debug_player.tres" id="2_42xvr"]
 [ext_resource type="PackedScene" uid="uid://cdm4wb2e7afc1" path="res://systems/card_combat/cards/combat_card.tscn" id="3_1hhbj"]
 [ext_resource type="Texture2D" uid="uid://bqaoik2rrtkum" path="res://assets/sprites/backgrounds/battle_background.jpg" id="3_q3ccm"]
-[ext_resource type="Script" path="res://Systems/UI/tooltips/show_tooltip.gd" id="6_o6asy"]
+[ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="6_o6asy"]
 [ext_resource type="PackedScene" uid="uid://eo8nyis4kslg" path="res://systems/card_combat/card_player.tscn" id="6_tn8rr"]
 [ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="7_g0vvg"]
 

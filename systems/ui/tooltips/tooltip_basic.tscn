@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://b2qmncwrxdeer"]
 
-[ext_resource type="Script" path="res://Systems/UI/tooltips/tooltip_basic.gd" id="1_titoy"]
+[ext_resource type="Script" path="res://systems/ui/tooltips/tooltip_basic.gd" id="1_titoy"]
 [ext_resource type="Shader" path="res://shaders/invert.gdshader" id="2_lvrvg"]
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://Assets/Sprites/Cards/Sigils.png" id="3_pr56c"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="3_pr56c"]
 [ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="4_oor7w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf6co"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
-[ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://Systems/card_combat/cards/select_card.tscn" id="1_panx4"]
+[ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
 [ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_wtojk"]
 [ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/audio/card_hover.ogg" id="5_dpvki"]
 

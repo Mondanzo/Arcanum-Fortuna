@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7qbbf3idp0cf"]
 
-[ext_resource type="Script" path="res://Systems/UI/tooltips/card_tooltip.gd" id="1_j2xxw"]
-[ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://Assets/Sprites/Cards/chariot.png" id="1_nnqwu"]
+[ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
+[ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://assets/sprites/cards/chariot.png" id="1_nnqwu"]
 [ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="3_ewx55"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h7yt"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://systems/card_combat/card_stack.gd" id="1_fm0v2"]
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="2_5ud8m"]
-[ext_resource type="Script" path="res://Systems/UI/tooltips/show_tooltip.gd" id="3_dwfos"]
+[ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="3_dwfos"]
 
 [node name="CardStack" type="Control"]
 layout_mode = 3

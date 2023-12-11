@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://sqcbrvq8vlwu"]
 
-[ext_resource type="Script" path="res://Systems/UI/game_over_screen.gd" id="1_04l8t"]
-[ext_resource type="Texture2D" uid="uid://h0448sn65e2l" path="res://Assets/Sprites/Cards/death.png" id="2_uawat"]
+[ext_resource type="Script" path="res://systems/ui/game_over_screen.gd" id="1_04l8t"]
+[ext_resource type="Texture2D" uid="uid://h0448sn65e2l" path="res://assets/sprites/cards/death.png" id="2_uawat"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j67a8"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -12,7 +12,7 @@ font_size = 128
 [node name="GameOverScreen" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_04l8t")
-main_menu_scene = "res://Systems/UI/main_menu.tscn"
+main_menu_scene = "res://systems/ui/main_menu.tscn"
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15

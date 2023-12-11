@@ -21,18 +21,24 @@ shader = ExtResource("3_ewx55")
 shader_parameter/strength = 2.3
 shader_parameter/noise = SubResource("NoiseTexture2D_fov2i")
 
-[node name="CardTooltip" type="MarginContainer"]
-custom_minimum_size = Vector2(400, 0)
+[node name="CardTooltip" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 400.0
 offset_bottom = 87.0
 script = ExtResource("1_j2xxw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Container" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+offset_right = 400.0
+offset_bottom = 87.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="CardArtwork" type="TextureRect" parent="HBoxContainer"]
+[node name="CardArtwork" type="TextureRect" parent="Container/HBoxContainer"]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(400, 0)
@@ -41,19 +47,19 @@ texture = ExtResource("1_nnqwu")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="CardInformation" type="VBoxContainer" parent="HBoxContainer"]
+[node name="CardInformation" type="VBoxContainer" parent="Container/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="CardName" type="Label" parent="HBoxContainer/CardInformation"]
+[node name="CardName" type="Label" parent="Container/HBoxContainer/CardInformation"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "The Chariot"
 label_settings = SubResource("LabelSettings_fh8de")
 
-[node name="CardDescription" type="Label" parent="HBoxContainer/CardInformation"]
+[node name="CardDescription" type="Label" parent="Container/HBoxContainer/CardInformation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -61,15 +67,15 @@ text = "Lorem Ipsum dolor sit amet......"
 label_settings = SubResource("LabelSettings_mnpa1")
 autowrap_mode = 3
 
-[node name="Sigils" type="VBoxContainer" parent="HBoxContainer/CardInformation"]
+[node name="Sigils" type="VBoxContainer" parent="Container/HBoxContainer/CardInformation"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="Container"]
 show_behind_parent = true
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Container/Control"]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_cibef")
 layout_mode = 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=5 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
+[ext_resource type="PackedScene" uid="uid://c21gcj8wgm736" path="res://systems/ui/tooltips/show_card_tooltip.tscn" id="3_cofgw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
 size = Vector2(200, 100)
@@ -198,3 +199,7 @@ anchor_right = 1.0
 offset_left = -33.0
 offset_right = 0.0
 grow_horizontal = 0
+
+[node name="ShowCardTooltip" parent="." instance=ExtResource("3_cofgw")]
+unique_name_in_owner = true
+layout_mode = 1

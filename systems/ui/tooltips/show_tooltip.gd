@@ -15,9 +15,17 @@ extends Control
 @export var hover_min_duration := 0.5
 var hovering := false
 @onready var cooldown := hover_min_duration
-var instance: TooltipBasic = null
+var instance: TooltipBase = null:
+	set(value): instance = create_instance(value)
 
 static var tooltip_container = null
+
+func create_instance(value):
+	if value == null:
+		return null
+	var new_instance = value as TooltipBasic
+	new_instance.setup(title, icon, text)
+	return new_instance
 
 func show_tooltip():
 	if not tooltip_container:
@@ -27,8 +35,7 @@ func show_tooltip():
 		get_tree().root.add_child(tooltip_container)
 
 	if not instance:
-		instance = tooltip_template.instantiate() as TooltipBasic
-		instance.setup(title, icon, text)
+		instance = tooltip_template.instantiate()
 		tooltip_container.add_child(instance)
 		instance.global_position = get_global_mouse_position() + offset
 

@@ -11,5 +11,7 @@ timing = 0
 [resource]
 script = ExtResource("1_ekhnk")
 combat_phase_triggers = Array[ExtResource("1_nhvvg")]([SubResource("Resource_74j2r")])
-triggers = null
+triggers = 0
+title = "Flip"
+description = "A card with this keyword will swap its current attack and health at the end of the turn."
 highlight_duration = 1.0

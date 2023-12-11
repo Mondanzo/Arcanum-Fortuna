@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SplitAttack" load_steps=2 format=3 uid="uid://ues1kduox2nf"]
+
+[ext_resource type="Script" path="res://systems/card_combat/keywords/split_attack.gd" id="1_qg2bb"]
+
+[resource]
+script = ExtResource("1_qg2bb")
+title = "SplitAttack"
+description = "A card with this keyword will attack diagonally instead of straight."
+highlight_duration = 1.0

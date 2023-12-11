@@ -31,11 +31,8 @@ font_size = 26
 font_size = 24
 
 [node name="KeywordInfo" type="VBoxContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 365.0
+offset_bottom = 150.0
 script = ExtResource("1_01h56")
 
 [node name="separator" type="ColorRect" parent="."]

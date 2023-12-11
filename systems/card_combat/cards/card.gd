@@ -19,9 +19,11 @@ func scale_to_fit(new_size):
 	scale = get_rect().size / new_size
 
 func copy(card : Card):
+	card_data = card.card_data
 	init(card.artwork_texture, card.card_name, card.cost, card.attack, card.health, card.keywords)
 
 func load_from_data(data: CardData):
+	card_data = data
 	init(data.artwork, data.name, data.cost, data.attack, data.health, data.keywords)
 
 func init(artwork_texture, name, cost, attack, health, keywords):
@@ -33,6 +35,7 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 	self.keywords = keywords
 	for keyword in keywords:
 		keyword.init()
+	%ShowCardTooltip.init(card_data)
 
 
 func update_texts():

@@ -34,8 +34,10 @@ func trigger(player_data: PlayerData):
 		await get_tree().create_timer(.5).timeout
 		var c = grabbag.pop_at(rng.randi_range(0, len(grabbag) - 1))
 		if c:
-			var visualCard = cardTemplate.instantiate()
-			visualCard.initialise(c)
+			var visualCard = cardTemplate.instantiate() as Card
+			visualCard.card_data = c
+			visualCard.load_from_data(c)
+			visualCard.setup()
 			$CanvasLayer/Control/Cards.add_child(visualCard)
 			visualCard.clicked.connect(card_clicked)
 			$AudioStreamPlayer.play()
@@ -69,6 +71,6 @@ func card_clicked(card: Card):
 		$CanvasLayer/Control/Button.show()
 		
 		await $CanvasLayer/Control/Button.pressed
-		player_data_ref.cardStack.push_back(card.data.duplicate())
+		player_data_ref.cardStack.push_back(card.card_data.duplicate())
 		finished.emit()
 		queue_free()

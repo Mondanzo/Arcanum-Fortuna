@@ -1,72 +1,46 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvc773k7bxpdh"]
+[gd_scene load_steps=11 format=3 uid="uid://bvc773k7bxpdh"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_gkoes"]
-[ext_resource type="Script" path="res://systems/card_combat/scripts/keyword_info.gd" id="2_xum3b"]
+[ext_resource type="Script" path="res://systems/card_combat/scripts/keyword_icon.gd" id="2_ogjvt"]
 [ext_resource type="Script" path="res://systems/card_combat/scripts/keyword_info.gd" id="3_j7fmh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v72xo"]
 atlas = ExtResource("1_gkoes")
 region = Rect2(0, 0, 66, 66)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmcby"]
-atlas = ExtResource("1_gkoes")
-region = Rect2(0, 0, 66, 66)
-
-[sub_resource type="Resource" id="Resource_on8gm"]
+[sub_resource type="Resource" id="Resource_tal2q"]
 script = ExtResource("3_j7fmh")
-tooltip_title = "Split Attack"
-tooltip_icon = SubResource("AtlasTexture_mmcby")
-tooltip_description = "Cards with this sigil will attack diagonally accessible tiles
-instead of the tile in front of it."
+tooltip_title = "Keyword"
+tooltip_description = "Here is what this keyword does."
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v5j8e"]
-atlas = ExtResource("1_gkoes")
-region = Rect2(66, 0, 66, 66)
-
-[sub_resource type="Resource" id="Resource_oshpf"]
+[sub_resource type="Resource" id="Resource_dg1ns"]
 script = ExtResource("3_j7fmh")
-tooltip_title = "Flip"
-tooltip_icon = SubResource("AtlasTexture_v5j8e")
-tooltip_description = "Cards with this symbol will swap their
-attack and health at the start of the turn."
+tooltip_title = "Keyword"
+tooltip_description = "Here is what this keyword does."
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gshfc"]
-atlas = ExtResource("1_gkoes")
-region = Rect2(0, 66, 66, 66)
-
-[sub_resource type="Resource" id="Resource_iqddn"]
+[sub_resource type="Resource" id="Resource_ptqin"]
 script = ExtResource("3_j7fmh")
-tooltip_title = "Consume"
-tooltip_icon = SubResource("AtlasTexture_gshfc")
-tooltip_description = "Cards with this symbol will gain
-1 attack and 1 health whenever
-they attack and kill a card."
+tooltip_title = "Keyword"
+tooltip_description = "Here is what this keyword does."
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n5jr8"]
-atlas = ExtResource("1_gkoes")
-region = Rect2(66, 66, 66, 66)
-
-[sub_resource type="Resource" id="Resource_x3888"]
+[sub_resource type="Resource" id="Resource_dta6m"]
 script = ExtResource("3_j7fmh")
-tooltip_title = "Enrage"
-tooltip_icon = SubResource("AtlasTexture_n5jr8")
-tooltip_description = "Cards with this sigil will gain 1 Attack whenever
-a friendly card drains your karma."
+tooltip_title = "Keyword"
+tooltip_description = "Here is what this keyword does."
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yix6j"]
-atlas = ExtResource("1_gkoes")
-region = Rect2(0, 132, 66, 66)
-
-[sub_resource type="Resource" id="Resource_cpqiu"]
+[sub_resource type="Resource" id="Resource_5bb68"]
 script = ExtResource("3_j7fmh")
-tooltip_title = "Tripple Attack"
-tooltip_icon = SubResource("AtlasTexture_yix6j")
-tooltip_description = "Cards with this sigil will attack diagonally accessible tiles
-in addition to the tile in front of it."
+tooltip_title = "Keyword"
+tooltip_description = "Here is what this keyword does."
+
+[sub_resource type="Resource" id="Resource_6qm1l"]
+script = ExtResource("3_j7fmh")
+tooltip_title = "Keyword"
+tooltip_description = "Here is what this keyword does."
 
 [node name="KeywordIcon" type="TextureRect"]
 offset_right = 66.0
 offset_bottom = 66.0
 texture = SubResource("AtlasTexture_v72xo")
-script = ExtResource("2_xum3b")
-descriptions = Array[ExtResource("3_j7fmh")]([SubResource("Resource_on8gm"), SubResource("Resource_oshpf"), SubResource("Resource_iqddn"), SubResource("Resource_x3888"), SubResource("Resource_cpqiu")])
+script = ExtResource("2_ogjvt")
+descriptions = Array[ExtResource("3_j7fmh")]([SubResource("Resource_tal2q"), SubResource("Resource_dg1ns"), SubResource("Resource_ptqin"), SubResource("Resource_dta6m"), SubResource("Resource_5bb68"), SubResource("Resource_6qm1l")])

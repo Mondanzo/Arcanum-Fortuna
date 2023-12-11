@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgbod0er521or"]
 
-[ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/DungeonExploration/Nodes/empty_node.tscn" id="1_jwvtv"]
+[ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/DungeonExploration/nodes/empty_node.tscn" id="1_jwvtv"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/DungeonExploration/player/player.tscn" id="2_we5fp"]
 
 [node name="node-map" type="Control"]

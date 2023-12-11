@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnw2n821p8qt8"]
+[gd_scene load_steps=5 format=3 uid="uid://cnw2n821p8qt8"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_stack.gd" id="1_fm0v2"]
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="2_5ud8m"]
+[ext_resource type="PackedScene" uid="uid://t6sockg0pnui" path="res://systems/card_combat/cards/hand_card.tscn" id="2_d5frc"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="3_dwfos"]
 
 [node name="CardStack" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fm0v2")
+deckCardTemplate = ExtResource("2_d5frc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

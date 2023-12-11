@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_lco5q"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial.gd" id="2_xmauc"]
-[ext_resource type="Script" path="res://datascripts/enemy_data.gd" id="3_fi5ux"]
-[ext_resource type="Script" path="res://datascripts/enemy_stats.gd" id="4_e0ixd"]
-[ext_resource type="Script" path="res://datascripts/player_data.gd" id="4_qmnt7"]
+[ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_fi5ux"]
+[ext_resource type="Script" path="res://data/scripts/enemy_stats.gd" id="4_e0ixd"]
+[ext_resource type="Script" path="res://data/scripts/player_data.gd" id="4_qmnt7"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="5_r05du"]
 [ext_resource type="Script" path="res://systems/tutorial/steps/tutorial_step.gd" id="5_txu6s"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_tutorial_chat.gd" id="8_lf455"]
@@ -24,7 +24,7 @@
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_enemy_cards_attack.gd" id="18_eq6fb"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_enemy_play_card.gd" id="18_mtdgx"]
 [ext_resource type="Texture2D" uid="uid://da686q86v5n60" path="res://assets/sprites/cards/spell.png" id="19_ymsqq"]
-[ext_resource type="Script" path="res://datascripts/card_data.gd" id="20_yi4lx"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="20_yi4lx"]
 [ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="21_fn7qg"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_play_out_turn.gd" id="22_o7xjc"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_process_mode.gd" id="23_s0rud"]
@@ -81,12 +81,17 @@ health = 666
 sigils = Array[int]([])
 spawn_frequency = 100
 
-[node name="Tutorial" node_paths=PackedStringArray("tutorial_steps") instance=ExtResource("1_lco5q")]
+[node name="Tutorial" node_paths=PackedStringArray("tutorial_steps", "gameBoard") instance=ExtResource("1_lco5q")]
 script = ExtResource("2_xmauc")
 enemy_data = SubResource("Resource_7as0j")
 tutorial_steps = NodePath("Steps")
 trigger_karma_on_turn_start = false
 debug_player_data = SubResource("Resource_wj3g8")
+gameBoard = NodePath("")
+
+[node name="GameBoard" parent="." index="1" node_paths=PackedStringArray("enemy_player", "player")]
+enemy_player = NodePath("")
+player = NodePath("")
 
 [node name="Panel" parent="GameBoard/EnemyTiles/Row1" index="0"]
 visible = false

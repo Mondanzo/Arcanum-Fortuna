@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bxifydx1hdpwf"]
+[gd_scene load_steps=44 format=3 uid="uid://bxifydx1hdpwf"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_lco5q"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial.gd" id="2_xmauc"]
@@ -27,7 +27,10 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="20_yi4lx"]
 [ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="21_fn7qg"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_play_out_turn.gd" id="22_o7xjc"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="23_mj0yg"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_process_mode.gd" id="23_s0rud"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="24_allw1"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="25_nrcpb"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_swap_scene.gd" id="26_t18aa"]
 
 [sub_resource type="Resource" id="Resource_7133d"]
@@ -60,6 +63,7 @@ start_hand_size = 1
 draw_amount = 1
 karma = 0
 draw_rng_seed = 1337
+currency = 0
 
 [sub_resource type="Resource" id="Resource_fh7bg"]
 script = ExtResource("20_yi4lx")
@@ -68,8 +72,26 @@ artwork = ExtResource("19_ymsqq")
 cost = 0
 attack = 2
 health = 2
-sigils = Array[int]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100
+
+[sub_resource type="Resource" id="Resource_67liv"]
+script = ExtResource("23_mj0yg")
+
+[sub_resource type="Resource" id="Resource_43ql8"]
+script = ExtResource("24_allw1")
+
+[sub_resource type="Resource" id="Resource_wlrrh"]
+script = ExtResource("25_nrcpb")
+
+[sub_resource type="Resource" id="Resource_ih0bu"]
+script = ExtResource("23_mj0yg")
+
+[sub_resource type="Resource" id="Resource_hfuxg"]
+script = ExtResource("24_allw1")
+
+[sub_resource type="Resource" id="Resource_1upqg"]
+script = ExtResource("25_nrcpb")
 
 [sub_resource type="Resource" id="Resource_7fli2"]
 script = ExtResource("20_yi4lx")
@@ -78,14 +100,13 @@ artwork = ExtResource("10_x770v")
 cost = 0
 attack = 666
 health = 666
-sigils = Array[int]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100
 
 [node name="Tutorial" node_paths=PackedStringArray("tutorial_steps") instance=ExtResource("1_lco5q")]
 script = ExtResource("2_xmauc")
 enemy_data = SubResource("Resource_7as0j")
 tutorial_steps = NodePath("Steps")
-trigger_karma_on_turn_start = false
 debug_player_data = SubResource("Resource_wj3g8")
 
 [node name="Panel" parent="GameBoard/EnemyTiles/Row1" index="0"]
@@ -329,6 +350,7 @@ script = ExtResource("15_7wyih")
 [node name="CompleteTurn" type="Node" parent="Steps/TutorialStep13/AwaitTurn" index="0" node_paths=PackedStringArray("card_battle")]
 script = ExtResource("22_o7xjc")
 card_battle = NodePath("../../../..")
+phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_67liv"), SubResource("Resource_43ql8"), SubResource("Resource_wlrrh")])
 
 [node name="TutorialStep14" type="Node" parent="Steps" index="13"]
 script = ExtResource("5_txu6s")
@@ -394,6 +416,7 @@ script = ExtResource("15_7wyih")
 [node name="PlayTurn" type="Node" parent="Steps/TutorialStep17/AwaitTurn" index="0" node_paths=PackedStringArray("card_battle")]
 script = ExtResource("22_o7xjc")
 card_battle = NodePath("../../../..")
+phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_ih0bu"), SubResource("Resource_hfuxg"), SubResource("Resource_1upqg")])
 
 [node name="TutorialStep18" type="Node" parent="Steps" index="17"]
 script = ExtResource("5_txu6s")

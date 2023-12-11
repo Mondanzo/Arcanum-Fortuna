@@ -133,3 +133,6 @@ text = "Seed: 1337"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("11_jsff7")
+
+[connection signal="mouse_entered" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_exited"]

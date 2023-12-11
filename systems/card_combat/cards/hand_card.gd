@@ -10,10 +10,17 @@ var isHovered = false
 
 var move_around := true
 
+
+func _notification(what):
+	if what == NOTIFICATION_PARENTED && get_parent().has_method("_on_card_added"):
+		get_parent()._on_card_added(self)
+
+
 func setup():
 	super()
 	mouse_entered.connect(self.mouse_entered_event)
 	mouse_exited.connect(self.mouse_exited_event)
+
 
 func _process(delta):
 	var target_scale = Vector2.ONE

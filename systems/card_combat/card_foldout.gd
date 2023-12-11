@@ -18,6 +18,7 @@ var lerpFactor = 1
 @export var card : PackedScene
 
 var showCards = false
+var is_card_dragged = false
 
 func _process(delta):
 	if get_global_mouse_position().y < get_viewport_rect().get_center().y:
@@ -26,7 +27,7 @@ func _process(delta):
 	if get_global_mouse_position().y > (get_viewport_rect().size.y - get_viewport_rect().size.y / 5):
 		showCards = true
 	
-	if !enabled:
+	if !enabled or is_card_dragged:
 		showCards = false
 	
 	var count = get_child_count()
@@ -68,6 +69,17 @@ func _process(delta):
 		lerpFactor = 0.1
 	
 	queue_redraw()
+
+func _on_card_drag_started():
+	is_card_dragged = true
+
+func _on_card_drag_ended(card):
+	is_card_dragged = false
+
+func _on_card_added(card : HandCard):
+	card.drag_started.connect(_on_card_drag_started)
+	card.drag_ended.connect(_on_card_drag_ended)
+
 
 func curve(x):
 	return (x * x) * (cardArc * 0.001) + (cardHeight if showCards else cardHiddenHeight)

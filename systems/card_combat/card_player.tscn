@@ -8,45 +8,54 @@
 
 [node name="CardPlayer" type="ReferenceRect"]
 custom_minimum_size = Vector2(300, 650)
-border_width = 0.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ifl70")
 
 [node name="Hand" parent="." instance=ExtResource("1_cbbcf")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -29.0
-offset_top = -200.0
-offset_right = 29.0
-pivot_offset = Vector2(700, 100)
-cardHeight = -550
-cardHiddenHeight = -1000
-cardArc = 0.02
+offset_top = 0.0
 
-[node name="CardStack" parent="." node_paths=PackedStringArray("target") instance=ExtResource("10_n68ae")]
-unique_name_in_owner = true
+[node name="Deck" type="ReferenceRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -35.0
+offset_right = -50.0
+offset_bottom = 615.0
+grow_horizontal = 0
+grow_vertical = 2
+border_width = 0.0
+
+[node name="CardStack" parent="Deck" node_paths=PackedStringArray("target") instance=ExtResource("10_n68ae")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 70.0
+offset_top = -17.0
+offset_right = 320.0
+offset_bottom = 633.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.10472
-target = NodePath("../Hand")
+rotation = 0.272341
+target = NodePath("../../Hand")
 deckCardTemplate = ExtResource("2_yo3i5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 104.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Deck"]
+layout_mode = 2
+offset_right = 250.0
+offset_bottom = 650.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="Deck/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 19
@@ -54,13 +63,13 @@ text = "- You -"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Karma" type="ColorRect" parent="VBoxContainer"]
+[node name="Karma" type="ColorRect" parent="Deck/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 color = Color(0.47451, 0.207843, 0.592157, 1)
 
-[node name="Label" type="Label" parent="VBoxContainer/Karma"]
+[node name="Label" type="Label" parent="Deck/VBoxContainer/Karma"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,7 +81,7 @@ text = "Karma: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShowTooltip" type="Control" parent="VBoxContainer/Karma"]
+[node name="ShowTooltip" type="Control" parent="Deck/VBoxContainer/Karma"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -83,13 +92,13 @@ combined cost to your karma total each turn.
 Whenever your karma would go below zero the excess
 amount is substracted from your health instead."
 
-[node name="Health" type="ColorRect" parent="VBoxContainer"]
+[node name="Health" type="ColorRect" parent="Deck/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 color = Color(0.607843, 0.172549, 0.203922, 1)
 
-[node name="Label" type="Label" parent="VBoxContainer/Health"]
+[node name="Label" type="Label" parent="Deck/VBoxContainer/Health"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,7 +110,7 @@ text = "Health: 20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShowTooltip" type="Control" parent="VBoxContainer/Health"]
+[node name="ShowTooltip" type="Control" parent="Deck/VBoxContainer/Health"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

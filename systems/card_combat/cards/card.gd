@@ -35,17 +35,17 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 		keyword.init()
 
 func update_texts():
-	$VBoxContainer/Name/Label.text = card_name
-	$Attack/Label.text = str(attack)
-	$Health/Label.text = str(health)
+	%Name.text = card_name
+	%AttackCost.text = str(attack)
+	%HealthCost.text = str(health)
 
 func setup():
-	$VBoxContainer/Artwork.texture = artwork_texture
-	$VBoxContainer/Name/Label.text = card_name
-	$Cost/Label.text = str(cost)
-	$Attack/Label.text = str(attack)
-	$Health/Label.text = str(health)
+	%Artwork.texture = artwork_texture
+	%Name.text = card_name
+	%KarmaCost.text = str(cost)
+	%AttackCost.text = str(attack)
+	%HealthCost.text = str(health)
 	
 	for i in range(keywords.size()):
-		$KeyWords.get_child(i).set_icon(keywords[i].id)
+		%KeyWords.get_child(i).set_icon(keywords[i].id)
 

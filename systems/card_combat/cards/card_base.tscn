@@ -1,0 +1,207 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl86q0oq58j6q"]
+
+[ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
+[ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
+size = Vector2(200, 100)
+
+[node name="Card" type="Control"]
+z_index = 2
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.001
+offset_bottom = 300.0
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_04ic4")
+
+[node name="Artwork" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = SubResource("PlaceholderTexture2D_hmwet")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0.588235, 0.588235, 0.588235, 1)
+
+[node name="Name" type="Label" parent="VBoxContainer/Name"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type" type="ColorRect" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 8
+color = Color(0.32549, 0.631373, 0.768627, 1)
+
+[node name="Label" type="Label" parent="VBoxContainer/Type"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Type Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cost" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 19.0
+offset_bottom = 19.0
+color = Color(0.254902, 0.521569, 0.796078, 1)
+
+[node name="KarmaCost" type="Label" parent="Cost"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "-100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+offset_right = 64.0
+grow_vertical = 0
+color = Color(0.937255, 0, 0.309804, 0.705882)
+
+[node name="AttackCost" type="Label" parent="Attack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.321569, 0.588235, 0.0941176, 0.705882)
+
+[node name="HealthCost" type="Label" parent="Health"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyWords" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -66.0
+offset_right = 33.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="KeywordIcon3" parent="KeyWords" instance=ExtResource("2_bo1pm")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeywordIcon4" parent="KeyWords" instance=ExtResource("2_bo1pm")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeywordIcon" parent="KeyWords" instance=ExtResource("2_bo1pm")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_right = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="KeywordIcon2" parent="KeyWords" instance=ExtResource("2_bo1pm")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2

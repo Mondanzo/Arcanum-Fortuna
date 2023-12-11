@@ -5,6 +5,8 @@ extends ActivatedKeyword
 @export var attack_gain : int = 1
 
 func init(id = 4):
+	if description.count('%d') == 2:
+		description = description % [attack_gain, health_gain]
 	super.init(id)
 
 func trigger(source, target):

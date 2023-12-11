@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=31 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
@@ -25,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://ccymn0mj5bdvy" path="res://data/cards/the_sun.tres" id="20_roc35"]
 [ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="21_sdmdj"]
 [ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="22_fmmdo"]
+[ext_resource type="Resource" uid="uid://dpspidmqwqebx" path="res://data/cards/the_world.tres" id="23_kveiv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wl2yu"]
 font_size = 151
@@ -40,7 +41,7 @@ bg_color = Color(0.545098, 0.388235, 0.658824, 1)
 
 [node name="LootEvent" type="Node"]
 script = ExtResource("1_dmmsx")
-possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("2_kt70e"), ExtResource("3_6il76"), ExtResource("4_anhfr"), ExtResource("5_g314m"), ExtResource("6_k0i6c"), ExtResource("7_3menk"), ExtResource("8_qccdy"), ExtResource("9_mciwm"), ExtResource("10_jbfgc"), ExtResource("11_jhwta"), ExtResource("12_fqraf"), ExtResource("13_d27cj"), ExtResource("14_n23su"), ExtResource("15_5fchr"), ExtResource("16_mhl86"), ExtResource("17_37lf3"), ExtResource("18_c0isd"), ExtResource("19_4guxq"), ExtResource("20_roc35"), ExtResource("21_sdmdj"), ExtResource("22_fmmdo")])
+possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("2_kt70e"), ExtResource("3_6il76"), ExtResource("4_anhfr"), ExtResource("5_g314m"), ExtResource("6_k0i6c"), ExtResource("7_3menk"), ExtResource("8_qccdy"), ExtResource("9_mciwm"), ExtResource("10_jbfgc"), ExtResource("11_jhwta"), ExtResource("12_fqraf"), ExtResource("13_d27cj"), ExtResource("14_n23su"), ExtResource("15_5fchr"), ExtResource("16_mhl86"), ExtResource("17_37lf3"), ExtResource("18_c0isd"), ExtResource("19_4guxq"), ExtResource("20_roc35"), ExtResource("21_sdmdj"), ExtResource("22_fmmdo"), ExtResource("23_kveiv")])
 cardTemplate = ExtResource("1_panx4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

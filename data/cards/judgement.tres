@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_3cnmo")
 name = "Judgement"
-description = "It can do stuff."
+description = "\"Judge lest ye be judged.\""
 artwork = ExtResource("1_e5oar")
 cost = -1
 attack = 2

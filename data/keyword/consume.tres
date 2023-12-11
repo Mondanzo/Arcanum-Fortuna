@@ -1,6 +1,11 @@
-[gd_resource type="Resource" script_class="Consume" load_steps=2 format=3 uid="uid://drtnl4dtcqfpq"]
+[gd_resource type="Resource" script_class="Consume" load_steps=4 format=3 uid="uid://drtnl4dtcqfpq"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/consume.gd" id="1_51vno"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_bt1jk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tssjv"]
+atlas = ExtResource("1_bt1jk")
+region = Rect2(0, 66, 66, 66)
 
 [resource]
 script = ExtResource("1_51vno")
@@ -10,4 +15,5 @@ combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/comba
 triggers = 1
 title = "Cosume"
 description = "Whenever a card with this keyword attacks and kills a card it gains %d/%d."
+icon = SubResource("AtlasTexture_tssjv")
 highlight_duration = 1.0

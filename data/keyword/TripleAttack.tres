@@ -1,9 +1,15 @@
-[gd_resource type="Resource" script_class="TripleAttack" load_steps=2 format=3 uid="uid://dvt6vrtfufa0t"]
+[gd_resource type="Resource" script_class="TripleAttack" load_steps=4 format=3 uid="uid://dvt6vrtfufa0t"]
 
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_760mp"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/triple_attack.gd" id="1_dn2gv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brrce"]
+atlas = ExtResource("1_760mp")
+region = Rect2(0, 132, 66, 66)
 
 [resource]
 script = ExtResource("1_dn2gv")
 title = "TripleAttack"
 description = "A card with this keyword will both attack diagonally and straight. "
+icon = SubResource("AtlasTexture_brrce")
 highlight_duration = 1.0

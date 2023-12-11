@@ -27,9 +27,11 @@ anchors_preset = 0
 offset_right = 400.0
 offset_bottom = 87.0
 script = ExtResource("1_j2xxw")
+mouse_offset = Vector2(35, -60)
 
 [node name="Container" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
 offset_right = 400.0
 offset_bottom = 87.0
 

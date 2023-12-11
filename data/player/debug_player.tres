@@ -1,18 +1,20 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=8 format=3 uid="uid://bey7oy462yo2s"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=9 format=3 uid="uid://bey7oy462yo2s"]
 
 [ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="1_41xj8"]
 [ext_resource type="Script" path="res://data/scripts/player_data.gd" id="1_h25ob"]
 [ext_resource type="Resource" uid="uid://dtm8ekuwulx8j" path="res://data/cards/the_lovers.tres" id="2_feynm"]
 [ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="2_g1cuq"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="2_pb7uk"]
+[ext_resource type="Resource" uid="uid://c81sp31vj3l2" path="res://data/cards/the_empress.tres" id="3_fs026"]
 [ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="4_csw0r"]
 [ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="4_td367"]
 
 [resource]
 script = ExtResource("1_h25ob")
-cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_41xj8"), ExtResource("2_g1cuq"), ExtResource("2_pb7uk"), ExtResource("2_pb7uk"), ExtResource("4_csw0r"), ExtResource("2_feynm"), ExtResource("4_td367")])
+cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_41xj8"), ExtResource("2_g1cuq"), ExtResource("3_fs026"), ExtResource("2_pb7uk"), ExtResource("4_csw0r"), ExtResource("2_feynm"), ExtResource("4_td367")])
 health = 40.0
 start_hand_size = 4
 draw_amount = 1
 karma = 0
 draw_rng_seed = 1337
+currency = 0

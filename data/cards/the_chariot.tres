@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("2_h65kg")
 name = "The Chariot"
+description = "\"May nothing stand before you.\""
 artwork = ExtResource("1_p6ovo")
 cost = 1
 attack = 1
 health = 4
-sigils = Array[int]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100

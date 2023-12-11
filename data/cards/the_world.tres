@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://dpspidmqwqebx"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_aspms"]
+[ext_resource type="Texture2D" uid="uid://deqxg805404yn" path="res://assets/sprites/cards/world.png" id="1_j3v4b"]
+[ext_resource type="Resource" uid="uid://cdie0qb10eba1" path="res://data/keyword/drain.tres" id="2_pq7ue"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/consume.gd" id="3_6tb5c"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/flip.gd" id="4_h445y"]
+
+[sub_resource type="Resource" id="Resource_cmhky"]
+script = ExtResource("3_6tb5c")
+health_gain = 1
+attack_gain = 1
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 0
+title = "Keyword"
+description = "Gives your card an ability and stuff"
+highlight_duration = 1.0
+
+[sub_resource type="Resource" id="Resource_y058g"]
+script = ExtResource("4_h445y")
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 0
+title = "Keyword"
+description = "Gives your card an ability and stuff"
+highlight_duration = 1.0
+
+[resource]
+script = ExtResource("1_aspms")
+name = "The World"
+description = "\"May time complete you.\""
+artwork = ExtResource("1_j3v4b")
+cost = 0
+attack = 0
+health = 0
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_pq7ue"), SubResource("Resource_cmhky"), SubResource("Resource_y058g")])
+spawn_frequency = 50

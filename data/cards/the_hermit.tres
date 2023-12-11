@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("2_y1met")
 name = "The Hermit"
+description = "\"May you take solace in solitude.\""
 artwork = ExtResource("1_rhqay")
 cost = 4
 attack = 0
 health = 1
-sigils = Array[int]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 40

@@ -6,8 +6,10 @@
 [resource]
 script = ExtResource("1_nwcwr")
 name = "The Hierophant"
+description = "\"May you find trust in connections.\""
 artwork = ExtResource("1_tibtj")
 cost = 5
 attack = 0
 health = 0
-sigils = Array[int]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 100

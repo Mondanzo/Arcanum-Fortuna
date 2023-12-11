@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("2_4eh3m")
 name = "Death"
+description = "\"Every end marks a new beginning.\""
 artwork = ExtResource("1_lancp")
 cost = -3
 attack = 1

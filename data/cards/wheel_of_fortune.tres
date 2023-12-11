@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nop2x"]
 [ext_resource type="Texture2D" uid="uid://kmb5fym80vkf" path="res://assets/sprites/cards/wheel_of_fortune.png" id="1_qotfe"]
-[ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/Flip.tres" id="2_h80nj"]
+[ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/flip.tres" id="2_h80nj"]
 
 [resource]
 script = ExtResource("1_nop2x")
 name = "Wheel of Fortune"
+description = "\"May your luck change.\""
 artwork = ExtResource("1_qotfe")
 cost = 2
 attack = 0

@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("2_w1k5e")
 name = "The Moon"
+description = "\"May you find all you have lost.\""
 artwork = ExtResource("1_u3r3r")
 cost = -2
 attack = 3
 health = 3
-sigils = Array[int]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 30

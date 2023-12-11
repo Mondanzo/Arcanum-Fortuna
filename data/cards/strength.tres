@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://vhp6qhyxxw2w" path="res://assets/sprites/cards/strength.png" id="1_0dpls"]
 [ext_resource type="Resource" uid="uid://cdie0qb10eba1" path="res://data/keyword/drain.tres" id="2_ujyeh"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_xl1hd"]
-[ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/Flip.tres" id="3_hlb3w"]
+[ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/flip.tres" id="3_hlb3w"]
 
 [resource]
 script = ExtResource("2_xl1hd")
 name = "Strength"
+description = "\"May you ignite your inner power.\""
 artwork = ExtResource("1_0dpls")
 cost = -1
 attack = 0

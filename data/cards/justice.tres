@@ -1,28 +1,17 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://cyu186axhjfax"]
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://cyu186axhjfax"]
 
 [ext_resource type="Texture2D" uid="uid://bgqy2ut5amxhf" path="res://assets/sprites/cards/justice.png" id="1_aecmw"]
+[ext_resource type="Resource" uid="uid://ues1kduox2nf" path="res://data/keyword/SplitAttack.tres" id="2_7vyyo"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_fwtl7"]
-[ext_resource type="Script" path="res://systems/card_combat/keywords/triple_attack.gd" id="2_qrr1u"]
-[ext_resource type="Script" path="res://systems/card_combat/keywords/consume.gd" id="3_11bq6"]
-
-[sub_resource type="Resource" id="Resource_f7cvo"]
-script = ExtResource("2_qrr1u")
-highlight_duration = 1.0
-
-[sub_resource type="Resource" id="Resource_bh2yr"]
-script = ExtResource("3_11bq6")
-health_gain = 1
-attack_gain = 1
-combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
-triggers = 0
-highlight_duration = 1.0
+[ext_resource type="Resource" uid="uid://drtnl4dtcqfpq" path="res://data/keyword/consume.tres" id="3_rpu7v"]
 
 [resource]
 script = ExtResource("2_fwtl7")
 name = "Justice"
+description = "\"May your future become balanced.\""
 artwork = ExtResource("1_aecmw")
-cost = -7
+cost = -4
 attack = 2
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_f7cvo"), SubResource("Resource_bh2yr")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_7vyyo"), ExtResource("3_rpu7v")])
 spawn_frequency = 10

@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("2_1jc2m")
 name = "The Tower"
+description = "\"May you find sturdiness amidst change.\""
 artwork = ExtResource("1_qhii3")
 cost = -3
 attack = 2
 health = 7
-sigils = Array[int]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 80

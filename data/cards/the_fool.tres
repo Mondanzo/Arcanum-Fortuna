@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("2_skw0c")
 name = "The Fool"
+description = "\"Where journey begins.\""
 artwork = ExtResource("1_oq4bk")
 cost = 3
 attack = 0
 health = 3
-sigils = Array[int]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100

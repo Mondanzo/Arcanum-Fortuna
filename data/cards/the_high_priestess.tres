@@ -6,11 +6,14 @@
 
 [sub_resource type="Resource" id="Resource_wn2vh"]
 script = ExtResource("2_03b1t")
+title = "Keyword"
+description = "Gives your card an ability and stuff"
 highlight_duration = 1.0
 
 [resource]
 script = ExtResource("2_ako5p")
 name = "The High Priestess"
+description = "\"May your spirit be free.\""
 artwork = ExtResource("1_b4wyt")
 cost = -6
 attack = 3

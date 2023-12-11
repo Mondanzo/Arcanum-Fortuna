@@ -4,6 +4,7 @@ extends TextureRect
 @export var grid_columns := 3
 
 @export var descriptions : Array[KeywordDescription]
+@export var generate_tooltip := false
 
 func set_icon(id: int):
 	texture = texture.duplicate()
@@ -20,8 +21,10 @@ func set_icon(id: int):
 			width, height)
 	visible = true
 	
+	if not generate_tooltip:
+		return
+		
 	var tooltipInfo = descriptions[id]
-	
 	var tooltip = ShowTooltip.new()
 	tooltip.hover_min_duration = 0.8
 	tooltip.title = tooltipInfo.tooltip_title

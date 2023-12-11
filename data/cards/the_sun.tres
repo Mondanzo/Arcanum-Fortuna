@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("2_y1k8m")
 name = "The Sun"
+description = "\"May the light heal and enlighten you.\""
 artwork = ExtResource("1_wr52r")
 cost = -1
 attack = 2

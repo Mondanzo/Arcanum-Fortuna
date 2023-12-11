@@ -7,21 +7,7 @@
 script = ExtResource("1_3lxv2")
 attack_delay = 1
 death_delay = 1
-attacked_color = Color(0, 0, 0, 1)
-highlight_color = Color(0, 0, 0, 1)
-active_color = Color(0, 0, 0, 1)
+attacked_color = Color(1, 0.172549, 0.129412, 1)
+highlight_color = Color(0.909804, 0.647059, 0.572549, 1)
+active_color = Color(0.713726, 0.764706, 0.870588, 1)
 move_speed = 0.5
-
-[node name="KeywordIcon4" parent="KeyWords" index="1"]
-offset_left = -16.5
-offset_right = 16.5
-
-[node name="KeywordIcon" parent="KeyWords" index="2"]
-offset_top = -16.5
-offset_bottom = 16.5
-
-[node name="KeywordIcon2" parent="KeyWords" index="3"]
-offset_left = -16.5
-offset_top = -16.5
-offset_right = 16.5
-offset_bottom = 16.5

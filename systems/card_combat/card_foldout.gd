@@ -2,9 +2,9 @@ class_name Hand extends Control
 
 var lerpFactor = 1
 @export var cardSpacing = 0
-@export var cardHeight = 100
-@export var cardHiddenHeight = -100
-@export var cardArc = 0.1
+@export var cardHeight = 400
+@export var cardHiddenHeight = 100
+@export var cardArc = 0.05
 @export var enabled := true : 
 	get:
 		return enabled
@@ -59,7 +59,7 @@ func _process(delta):
 		if count > 1:
 			posX = ((float(idx) - (float(count) / 2.0)) / count) * min(width * count, 1920)
 		var posY = curve(posX)
-		card.set_position(card.position.lerp(Vector2(posX, -posY) + get_rect().size , lerpFactor))
+		card.position = card.position.lerp(Vector2(posX, -posY) + get_rect().size , lerpFactor)
 		var rot = -derivative(posX)
 		card.rotation = lerpf(card.rotation, rot, lerpFactor)
 		idx += 1
@@ -70,8 +70,8 @@ func _process(delta):
 	queue_redraw()
 
 func curve(x):
-	return -(x * x) * (cardArc * 0.01) + (cardHeight if showCards else cardHiddenHeight)
+	return (x * x) * (cardArc * 0.001) + (cardHeight if showCards else cardHiddenHeight)
 
 
 func derivative(x):
-	return -2 * x * (cardArc * 0.01)
+	return -2 * x * (cardArc * 0.001)

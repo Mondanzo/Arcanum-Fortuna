@@ -8,6 +8,8 @@ static var heldCard : HandCard
 var isPickedUp = false
 var isHovered = false
 
+var move_around := true
+
 func setup():
 	super()
 	mouse_entered.connect(self.mouse_entered_event)
@@ -15,7 +17,6 @@ func setup():
 
 func _process(delta):
 	var target_scale = Vector2.ONE
-	var target_position = Vector2.ZERO
 	if isHovered:
 		target_scale = Vector2.ONE * 1.1
 		z_index = 1
@@ -23,11 +24,10 @@ func _process(delta):
 		z_index = 0
 	
 	if isPickedUp:
-		target_position = get_global_mouse_position() - (get_rect().size / 2.0)
+		var target_position = get_global_mouse_position() - (get_rect().size / 2.0)
+		global_position = global_position.lerp(target_position, 0.1)
 		target_scale = Vector2.ONE
 	scale = scale.lerp(target_scale, 0.1)
-	global_position = global_position.lerp(target_position, 0.1)
-	
 
 
 func _input(event: InputEvent):

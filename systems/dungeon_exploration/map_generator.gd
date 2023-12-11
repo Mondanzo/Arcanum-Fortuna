@@ -38,7 +38,7 @@ signal finished_generating(generated_nodes: Array[EventNode])
 func setup():
 	rng = RandomNumberGenerator.new()
 	rng.seed = rng_seed
-	$CanvasLayer/SeedLabel.text = "Seed: " + rng_seed_text
+	$CanvasLayer/SeedLabel.set_seed(rng_seed_text)
 
 
 func generate(amount: int) -> void:

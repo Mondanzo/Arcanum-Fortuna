@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdkhck4lxvdx5"]
+[gd_scene load_steps=17 format=3 uid="uid://bdkhck4lxvdx5"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/map_generator.gd" id="1_03jr0"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="2_5yni0"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="6_p7mao"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="7_uemsd"]
 [ext_resource type="Resource" uid="uid://22opo18s7wkj" path="res://data/player/basic_player.tres" id="10_2rstt"]
+[ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="11_jsff7"]
 
 [sub_resource type="Resource" id="Resource_2c5hw"]
 script = ExtResource("3_0jkw7")
@@ -131,3 +132,4 @@ theme_override_font_sizes/font_size = 24
 text = "Seed: 1337"
 horizontal_alignment = 2
 vertical_alignment = 1
+script = ExtResource("11_jsff7")

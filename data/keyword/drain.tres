@@ -14,6 +14,6 @@ attack_gain = 1
 combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
 triggers = 2
 title = "Drain %s/%s"
-description = "Whenever your karma gets decreased, a card with this sigils will gain %s/%s."
+description = "Whenever your karma gets decreased, a card with this sigils will gains %d Attack and %d Health."
 icon = SubResource("AtlasTexture_a6owf")
 highlight_duration = 1.0

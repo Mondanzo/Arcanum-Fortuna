@@ -20,3 +20,6 @@ func process_effect():
 		return
 	for i in range(combat.player_data.draw_amount):
 		await combat.player.draw_card()
+
+func reset():
+	was_already_invoked = false

@@ -34,6 +34,11 @@ func _ready():
 		start_combat()
 
 
+func _exit_tree():
+	for phase : CombatPhase in phases:
+		phase.reset()
+
+
 func init(player_data, enemy_data):
 	self.player_data = player_data
 	player.init(player_data)

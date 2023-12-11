@@ -53,6 +53,9 @@ func mouse_exited_event():
 	isHovered = false
 
 func pickup():
+	%ShowCardTooltip.hide_tooltip()
+	%ShowCardTooltip.set_process(false)
+	
 	isPickedUp = true
 	if heldCard:
 		# Edge case if you pick up multiple cards
@@ -62,6 +65,7 @@ func pickup():
 	emit_signal("drag_started")
 
 func put(dropNode):
+	%ShowCardTooltip.set_process(true)
 	isPickedUp = false
 	heldCard = null
 	mouse_filter = Control.MOUSE_FILTER_PASS

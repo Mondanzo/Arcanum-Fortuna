@@ -65,9 +65,10 @@ tooltip_description = "Cards with this sigil will attack diagonally accessible t
 in addition to the tile in front of it."
 
 [node name="KeywordIcon" type="TextureRect"]
+custom_minimum_size = Vector2(33, 33)
 offset_right = 33.0
 offset_bottom = 33.0
 texture = SubResource("AtlasTexture_v72xo")
-expand_mode = 2
+expand_mode = 1
 script = ExtResource("2_xum3b")
 descriptions = Array[ExtResource("3_j7fmh")]([SubResource("Resource_on8gm"), SubResource("Resource_oshpf"), SubResource("Resource_iqddn"), SubResource("Resource_x3888"), SubResource("Resource_cpqiu")])

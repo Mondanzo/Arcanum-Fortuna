@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=3 uid="uid://jqc67rl1fpl3"]
+
+[ext_resource type="Script" path="res://systems/shop/shop_keeper.gd" id="1_hhc2q"]
+[ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_pymec"]
+[ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="2_43omd"]
+[ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="3_tib0t"]
+[ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="4_ujqyy"]
+[ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="5_ewuug"]
+[ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="6_8wyf6"]
+[ext_resource type="Resource" uid="uid://dtm8ekuwulx8j" path="res://data/cards/the_lovers.tres" id="7_tdm37"]
+[ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="8_p6eji"]
+[ext_resource type="Resource" uid="uid://jevuhv5svmgn" path="res://data/cards/the_fool.tres" id="9_3ot4t"]
+[ext_resource type="Script" path="res://data/scripts/player_data.gd" id="10_g2r72"]
+[ext_resource type="Script" path="res://systems/shop/destroy_panel.gd" id="11_6lnur"]
+
+[sub_resource type="Resource" id="Resource_minlu"]
+script = ExtResource("10_g2r72")
+cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("3_tib0t"), ExtResource("4_ujqyy"), ExtResource("5_ewuug"), ExtResource("6_8wyf6"), ExtResource("7_tdm37"), ExtResource("8_p6eji"), ExtResource("9_3ot4t"), ExtResource("9_3ot4t"), ExtResource("9_3ot4t")])
+health = 30.0
+start_hand_size = 4
+draw_amount = 1
+karma = 0
+draw_rng_seed = 1337
+currency = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_6tfy7"]
+font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dwvn"]
+bg_color = Color(0.92549, 0.419608, 0.403922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etr58"]
+bg_color = Color(0.721569, 0.0431373, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb0vq"]
+bg_color = Color(0.878431, 0, 0.341176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41b8t"]
+bg_color = Color(0.243137, 0.176471, 0.188235, 1)
+
+[node name="ShopKeeper" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hhc2q")
+card_template = ExtResource("2_43omd")
+is_debug = true
+debug_player_data = SubResource("Resource_minlu")
+
+[node name="PanelContainer" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 88.0
+size_flags_vertical = 0
+text = "Shop"
+label_settings = SubResource("LabelSettings_6tfy7")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="DestroyField" type="VBoxContainer" parent="PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DestroyPanel" type="PanelContainer" parent="PanelContainer/Control/DestroyField"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4dwvn")
+script = ExtResource("11_6lnur")
+
+[node name="DestroyButton" type="Button" parent="PanelContainer/Control/DestroyField"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_etr58")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eb0vq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_41b8t")
+text = "Destroy (10g)"
+
+[node name="Hand" type="Control" parent="PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+script = ExtResource("1_pymec")
+cardHeight = 300
+cardHiddenHeight = 75
+cardArc = 0.002
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 23.0
+
+[node name="Money" type="Label" parent="PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "69
+"
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "g"
+
+[connection signal="pressed" from="PanelContainer/Control/DestroyField/DestroyButton" to="." method="destroy_card"]

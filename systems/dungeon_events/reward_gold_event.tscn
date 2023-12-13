@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ul6vq1b44cxh"]
+
+[ext_resource type="Script" path="res://systems/dungeon_events/reward_gold_event.gd" id="1_huadp"]
+
+[node name="RewardGoldEvent" type="Node"]
+script = ExtResource("1_huadp")

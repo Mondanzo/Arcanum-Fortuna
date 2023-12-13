@@ -1,3 +1,4 @@
+class_name SelectCard
 extends Card
 
 var isHovered := false

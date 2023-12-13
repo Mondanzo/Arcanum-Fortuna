@@ -1,6 +1,6 @@
 class_name Hand extends Control
 
-var lerpFactor = 1
+@export var lerpFactor := 0.3
 @export var cardSpacing = 0
 @export var cardHeight = 400
 @export var cardHiddenHeight = 100

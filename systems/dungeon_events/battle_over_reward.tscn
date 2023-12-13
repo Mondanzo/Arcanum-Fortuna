@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn0otoe0nvpis"]
+
+[ext_resource type="PackedScene" uid="uid://bxdbhojef5ghn" path="res://systems/dungeon_events/queue_events.tscn" id="1_d157m"]
+
+[node name="BattleOverReward" instance=ExtResource("1_d157m")]

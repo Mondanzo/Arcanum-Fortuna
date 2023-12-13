@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://jqc67rl1fpl3"]
+[gd_scene load_steps=21 format=3 uid="uid://jqc67rl1fpl3"]
 
 [ext_resource type="Script" path="res://systems/shop/shop_keeper.gd" id="1_hhc2q"]
-[ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="2_43omd"]
+[ext_resource type="PackedScene" uid="uid://bx7fy3hybiabj" path="res://systems/shop/shop_card.tscn" id="2_tyne5"]
+[ext_resource type="PackedScene" uid="uid://dohw12papqoct" path="res://systems/shop/pick_card.tscn" id="3_ifsw2"]
 [ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="3_tib0t"]
 [ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="4_ujqyy"]
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="5_ewuug"]
@@ -10,6 +11,10 @@
 [ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="8_p6eji"]
 [ext_resource type="Resource" uid="uid://jevuhv5svmgn" path="res://data/cards/the_fool.tres" id="9_3ot4t"]
 [ext_resource type="Script" path="res://data/scripts/player_data.gd" id="10_g2r72"]
+[ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="11_bk5hd"]
+[ext_resource type="Resource" uid="uid://c81sp31vj3l2" path="res://data/cards/the_empress.tres" id="12_ygvfo"]
+[ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="13_j2vih"]
+[ext_resource type="Resource" uid="uid://ccymn0mj5bdvy" path="res://data/cards/the_sun.tres" id="14_xkwaj"]
 
 [sub_resource type="Resource" id="Resource_minlu"]
 script = ExtResource("10_g2r72")
@@ -18,8 +23,8 @@ health = 30.0
 start_hand_size = 4
 draw_amount = 1
 karma = 0
-draw_rng_seed = 1337
-currency = 32
+draw_rng_seed = 4467
+currency = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_6tfy7"]
 font_size = 64
@@ -30,6 +35,13 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_sexwm"]
 font_size = 32
 
+[sub_resource type="Environment" id="Environment_swoae"]
+background_mode = 3
+background_energy_multiplier = 4.3
+background_canvas_max_layer = 760
+glow_enabled = true
+glow_hdr_threshold = 0.3
+
 [node name="ShopKeeper" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -38,9 +50,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hhc2q")
-card_template = ExtResource("2_43omd")
-is_debug = true
+card_template = ExtResource("2_tyne5")
+select_prompt = ExtResource("3_ifsw2")
+cards_to_offer = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("6_8wyf6"), ExtResource("11_bk5hd"), ExtResource("12_ygvfo"), ExtResource("5_ewuug"), ExtResource("13_j2vih"), ExtResource("14_xkwaj")])
+discount = 0.925
+seed = 3085
 debug_player_data = SubResource("Resource_minlu")
+is_debug = true
 
 [node name="PanelContainer" type="Panel" parent="."]
 layout_mode = 1
@@ -65,25 +81,25 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="MoneyCounter" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 64.0
 offset_top = 32.0
 
-[node name="Money" type="Label" parent="PanelContainer/HBoxContainer"]
+[node name="Money" type="Label" parent="PanelContainer/MoneyCounter"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "69
 "
 label_settings = SubResource("LabelSettings_jdpwx")
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MoneyCounter"]
 layout_mode = 2
 text = "g"
 label_settings = SubResource("LabelSettings_jdpwx")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="LEFT" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.1
@@ -92,57 +108,59 @@ anchor_bottom = 0.9
 offset_left = 64.0
 grow_vertical = 2
 
-[node name="BuyCards" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="BuyCards" type="VBoxContainer" parent="PanelContainer/LEFT"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/BuyCards"]
+[node name="Label" type="Label" parent="PanelContainer/LEFT/BuyCards"]
 layout_mode = 2
 text = "Buy Cards"
 label_settings = SubResource("LabelSettings_sexwm")
 
-[node name="Cards" type="HBoxContainer" parent="PanelContainer/VBoxContainer/BuyCards"]
+[node name="Cards" type="HBoxContainer" parent="PanelContainer/LEFT/BuyCards"]
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="Slot1" type="Panel" parent="PanelContainer/VBoxContainer/BuyCards/Cards"]
+[node name="Slot1" type="Panel" parent="PanelContainer/LEFT/BuyCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="Slot2" type="Panel" parent="PanelContainer/VBoxContainer/BuyCards/Cards"]
+[node name="Slot2" type="Panel" parent="PanelContainer/LEFT/BuyCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="Slot3" type="Panel" parent="PanelContainer/VBoxContainer/BuyCards/Cards"]
+[node name="Slot3" type="Panel" parent="PanelContainer/LEFT/BuyCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="TradeCards" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="TradeCards" type="VBoxContainer" parent="PanelContainer/LEFT"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TradeCards"]
+[node name="Label" type="Label" parent="PanelContainer/LEFT/TradeCards"]
 layout_mode = 2
 text = "Trade Cards"
 label_settings = SubResource("LabelSettings_sexwm")
 
-[node name="Cards" type="HBoxContainer" parent="PanelContainer/VBoxContainer/TradeCards"]
+[node name="Cards" type="HBoxContainer" parent="PanelContainer/LEFT/TradeCards"]
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="Slot1" type="Panel" parent="PanelContainer/VBoxContainer/TradeCards/Cards"]
+[node name="Slot1" type="Panel" parent="PanelContainer/LEFT/TradeCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="Slot2" type="Panel" parent="PanelContainer/VBoxContainer/TradeCards/Cards"]
+[node name="Slot2" type="Panel" parent="PanelContainer/LEFT/TradeCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="Slot3" type="Panel" parent="PanelContainer/VBoxContainer/TradeCards/Cards"]
+[node name="Slot3" type="Panel" parent="PanelContainer/LEFT/TradeCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
+[node name="RIGHT" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -153,27 +171,42 @@ offset_right = -64.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="HealthCards" type="VBoxContainer" parent="PanelContainer/VBoxContainer2"]
+[node name="HealthCards" type="VBoxContainer" parent="PanelContainer/RIGHT"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/HealthCards"]
+[node name="Label" type="Label" parent="PanelContainer/RIGHT/HealthCards"]
 layout_mode = 2
 text = "Heal Yourself"
 label_settings = SubResource("LabelSettings_sexwm")
 
-[node name="Cards" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/HealthCards"]
+[node name="Cards" type="HBoxContainer" parent="PanelContainer/RIGHT/HealthCards"]
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="Slot1" type="Panel" parent="PanelContainer/VBoxContainer2/HealthCards/Cards"]
+[node name="Slot1" type="Panel" parent="PanelContainer/RIGHT/HealthCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="Slot2" type="Panel" parent="PanelContainer/VBoxContainer2/HealthCards/Cards"]
+[node name="Slot2" type="Panel" parent="PanelContainer/RIGHT/HealthCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="Slot3" type="Panel" parent="PanelContainer/VBoxContainer2/HealthCards/Cards"]
+[node name="Slot3" type="Panel" parent="PanelContainer/RIGHT/HealthCards/Cards"]
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 36
+text = "Leave Trader"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_swoae")

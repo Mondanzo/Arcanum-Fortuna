@@ -57,6 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7dv5d")
 phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_3vjfy")])
+phase_end_delay = 0.2
 debug_player_data = ExtResource("2_42xvr")
 
 [node name="Background" type="Panel" parent="."]

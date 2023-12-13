@@ -196,7 +196,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(210, 330)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer"]
+[node name="close_shop" type="Button" parent="PanelContainer"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 1
 anchors_preset = -1
@@ -210,3 +210,5 @@ text = "Leave Trader"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_swoae")
+
+[connection signal="pressed" from="PanelContainer/close_shop" to="." method="_on_close_shop_pressed"]

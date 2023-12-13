@@ -1,5 +1,7 @@
 extends Control
 
+signal close_shop
+
 @export var card_template: PackedScene
 @export var select_prompt: PackedScene
 ## Which cards can the trader sell?
@@ -89,3 +91,8 @@ func card_clicked(card: ShopCard):
 
 	player_data_ref.cardStack.append(data)
 	processing_purchase = false
+
+
+func _on_close_shop_pressed():
+	close_shop.emit()
+	queue_free()

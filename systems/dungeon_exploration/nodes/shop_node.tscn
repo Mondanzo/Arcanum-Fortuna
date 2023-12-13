@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cehj7gi3tdwb4"]
+[gd_scene load_steps=5 format=3 uid="uid://cehj7gi3tdwb4"]
 
-[ext_resource type="Script" path="res://systems/dungeon_exploration/nodes/event_node.gd" id="1_yfc31"]
+[ext_resource type="Script" path="res://systems/dungeon_exploration/nodes/shop_node.gd" id="1_77k18"]
 [ext_resource type="Texture2D" uid="uid://c1o60aibngi18" path="res://systems/dungeon_exploration/node_sprites/background.png" id="2_8yelx"]
 [ext_resource type="PackedScene" uid="uid://jqc67rl1fpl3" path="res://systems/shop/shop_keeper.tscn" id="2_eesgv"]
+[ext_resource type="Texture2D" uid="uid://qxohsjdaygtj" path="res://assets/sprites/cards/ed.jpeg" id="4_awgxc"]
 
 [node name="EventNode" type="Control"]
 layout_mode = 3
@@ -16,12 +17,8 @@ grow_vertical = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
 mouse_default_cursor_shape = 2
-script = ExtResource("1_yfc31")
-lookahead = 1
+script = ExtResource("1_77k18")
 event = ExtResource("2_eesgv")
-disabledColor = Color(0.364706, 0.364706, 0.364706, 1)
-dashed_width = 12.0
-offset = 66.0
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -56,3 +53,4 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(64, 64)
 mouse_filter = 2
+texture = ExtResource("4_awgxc")

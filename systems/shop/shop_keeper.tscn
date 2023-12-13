@@ -42,13 +42,8 @@ background_canvas_max_layer = 760
 glow_enabled = true
 glow_hdr_threshold = 0.3
 
-[node name="ShopKeeper" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ShopKeeper" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_hhc2q")
 card_template = ExtResource("2_tyne5")
 select_prompt = ExtResource("3_ifsw2")
@@ -56,10 +51,8 @@ cards_to_offer = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource
 discount = 0.925
 seed = 3085
 debug_player_data = SubResource("Resource_minlu")
-is_debug = true
 
 [node name="PanelContainer" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

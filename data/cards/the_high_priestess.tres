@@ -1,14 +1,8 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://bdbn32r8x8g4v"]
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://bdbn32r8x8g4v"]
 
 [ext_resource type="Texture2D" uid="uid://b14l0m0wd4e7" path="res://assets/sprites/cards/high_priestess.png" id="1_b4wyt"]
-[ext_resource type="Script" path="res://systems/card_combat/keywords/triple_attack.gd" id="2_03b1t"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_ako5p"]
-
-[sub_resource type="Resource" id="Resource_wn2vh"]
-script = ExtResource("2_03b1t")
-title = "Keyword"
-description = "Gives your card an ability and stuff"
-highlight_duration = 1.0
+[ext_resource type="Resource" uid="uid://dvt6vrtfufa0t" path="res://data/keyword/TripleAttack.tres" id="2_pd0by"]
 
 [resource]
 script = ExtResource("2_ako5p")
@@ -18,5 +12,5 @@ artwork = ExtResource("1_b4wyt")
 cost = -6
 attack = 3
 health = 6
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_wn2vh")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_pd0by")])
 spawn_frequency = 100

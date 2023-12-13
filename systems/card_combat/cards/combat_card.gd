@@ -1,8 +1,8 @@
 class_name CombatCard extends Card
 
-@export var attack_delay = 1
-@export var death_delay = 1
-@export var karma_delay = 1
+@export var attack_delay = 1.0
+@export var death_delay = 1.0
+@export var karma_delay = 1.0
 @export var attacked_color : Color
 @export var highlight_color : Color
 @export var active_color : Color

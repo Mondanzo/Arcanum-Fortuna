@@ -2,6 +2,7 @@ class_name CombatCard extends Card
 
 @export var attack_delay = 1
 @export var death_delay = 1
+@export var karma_delay = 1
 @export var attacked_color : Color
 @export var highlight_color : Color
 @export var active_color : Color
@@ -104,7 +105,7 @@ func animate_karma(target):
 	$Cost.modulate = active_color
 	modulate = highlight_color
 	var overflow = target.modify_karma(cost)
-	await get_tree().create_timer(attack_delay).timeout
+	await get_tree().create_timer(karma_delay).timeout
 	target.restore_default_color()
 	restore_default_color()
 

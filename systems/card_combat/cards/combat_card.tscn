@@ -7,6 +7,7 @@
 script = ExtResource("1_3lxv2")
 attack_delay = 1
 death_delay = 1
+karma_delay = 1
 attacked_color = Color(1, 0.172549, 0.129412, 1)
 highlight_color = Color(0.909804, 0.647059, 0.572549, 1)
 active_color = Color(0.713726, 0.764706, 0.870588, 1)

@@ -13,8 +13,10 @@ extends Control
 @export var trigger_automatically := true
 @export_flags("Hover Duration", "Right-Click") var trigger_mode := 0b11
 @export var hover_min_duration := 0.5
-var hovering := false
+
 @onready var cooldown := hover_min_duration
+
+var is_hovered := false
 var instance: TooltipBase = null:
 	set(value): instance = create_instance(value)
 
@@ -59,7 +61,7 @@ func _input(event: InputEvent):
 		return
 	
 	if event.is_action_pressed("show_tooltip"):
-		if hovering:
+		if is_hovered:
 			show_tooltip()
 
 func _process(delta):
@@ -70,15 +72,17 @@ func _process(delta):
 	if not parent_control:
 		return
 	
-	if "hovering" in parent_control:
-		hovering = parent_control.hovering
+	if parent_control.has_method("is_hovered"):
+		is_hovered = parent_control.is_hovered()
+	elif "is_hovered" in parent_control:
+		is_hovered = parent_control.is_hovered
 	else:
-		hovering = (
+		is_hovered = (
 				Rect2(Vector2(), parent_control.get_rect().size)
 				.has_point(parent_control.get_local_mouse_position())
 			)
 	
-	if hovering:
+	if is_hovered:
 		cooldown -= delta
 	else:
 		cooldown = hover_min_duration

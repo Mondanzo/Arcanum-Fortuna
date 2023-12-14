@@ -145,3 +145,8 @@ func highlight_tile(idx, friendly = false):
 
 func end_tile_highlight(idx, friendly = false):
 	($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx).self_modulate = tile_disabled_color
+
+
+func _on_card_deletion_button_toggled(toggled_on):
+	for card : CombatCard in get_friendly_cards():
+		card.set_delete_mode(toggled_on)

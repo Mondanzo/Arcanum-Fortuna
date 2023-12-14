@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ifl70")
 
 [node name="Hand" parent="." instance=ExtResource("1_cbbcf")]
@@ -20,6 +21,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
 offset_top = 0.0
+mouse_filter = 2
 
 [node name="Deck" type="ReferenceRect" parent="."]
 layout_mode = 1

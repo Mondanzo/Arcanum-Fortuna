@@ -115,3 +115,14 @@ func animate_move(target_pos):
 	global_position = target_pos
 	await get_tree().create_timer(move_speed).timeout # todo interpolat move 
 	modulate = Color.WHITE
+
+
+func set_delete_mode(value : bool):
+	if value:
+		%DeleteButton.show()
+	else:
+		%DeleteButton.hide()
+
+
+func _on_delete_button_pressed():
+	queue_free()

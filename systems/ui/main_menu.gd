@@ -10,7 +10,8 @@ func _ready():
 	randomize()
 	seed = randi()
 	$SeedInput.text = str(seed)
-
+	GlobalLog.set_context(GlobalLog.Context.MENU)
+	GlobalLog.add_entry("Main Menu loaded.")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,6 +29,7 @@ func _on_start_button_button_down():
 	node_map.rng_seed = seed
 	node_map.get_node("Generator").random_seed = false
 	node_map.rng_seed_text = $SeedInput.text
+	GlobalLog.add_entry("Seed used: " + $SeedInput.text)
 	get_tree().current_scene.queue_free()
 	get_tree().root.add_child(node_map)
 	get_tree().current_scene = node_map

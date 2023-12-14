@@ -37,6 +37,7 @@ func take_damage(amount):
 	%Health/Label.text = "Health: " + str(health) + " (" + str(-amount) + ")"
 	health -= amount
 	%Health.modulate = attacked_color
+	GlobalLog.add_entry("You took %d damage." % amount)
 
 
 func restore_default_color():
@@ -46,6 +47,8 @@ func restore_default_color():
 
 
 func proccess_death() -> bool:
+	if health < 0:
+		GlobalLog.add_entry("You died! Rip.")
 	return health <= 0
 
 #endregion
@@ -66,6 +69,7 @@ func modify_karma(amount):
 func process_karma_overflow() -> bool:
 	%Karma/Label.text = "Karma: " + str(karma)
 	if karma < 0:
+		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
 		take_damage(-karma)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0

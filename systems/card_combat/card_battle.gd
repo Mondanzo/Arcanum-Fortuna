@@ -27,6 +27,8 @@ var board_width : int = 5
 var is_battle_over = false
 
 func _ready():
+	GlobalLog.set_context(GlobalLog.Context.COMBAT)
+	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
 	if is_debug:
 		await get_tree().process_frame # gameBoard needs to be ready first lol
@@ -105,7 +107,7 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	if target == null:
 		return false
 	gameBoard.highlight_tile(column_idx, friendly)
-	if await attacker.animate_attack(target):
+	if await attacker.animate_attack(target, column_idx):
 		finished.emit(player.health)
 		is_battle_over = true
 	gameBoard.end_tile_highlight(column_idx, friendly)

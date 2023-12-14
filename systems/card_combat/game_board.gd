@@ -62,7 +62,9 @@ func _on_card_relased(card: Card):
 
 
 func lock_friendly_cards():
+	var i := -1
 	for tile in player_tiles.get_children():
+		i += 1
 		if tile.get_child_count() == 0:
 			continue
 		var card = tile.get_child(0)
@@ -72,6 +74,9 @@ func lock_friendly_cards():
 		new_combat_card.copy(card)
 		tile.add_child(new_combat_card)
 		new_combat_card.scale_to_fit(tile.get_rect().size)
+		new_combat_card.tile_coordinate = Vector2i(i, 0)
+		GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
+		[new_combat_card.card_data.name, i, 1])
 		card.queue_free()
 
 
@@ -85,6 +90,9 @@ func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
 	new_combat_card.scale_to_fit(target_tile.get_rect().size)
 	target_tile.add_child(new_combat_card)
 	new_combat_card.make_enemy()
+	new_combat_card.tile_coordinate = Vector2i(tile_idx, 1)
+	GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
+	[new_combat_card.card_data.name, tile_idx, 1])
 	return true
 
 
@@ -108,6 +116,9 @@ func place_enemy_card_back(cardData : CardData, tile_idx) -> bool:
 	new_combat_card.scale_to_fit(target_tile.get_rect().size)
 	target_tile.add_child(new_combat_card)
 	new_combat_card.make_enemy()
+	new_combat_card.tile_coordinate = Vector2i(tile_idx, 2)
+	GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
+	[new_combat_card.card_data.name, tile_idx, 1])
 	return true
 
 

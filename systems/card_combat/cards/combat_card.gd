@@ -90,7 +90,7 @@ func animate_attack(target, tile_idx) -> bool:
 		 target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
 	else:
 		GlobalLog.add_entry("'%s' at position %d-%d attacked empty tile at position %d-%d." %\
-		 [card_data.name, tile_coordinate.x, tile_coordinate.y,  tile_idx, 1 if is_enemy else 0])
+		 [card_data.name, tile_coordinate.x, tile_coordinate.y,  tile_idx, 0 if is_enemy else 1])
 	
 	$Attack.modulate = active_color
 	modulate = highlight_color

@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="2_kt70e"]
 [ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="3_6il76"]
 [ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="4_anhfr"]
-[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/audio/card_hover.ogg" id="5_dpvki"]
+[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="5_dpvki"]
 [ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="5_g314m"]
 [ext_resource type="Resource" uid="uid://buthwniwc7tav" path="res://data/cards/temperance.tres" id="6_k0i6c"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="7_3menk"]

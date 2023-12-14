@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://bjumrp1gk17p2"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_d7cdo"]
+
+[resource]
+script = ExtResource("1_d7cdo")
+name = "Ace of Swords"
+description = "It doesn't do stuff."
+cost = 1
+attack = 5
+health = 2
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

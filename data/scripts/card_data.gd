@@ -8,3 +8,4 @@ class_name CardData extends Resource
 @export var health := 1
 @export var keywords : Array[Keyword]
 @export var spawn_frequency : int = 100
+@export var sound_effect: AudioStream

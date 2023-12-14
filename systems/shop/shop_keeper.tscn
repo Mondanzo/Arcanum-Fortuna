@@ -69,7 +69,6 @@ cards_to_offer = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource
 discount = 0.925
 seed = 1690
 debug_player_data = SubResource("Resource_minlu")
-is_debug = true
 
 [node name="PanelContainer" type="Panel" parent="."]
 anchors_preset = 15

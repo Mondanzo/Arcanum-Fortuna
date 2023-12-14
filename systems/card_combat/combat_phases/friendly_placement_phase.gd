@@ -10,9 +10,11 @@ func init(combat : CardBattle):
 static func get_class_name():
 	return "Friendly Placement Phase"
 
+
 func execute():
 	await process_start_keywords(self, combat.gameBoard.get_active_cards())
 	return await process_effect()
+
 
 func get_corresponding_trigger():
 	return CombatPhaseTrigger.SourcePhases.FRIENDLY_PLACEMENT

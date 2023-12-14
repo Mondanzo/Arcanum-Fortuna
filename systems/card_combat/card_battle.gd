@@ -80,11 +80,14 @@ func _on_phase_completed():
 
 func lock_player_actions():
 	player.set_active(false)
+	%CardDeletionButton.button_pressed = false
+	%CardDeletionButton.disabled = true
 	%EndTurnButton.disabled = true
 
 
 func unlock_player_actions():
 	player.set_active(true)
+	%CardDeletionButton.disabled = false
 	%EndTurnButton.disabled = false
 
 

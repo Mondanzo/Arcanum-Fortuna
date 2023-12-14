@@ -6,6 +6,13 @@ signal card_drag_ended(card)
 @onready var hand : Hand = %Hand
 @onready var card_stack : CardStack = %CardStack
 
+
+## Cost of the first bonus draw
+@export var bonus_draw_cost := 2
+## Whenever a bonus card is redeemed the cost is multiplied by this
+@export var bonus_draw_cost_scale := 2.0
+
+@export_category("Animation")
 @export var animation_delay = 1
 @export var draw_delay = 0.5
 @export var attacked_color : Color = Color.RED
@@ -101,3 +108,18 @@ func draw_card():
 func set_active(value):
 	set_process(value)
 	%Hand.enabled = value
+	$BonusDrawButton.disabled = !value && len(%CardStack.cardStack) > 0
+
+
+func _on_bonus_draw_button_button_down():
+	modify_karma(-bonus_draw_cost)
+	bonus_draw_cost *= bonus_draw_cost_scale
+	$BonusDrawButton.text = "Draw Extra Card (-%d Karma)" % bonus_draw_cost
+	$BonusDrawButton.disabled = true
+	await get_tree().create_timer(animation_delay).timeout
+	await process_karma_overflow()
+	restore_default_color()
+	await draw_card()
+	if len(%CardStack.cardStack) > 0 && %Hand.enabled:
+		$BonusDrawButton.disabled = false
+

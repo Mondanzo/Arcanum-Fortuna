@@ -121,3 +121,13 @@ script = ExtResource("5_bxaiy")
 title = "Your Health"
 text = "Is lowered whenever an enemy card attacks an empty tile.
 If it drops to zero you'll die!"
+
+[node name="BonusDrawButton" type="Button" parent="."]
+offset_left = 22.0
+offset_top = 729.0
+offset_right = 266.0
+offset_bottom = 783.0
+theme_override_font_sizes/font_size = 18
+text = "Draw Extra Card (-2 Karma)"
+
+[connection signal="button_down" from="BonusDrawButton" to="." method="_on_bonus_draw_button_button_down"]

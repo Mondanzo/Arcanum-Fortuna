@@ -8,6 +8,7 @@ var seed = 0
 var event_queue = []
 var player_data_ref
 
+
 func trigger(player_data: PlayerData):
 	player_data_ref = player_data
 	for event in events:

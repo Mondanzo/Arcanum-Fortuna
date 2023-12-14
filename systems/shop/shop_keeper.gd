@@ -34,6 +34,9 @@ func setup(player_data: PlayerData):
 
 
 func _process(delta):
+	if not player_data_ref:
+		return
+	
 	%Money.text = str(player_data_ref.currency)
 
 
@@ -57,6 +60,8 @@ func populate_shop():
 		instance.clicked.connect(card_clicked)
 		instance.setup()
 		slot.add_child(instance)
+	
+	%HealthCards.setup(rng, player_data_ref)
 
 
 func card_clicked(card: ShopCard):

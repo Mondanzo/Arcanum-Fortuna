@@ -37,6 +37,5 @@ func _process(delta):
 
 
 func _gui_input(event):
-	if event is InputEventMouse:
-		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-			clicked.emit(self)
+	if event.is_action("pickUpCard"):
+		clicked.emit(self)

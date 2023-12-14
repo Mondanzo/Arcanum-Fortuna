@@ -221,6 +221,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
 
 [node name="CardPlayer" parent="." instance=ExtResource("6_tn8rr")]
 layout_mode = 1
+mouse_filter = 2
 
 [node name="CardDeletionButton" type="CheckButton" parent="."]
 layout_mode = 2

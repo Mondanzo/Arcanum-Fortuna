@@ -89,7 +89,13 @@ func card_clicked(card: ShopCard):
 	if card.is_trade_card:
 		var prompt = select_prompt.instantiate() as CardPick
 		add_child(prompt)
-		var result = await prompt.prompt_for_card(player_data_ref.cardStack)
+		var grabbag = player_data_ref.cardStack.duplicate()
+		var options: Array[CardData] = []
+		for i in range(3):
+			var c = grabbag.pop_at(rng.randi_range(0, len(grabbag) - 1))
+			options.append(c)
+		
+		var result = await prompt.prompt_for_card(options)
 		for i in range(len(player_data_ref.cardStack)):
 			if player_data_ref.cardStack[i].name == result.name:
 				player_data_ref.cardStack.remove_at(i)

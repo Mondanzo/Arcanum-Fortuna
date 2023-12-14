@@ -23,7 +23,7 @@ var rng := RandomNumberGenerator.new()
 var processing_purchase := false
 
 func _ready():
-	if is_debug:
+	if get_tree().current_scene == self:
 		setup(debug_player_data)
 
 

@@ -274,6 +274,108 @@ offset_right = 331.0
 offset_bottom = 98.0
 theme_override_font_sizes/font_size = 19
 
+[node name="BattleLog" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.561
+anchor_bottom = 0.696
+offset_left = 7.0
+offset_top = 8.0
+offset_right = -746.12
+offset_bottom = -224.68
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.329412, 0.329412, 0.329412, 0.54902)
+
+[node name="Title" type="Label" parent="BattleLog"]
+layout_mode = 2
+offset_left = -2.0
+offset_top = -8.0
+offset_right = 310.0
+offset_bottom = 27.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "Battle Log"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollView" type="ScrollContainer" parent="BattleLog"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 26.0
+offset_right = 320.0
+offset_bottom = 515.0
+
+[node name="Label" type="Label" parent="BattleLog/ScrollView"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1.
+Card 'The Fool' move from 2-1 to 1-1."
+autowrap_mode = 3
+
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
 [connection signal="toggled" from="CardDeletionButton" to="GameBoard" method="_on_card_deletion_button_toggled"]

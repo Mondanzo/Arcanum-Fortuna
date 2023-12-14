@@ -6,3 +6,6 @@
 [node name="CardBattle_Debug" instance=ExtResource("1_xuxc3")]
 is_debug = true
 debug_enemy_data = ExtResource("2_6qelf")
+
+[node name="CardPlayer" parent="." index="2"]
+mouse_filter = 2

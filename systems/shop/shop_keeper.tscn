@@ -40,18 +40,18 @@ font_size = 32
 
 [sub_resource type="Resource" id="Resource_ii2kq"]
 script = ExtResource("17_kahto")
-costs = 3
-healing_amount = 6
+costs = 6
+healing_amount = 4
 
 [sub_resource type="Resource" id="Resource_ujd1b"]
 script = ExtResource("17_kahto")
-costs = 5
-healing_amount = 10
+costs = 8
+healing_amount = 7
 
-[sub_resource type="Resource" id="Resource_diu03"]
+[sub_resource type="Resource" id="Resource_amwq7"]
 script = ExtResource("17_kahto")
-costs = 9
-healing_amount = 20
+costs = 14
+healing_amount = 10
 
 [sub_resource type="Environment" id="Environment_swoae"]
 background_mode = 3
@@ -67,9 +67,8 @@ card_template = ExtResource("2_tyne5")
 select_prompt = ExtResource("3_ifsw2")
 cards_to_offer = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("6_8wyf6"), ExtResource("11_bk5hd"), ExtResource("12_ygvfo"), ExtResource("5_ewuug"), ExtResource("13_j2vih"), ExtResource("14_xkwaj")])
 discount = 0.925
-seed = 3085
+seed = 1690
 debug_player_data = SubResource("Resource_minlu")
-is_debug = true
 
 [node name="PanelContainer" type="Panel" parent="."]
 anchors_preset = 15
@@ -189,7 +188,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 script = ExtResource("16_1rtk8")
 card_template = ExtResource("17_wsgkq")
-potential_values = [SubResource("Resource_ii2kq"), SubResource("Resource_ujd1b"), SubResource("Resource_diu03")]
+potential_values = [SubResource("Resource_ii2kq"), SubResource("Resource_ujd1b"), SubResource("Resource_amwq7")]
 
 [node name="Label" type="Label" parent="PanelContainer/RIGHT/HealthCards"]
 layout_mode = 2

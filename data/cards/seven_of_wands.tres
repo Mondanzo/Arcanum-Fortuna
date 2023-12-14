@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://bu1018b8di2t3"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_3nhxn"]
+
+[resource]
+script = ExtResource("1_3nhxn")
+name = "Seven of Wands"
+description = "It doesn't do stuff."
+cost = 1
+attack = 4
+health = 3
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

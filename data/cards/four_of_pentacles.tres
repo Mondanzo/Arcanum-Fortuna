@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://oohbho78vs66"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_xddx3"]
+
+[resource]
+script = ExtResource("1_xddx3")
+name = "Four of Pentacles"
+description = "It doesn't do stuff."
+cost = 4
+attack = 2
+health = 2
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

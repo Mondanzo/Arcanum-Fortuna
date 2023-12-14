@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://b5ytokrx5why5"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_4j62v"]
+
+[resource]
+script = ExtResource("1_4j62v")
+name = "Page of Swords"
+description = "It doesn't do stuff."
+cost = 3
+attack = 2
+health = 3
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

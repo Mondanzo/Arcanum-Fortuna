@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://bjlneh5al3d8x"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_rvq1k"]
+
+[resource]
+script = ExtResource("1_rvq1k")
+name = "Queen of Cups"
+description = "It doesn't do stuff."
+cost = 1
+attack = 3
+health = 4
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

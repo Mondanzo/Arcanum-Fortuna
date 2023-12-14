@@ -56,7 +56,8 @@ func apply_consume():
 
 #region damage functions
 func take_damage(amount : int):
-	GlobalLog.add_entry("Card '%s' was dealt %d damage!" % [card_data.name, amount])
+	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
+	[tile_coordinate.x, tile_coordinate.y, card_data.name, amount])
 	health -= amount
 	%HealthCost.text = str(health)
 	$Health.modulate = attacked_color
@@ -75,7 +76,7 @@ func proccess_death() -> bool:
 		modulate = attacked_color
 		await get_tree().create_timer(death_delay).timeout
 		print("Card '", card_name, "' died!")
-		GlobalLog.add_entry("Card '%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
+		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
 		queue_free()
 		return true
 	return false
@@ -83,18 +84,20 @@ func proccess_death() -> bool:
 
 
 func animate_attack(target, tile_idx) -> bool:
+	if target is CombatCard:
+		GlobalLog.add_entry("'%s' at position %d-%d attacked '%s' at position %d-%d." % \
+		 [card_data.name, tile_coordinate.x, tile_coordinate.y, \
+		 target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
+	else:
+		GlobalLog.add_entry("'%s' at position %d-%d attacked empty tile at position %d-%d." %\
+		 [card_data.name, tile_coordinate.x, tile_coordinate.y,  tile_idx, 1 if is_enemy else 0])
+	
 	$Attack.modulate = active_color
 	modulate = highlight_color
 	target.take_damage(attack)
 	await get_tree().create_timer(attack_delay).timeout
 	target.restore_default_color()
 	restore_default_color()
-	if target is CombatCard:
-		GlobalLog.add_entry("Card '%s' at position %d-%d attacked card '%s' at position %d-%d." % [card_data.name, tile_coordinate.x, tile_coordinate.y, \
-		 target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
-	else:
-		GlobalLog.add_entry("Card '%s' at position %d-%d attacked empty tile at position %d-%d." % [card_data.name, tile_coordinate.x, tile_coordinate.y, \
-		 1 if is_enemy else 0, tile_idx])
 	var was_lethal = await target.proccess_death()
 	var is_battle_over = false
 	if was_lethal and (target is EnemyPlayer or target is CardPlayer):
@@ -114,7 +117,7 @@ func animate_karma(target):
 	modulate = highlight_color
 	var overflow = target.modify_karma(cost)
 	await get_tree().create_timer(karma_delay).timeout
-	GlobalLog.add_entry("Card '%s' at position %d-%d added %d karma." % \
+	GlobalLog.add_entry("'%s' at position %d-%d added %d karma." % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, cost])
 	target.restore_default_color()
 	restore_default_color()
@@ -124,7 +127,7 @@ func animate_move(target_pos):
 	modulate = active_color
 	global_position = target_pos
 	await get_tree().create_timer(move_speed).timeout # todo interpolate move 
-	GlobalLog.add_entry("Card '%s' at position %d-%d moved to positon %d-%d." % \
+	GlobalLog.add_entry("'%s' at position %d-%d moved to positon %d-%d." % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, tile_coordinate.x, tile_coordinate.y - 1])
 	tile_coordinate = Vector2i(tile_coordinate.x, tile_coordinate.y - 1)
 	modulate = Color.WHITE

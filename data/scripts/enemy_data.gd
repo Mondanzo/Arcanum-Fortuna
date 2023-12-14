@@ -69,7 +69,7 @@ func get_rows():
 			for i in range(row.size()):
 				row_str += row[i].name if row[i] is CardData else "null"
 				if i < row.size() - 1:
-					row_str += ", "
+					row_str += ", \t"
 			row_str += "]"
 			GlobalLog.add_entry(row_str)
 	return rows

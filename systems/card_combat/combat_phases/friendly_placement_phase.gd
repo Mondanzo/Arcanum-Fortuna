@@ -24,6 +24,7 @@ func process_effect() -> ExitState:
 
 
 func _on_player_turn_ended():
+	combat.gameBoard.lock_friendly_cards()
 	await process_end_keywords(self, combat.gameBoard.get_active_cards())
 	combat.lock_player_actions()
 	completed.emit(ExitState.DEFAULT)

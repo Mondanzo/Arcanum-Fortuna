@@ -56,11 +56,23 @@ func _on_card_relased(card: Card):
 	accept_card = false
 	if not hovered_tile or hovered_tile.get_child_count() != 0:
 		return
-	var new_combat_card = combat_card_prefab.instantiate()
-	new_combat_card.copy(card)
-	hovered_tile.add_child(new_combat_card)
-	new_combat_card.scale_to_fit(hovered_tile.get_rect().size)
-	card.queue_free()
+	card.reparent(hovered_tile)
+	card.global_position = hovered_tile.global_position + Vector2(-20, -40)
+	card.z_index = 2
+
+
+func lock_friendly_cards():
+	for tile in player_tiles.get_children():
+		if tile.get_child_count() == 0:
+			continue
+		var card = tile.get_child(0)
+		if card is CombatCard:
+			continue
+		var new_combat_card = combat_card_prefab.instantiate()
+		new_combat_card.copy(card)
+		tile.add_child(new_combat_card)
+		new_combat_card.scale_to_fit(tile.get_rect().size)
+		card.queue_free()
 
 
 func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:

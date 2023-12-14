@@ -81,5 +81,6 @@ show_tooltip={
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+viewport/hdr_2d=true
 lights_and_shadows/size/viewport_height=800
 lights_and_shadows/size/viewport_width=1920

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_6dkqy"]
 [ext_resource type="Script" path="res://systems/dungeon_events/generation_event.gd" id="1_oeetg"]
 [ext_resource type="PackedScene" uid="uid://bacm13wfea74s" path="res://systems/dungeon_events/health_card.tscn" id="1_ppc8c"]
-[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/audio/card_hover.ogg" id="3_1320o"]
+[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="3_1320o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x4k0d"]
 font_size = 151

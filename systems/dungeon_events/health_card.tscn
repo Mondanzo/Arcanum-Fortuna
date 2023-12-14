@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bacm13wfea74s"]
 
-[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/audio/card_hover.ogg" id="1_dnjjl"]
+[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="1_dnjjl"]
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="1_mvcxe"]
 [ext_resource type="Script" path="res://systems/dungeon_events/health_card.gd" id="1_saybv"]
-[ext_resource type="AudioStream" uid="uid://csn44i17fqgdd" path="res://assets/audio/card_pick.ogg" id="2_oyus5"]
+[ext_resource type="AudioStream" uid="uid://csn44i17fqgdd" path="res://assets/sounds/card_pick.ogg" id="2_oyus5"]
 
 [node name="HealthCard" type="Control"]
 custom_minimum_size = Vector2(200, 300)

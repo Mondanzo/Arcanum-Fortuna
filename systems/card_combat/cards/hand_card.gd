@@ -9,6 +9,12 @@ var isPickedUp = false
 var isHovered = false
 
 var move_around := true
+var base_scale = 1.0
+
+
+func _ready():
+	super._ready()
+	base_scale = scale
 
 
 func _notification(what):
@@ -25,9 +31,9 @@ func setup():
 
 
 func _process(delta):
-	var target_scale = Vector2.ONE
+	var target_scale = base_scale
 	if isHovered:
-		target_scale = Vector2.ONE * 1.1
+		target_scale = base_scale * 1.1
 		z_index = 4
 	else:
 		z_index = 3
@@ -36,7 +42,7 @@ func _process(delta):
 		z_index = 5
 		var target_position = get_global_mouse_position() - (get_rect().size / 2.0)
 		global_position = global_position.lerp(target_position, 0.1)
-		target_scale = Vector2.ONE
+		target_scale = base_scale
 	scale = scale.lerp(target_scale, 0.1)
 
 

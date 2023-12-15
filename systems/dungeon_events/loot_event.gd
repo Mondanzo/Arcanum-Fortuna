@@ -51,9 +51,6 @@ func trigger(player_data: PlayerData):
 
 
 func card_clicked(card: Card):
-	while len(selected_cards) >= cardsToReward:
-		selected_cards.pop_front()
-
 	if card in selected_cards:
 		var idx = selected_cards.find(card)
 		if idx > -1:
@@ -62,7 +59,9 @@ func card_clicked(card: Card):
 	else:
 		card.selected = true
 		selected_cards.push_back(card)
-	
+
+	while len(selected_cards) > cardsToReward:
+		selected_cards.pop_front()
 	if len(selected_cards) == cardsToReward:
 		$CanvasLayer/Control/ConfirmButton.show()
 	else:

@@ -57,7 +57,7 @@ func apply_consume():
 #region damage functions
 func take_damage(amount : int):
 	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
-	[tile_coordinate.x, tile_coordinate.y, card_data.name, amount])
+	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
 	health -= amount
 	%HealthCost.text = str(health)
 	$Health.modulate = attacked_color

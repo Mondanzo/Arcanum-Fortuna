@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://c1mpy5q6eg3x8"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c1mpy5q6eg3x8"]
 
+[ext_resource type="Texture2D" uid="uid://byyvo6xgulib1" path="res://assets/sprites/cards/card_cups_4.png" id="1_ilouu"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_yl1qs"]
 
 [resource]
 script = ExtResource("1_yl1qs")
 name = "Four of Cups"
 description = "It doesn't do stuff."
+artwork = ExtResource("1_ilouu")
 cost = 4
 attack = 2
 health = 2

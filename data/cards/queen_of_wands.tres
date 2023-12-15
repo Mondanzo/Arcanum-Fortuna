@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://d2b7yscmtse2l"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://d2b7yscmtse2l"]
 
+[ext_resource type="Texture2D" uid="uid://b6vsqvjd4cjla" path="res://assets/sprites/cards/card_queen_of_wands.png" id="1_b0wwj"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_rnlue"]
 
 [resource]
 script = ExtResource("1_rnlue")
 name = "Queen of Wands"
 description = "It doesn't do stuff."
+artwork = ExtResource("1_b0wwj")
 cost = 1
 attack = 2
 health = 5

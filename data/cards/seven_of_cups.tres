@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://bjka6xdj62gef"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bjka6xdj62gef"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_8v7bj"]
+[ext_resource type="Texture2D" uid="uid://4yhs6kcaf4qk" path="res://assets/sprites/cards/card_cups_7.png" id="1_h14cg"]
 
 [resource]
 script = ExtResource("1_8v7bj")
 name = "Seven of Cups"
 description = "It doesn't do stuff."
+artwork = ExtResource("1_h14cg")
 cost = 1
 attack = 5
 health = 2

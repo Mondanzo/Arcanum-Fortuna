@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://b1wn5k6rpiski"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://b1wn5k6rpiski"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_o6cqy"]
+[ext_resource type="Texture2D" uid="uid://bjovrcqhrqa6r" path="res://assets/sprites/cards/card_coins_5.png" id="1_w38tn"]
 
 [resource]
 script = ExtResource("1_o6cqy")
 name = "Five of Pentacles"
 description = "It doesn't do stuff."
+artwork = ExtResource("1_w38tn")
 cost = 3
 attack = 1
 health = 4

@@ -123,6 +123,7 @@ text = "Is lowered whenever an enemy card attacks an empty tile.
 If it drops to zero you'll die!"
 
 [node name="BonusDrawButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 729.0
 offset_right = 266.0

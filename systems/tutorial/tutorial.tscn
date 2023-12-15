@@ -154,7 +154,6 @@ visible = false
 
 [node name="BonusDrawButton" parent="CardPlayer" index="2"]
 visible = false
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 244.0
@@ -561,9 +560,6 @@ custom_minimum_size = Vector2(0, 150)
 offset_top = -87.0
 
 [node name="ContinueButton" parent="CanvasLayer/TutorialBox/HBoxContainer" index="2"]
-visible = false
-
-[node name="BattleLog" parent="." index="10"]
 visible = false
 
 [connection signal="button_down" from="SkipButton" to="." method="_on_skip_button_button_down"]

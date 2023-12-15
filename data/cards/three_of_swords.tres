@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://dpyiuf5hutnml"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dpyiuf5hutnml"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_304pa"]
+[ext_resource type="Texture2D" uid="uid://xbc36qcn475i" path="res://assets/sprites/cards/card_swords_3.png" id="1_imlkp"]
 
 [resource]
 script = ExtResource("1_304pa")
 name = "Three of Swords"
 description = "It doesn't do stuff."
+artwork = ExtResource("1_imlkp")
 cost = 3
 attack = 1
 health = 4

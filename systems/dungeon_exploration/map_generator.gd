@@ -35,6 +35,12 @@ var reattach: Array[EventNode] = []
 
 signal finished_generating(generated_nodes: Array[EventNode])
 
+
+func _ready():
+	if name == "node-map":
+		GlobalLog.set_context(GlobalLog.Context.NODEMAP)
+		GlobalLog.add_entry(name + " loaded.")
+
 func setup():
 	rng = RandomNumberGenerator.new()
 	rng.seed = rng_seed

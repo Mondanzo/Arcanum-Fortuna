@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dc1n31hjbsioa"]
+
+[ext_resource type="Texture2D" uid="uid://cq5j7ofloanta" path="res://assets/sprites/cards/card_cups_8.png" id="1_br232"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_gwj1f"]
+
+[resource]
+script = ExtResource("1_gwj1f")
+name = "Eight of Cups"
+description = "It doesn't do stuff."
+artwork = ExtResource("1_br232")
+cost = 2
+attack = 3
+health = 3
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

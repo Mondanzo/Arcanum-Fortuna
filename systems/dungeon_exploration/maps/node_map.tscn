@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="1_jwvtv"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="2_we5fp"]
-[ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="3_vdcsk"]
+[ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="3_k4v05"]
 
 [node name="node-map" type="Control"]
 layout_mode = 3
@@ -49,4 +49,4 @@ theme_override_font_sizes/font_size = 24
 text = "Seed: 1337"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("3_vdcsk")
+script = ExtResource("3_k4v05")

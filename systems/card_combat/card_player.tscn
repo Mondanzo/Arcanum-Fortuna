@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ifl70")
 
 [node name="Hand" parent="." instance=ExtResource("1_cbbcf")]
@@ -20,8 +21,10 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
 offset_top = 0.0
+mouse_filter = 2
 
 [node name="Deck" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -118,3 +121,14 @@ script = ExtResource("5_bxaiy")
 title = "Your Health"
 text = "Is lowered whenever an enemy card attacks an empty tile.
 If it drops to zero you'll die!"
+
+[node name="BonusDrawButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 729.0
+offset_right = 266.0
+offset_bottom = 783.0
+theme_override_font_sizes/font_size = 18
+text = "Draw Extra Card (-2 Karma)"
+
+[connection signal="button_down" from="BonusDrawButton" to="." method="_on_bonus_draw_button_button_down"]

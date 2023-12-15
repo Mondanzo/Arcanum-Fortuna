@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://jsh2axt5x8u3"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_ky21d"]
+[ext_resource type="Texture2D" uid="uid://cbkr1pf227bx8" path="res://assets/sprites/cards/card_swords_7.png" id="1_n1rbu"]
+
+[resource]
+script = ExtResource("1_ky21d")
+name = "Seven of Swords"
+description = "It doesn't do stuff."
+artwork = ExtResource("1_n1rbu")
+cost = 1
+attack = 4
+health = 3
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

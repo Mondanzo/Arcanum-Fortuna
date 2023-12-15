@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4mlm5draiaf7"]
+
+[ext_resource type="Script" path="res://systems/card_combat/battle_log.gd" id="1_fy4e0"]
+[ext_resource type="Texture2D" uid="uid://cmco4s8rf26d5" path="res://assets/ui/icons/expand_more.svg" id="2_l0pje"]
+[ext_resource type="Texture2D" uid="uid://6y7whf4ocr3d" path="res://assets/ui/icons/expand_less.svg" id="3_x1b6r"]
+[ext_resource type="Script" path="res://systems/card_combat/BattLogScroll.gd" id="4_rikhf"]
+
+[node name="BattleLog" type="ColorRect"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = -1585.0
+offset_bottom = -1040.0
+grow_vertical = 2
+color = Color(0.247059, 0.247059, 0.247059, 0.54902)
+script = ExtResource("1_fy4e0")
+more_icon = ExtResource("2_l0pje")
+less_icon = ExtResource("3_x1b6r")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 331.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "Battle Log"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExpandButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_right = 330.0
+offset_bottom = 32.0
+toggle_mode = true
+icon = ExtResource("2_l0pje")
+
+[node name="ScrollBackground" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 32.0
+offset_right = 331.0
+offset_bottom = 572.0
+color = Color(0.329412, 0.329412, 0.329412, 0.54902)
+
+[node name="ScrollView" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = 33.0
+offset_right = 332.0
+offset_bottom = 573.0
+script = ExtResource("4_rikhf")
+
+[node name="Label" type="Label" parent="ScrollView"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+
+[connection signal="toggled" from="ExpandButton" to="." method="_on_expand_button_toggled"]

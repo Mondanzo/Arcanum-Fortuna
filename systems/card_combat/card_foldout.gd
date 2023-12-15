@@ -46,7 +46,6 @@ func _process(delta):
 	if count < 1:
 		return
 	
-	
 	var idx = 0
 	for child in get_children():
 		var card = child as Card
@@ -74,9 +73,13 @@ func _on_card_drag_started():
 	is_card_dragged = true
 
 func _on_card_drag_ended(card):
+	if not card in get_children():
+		card.reparent(self)
 	is_card_dragged = false
 
 func _on_card_added(card : HandCard):
+	if card.drag_started.is_connected(_on_card_drag_started):
+		return
 	card.drag_started.connect(_on_card_drag_started)
 	card.drag_ended.connect(_on_card_drag_ended)
 

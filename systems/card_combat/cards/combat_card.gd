@@ -1,7 +1,8 @@
 class_name CombatCard extends Card
 
-@export var attack_delay = 1
-@export var death_delay = 1
+@export var attack_delay = 1.0
+@export var death_delay = 1.0
+@export var karma_delay = 1.0
 @export var attacked_color : Color
 @export var highlight_color : Color
 @export var active_color : Color
@@ -10,7 +11,7 @@ class_name CombatCard extends Card
 
 var target_offsets : Array[int] = [0]
 var is_enemy := false
-
+var tile_coordinate := Vector2i(-1, -1)
 
 func make_enemy():
 	is_enemy = true
@@ -55,6 +56,8 @@ func apply_consume():
 
 #region damage functions
 func take_damage(amount : int):
+	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
+	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
 	health -= amount
 	%HealthCost.text = str(health)
 	$Health.modulate = attacked_color
@@ -73,13 +76,22 @@ func proccess_death() -> bool:
 		modulate = attacked_color
 		await get_tree().create_timer(death_delay).timeout
 		print("Card '", card_name, "' died!")
+		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
 		queue_free()
 		return true
 	return false
 #endregion
 
 
-func animate_attack(target) -> bool:
+func animate_attack(target, tile_idx) -> bool:
+	if target is CombatCard:
+		GlobalLog.add_entry("'%s' at position %d-%d attacked '%s' at position %d-%d." % \
+		 [card_data.name, tile_coordinate.x, tile_coordinate.y, \
+		 target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
+	else:
+		GlobalLog.add_entry("'%s' at position %d-%d attacked empty tile at position %d-%d." %\
+		 [card_data.name, tile_coordinate.x, tile_coordinate.y,  tile_idx, 0 if is_enemy else 1])
+	
 	$Attack.modulate = active_color
 	modulate = highlight_color
 	target.take_damage(attack)
@@ -104,7 +116,9 @@ func animate_karma(target):
 	$Cost.modulate = active_color
 	modulate = highlight_color
 	var overflow = target.modify_karma(cost)
-	await get_tree().create_timer(attack_delay).timeout
+	await get_tree().create_timer(karma_delay).timeout
+	GlobalLog.add_entry("'%s' at position %d-%d added %d karma." % \
+	[card_data.name, tile_coordinate.x, tile_coordinate.y, cost])
 	target.restore_default_color()
 	restore_default_color()
 
@@ -112,5 +126,19 @@ func animate_karma(target):
 func animate_move(target_pos):
 	modulate = active_color
 	global_position = target_pos
-	await get_tree().create_timer(move_speed).timeout # todo interpolat move 
+	await get_tree().create_timer(move_speed).timeout # todo interpolate move 
+	GlobalLog.add_entry("'%s' at position %d-%d moved to positon %d-%d." % \
+	[card_data.name, tile_coordinate.x, tile_coordinate.y, tile_coordinate.x, tile_coordinate.y - 1])
+	tile_coordinate = Vector2i(tile_coordinate.x, tile_coordinate.y - 1)
 	modulate = Color.WHITE
+
+
+func set_delete_mode(value : bool):
+	if value:
+		%DeleteButton.show()
+	else:
+		%DeleteButton.hide()
+
+
+func _on_delete_button_pressed():
+	queue_free()

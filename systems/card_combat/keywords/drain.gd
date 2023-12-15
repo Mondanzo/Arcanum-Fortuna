@@ -14,6 +14,8 @@ func init(id = 4):
 func trigger(source, target):
 	if not target is CombatCard:
 		push_error("Cannot apply Drain. Invalid target ", target, ".")
+		
+	GlobalLog.add_entry("Card '%s' at position %d-%d triggered drain." % [target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
 	target.attack += attack_gain
 	target.health += health_gain
 	target.update_texts()

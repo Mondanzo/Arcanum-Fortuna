@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://rtlv3pniods"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_262s8"]
+[ext_resource type="Texture2D" uid="uid://ddo6nfciy4n1e" path="res://assets/sprites/cards/card_wands_9.png" id="1_b1cba"]
+
+[resource]
+script = ExtResource("1_262s8")
+name = "Nine of Wands"
+description = "It doesn't do stuff."
+artwork = ExtResource("1_b1cba")
+cost = 3
+attack = 1
+health = 4
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://d4guw6tm3pttg"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nvp6e"]
+[ext_resource type="Texture2D" uid="uid://cj012pap0dc6w" path="res://assets/sprites/cards/card_king_of_cups.png" id="1_yivmj"]
+
+[resource]
+script = ExtResource("1_nvp6e")
+name = "King of Cups"
+description = "It doesn't do stuff."
+artwork = ExtResource("1_yivmj")
+cost = 2
+attack = 3
+health = 3
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

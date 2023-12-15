@@ -3,4 +3,9 @@ extends TutorialAction
 @export var card_battle: CardBattle
 
 func _execute():
-	await card_battle.handle_friendly_attacks()
+	card_battle.gameBoard.lock_friendly_cards()
+	await get_tree().process_frame
+	var phase = FriendlyAttackPhase.new()
+	phase.init(card_battle)
+	phase.execute()
+	await phase.completed

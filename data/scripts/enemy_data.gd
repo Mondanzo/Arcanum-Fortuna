@@ -63,6 +63,15 @@ func get_random_card() -> CardData:
 func get_rows():
 	if rows == []:
 		fill_rows()
+		GlobalLog.add_entry("Enemy Rows created:")
+		for row in rows:
+			var row_str = "["
+			for i in range(row.size()):
+				row_str += row[i].name if row[i] is CardData else "null"
+				if i < row.size() - 1:
+					row_str += ", \t"
+			row_str += "]"
+			GlobalLog.add_entry(row_str)
 	return rows
 
 

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dqrf3a1gc1liv"]
+
+[ext_resource type="Texture2D" uid="uid://brroil6n53anv" path="res://assets/sprites/cards/card_wands_2.png" id="1_g7hyj"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_vv6l1"]
+
+[resource]
+script = ExtResource("1_vv6l1")
+name = "Two of Wands"
+description = "It doesn't do stuff."
+artwork = ExtResource("1_g7hyj")
+cost = 2
+attack = 2
+health = 4
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

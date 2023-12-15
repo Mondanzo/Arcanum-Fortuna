@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://s2luhru0dtce"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_otgqu"]
+[ext_resource type="Texture2D" uid="uid://cg5wcb1w8sf8h" path="res://assets/sprites/cards/card_knight_of_cups.png" id="1_s1bsp"]
+
+[resource]
+script = ExtResource("1_otgqu")
+name = "Knight of Cups"
+description = "It doesn't do stuff."
+artwork = ExtResource("1_s1bsp")
+cost = 2
+attack = 2
+health = 4
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

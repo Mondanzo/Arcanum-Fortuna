@@ -15,3 +15,4 @@ class_name CardData extends Resource
 @export var shop_cost := 5
 ## If a value greater than zero is used the cards trade discount will be overriden with this value.
 @export var trade_override := 0
+@export var sound_effect: AudioStream

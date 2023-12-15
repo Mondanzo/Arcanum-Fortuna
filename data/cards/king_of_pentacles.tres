@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://nr5du58leen5"]
+
+[ext_resource type="Texture2D" uid="uid://bhks1grxrynox" path="res://assets/sprites/cards/card_king_of_coins.png" id="1_5t04l"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_uako4"]
+
+[resource]
+script = ExtResource("1_uako4")
+name = "King of Pentacles"
+description = "It doesn't do stuff."
+artwork = ExtResource("1_5t04l")
+cost = 2
+attack = 3
+health = 3
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 0

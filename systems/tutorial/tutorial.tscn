@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://systems/tutorial/steps/tutorial_step.gd" id="5_txu6s"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_tutorial_chat.gd" id="8_lf455"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_visiblity.gd" id="8_r3c85"]
-[ext_resource type="Script" path="res://systems/tutorial/conditions/tc_action_pressed.gd" id="9_k5tk7"]
+[ext_resource type="Script" path="res://systems/tutorial/conditions/tc_button_pressed.gd" id="8_ubcot"]
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tc_no_cards.gd" id="10_c5ygj"]
 [ext_resource type="PackedScene" uid="uid://d2hl78obwhmmt" path="res://systems/tutorial/tutorial_box.tscn" id="10_ni5w3"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_draw_card.gd" id="10_u046w"]
@@ -185,10 +185,9 @@ text = "Hi there, I'm the Magician and I will try my best to explain how this ga
 Just click the left mouse button to get started."
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep1" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep1" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep2" type="Node" parent="Steps" index="1"]
 script = ExtResource("5_txu6s")
@@ -249,10 +248,9 @@ script = ExtResource("8_lf455")
 text = "Good job! You just dealt some damage to your enemy."
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep5" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep5" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep6" type="Node" parent="Steps" index="5"]
 script = ExtResource("5_txu6s")
@@ -262,10 +260,9 @@ script = ExtResource("8_lf455")
 text = "After your cards are done attacking, their karma value is added to your total karma count."
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep6" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep6" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep7" type="Node" parent="Steps" index="6"]
 script = ExtResource("5_txu6s")
@@ -291,10 +288,9 @@ Karma is kept when you start a new turn but will be set back to zero once the ba
 Be careful tough: whenever your karma would go below zero, you'll take damage instead!"
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep8" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep8" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep9" type="Node" parent="Steps" index="8"]
 script = ExtResource("5_txu6s")
@@ -305,10 +301,9 @@ text = "Some Cards will increase your karma and others will drain it.
 You can tell how a card will affect your karma total by looking at the number on the top left of each card."
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep9" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep9" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep10" type="Node" parent="Steps" index="9"]
 script = ExtResource("5_txu6s")
@@ -323,10 +318,9 @@ script = ExtResource("8_lf455")
 text = "Oh no, the enemy just played a card. Let's hope things won't turn out nasty for you."
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep10" index="2"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep10" index="2" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep11" type="Node" parent="Steps" index="10"]
 script = ExtResource("5_txu6s")
@@ -351,10 +345,9 @@ text = "Yikes, that card just dealt some damage to your card!
 Once the health of your card goes down to zero it dies, and the enemy can attack you directly."
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep12" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep12" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep13" type="Node" parent="Steps" index="12"]
 script = ExtResource("5_txu6s")
@@ -379,10 +372,9 @@ script = ExtResource("8_lf455")
 text = "And there goes your card, such a pity."
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep14" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep14" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep15" type="Node" parent="Steps" index="14"]
 script = ExtResource("5_txu6s")
@@ -445,10 +437,9 @@ script = ExtResource("8_lf455")
 text = "Haha take that!"
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep18" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep18" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep19" type="Node" parent="Steps" index="18"]
 script = ExtResource("5_txu6s")
@@ -456,13 +447,12 @@ script = ExtResource("5_txu6s")
 [node name="ChatSigils" type="Node" parent="Steps/TutorialStep19" index="0" node_paths=PackedStringArray("tutorial_box")]
 script = ExtResource("8_lf455")
 text = "You might have noticed that the strength of your card just grew!
-That’s thanks to the special symbols on this card. Just hover over them to find out what they do!"
+That’s thanks to the special symbols on this card. You can hover over your card to find out what they do!"
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep19" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep19" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep19_5" type="Node" parent="Steps" index="19"]
 script = ExtResource("5_txu6s")
@@ -476,10 +466,9 @@ tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 script = ExtResource("8_r3c85")
 nodes = [NodePath("../../../GameBoard/EnemyTiles/Row1/Panel"), NodePath("../../../GameBoard/EnemyTiles/Row1/Panel2"), NodePath("../../../GameBoard/EnemyTiles/Row1/Panel4"), NodePath("../../../GameBoard/EnemyTiles/Row1/Panel5"), NodePath("../../../GameBoard/EnemyTiles/Row2/Panel"), NodePath("../../../GameBoard/EnemyTiles/Row2/Panel2"), NodePath("../../../GameBoard/EnemyTiles/Row2/Panel4"), NodePath("../../../GameBoard/EnemyTiles/Row2/Panel5"), NodePath("../../../GameBoard/PlayerTiles/Panel"), NodePath("../../../GameBoard/PlayerTiles/Panel2"), NodePath("../../../GameBoard/PlayerTiles/Panel4"), NodePath("../../../GameBoard/PlayerTiles/Panel5")]
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep19_5" index="2"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep19_5" index="2" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep20" type="Node" parent="Steps" index="20"]
 script = ExtResource("5_txu6s")
@@ -489,10 +478,9 @@ script = ExtResource("8_lf455")
 text = "And now, with all of that out of the way..."
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep20" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep20" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep21" type="Node" parent="Steps" index="21"]
 script = ExtResource("5_txu6s")
@@ -507,10 +495,9 @@ script = ExtResource("18_mtdgx")
 card_battle = NodePath("../../..")
 card_to_play = SubResource("Resource_7fli2")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep21" index="2"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 2.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep21" index="2" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep22" type="Node" parent="Steps" index="22"]
 script = ExtResource("5_txu6s")
@@ -534,10 +521,9 @@ script = ExtResource("8_lf455")
 text = "Good luck on your journey out there!"
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep23" index="1"]
-script = ExtResource("9_k5tk7")
-action = "pickUpCard"
-cooldown = 1.0
+[node name="IfActionPressed" type="Node" parent="Steps/TutorialStep23" index="1" node_paths=PackedStringArray("button")]
+script = ExtResource("8_ubcot")
+button = NodePath("../../../CanvasLayer/TutorialBox/HBoxContainer/ContinueButton")
 
 [node name="TutorialStep24" type="Node" parent="Steps" index="24"]
 script = ExtResource("5_txu6s")
@@ -574,9 +560,13 @@ layer = 9
 custom_minimum_size = Vector2(0, 150)
 offset_top = -87.0
 
+[node name="ContinueButton" parent="CanvasLayer/TutorialBox/HBoxContainer" index="2"]
+visible = false
+
 [node name="BattleLog" parent="." index="10"]
 visible = false
 
 [connection signal="button_down" from="SkipButton" to="." method="_on_skip_button_button_down"]
 
 [editable path="CardPlayer"]
+[editable path="CanvasLayer/TutorialBox"]

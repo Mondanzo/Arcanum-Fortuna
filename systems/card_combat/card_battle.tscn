@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=31 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -65,6 +65,9 @@ keycode = 4194312
 [sub_resource type="Shortcut" id="Shortcut_udv11"]
 events = [SubResource("InputEventKey_thsaf"), SubResource("InputEventKey_kwdgl"), SubResource("InputEventKey_vvn32")]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy01y"]
+bg_color = Color(1, 0.505882, 0.137255, 1)
+
 [node name="CardBattle" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -90,10 +93,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_1vun5")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -256.0
+anchor_bottom = 0.833
+offset_bottom = -75.6401
 grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 100
 alignment = 1
@@ -115,31 +117,31 @@ theme_override_constants/separation = 60
 alignment = 1
 
 [node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
 
 [node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
 
 [node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
 
 [node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
 
 [node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
@@ -150,31 +152,31 @@ theme_override_constants/separation = 60
 alignment = 1
 
 [node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
 
 [node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
 
 [node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
 
 [node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
 
 [node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
@@ -186,35 +188,35 @@ alignment = 1
 
 [node name="Panel" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
 
 [node name="Panel2" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
 
 [node name="Panel3" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
 
 [node name="Panel4" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
 
 [node name="Panel5" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
@@ -246,7 +248,9 @@ offset_left = -277.0
 offset_top = -0.120026
 offset_right = -84.0
 offset_bottom = -0.320007
+theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_gy01y")
 text = "End Turn
 "
 

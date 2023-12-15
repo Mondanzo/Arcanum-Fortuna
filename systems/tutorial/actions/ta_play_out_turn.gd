@@ -5,6 +5,8 @@ extends TutorialAction
 
 
 func _execute():
+	card_battle.gameBoard.lock_friendly_cards()
+	await get_tree().process_frame
 	for phase in phases:
 		phase.init(card_battle)
 		phase.execute()

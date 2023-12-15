@@ -10,7 +10,7 @@ attack_delay = 0.5
 death_delay = 0.5
 karma_delay = 0.3
 attacked_color = Color(1, 0.172549, 0.129412, 1)
-highlight_color = Color(0.909804, 0.647059, 0.572549, 1)
+highlight_color = Color(0.623529, 0.721569, 0.894118, 1)
 active_color = Color(0.713726, 0.764706, 0.870588, 1)
 move_speed = 0.5
 

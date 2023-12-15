@@ -39,6 +39,14 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 	self.attack = attack
 	self.health = health
 	self.keywords = keywords
+	if card_data == null:
+		card_data = CardData.new()
+		card_data.artwork_texture = artwork_texture
+		card_data.card_name = name
+		card_data.cost = cost
+		card_data.attack = attack
+		card_data.health = health
+		card_data.keywords = keywords
 	for keyword in keywords:
 		keyword.init()
 	%ShowCardTooltip.init(card_data)

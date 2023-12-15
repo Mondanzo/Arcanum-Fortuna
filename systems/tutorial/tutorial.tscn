@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bxifydx1hdpwf"]
+[gd_scene load_steps=46 format=3 uid="uid://bxifydx1hdpwf"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_lco5q"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial.gd" id="2_xmauc"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tcd_delayed.gd" id="11_xqb1o"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_enabled.gd" id="12_ojt8p"]
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tc_signal_emitted.gd" id="13_pw7qy"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="13_y6t7h"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_tutorial_chat_visible.gd" id="14_akgfj"]
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tcd_await_actions.gd" id="15_7wyih"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_friendly_cards_attack.gd" id="16_m80f0"]
@@ -65,9 +66,13 @@ karma = 0
 draw_rng_seed = 1337
 currency = 0
 
+[sub_resource type="Resource" id="Resource_3wse5"]
+script = ExtResource("13_y6t7h")
+
 [sub_resource type="Resource" id="Resource_fh7bg"]
 script = ExtResource("20_yi4lx")
 name = "The Spell"
+description = "It can do stuff."
 artwork = ExtResource("19_ymsqq")
 cost = 0
 attack = 2
@@ -96,6 +101,7 @@ script = ExtResource("25_nrcpb")
 [sub_resource type="Resource" id="Resource_7fli2"]
 script = ExtResource("20_yi4lx")
 name = "The Magician"
+description = "It can do stuff."
 artwork = ExtResource("10_x770v")
 cost = 0
 attack = 666
@@ -107,6 +113,7 @@ spawn_frequency = 100
 script = ExtResource("2_xmauc")
 enemy_data = SubResource("Resource_7as0j")
 tutorial_steps = NodePath("Steps")
+next_scene = "res://systems/ui/main_menu.tscn"
 debug_player_data = SubResource("Resource_wj3g8")
 
 [node name="Panel" parent="GameBoard/EnemyTiles/Row1" index="0"]
@@ -145,13 +152,29 @@ visible = false
 [node name="Panel5" parent="GameBoard/PlayerTiles" index="4"]
 visible = false
 
-[node name="EndTurnButton" parent="." index="3"]
-disabled = true
+[node name="BonusDrawButton" parent="CardPlayer" index="2"]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 244.0
+offset_bottom = 54.0
+
+[node name="SkipButton" type="Button" parent="." index="3"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 172.0
+offset_bottom = 89.0
+text = "Skip Tutorial"
+
+[node name="CardDeletionButton" parent="." index="4"]
+visible = false
 
 [node name="ShowTooltip" parent="EndTurnButton" index="0"]
 process_mode = 4
 
-[node name="Steps" type="Node" parent="." index="5"]
+[node name="Steps" type="Node" parent="." index="6"]
 
 [node name="TutorialStep1" type="Node" parent="Steps" index="0"]
 script = ExtResource("5_txu6s")
@@ -194,9 +217,10 @@ text = "Nicely done!
 Now press the \"End Turn\" button to attack the enemy!"
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="EnableEndTurnButton" type="Node" parent="Steps/TutorialStep3" index="1" node_paths=PackedStringArray("nodes")]
-script = ExtResource("12_ojt8p")
-nodes = [NodePath("../../../EndTurnButton")]
+[node name="PlacementTurn" type="Node" parent="Steps/TutorialStep3" index="1" node_paths=PackedStringArray("card_battle")]
+script = ExtResource("22_o7xjc")
+card_battle = NodePath("../../..")
+phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_3wse5")])
 
 [node name="IfCombatStarted" type="Node" parent="Steps/TutorialStep3" index="2" node_paths=PackedStringArray("node_with_signal")]
 script = ExtResource("13_pw7qy")
@@ -206,16 +230,11 @@ signal_name = "pressed"
 [node name="TutorialStep4" type="Node" parent="Steps" index="3"]
 script = ExtResource("5_txu6s")
 
-[node name="DisableEndTurnButton" type="Node" parent="Steps/TutorialStep4" index="0" node_paths=PackedStringArray("nodes")]
-script = ExtResource("12_ojt8p")
-nodes = [NodePath("../../../EndTurnButton")]
-new_status = false
-
-[node name="HideTutorial" type="Node" parent="Steps/TutorialStep4" index="1" node_paths=PackedStringArray("tutorial_box")]
+[node name="HideTutorial" type="Node" parent="Steps/TutorialStep4" index="0" node_paths=PackedStringArray("tutorial_box")]
 script = ExtResource("14_akgfj")
 tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
-[node name="DoCombat" type="Node" parent="Steps/TutorialStep4" index="2"]
+[node name="DoCombat" type="Node" parent="Steps/TutorialStep4" index="1"]
 script = ExtResource("15_7wyih")
 
 [node name="FriendlyCardAttack" type="Node" parent="Steps/TutorialStep4/DoCombat" index="0" node_paths=PackedStringArray("card_battle")]
@@ -548,9 +567,16 @@ script = ExtResource("5_txu6s")
 script = ExtResource("26_t18aa")
 scene = "res://systems/ui/main_menu.tscn"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
 layer = 9
 
 [node name="TutorialBox" parent="CanvasLayer" index="0" instance=ExtResource("10_ni5w3")]
 custom_minimum_size = Vector2(0, 150)
 offset_top = -87.0
+
+[node name="BattleLog" parent="." index="10"]
+visible = false
+
+[connection signal="button_down" from="SkipButton" to="." method="_on_skip_button_button_down"]
+
+[editable path="CardPlayer"]

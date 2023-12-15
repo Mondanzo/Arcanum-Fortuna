@@ -3,6 +3,7 @@ extends CardBattle
 
 @export var enemy_data: EnemyData
 @export var tutorial_steps: Node
+@export_file("*.tscn") var next_scene := ""
 
 var current_step: int = 0
 var current_step_ref: TutorialStep = null
@@ -39,3 +40,7 @@ func next_step():
 
 func _on_end_turn_button_button_down():
 	pass
+
+
+func _on_skip_button_button_down():
+	get_tree().change_scene_to_file(next_scene)

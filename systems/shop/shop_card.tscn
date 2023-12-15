@@ -31,6 +31,7 @@ corner_radius_bottom_right = 64
 corner_radius_bottom_left = 64
 
 [node name="ShopCard" instance=ExtResource("1_quohb")]
+scale = Vector2(1.28, 1.28)
 script = ExtResource("2_xx82y")
 discount = 0.3
 

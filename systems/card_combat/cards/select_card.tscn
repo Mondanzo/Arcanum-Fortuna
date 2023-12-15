@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://csn44i17fqgdd" path="res://assets/sounds/card_pick.ogg" id="2_lu1ut"]
 
 [node name="SelectCard" instance=ExtResource("1_xraf4")]
+scale = Vector2(1.28, 1.28)
 script = ExtResource("1_gup87")
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="." index="6"]

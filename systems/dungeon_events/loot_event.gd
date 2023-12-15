@@ -51,6 +51,9 @@ func trigger(player_data: PlayerData):
 
 
 func card_clicked(card: Card):
+	while len(selected_cards) >= cardsToReward:
+		selected_cards.pop_front()
+
 	if card in selected_cards:
 		var idx = selected_cards.find(card)
 		if idx > -1:
@@ -61,16 +64,21 @@ func card_clicked(card: Card):
 		selected_cards.push_back(card)
 	
 	if len(selected_cards) == cardsToReward:
-		$CanvasLayer/Control.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		for c in $CanvasLayer/Control/Cards.get_children():
-			c.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			c.isHovered = false
-			if c in selected_cards:
-				continue
-			c.queue_free()
-		$CanvasLayer/Control/Button.show()
-		
-		await $CanvasLayer/Control/Button.pressed
-		player_data_ref.cardStack.push_back(card.card_data.duplicate())
-		finished.emit()
-		queue_free()
+		$CanvasLayer/Control/ConfirmButton.show()
+	else:
+		$CanvasLayer/Control/ConfirmButton.hide()
+
+
+func _on_confirm_button_pressed():
+	$CanvasLayer/Control.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for c : Card in $CanvasLayer/Control/Cards.get_children():
+		c.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		c.isHovered = false
+		if c in selected_cards:
+			continue
+		player_data_ref.cardStack.push_back(c.card_data.duplicate())
+		c.queue_free()
+	$CanvasLayer/Control/Button.show()
+	await $CanvasLayer/Control/Button.pressed
+	finished.emit()
+	queue_free()

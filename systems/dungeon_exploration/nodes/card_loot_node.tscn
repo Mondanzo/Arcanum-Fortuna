@@ -10,4 +10,5 @@ lookahead = 2
 event = ExtResource("2_ccsv8")
 
 [node name="icon" parent="background" index="0"]
+visible = true
 texture = ExtResource("3_e0t7d")

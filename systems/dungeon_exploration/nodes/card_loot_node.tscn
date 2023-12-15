@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="1_lqas6"]
 [ext_resource type="PackedScene" uid="uid://bggcv7yipjcm7" path="res://systems/dungeon_events/loot_event.tscn" id="2_ccsv8"]
-[ext_resource type="Texture2D" uid="uid://bkkrf2ynprn0h" path="res://systems/dungeon_exploration/node_sprites/new_card.png" id="3_e0t7d"]
+[ext_resource type="Texture2D" uid="uid://bkkrf2ynprn0h" path="res://assets/sprites/nodemap/new_card.png" id="3_e0t7d"]
 
 [node name="CardLootNode" instance=ExtResource("1_lqas6")]
 pivot_offset = Vector2(64, 64)

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="1_brtep"]
 [ext_resource type="PackedScene" uid="uid://v1xv2tgq67vf" path="res://systems/dungeon_events/regeneration_event.tscn" id="2_g4x36"]
-[ext_resource type="Texture2D" uid="uid://dou2tmmtdcayo" path="res://systems/dungeon_exploration/node_sprites/health.png" id="3_qan20"]
+[ext_resource type="Texture2D" uid="uid://dou2tmmtdcayo" path="res://assets/sprites/nodemap/health.png" id="3_qan20"]
 
 [node name="RegenerationNode" instance=ExtResource("1_brtep")]
 event = ExtResource("2_g4x36")

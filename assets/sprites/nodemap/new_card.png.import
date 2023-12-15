@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4txvwxxbco0f"
-path="res://.godot/imported/combat_challenging.png-9855d53762180789ea0728ed8c4f1b9b.ctex"
+uid="uid://bkkrf2ynprn0h"
+path="res://.godot/imported/new_card.png-473dfe66b123a72302cb15d6223ba4e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://systems/dungeon_exploration/node_sprites/combat_challenging.png"
-dest_files=["res://.godot/imported/combat_challenging.png-9855d53762180789ea0728ed8c4f1b9b.ctex"]
+source_file="res://assets/sprites/nodemap/new_card.png"
+dest_files=["res://.godot/imported/new_card.png-473dfe66b123a72302cb15d6223ba4e6.ctex"]
 
 [params]
 

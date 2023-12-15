@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1ib8g0b3wmbv"
-path="res://.godot/imported/victory.png-a5713da18d50f2b3b0fd7e5b16a47d1b.ctex"
+uid="uid://dy7tcnyepo7yq"
+path="res://.godot/imported/combat.png-3792ba83728cc2fc7dde8984410cb2f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://systems/dungeon_exploration/node_sprites/victory.png"
-dest_files=["res://.godot/imported/victory.png-a5713da18d50f2b3b0fd7e5b16a47d1b.ctex"]
+source_file="res://assets/sprites/nodemap/combat.png"
+dest_files=["res://.godot/imported/combat.png-3792ba83728cc2fc7dde8984410cb2f0.ctex"]
 
 [params]
 

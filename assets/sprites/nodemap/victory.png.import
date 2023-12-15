@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dou2tmmtdcayo"
-path="res://.godot/imported/health.png-e57925638054beffb3331cd1d637d30a.ctex"
+uid="uid://1ib8g0b3wmbv"
+path="res://.godot/imported/victory.png-a5b8a665903729c10d92a0f1f0c7b0d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://systems/dungeon_exploration/node_sprites/health.png"
-dest_files=["res://.godot/imported/health.png-e57925638054beffb3331cd1d637d30a.ctex"]
+source_file="res://assets/sprites/nodemap/victory.png"
+dest_files=["res://.godot/imported/victory.png-a5b8a665903729c10d92a0f1f0c7b0d9.ctex"]
 
 [params]
 

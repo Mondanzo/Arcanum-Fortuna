@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b5mnw025kyefa" path="res://systems/dungeon_exploration/nodes/combat_node.tscn" id="1_bjf1o"]
 [ext_resource type="Resource" uid="uid://dun0e4lm0kt3m" path="res://data/enemy/challenge_enemy.tres" id="2_ef5s8"]
-[ext_resource type="Texture2D" uid="uid://c4txvwxxbco0f" path="res://systems/dungeon_exploration/node_sprites/combat_challenging.png" id="5_icbpd"]
+[ext_resource type="Texture2D" uid="uid://c4txvwxxbco0f" path="res://assets/sprites/nodemap/combat_challenging.png" id="5_icbpd"]
 
 [node name="ChallengingCombatNode" instance=ExtResource("1_bjf1o")]
 potential_enemies = Array[Resource("res://data/scripts/enemy_data.gd")]([ExtResource("2_ef5s8")])

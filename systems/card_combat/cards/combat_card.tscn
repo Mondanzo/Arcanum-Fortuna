@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://j8o1whwr6cmm" path="res://assets/ui/icons/ui_icon_delete_forever.svg" id="3_dlei7"]
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
-scale = Vector2(0.9, 0.9)
 script = ExtResource("1_3lxv2")
 attack_delay = 0.5
 death_delay = 0.5

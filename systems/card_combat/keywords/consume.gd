@@ -15,11 +15,9 @@ func init(id = 3):
 func trigger(source, target):
 	if not target is CombatCard:
 		push_error("Cannot apply Consume. Invalid target ", target, ".")
-	if source != null:
-		GlobalLog.add_entry("Card '%s' at position %d-%d triggered consume." % [source.card_data.name, source.tile_coordinate.x, source.tile_coordinate.y])
-	else:
-		GlobalLog.add_entry("Consume triggered with missing source...")
-		push_warning("Consume triggered with missing source...")
+		return
+	if target is CombatCard:
+		GlobalLog.add_entry("Card '%s' at position %d-%d triggered consume." % [target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
 	target.attack += attack_gain
 	target.health += health_gain
 	target.update_texts()

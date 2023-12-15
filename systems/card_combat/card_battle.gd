@@ -51,7 +51,7 @@ func init(player_data, enemy_data):
 
 
 func _input(event):
-	if is_debug && OS.has_feature("debug") && event.is_action_pressed("debug_quit"):
+	if not OS.has_feature("no-cheat") && event.is_action_pressed("debug_quit"):
 		finished.emit(player.health)
 
 

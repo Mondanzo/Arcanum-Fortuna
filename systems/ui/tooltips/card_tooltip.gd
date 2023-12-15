@@ -1,7 +1,7 @@
 class_name CardTooltip
 extends TooltipBase
 
-@export var sigil_info_template: PackedScene = preload("res://Systems/UI/tooltips/keyword_info.tscn")
+@export var sigil_info_template: PackedScene = preload("res://systems/ui/tooltips/keyword_info.tscn")
 
 
 func setup(data : CardData):

@@ -5,7 +5,7 @@ extends Control
 @export var icon: Texture2D
 @export var title := "Tooltip"
 @export_multiline var text := "Lorem Ipsum... dolor sit amet..."
-@export var tooltip_template := preload("res://Systems/UI/tooltips/tooltip_basic.tscn")
+@export var tooltip_template : PackedScene = preload("res://systems/ui/tooltips/tooltip_basic.tscn")
 @export var offset := Vector2.ZERO
 
 

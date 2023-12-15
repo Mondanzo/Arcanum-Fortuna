@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://systems/dungeon_exploration/nodes/shop_node.gd" id="1_77k18"]
 [ext_resource type="Texture2D" uid="uid://c1o60aibngi18" path="res://systems/dungeon_exploration/node_sprites/background.png" id="2_8yelx"]
 [ext_resource type="PackedScene" uid="uid://jqc67rl1fpl3" path="res://systems/shop/shop_keeper.tscn" id="2_eesgv"]
-[ext_resource type="Texture2D" uid="uid://qxohsjdaygtj" path="res://assets/sprites/cards/ed.jpeg" id="4_awgxc"]
+[ext_resource type="Texture2D" uid="uid://c5uyxabahx82i" path="res://assets/sprites/nodemap/shop.png" id="4_om52u"]
 
 [node name="EventNode" type="Control"]
 layout_mode = 3
@@ -53,4 +53,4 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(64, 64)
 mouse_filter = 2
-texture = ExtResource("4_awgxc")
+texture = ExtResource("4_om52u")

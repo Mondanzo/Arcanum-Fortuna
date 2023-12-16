@@ -391,4 +391,4 @@ autowrap_mode = 3
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
 [connection signal="toggled" from="CardDeletionButton" to="GameBoard" method="_on_card_deletion_button_toggled"]
-[connection signal="button_down" from="EndTurnButton" to="." method="_on_end_turn_button_button_down"]
+[connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

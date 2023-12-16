@@ -20,7 +20,7 @@ func _ready():
 	rng.seed = seed
 
 
-func trigger(player_data: PlayerData):
+func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	
 	if cardsToChooseFrom < cardsToReward:
 		push_error("Cards to Choose from is less than the Cards that get rewarded! force adjusting")
@@ -61,6 +61,7 @@ func card_clicked(card: Card):
 		selected_cards.push_back(card)
 
 	while len(selected_cards) > cardsToReward:
+		selected_cards[0].selected = false
 		selected_cards.pop_front()
 	if len(selected_cards) == cardsToReward:
 		$CanvasLayer/Control/ConfirmButton.show()
@@ -74,9 +75,9 @@ func _on_confirm_button_pressed():
 		c.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		c.isHovered = false
 		if c in selected_cards:
-			continue
-		player_data_ref.cardStack.push_back(c.card_data.duplicate())
-		c.queue_free()
+			player_data_ref.cardStack.push_back(c.card_data.duplicate())
+		else:
+			c.queue_free()
 	$CanvasLayer/Control/Button.show()
 	await $CanvasLayer/Control/Button.pressed
 	finished.emit()

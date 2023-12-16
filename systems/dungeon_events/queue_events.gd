@@ -7,10 +7,12 @@ signal finished
 var seed = 0
 var event_queue = []
 var player_data_ref
+var enemy_data_ref
 
 
-func trigger(player_data: PlayerData):
+func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	player_data_ref = player_data
+	enemy_data_ref = enemy_data
 	for event in events:
 		var instance = event.instantiate()
 		if "seed" in instance:
@@ -28,4 +30,4 @@ func event_finished():
 		return
 	var event = event_queue.pop_front()
 	add_child(event)
-	event.trigger(player_data_ref)
+	event.trigger(player_data_ref, enemy_data_ref)

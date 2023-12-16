@@ -13,7 +13,7 @@ func _ready():
 	rng.seed = seed
 
 
-func trigger(playerData: PlayerData):
+func trigger(playerData: PlayerData, enemy_data: EnemyData):
 	player_data_ref = playerData
 	print("using seed " + str(seed))
 		

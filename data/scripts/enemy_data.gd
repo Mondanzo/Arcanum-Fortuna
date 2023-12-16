@@ -6,6 +6,7 @@ class_name EnemyData extends Resource
 @export var level3_cards : Array[CardData]
 
 @export_category("Stats")
+@export var gold_reward := 4
 @export var stats_per_level : Array[EnemyStats]
 
 @export_category("Debug")

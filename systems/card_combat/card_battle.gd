@@ -93,7 +93,7 @@ func unlock_player_actions():
 	%EndTurnButton.disabled = false
 
 
-func _on_end_turn_button_button_down():
+func _on_end_turn_button_pressed():
 	player_turn_ended.emit()
 
 

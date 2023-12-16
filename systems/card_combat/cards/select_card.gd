@@ -1,9 +1,14 @@
 class_name SelectCard
 extends Card
 
+signal clicked
+
+
 var isHovered := false
 var selected := false
-signal clicked
+
+@onready var base_scale = scale
+
 
 func _ready():
 	mouse_entered.connect(mouse_entered_event)
@@ -11,12 +16,13 @@ func _ready():
 
 
 func _process(delta):
+	%selected.visible = selected
 	if isHovered:
-		scale = scale.lerp(Vector2.ONE * 1.1, 0.2)
+		scale = scale.lerp(base_scale * 1.1, 0.2)
 	elif selected:
-		scale = scale.lerp(Vector2.ONE * 1.05, 0.2)
+		scale = scale.lerp(base_scale * 1.05, 0.2)
 	else:
-		scale = scale.lerp(Vector2.ONE, 0.2)
+		scale = scale.lerp(base_scale, 0.2)
 
 
 func mouse_entered_event():

@@ -33,7 +33,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 		if "seed" in instance:
 			instance.seed = seed
 		add_child(instance)
-		instance.trigger(player_data)
+		instance.trigger(player_data, enemy_data)
 		await instance.finished
 	
 	field.queue_free()

@@ -9,7 +9,7 @@ noise_type = 0
 frequency = 0.0161
 domain_warp_type = 2
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_68116"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6ymb3"]
 seamless = true
 normalize = false
 noise = SubResource("FastNoiseLite_ibg53")
@@ -21,7 +21,7 @@ shader_parameter/noise_speed = 0.05
 shader_parameter/noise_threshold = -0.155
 shader_parameter/noise_falloff = 0.06
 shader_parameter/bleed_strength = 1.375
-shader_parameter/noise = SubResource("NoiseTexture2D_68116")
+shader_parameter/noise = SubResource("NoiseTexture2D_6ymb3")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ny8ys"]
 bg_color = Color(0.745098, 0.662745, 0, 1)

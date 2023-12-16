@@ -90,7 +90,7 @@ func _trigger_event():
 		if "seed" in instance:
 			instance.seed = seed
 		add_child(instance)
-		instance.trigger(player.data)
+		instance.trigger(player.data, null)
 		await instance.finished
 
 

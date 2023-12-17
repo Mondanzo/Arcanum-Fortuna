@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://jqc67rl1fpl3"]
+[gd_scene load_steps=38 format=3 uid="uid://jqc67rl1fpl3"]
 
 [ext_resource type="Script" path="res://systems/shop/shop_keeper.gd" id="1_hhc2q"]
 [ext_resource type="PackedScene" uid="uid://bx7fy3hybiabj" path="res://systems/shop/shop_card.tscn" id="2_tyne5"]
@@ -41,6 +41,13 @@ currency = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_6tfy7"]
 font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2h0a"]
+bg_color = Color(0.745098, 0.662745, 0, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_jdpwx"]
 font_size = 24
@@ -107,18 +114,29 @@ layout_mode = 1
 anchors_preset = -1
 offset_left = 64.0
 offset_top = 32.0
+scale = Vector2(1.25, 1.25)
 
-[node name="Money" type="Label" parent="PanelContainer/MoneyCounter"]
+[node name="MoneyLabel" type="Label" parent="PanelContainer/MoneyCounter"]
+layout_mode = 2
+text = "Your Gold: "
+
+[node name="CostBg" type="Panel" parent="PanelContainer/MoneyCounter"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j2h0a")
+
+[node name="Money" type="Label" parent="PanelContainer/MoneyCounter/CostBg"]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 30.0
+offset_bottom = 33.0
 text = "69
 "
 label_settings = SubResource("LabelSettings_jdpwx")
-
-[node name="Label" type="Label" parent="PanelContainer/MoneyCounter"]
-layout_mode = 2
-text = "g"
-label_settings = SubResource("LabelSettings_jdpwx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LEFT" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 1

@@ -26,12 +26,12 @@
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_enemy_play_card.gd" id="18_mtdgx"]
 [ext_resource type="Texture2D" uid="uid://da686q86v5n60" path="res://assets/sprites/cards/spell.png" id="19_ymsqq"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="20_yi4lx"]
-[ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="21_fn7qg"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_play_out_turn.gd" id="22_o7xjc"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="23_mj0yg"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_process_mode.gd" id="23_s0rud"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="24_allw1"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="25_nrcpb"]
+[ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="26_s5xfr"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_swap_scene.gd" id="26_t18aa"]
 
 [sub_resource type="Resource" id="Resource_7133d"]
@@ -52,6 +52,7 @@ script = ExtResource("3_fi5ux")
 level1_cards = Array[ExtResource("20_yi4lx")]([])
 level2_cards = Array[ExtResource("20_yi4lx")]([])
 level3_cards = Array[ExtResource("20_yi4lx")]([])
+gold_reward = 4
 stats_per_level = Array[ExtResource("4_e0ixd")]([SubResource("Resource_7133d")])
 level = 0
 rng_seed = 0
@@ -79,6 +80,8 @@ attack = 2
 health = 2
 keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100
+shop_cost = 5
+trade_override = 0
 
 [sub_resource type="Resource" id="Resource_67liv"]
 script = ExtResource("23_mj0yg")
@@ -108,6 +111,8 @@ attack = 666
 health = 666
 keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100
+shop_cost = 5
+trade_override = 0
 
 [node name="Tutorial" node_paths=PackedStringArray("tutorial_steps") instance=ExtResource("1_lco5q")]
 script = ExtResource("2_xmauc")
@@ -385,7 +390,7 @@ tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
 [node name="DrawCard" type="Node" parent="Steps/TutorialStep15" index="1" node_paths=PackedStringArray("card_player")]
 script = ExtResource("10_u046w")
-card_to_draw = ExtResource("21_fn7qg")
+card_to_draw = ExtResource("26_s5xfr")
 card_player = NodePath("../../../CardPlayer")
 
 [node name="IfNoCardsInHand" type="Node" parent="Steps/TutorialStep15" index="2" node_paths=PackedStringArray("card_player")]

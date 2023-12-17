@@ -132,6 +132,7 @@ script = ExtResource("1_ng5at")
 level1_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_34dqb"), ExtResource("3_taufv"), ExtResource("5_ffyp3"), ExtResource("5_1tjfo")])
 level2_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("6_0c3ti"), ExtResource("7_8gpfa"), ExtResource("2_whjye"), ExtResource("8_g06dt"), ExtResource("9_qgo8b"), ExtResource("9_57sbi"), ExtResource("4_aslvv"), ExtResource("12_w8ay7")])
 level3_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("9_7iupu"), ExtResource("10_etmu3"), ExtResource("8_ckreu"), ExtResource("13_cvpsu")])
+gold_reward = 4
 stats_per_level = Array[ExtResource("16_cryir")]([SubResource("Resource_wktkx"), SubResource("Resource_qes8a"), SubResource("Resource_g2q6x"), SubResource("Resource_1jykb"), SubResource("Resource_21y0a"), SubResource("Resource_06p36")])
 level = 0
 rng_seed = 171236

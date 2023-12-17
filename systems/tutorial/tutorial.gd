@@ -5,7 +5,7 @@ extends CardBattle
 @export var tutorial_steps: Node
 @export_file("*.tscn") var next_scene := ""
 
-var current_step: int = 0
+var current_step: int = 14
 var current_step_ref: TutorialStep = null
 
 signal turn_started

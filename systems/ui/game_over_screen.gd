@@ -9,7 +9,7 @@ func _ready():
 	GlobalLog.add_entry(name + " loaded.")
 
 
-func trigger(player_data: PlayerData):
+func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	pass
 
 

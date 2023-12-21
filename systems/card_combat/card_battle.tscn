@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=32 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://eo8nyis4kslg" path="res://systems/card_combat/card_player.tscn" id="6_tn8rr"]
 [ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="7_g0vvg"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="8_qbqvo"]
+[ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -281,112 +282,19 @@ grow_horizontal = 0
 [node name="CurrentPhaseLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 12.0
-offset_top = 20.0
+offset_top = 982.0
 offset_right = 331.0
-offset_bottom = 98.0
+offset_bottom = 1060.0
 theme_override_font_sizes/font_size = 19
 
-[node name="BattleLog" type="ColorRect" parent="."]
-visible = false
+[node name="BattleLog" parent="." instance=ExtResource("16_kecnr")]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.561
-anchor_bottom = 0.696
-offset_left = 7.0
-offset_top = 8.0
-offset_right = -746.12
-offset_bottom = -224.68
+anchors_preset = 15
+offset_left = 12.0
+offset_top = 11.0
+offset_right = -1577.0
+offset_bottom = -1037.0
 grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.329412, 0.329412, 0.329412, 0.54902)
-
-[node name="Title" type="Label" parent="BattleLog"]
-layout_mode = 2
-offset_left = -2.0
-offset_top = -8.0
-offset_right = 310.0
-offset_bottom = 27.0
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
-text = "Battle Log"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ScrollView" type="ScrollContainer" parent="BattleLog"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 26.0
-offset_right = 320.0
-offset_bottom = 515.0
-
-[node name="Label" type="Label" parent="BattleLog/ScrollView"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1.
-Card 'The Fool' move from 2-1 to 1-1."
-autowrap_mode = 3
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]

@@ -79,6 +79,12 @@ func _on_confirm_button_pressed():
 		else:
 			c.queue_free()
 	$CanvasLayer/Control/Button.show()
+	$CanvasLayer/Control/SkipButton.hide()
 	await $CanvasLayer/Control/Button.pressed
+	finished.emit()
+	queue_free()
+
+
+func _on_skip_button_pressed():
 	finished.emit()
 	queue_free()

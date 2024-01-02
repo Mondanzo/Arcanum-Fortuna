@@ -21,14 +21,14 @@ var file = null:
 
 func set_context(new_context : Context):
 	context = new_context
-	if OS.has_feature("web") && file != null:
+	if OS.has_feature("web") || file == null:
 		return
 	file.store_line("Entered context " + str(context))
 
 func add_entry(text : String):
 	entries.push_back(Entry.new(context, text))
 	entry_added.emit(text)
-	if OS.has_feature("web") && file != null:
+	if OS.has_feature("web") || file == null:
 		return
 	file.store_line(text)
 

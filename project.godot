@@ -30,6 +30,19 @@ window/size/window_height_override=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
+
+[importer_defaults]
+
+com.timothyqiu.godot-csv-importer={
+"delimiter": 0,
+"detect_numbers": true,
+"force_float": false,
+"headers": true
+}
+
 [input]
 
 pickUpCard={

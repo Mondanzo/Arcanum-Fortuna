@@ -32,7 +32,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
+enabled=PackedStringArray("res://addons/card_import/plugin.cfg", "res://addons/csv-data-importer/plugin.cfg")
 
 [importer_defaults]
 

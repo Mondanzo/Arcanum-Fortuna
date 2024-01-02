@@ -7,6 +7,9 @@
 is_debug = true
 debug_enemy_data = ExtResource("2_6qelf")
 
+[node name="GameBoard" parent="." index="1"]
+offset_bottom = 0.0
+
 [node name="CurrentPhaseLabel" parent="." index="6"]
 offset_top = 979.0
 offset_bottom = 1057.0

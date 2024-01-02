@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ATK_Drain" load_steps=2 format=3 uid="uid://4g0i0fjq2dum"]
+
+[ext_resource type="Script" path="res://systems/card_combat/keywords/atk_drain.gd" id="1_ybxio"]
+
+[resource]
+script = ExtResource("1_ybxio")
+attack_gain = 1
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 4
+title = "ATK Drain"
+description = "This gains %d attack for each card on the board with a positve karma value."
+highlight_duration = 0.5

@@ -12,7 +12,7 @@ func init(id = 3):
 	super.init(id)
 
 
-func trigger(source, target):
+func trigger(source, target, params={}):
 	if not target is CombatCard:
 		push_error("Cannot apply Consume. Invalid target ", target, ".")
 		return

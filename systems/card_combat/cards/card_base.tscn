@@ -75,10 +75,8 @@ vertical_alignment = 1
 
 [node name="Cost" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 19.0
-offset_bottom = 19.0
+offset_right = 35.0
+offset_bottom = 35.0
 color = Color(0.47451, 0.207843, 0.592157, 1)
 
 [node name="KarmaCost" type="Label" parent="Cost"]

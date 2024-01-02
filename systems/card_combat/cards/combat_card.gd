@@ -13,9 +13,11 @@ var target_offsets : Array[int] = [0]
 var is_enemy := false
 var tile_coordinate := Vector2i(-1, -1)
 
+@onready var base_attack = attack
+
 func make_enemy():
 	is_enemy = true
-	$Cost.hide()
+	#$Cost.hide()
 	if attack == 0 and keywords.filter(func(keyword): 
 		return keyword is Drain or keyword is Flip).size() == 0:
 		flip()
@@ -103,13 +105,14 @@ func animate_attack(target, tile_idx) -> bool:
 	if was_lethal and (target is EnemyPlayer or target is CardPlayer):
 		is_battle_over = true
 	if was_lethal:
+		await get_tree().process_frame
 		for i in range(keywords.size()):
 			if keywords[i] is ActivatedKeyword and keywords[i].triggers & 1:
 				keywords[i].trigger(target, self)
 				$KeyWords.get_child(i).scale = Vector2(1.2, 1.2)
 				await get_tree().create_timer(keywords[i].highlight_duration).timeout
 				$KeyWords.get_child(i).scale = Vector2.ONE
-	return is_battle_over
+	return was_lethal
 
 
 func animate_karma(target):

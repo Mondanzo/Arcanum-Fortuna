@@ -18,10 +18,10 @@ move_speed = 0.5
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 174.444
-offset_top = -27.7778
-offset_right = 209.444
-offset_bottom = 7.22222
+offset_left = 129.0
+offset_top = -1.0
+offset_right = 164.0
+offset_bottom = 34.0
 icon = ExtResource("3_dlei7")
 icon_alignment = 1
 

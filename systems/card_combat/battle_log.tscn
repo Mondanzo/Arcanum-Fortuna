@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/battle_log.gd" id="1_fy4e0"]
 [ext_resource type="Texture2D" uid="uid://cmco4s8rf26d5" path="res://assets/ui/icons/expand_more.svg" id="2_l0pje"]
 [ext_resource type="Texture2D" uid="uid://6y7whf4ocr3d" path="res://assets/ui/icons/expand_less.svg" id="3_x1b6r"]
-[ext_resource type="Script" path="res://systems/card_combat/BattLogScroll.gd" id="4_rikhf"]
+[ext_resource type="Script" path="res://systems/card_combat/battle_log_scroll.gd" id="4_rikhf"]
 
 [node name="BattleLog" type="ColorRect"]
 anchors_preset = -1

@@ -78,6 +78,7 @@ func lock_friendly_cards():
 		GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 		[new_combat_card.card_data.name, i, 0])
 		card.queue_free()
+		await get_tree().process_frame
 		_on_active_cards_changed(new_combat_card)
 
 
@@ -94,6 +95,7 @@ func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
 	new_combat_card.tile_coordinate = Vector2i(tile_idx, 1)
 	GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 	[new_combat_card.card_data.name, tile_idx, 1])
+	await get_tree().process_frame
 	_on_active_cards_changed(new_combat_card)
 	return true
 
@@ -161,10 +163,11 @@ func get_back_enemies() -> Array[CombatCard]:
 
 
 func _on_active_cards_changed(source):
-	for card : CombatCard in get_active_cards():
+	var active_cards = get_active_cards()
+	for card : CombatCard in active_cards:
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
-				card.keywords[i].trigger(source, card, {"active_cards": get_active_cards()})
+				card.keywords[i].trigger(source, card, {"active_cards": active_cards})
 				card.get_node("KeyWords").get_child(i).scale = Vector2(1.2, 1.2)
 				await get_tree().create_timer(card.keywords[i].highlight_duration).timeout
 				card.get_node("KeyWords").get_child(i).scale = Vector2.ONE

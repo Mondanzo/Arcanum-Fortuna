@@ -12,8 +12,11 @@ class_name CombatCard extends Card
 var target_offsets : Array[int] = [0]
 var is_enemy := false
 var tile_coordinate := Vector2i(-1, -1)
+var base_attack : int
 
-@onready var base_attack = attack
+func setup():
+	super.setup()
+	base_attack = attack
 
 func make_enemy():
 	is_enemy = true

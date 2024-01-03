@@ -6,13 +6,15 @@
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
 script = ExtResource("1_3lxv2")
+attack_speed = 0.2
+attack_rewind = 0.3
 attack_delay = 0.5
 death_delay = 0.5
 karma_delay = 0.3
 attacked_color = Color(1, 0.172549, 0.129412, 1)
 highlight_color = Color(0.623529, 0.721569, 0.894118, 1)
 active_color = Color(0.713726, 0.764706, 0.870588, 1)
-move_speed = 0.5
+move_speed = 0.2
 
 [node name="DeleteButton" type="Button" parent="." index="7"]
 unique_name_in_owner = true

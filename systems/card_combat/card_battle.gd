@@ -108,7 +108,7 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	if target == null:
 		return false
 	gameBoard.highlight_tile(column_idx, friendly)
-	if await attacker.animate_attack(target, column_idx):
+	if await attacker.animate_attack(target, column_idx, gameBoard.get_tile(column_idx, friendly)):
 		# IMPORTANT: target should be null here
 		gameBoard._on_active_cards_changed(target)
 		if was_target_player:

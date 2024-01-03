@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=34 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -10,10 +10,12 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="4_qhqtv"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="5_0huhq"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="5_7hc2v"]
+[ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="5_11qft"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_movement_phase.gd" id="5_lslbq"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="6_o6asy"]
 [ext_resource type="PackedScene" uid="uid://eo8nyis4kslg" path="res://systems/card_combat/card_player.tscn" id="6_tn8rr"]
 [ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="7_g0vvg"]
+[ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="7_vptnu"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="8_qbqvo"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
 
@@ -28,6 +30,10 @@ script = ExtResource("4_qhqtv")
 
 [sub_resource type="Resource" id="Resource_611yk"]
 script = ExtResource("5_0huhq")
+karma_blob = ExtResource("5_11qft")
+small_blob = ExtResource("7_vptnu")
+karma_duration = 2.3
+karma_delay = 0.6
 
 [sub_resource type="Resource" id="Resource_d62ed"]
 script = ExtResource("5_lslbq")

@@ -177,12 +177,16 @@ func get_active_cards() -> Array[CombatCard]:
 	return get_friendly_cards() + get_front_enemies()
 
 
+func get_tile(idx, friendly = false):
+	return ($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx)
+
+
 func highlight_tile(idx, friendly = false):
-	($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx).self_modulate = tile_hovered_color
+	get_tile(idx, friendly).self_modulate = tile_hovered_color
 
 
 func end_tile_highlight(idx, friendly = false):
-	($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx).self_modulate = tile_disabled_color
+	get_tile(idx, friendly).self_modulate = tile_disabled_color
 
 
 func _on_card_deletion_button_toggled(toggled_on):

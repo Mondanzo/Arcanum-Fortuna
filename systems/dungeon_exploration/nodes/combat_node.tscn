@@ -12,6 +12,7 @@ script = ExtResource("2_itd2s")
 potential_enemies = Array[Resource("res://data/scripts/enemy_data.gd")]([ExtResource("3_vxnwv")])
 level = 0
 lookahead = 2
+no_card_overview = true
 event = ExtResource("11_ent3l")
 disabledColor = Color(0.745098, 0.745098, 0.745098, 1)
 

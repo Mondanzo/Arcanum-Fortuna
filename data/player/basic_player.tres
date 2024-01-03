@@ -1,16 +1,14 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=8 format=3 uid="uid://22opo18s7wkj"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=6 format=3 uid="uid://22opo18s7wkj"]
 
+[ext_resource type="Resource" uid="uid://jevuhv5svmgn" path="res://data/cards/the_fool.tres" id="1_m6f7l"]
 [ext_resource type="Script" path="res://data/scripts/player_data.gd" id="1_osl3y"]
-[ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="2_vv5so"]
-[ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="3_62ngx"]
-[ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_cups.tres" id="8_rjibl"]
-[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="9_i7byh"]
-[ext_resource type="Resource" uid="uid://tdphvb38mwry" path="res://data/cards/ace_of_swords.tres" id="10_4klv5"]
-[ext_resource type="Resource" uid="uid://hmyvbrv26ucs" path="res://data/cards/ace_of_pentacles.tres" id="11_l8f45"]
+[ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="2_4jsua"]
+[ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="3_umjd2"]
+[ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="4_uqecr"]
 
 [resource]
 script = ExtResource("1_osl3y")
-cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("2_vv5so"), ExtResource("3_62ngx"), ExtResource("8_rjibl"), ExtResource("9_i7byh"), ExtResource("10_4klv5"), ExtResource("11_l8f45")])
+cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_m6f7l"), ExtResource("1_m6f7l"), ExtResource("1_m6f7l"), ExtResource("2_4jsua"), ExtResource("3_umjd2"), ExtResource("4_uqecr")])
 health = 77.0
 start_hand_size = 4
 draw_amount = 1

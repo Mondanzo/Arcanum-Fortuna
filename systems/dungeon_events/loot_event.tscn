@@ -1,20 +1,31 @@
-[gd_scene load_steps=20 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=31 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
 [ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_wtojk"]
+[ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="2_kt70e"]
+[ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="3_6il76"]
+[ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="4_anhfr"]
 [ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="5_dpvki"]
+[ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="5_g314m"]
+[ext_resource type="Resource" uid="uid://buthwniwc7tav" path="res://data/cards/temperance.tres" id="6_k0i6c"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="7_3menk"]
-[ext_resource type="Resource" uid="uid://bmrjp8nkbwfga" path="res://data/cards/the_emperor.tres" id="9_mciwm"]
-[ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_cups.tres" id="9_rh45t"]
-[ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="10_jbfgc"]
-[ext_resource type="Resource" uid="uid://hmyvbrv26ucs" path="res://data/cards/ace_of_pentacles.tres" id="10_jdld8"]
-[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="11_duwfb"]
-[ext_resource type="Resource" uid="uid://tdphvb38mwry" path="res://data/cards/ace_of_swords.tres" id="12_ivtxt"]
-[ext_resource type="Resource" uid="uid://dct4oouah3euj" path="res://data/cards/the_hierophant.tres" id="14_n23su"]
+[ext_resource type="Resource" uid="uid://deonq2pnkifc2" path="res://data/cards/the_devil.tres" id="8_qccdy"]
+[ext_resource type="Resource" uid="uid://q687abm80cnx" path="res://data/cards/the_emperor.tres" id="9_mciwm"]
+[ext_resource type="Resource" uid="uid://c81sp31vj3l2" path="res://data/cards/the_empress.tres" id="10_jbfgc"]
+[ext_resource type="Resource" uid="uid://jevuhv5svmgn" path="res://data/cards/the_fool.tres" id="11_jhwta"]
+[ext_resource type="Resource" uid="uid://cjas1prwh50gk" path="res://data/cards/the_hanged_man.tres" id="12_fqraf"]
+[ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="13_d27cj"]
+[ext_resource type="Resource" uid="uid://jhpr8shtv832" path="res://data/cards/the_hierophant.tres" id="14_n23su"]
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="15_5fchr"]
-[ext_resource type="Resource" uid="uid://dovqva8c61sxv" path="res://data/cards/the_lovers.tres" id="16_mhl86"]
-[ext_resource type="Resource" uid="uid://vgaph8o6ojsd" path="res://data/cards/the_magician.tres" id="17_37lf3"]
+[ext_resource type="Resource" uid="uid://dtm8ekuwulx8j" path="res://data/cards/the_lovers.tres" id="16_mhl86"]
+[ext_resource type="Resource" uid="uid://cqicyrydvy03e" path="res://data/cards/the_magician.tres" id="17_37lf3"]
+[ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="18_c0isd"]
+[ext_resource type="Resource" uid="uid://b4tc66w5jk5ii" path="res://data/cards/the_star.tres" id="19_4guxq"]
+[ext_resource type="Resource" uid="uid://ccymn0mj5bdvy" path="res://data/cards/the_sun.tres" id="20_roc35"]
+[ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="21_sdmdj"]
+[ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="22_fmmdo"]
+[ext_resource type="Resource" uid="uid://dpspidmqwqebx" path="res://data/cards/the_world.tres" id="23_kveiv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wl2yu"]
 font_size = 151
@@ -30,7 +41,7 @@ bg_color = Color(0.545098, 0.388235, 0.658824, 1)
 
 [node name="LootEvent" type="Node"]
 script = ExtResource("1_dmmsx")
-possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_rh45t"), ExtResource("10_jdld8"), ExtResource("11_duwfb"), ExtResource("12_ivtxt")])
+possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("2_kt70e"), ExtResource("3_6il76"), ExtResource("4_anhfr"), ExtResource("5_g314m"), ExtResource("6_k0i6c"), ExtResource("7_3menk"), ExtResource("8_qccdy"), ExtResource("9_mciwm"), ExtResource("10_jbfgc"), ExtResource("11_jhwta"), ExtResource("12_fqraf"), ExtResource("13_d27cj"), ExtResource("14_n23su"), ExtResource("15_5fchr"), ExtResource("16_mhl86"), ExtResource("17_37lf3"), ExtResource("18_c0isd"), ExtResource("19_4guxq"), ExtResource("20_roc35"), ExtResource("21_sdmdj"), ExtResource("22_fmmdo"), ExtResource("23_kveiv")])
 cardTemplate = ExtResource("1_panx4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

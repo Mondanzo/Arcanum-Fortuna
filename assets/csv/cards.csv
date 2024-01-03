@@ -1,0 +1,5 @@
+ResourceName,Name,Description,Artwork,Cost,Attack,Health,Keywords
+ace_of_cups,Ace of Cups,,,1,0,3,DeathrattleATK1
+ace_of_pentacles,Ace of Pentacles,,,1,2,2,
+ace_of_wands,Ace of Wands,,,2,1,2,
+ace_of_swords,Ace of Swords,,,1,2,2,

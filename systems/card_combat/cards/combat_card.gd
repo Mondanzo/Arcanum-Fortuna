@@ -1,5 +1,8 @@
 class_name CombatCard extends Card
 
+## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
+@export var is_auto_flip = true
+
 @export_category("Animation Settings")
 @export var attack_speed = 0.2
 @export var attack_rewind = 0.3
@@ -16,19 +19,21 @@ var target_offsets : Array[int] = [0]
 var is_enemy := false
 var tile_coordinate := Vector2i(-1, -1)
 var base_attack : int
+var base_health : int
+var placed_position: Vector2
+
 
 func setup():
 	super.setup()
 	base_attack = attack
-
-var placed_position: Vector2
+	base_health = health
 
 
 func make_enemy():
 	is_enemy = true
 	#$Cost.hide()
-	if attack == 0 and keywords.filter(func(keyword): 
-		return keyword is Drain or keyword is Flip).size() == 0:
+	if is_auto_flip and attack == 0 and keywords.filter(func(keyword): 
+			return keyword is Drain or keyword is Flip or keyword is ATK_Drain).size() == 0:
 		flip()
 
 

@@ -2,15 +2,15 @@
 
 [ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="1_a0565"]
 [ext_resource type="Script" path="res://data/scripts/player_data.gd" id="1_h25ob"]
+[ext_resource type="Resource" uid="uid://xp52amjvpee1" path="res://data/cards/ace_of_pentacles.tres" id="2_eiwll"]
 [ext_resource type="Resource" uid="uid://dtm8ekuwulx8j" path="res://data/cards/the_lovers.tres" id="2_feynm"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="2_pb7uk"]
-[ext_resource type="Resource" uid="uid://c81sp31vj3l2" path="res://data/cards/the_empress.tres" id="3_fs026"]
 [ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="4_csw0r"]
 [ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="4_td367"]
 
 [resource]
 script = ExtResource("1_h25ob")
-cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_a0565"), ExtResource("3_fs026"), ExtResource("2_pb7uk"), ExtResource("4_csw0r"), ExtResource("2_feynm"), ExtResource("4_td367")])
+cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_a0565"), ExtResource("2_eiwll"), ExtResource("2_pb7uk"), ExtResource("4_csw0r"), ExtResource("2_feynm"), ExtResource("4_td367")])
 health = 40.0
 start_hand_size = 6
 draw_amount = 1

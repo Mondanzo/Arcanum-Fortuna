@@ -7,6 +7,8 @@ var connectedFrom: Array[EventNode] = []
 @export_range(0, 10) var lookahead := 2
 var currentLookahead = 0
 
+@export var no_card_overview := false
+
 @export var event: PackedScene
 
 @export_category("Display Options")
@@ -28,6 +30,7 @@ var seed = 0
 
 signal on_stepped_on
 
+
 func _ready():
 	$background/icon.visible = false
 	for n in connectsTo:
@@ -43,8 +46,6 @@ func get_required_color(node: EventNode):
 
 
 func _process(delta):
-	
-	hovering = Rect2(Vector2(), $background.get_rect().size).has_point($background.get_local_mouse_position())
 	if selectable or Engine.is_editor_hint() or true:
 		$background/icon.visible = true
 	
@@ -62,6 +63,7 @@ func _process(delta):
 	
 	if passed:
 		passed = false
+	
 	queue_redraw()
 
 
@@ -86,12 +88,16 @@ func click():
 
 func _trigger_event():
 	if event:
+		if no_card_overview:
+			CardsOverlay.toggle(false)
 		var instance = event.instantiate()
 		if "seed" in instance:
 			instance.seed = seed
 		add_child(instance)
 		instance.trigger(player.data, null)
 		await instance.finished
+		if no_card_overview:
+			CardsOverlay.toggle(true)
 
 
 func _draw():
@@ -108,3 +114,19 @@ func _draw():
 
 func _generated(node_index: int, level: int, _rng: RandomNumberGenerator):
 	seed = _rng.randi()
+
+
+func _on_mouse_entered():
+	hovering = true
+
+
+func _on_mouse_exited():
+	hovering = false
+
+
+func _on_background_mouse_entered():
+	hovering = true
+
+
+func _on_background_mouse_exited():
+	hovering = false

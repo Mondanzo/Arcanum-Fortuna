@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bdkhck4lxvdx5"]
+[gd_scene load_steps=20 format=3 uid="uid://bdkhck4lxvdx5"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/map_generator.gd" id="1_03jr0"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="2_5yni0"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cehj7gi3tdwb4" path="res://systems/dungeon_exploration/nodes/shop_node.tscn" id="8_gwbkc"]
 [ext_resource type="Resource" uid="uid://22opo18s7wkj" path="res://data/player/basic_player.tres" id="10_2rstt"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="11_jsff7"]
+[ext_resource type="PackedScene" uid="uid://divw7h5guhbc8" path="res://systems/ui/cards_overview/cards_overlay.tscn" id="13_sj6n6"]
 
 [sub_resource type="Resource" id="Resource_2c5hw"]
 script = ExtResource("3_0jkw7")
@@ -109,7 +110,7 @@ offset_top = -486.0
 offset_right = -864.0
 offset_bottom = -486.0
 
-[node name="Player" parent="." node_paths=PackedStringArray("startNode") instance=ExtResource("7_uemsd")]
+[node name="Player" parent="." node_paths=PackedStringArray("startNode", "setup_nodes") instance=ExtResource("7_uemsd")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -124,6 +125,7 @@ grow_horizontal = 1
 grow_vertical = 1
 startNode = NodePath("../StartNode")
 startData = ExtResource("10_2rstt")
+setup_nodes = [NodePath("../CardsOverlay")]
 
 [node name="Generator" type="Node" parent="."]
 script = SubResource("GDScript_e8sv1")
@@ -146,6 +148,8 @@ text = "Seed: 1337"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("11_jsff7")
+
+[node name="CardsOverlay" parent="." instance=ExtResource("13_sj6n6")]
 
 [connection signal="mouse_entered" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_exited"]

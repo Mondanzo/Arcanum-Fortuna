@@ -3,6 +3,7 @@ class_name Player extends Control
 @export var startNode: EventNode
 @export var startData: PlayerData
 @export var mouse_track := 0.2
+@export var setup_nodes : Array[Node]
 
 @export_category("Debug")
 @export var is_debug := false
@@ -13,6 +14,9 @@ var targetNode: EventNode
 func _ready():
 	data = startData.duplicate(true)
 	update_target(startNode)
+	for node in setup_nodes:
+		if node.has_method("setup_player_data"):
+			node.setup_player_data(data)
 
 
 func update_target(new_target: EventNode):

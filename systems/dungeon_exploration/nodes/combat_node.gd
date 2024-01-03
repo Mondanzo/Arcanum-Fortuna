@@ -18,6 +18,8 @@ func _generated(node_index: int, _level: int, _rng: RandomNumberGenerator):
 
 
 func _trigger_event():
+	if no_card_overview:
+		CardsOverlay.toggle(false)
 	var instance = event.instantiate() as BattleEvent
 	instance.seed = combat_seed
 	var idx = rng.randi_range(0, len(potential_enemies) - 1)
@@ -29,3 +31,5 @@ func _trigger_event():
 	add_child(instance)
 	instance.trigger(player.data, selected_enemy)
 	await instance.finished
+	if no_card_overview:
+		CardsOverlay.toggle(true)

@@ -39,7 +39,6 @@ mouse_force_pass_scroll_events = false
 texture = ExtResource("2_7pmo2")
 
 [node name="icon" type="TextureRect" parent="background"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,3 +54,8 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(64, 64)
 mouse_filter = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="background" to="." method="_on_background_mouse_entered"]
+[connection signal="mouse_exited" from="background" to="." method="_on_background_mouse_exited"]

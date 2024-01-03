@@ -14,14 +14,15 @@ signal finished
 
 var player_data_ref : PlayerData
 var selected_cards = []
-
+var prev_mode: bool = true
 
 func _ready():
 	rng.seed = seed
 
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
-	
+	prev_mode = CardsOverlay.is_available()
+	CardsOverlay.toggle(true)
 	if cardsToChooseFrom < cardsToReward:
 		push_error("Cards to Choose from is less than the Cards that get rewarded! force adjusting")
 		cardsToChooseFrom = cardsToReward
@@ -81,10 +82,12 @@ func _on_confirm_button_pressed():
 	$CanvasLayer/Control/Button.show()
 	$CanvasLayer/Control/SkipButton.hide()
 	await $CanvasLayer/Control/Button.pressed
+	CardsOverlay.toggle(prev_mode)
 	finished.emit()
 	queue_free()
 
 
 func _on_skip_button_pressed():
+	CardsOverlay.toggle(prev_mode)
 	finished.emit()
 	queue_free()

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://divw7h5guhbc8"]
+
+[ext_resource type="Script" path="res://systems/ui/cards_overview/cards_overlay.gd" id="1_pqiay"]
+[ext_resource type="PackedScene" uid="uid://crfvyvixlipuo" path="res://systems/ui/cards_overview/cards_overview.tscn" id="2_g6il3"]
+
+[node name="CardsOverlay" type="CanvasLayer"]
+layer = 9
+script = ExtResource("1_pqiay")
+
+[node name="CardsOverview" parent="." instance=ExtResource("2_g6il3")]
+mouse_force_pass_scroll_events = false
+
+[node name="ToggleCardsOverview" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "show
+deck"
+
+[connection signal="pressed" from="ToggleCardsOverview" to="." method="_on_toggle_cards_overview_pressed"]

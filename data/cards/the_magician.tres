@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://c0p160e6m2l0t"]
 
 [ext_resource type="Texture2D" uid="uid://dkqjfttreclq5" path="res://assets/sprites/cards/magician.png" id="1_sfssk"]
-[ext_resource type="Resource" uid="uid://mf6fyaipcxt0" path="res://data/keyword/DrainATK1.tres" id="2_6qnvh"]
+[ext_resource type="Resource" uid="uid://cpxcddsxlgqw6" path="res://data/keyword/DrainATK1.tres" id="2_6qnvh"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u3n2c"]
 [ext_resource type="AudioStream" uid="uid://bdviau71b4rir" path="res://assets/sounds/cards/voices/the_magician.ogg" id="5_davrx"]
 

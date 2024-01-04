@@ -68,7 +68,7 @@ func setup():
 	%HealthCost.text = str(health)
 	
 	for i in range(keywords.size()):
-		%KeyWords.get_child(i).set_icon(keywords[i].id)
+		%KeyWords.get_child(i).set_icon(keywords[i])
 
 
 func _on_mouse_entered():

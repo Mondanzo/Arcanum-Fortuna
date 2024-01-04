@@ -44,6 +44,8 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 			$AudioStreamPlayer.play()
 			visualCard.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
+	%SkipButton.visible = true
+	
 	for c in $CanvasLayer/Control/Cards.get_children():
 		if cardsToChooseFrom == cardsToReward:
 			c.clicked.emit(c)

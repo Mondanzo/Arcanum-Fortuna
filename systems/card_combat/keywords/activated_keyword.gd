@@ -27,4 +27,4 @@ func animate(source, target: CombatCard, icon, params):
 		tween.set_parallel(true)
 		tween.tween_property(icon, "position", icon.origin_position, scale_speed)
 		tween.play()
-		await icon.get_tree().create_timer(scale_speed * 2).timeout
+		await icon.get_tree().create_timer(scale_speed).timeout

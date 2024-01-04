@@ -6,6 +6,7 @@ func _ready():
 	scrollbar.changed.connect(handle_scrollbar_changed)
 	max_scroll_length = scrollbar.max_value
 
+
 func handle_scrollbar_changed(): 
 	if max_scroll_length != scrollbar.max_value: 
 		max_scroll_length = scrollbar.max_value 

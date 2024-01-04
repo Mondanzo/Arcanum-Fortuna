@@ -48,7 +48,7 @@ theme_override_constants/separation = 8
 [node name="Card" type="Control" parent="Container/HBoxContainer"]
 unique_name_in_owner = true
 z_index = 2
-custom_minimum_size = Vector2(164, 257)
+custom_minimum_size = Vector2(246, 385.5)
 layout_mode = 2
 size_flags_vertical = 0
 script = ExtResource("2_22q2n")

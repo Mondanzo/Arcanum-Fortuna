@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="HealthDrain" load_steps=4 format=3 uid="uid://d0hdd7cqtw5dp"]
+[gd_resource type="Resource" script_class="HealthDrain" load_steps=4 format=3 uid="uid://dv667re0bpkvf"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_mweut"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/health_drain.gd" id="2_x23tg"]

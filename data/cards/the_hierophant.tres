@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nwcwr"]
 [ext_resource type="Texture2D" uid="uid://vy0ulm2qucxw" path="res://assets/sprites/cards/hierophant.png" id="1_tibtj"]
-[ext_resource type="Resource" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_7h18q"]
+[ext_resource type="Resource" uid="uid://dkwh5b71djpbr" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_7h18q"]
 [ext_resource type="AudioStream" uid="uid://biapfu538sjhj" path="res://assets/sounds/cards/voices/the_hierophant.ogg" id="3_fhnuy"]
 
 [resource]

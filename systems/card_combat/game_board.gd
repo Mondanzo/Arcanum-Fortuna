@@ -167,7 +167,7 @@ func _on_active_cards_changed(source):
 	for card : CombatCard in active_cards:
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
-				await card.keywords[i].trigger(source, card, {"active_cards": active_cards})
+				await card.keywords[i].trigger(source, card, card.get_node("KeyWords").get_child(i), {"active_cards": active_cards})
 				#card.get_node("KeyWords").get_child(i).scale = Vector2(1.2, 1.2)
 				#await get_tree().create_timer(card.keywords[i].highlight_duration).timeout
 				#card.get_node("KeyWords").get_child(i).scale = Vector2.ONE

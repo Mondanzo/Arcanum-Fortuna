@@ -53,10 +53,7 @@ func process_start_keywords(trigger_source, applicable_cards : Array[CombatCard]
 					continue
 				if trigger.source_phase != get_corresponding_trigger():
 					continue
-				card.get_node("KeyWords").get_child(i).scale = Vector2(1.2, 1.2)
-				await Engine.get_main_loop().create_timer(card.keywords[i].highlight_duration).timeout
-				card.get_node("KeyWords").get_child(i).scale = Vector2.ONE
-				card.keywords[i].trigger(self, card)
+				card.keywords[i].trigger(self, card, card.get_node("KeyWords").get_child(i))
 
 
 func process_end_keywords(trigger_source, applicable_cards : Array[CombatCard]):
@@ -69,7 +66,4 @@ func process_end_keywords(trigger_source, applicable_cards : Array[CombatCard]):
 					continue
 				if trigger.source_phase != get_corresponding_trigger():
 					continue
-				card.get_node("KeyWords").get_child(i).scale = Vector2(1.2, 1.2)
-				await Engine.get_main_loop().create_timer(card.keywords[i].highlight_duration).timeout
-				card.get_node("KeyWords").get_child(i).scale = Vector2.ONE
-				card.keywords[i].trigger(self, card)
+				card.keywords[i].trigger(self, card, card.get_node("KeyWords").get_child(i))

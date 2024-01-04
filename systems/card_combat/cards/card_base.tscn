@@ -166,6 +166,7 @@ anchor_bottom = 1.0
 offset_top = -33.0
 offset_bottom = 0.0
 grow_vertical = 0
+pivot_offset = Vector2(16, 16)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
@@ -183,10 +184,12 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
+pivot_offset = Vector2(16, 16)
 
 [node name="KeywordIcon3" parent="KeyWords" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
+pivot_offset = Vector2(16, 16)
 
 [node name="KeywordIcon4" parent="KeyWords" instance=ExtResource("2_bo1pm")]
 visible = false
@@ -197,6 +200,7 @@ anchor_right = 1.0
 offset_left = -33.0
 offset_right = 0.0
 grow_horizontal = 0
+pivot_offset = Vector2(16, 16)
 
 [node name="ShowCardTooltip" parent="." instance=ExtResource("3_cofgw")]
 unique_name_in_owner = true

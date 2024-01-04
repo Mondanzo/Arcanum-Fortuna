@@ -9,4 +9,3 @@ var id : int
 
 func init(id = 0):
 	self.id = id
-

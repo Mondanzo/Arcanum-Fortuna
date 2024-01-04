@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Consume" load_steps=4 format=3 uid="uid://dkwh5b71djpbr"]
+[gd_resource type="Resource" script_class="Consume" load_steps=4 format=3 uid="uid://bad0llajg2pb5"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_3b2ol"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/consume.gd" id="2_pbs33"]

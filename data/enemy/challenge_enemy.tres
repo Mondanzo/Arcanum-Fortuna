@@ -1,20 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=29 format=3 uid="uid://dun0e4lm0kt3m"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=22 format=3 uid="uid://dun0e4lm0kt3m"]
 
-[ext_resource type="Resource" uid="uid://jevuhv5svmgn" path="res://data/cards/the_fool.tres" id="1_cioi4"]
+[ext_resource type="Resource" uid="uid://bmrjp8nkbwfga" path="res://data/cards/the_emperor.tres" id="1_1bako"]
+[ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_cups.tres" id="2_hh5fo"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="2_moesw"]
-[ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="3_02q1o"]
-[ext_resource type="Resource" uid="uid://ccymn0mj5bdvy" path="res://data/cards/the_sun.tres" id="4_warx5"]
-[ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="5_aafh8"]
-[ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="6_eol4d"]
-[ext_resource type="Resource" uid="uid://dtm8ekuwulx8j" path="res://data/cards/the_lovers.tres" id="7_he3dc"]
-[ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="8_g5vvh"]
-[ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="9_m0sir"]
-[ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="10_tyq3f"]
-[ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="11_shixx"]
-[ext_resource type="Resource" uid="uid://cqicyrydvy03e" path="res://data/cards/the_magician.tres" id="12_ssh2v"]
-[ext_resource type="Resource" uid="uid://deonq2pnkifc2" path="res://data/cards/the_devil.tres" id="13_c2xod"]
-[ext_resource type="Resource" uid="uid://cjas1prwh50gk" path="res://data/cards/the_hanged_man.tres" id="14_4e58n"]
-[ext_resource type="Resource" uid="uid://b4tc66w5jk5ii" path="res://data/cards/the_star.tres" id="15_y3y8g"]
+[ext_resource type="Resource" uid="uid://dct4oouah3euj" path="res://data/cards/the_hierophant.tres" id="2_qdad0"]
+[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="3_p01o5"]
+[ext_resource type="Resource" uid="uid://hmyvbrv26ucs" path="res://data/cards/ace_of_pentacles.tres" id="6_gq7wa"]
+[ext_resource type="Resource" uid="uid://tdphvb38mwry" path="res://data/cards/ace_of_swords.tres" id="7_an2jd"]
+[ext_resource type="Resource" uid="uid://dovqva8c61sxv" path="res://data/cards/the_lovers.tres" id="7_he3dc"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="16_kjdst"]
 [ext_resource type="Script" path="res://data/scripts/enemy_stats.gd" id="17_eu73n"]
 
@@ -142,9 +135,9 @@ max_health = 45
 
 [resource]
 script = ExtResource("16_kjdst")
-level1_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_cioi4"), ExtResource("2_moesw"), ExtResource("3_02q1o"), ExtResource("4_warx5")])
-level2_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("5_aafh8"), ExtResource("6_eol4d"), ExtResource("7_he3dc"), ExtResource("8_g5vvh"), ExtResource("9_m0sir"), ExtResource("10_tyq3f"), ExtResource("11_shixx")])
-level3_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("12_ssh2v"), ExtResource("13_c2xod"), ExtResource("14_4e58n"), ExtResource("15_y3y8g")])
+level1_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_1bako"), ExtResource("2_hh5fo"), ExtResource("3_p01o5")])
+level2_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("2_qdad0"), ExtResource("7_he3dc"), ExtResource("6_gq7wa"), ExtResource("7_an2jd")])
+level3_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("2_moesw")])
 gold_reward = 8
 stats_per_level = Array[ExtResource("17_eu73n")]([SubResource("Resource_qes8a"), SubResource("Resource_g2q6x"), SubResource("Resource_1jykb"), SubResource("Resource_21y0a"), SubResource("Resource_06p36"), SubResource("Resource_ogi7t"), SubResource("Resource_ylaks")])
 level = 0

@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=22 format=3 uid="uid://dun0e4lm0kt3m"]
 
-[ext_resource type="Resource" uid="uid://bmrjp8nkbwfga" path="res://data/cards/the_emperor.tres" id="1_1bako"]
+[ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="1_1bako"]
 [ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_cups.tres" id="2_hh5fo"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="2_moesw"]
-[ext_resource type="Resource" uid="uid://dct4oouah3euj" path="res://data/cards/the_hierophant.tres" id="2_qdad0"]
+[ext_resource type="Resource" uid="uid://wx2v5wr88lof" path="res://data/cards/the_hierophant.tres" id="2_qdad0"]
 [ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="3_p01o5"]
-[ext_resource type="Resource" uid="uid://hmyvbrv26ucs" path="res://data/cards/ace_of_pentacles.tres" id="6_gq7wa"]
-[ext_resource type="Resource" uid="uid://tdphvb38mwry" path="res://data/cards/ace_of_swords.tres" id="7_an2jd"]
-[ext_resource type="Resource" uid="uid://dovqva8c61sxv" path="res://data/cards/the_lovers.tres" id="7_he3dc"]
+[ext_resource type="Resource" uid="uid://dwx1jg5fmwy31" path="res://data/cards/ace_of_pentacles.tres" id="6_gq7wa"]
+[ext_resource type="Resource" uid="uid://dfad3qo3mi3uh" path="res://data/cards/ace_of_swords.tres" id="7_an2jd"]
+[ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="7_he3dc"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="16_kjdst"]
 [ext_resource type="Script" path="res://data/scripts/enemy_stats.gd" id="17_eu73n"]
 

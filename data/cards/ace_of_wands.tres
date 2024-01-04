@@ -1,18 +1,17 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://cyeh4q64sjp70"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://cyeh4q64sjp70"]
 
 [ext_resource type="Texture2D" uid="uid://7ird4qj74aem" path="res://assets/sprites/cards/card_wands_1.png" id="1_jbsjm"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_knul0"]
-[ext_resource type="Resource" uid="uid://4g0i0fjq2dum" path="res://data/keyword/ATK_Drain.tres" id="2_pigtj"]
 
 [resource]
 script = ExtResource("1_knul0")
 name = "Ace of Wands"
 description = "It doesn't do stuff."
 artwork = ExtResource("1_jbsjm")
-cost = 2
-attack = 0
+cost = 1
+attack = 2
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_pigtj")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0

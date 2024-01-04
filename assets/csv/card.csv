@@ -1,0 +1,12 @@
+ResourceName,Name,Cost,Attack,Health,Keywords
+the_magician,The Magician,-2,1,3,DrainATK1
+the_high_priestess,The High Priestess,-2,3,1,DrainHP1
+the_empress,The Empress,-3,2,4,flip
+the_emperor,The Emperor,-3,4,5,
+the_hierophant,The Hierophant,-4,3,2,ConsumeATK1HP1
+the_lovers,The Lovers,-3,2,3,SplitAttack
+the_chariot,The Chariot,-4,2,2,TripleAttack
+ace_of_cups,Ace of Cups,2,1,2,
+ace_of_pentacles,Ace of Pentacles,2,2,1,
+ace_of_wands,Ace of Wands,1,2,2,
+ace_of_swords,Ace of Swords,1,2,2,

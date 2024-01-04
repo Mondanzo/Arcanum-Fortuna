@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://c0p160e6m2l0t"]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/cards/magician.png" id="1_sfssk"]
+[ext_resource type="Texture2D" uid="uid://dkqjfttreclq5" path="res://assets/sprites/cards/magician.png" id="1_sfssk"]
+[ext_resource type="Resource" uid="uid://mf6fyaipcxt0" path="res://data/keyword/DrainATK1.tres" id="2_6qnvh"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u3n2c"]
-[ext_resource type="AudioStream" path="res://assets/sounds/cards/voices/the_magician.ogg" id="5_davrx"]
+[ext_resource type="AudioStream" uid="uid://bdviau71b4rir" path="res://assets/sounds/cards/voices/the_magician.ogg" id="5_davrx"]
 
 [resource]
 script = ExtResource("2_u3n2c")
@@ -10,9 +11,9 @@ name = "The Magician"
 description = "\"May you find truth in transformation.\""
 artwork = ExtResource("1_sfssk")
 cost = -2
-attack = 4
+attack = 1
 health = 3
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_6qnvh")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

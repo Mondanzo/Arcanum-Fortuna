@@ -8,9 +8,9 @@ var base_decription := ""
 
 
 func init(id = 4):
-	if description.count('%d') == 2:
+	if description.count('%d') == 1:
 		base_decription = description
-		description = description % [health_gain, 0]
+		description = description % health_gain
 	super.init(id)
 
 func trigger(source, target, icon, params={}):
@@ -34,4 +34,6 @@ func trigger(source, target, icon, params={}):
 	if enable_debug_print:
 		print(str(target.base_health) + " => " + str(target.health))
 	target.update_texts()
+	if base_decription.count('%d') < 2:
+		base_decription = base_decription + " (%d)"
 	description = base_decription % [health_gain, hit_count]

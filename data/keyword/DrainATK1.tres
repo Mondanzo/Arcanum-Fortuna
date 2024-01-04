@@ -15,6 +15,6 @@ combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/comba
 triggers = 4
 scale_speed = 0.6
 title = "ATK Drain"
-description = "This gains %d attack for each card on the board with a positve karma value. (%d)"
+description = "This gains %d attack for each card on the board with a positve karma value."
 icon = SubResource("AtlasTexture_1o6as")
 highlight_duration = 0.5

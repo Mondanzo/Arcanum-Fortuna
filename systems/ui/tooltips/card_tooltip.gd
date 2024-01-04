@@ -10,7 +10,7 @@ func setup(data : CardData):
 		return
 	%CardName.text = data.name
 	%CardDescription.text = data.description
-	%CardArtwork.texture = data.artwork
+	%Card.card_data = data
 	var added_keywords = []
 	for keyword in data.keywords:
 		if not keyword.get_script() in added_keywords:

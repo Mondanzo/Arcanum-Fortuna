@@ -201,6 +201,7 @@ grow_horizontal = 0
 [node name="ShowCardTooltip" parent="." instance=ExtResource("3_cofgw")]
 unique_name_in_owner = true
 layout_mode = 1
+tooltip_template = "res://systems/ui/tooltips/card_tooltip.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Voices"

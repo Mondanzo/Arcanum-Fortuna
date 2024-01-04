@@ -1,8 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7qbbf3idp0cf"]
+[gd_scene load_steps=12 format=3 uid="uid://c7qbbf3idp0cf"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
 [ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://assets/sprites/cards/chariot.png" id="1_nnqwu"]
+[ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="2_22q2n"]
 [ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="3_ewx55"]
+[ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="3_yndjn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
+size = Vector2(200, 100)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fh8de"]
 font_size = 32
@@ -40,6 +45,255 @@ custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_constants/separation = 8
 
+[node name="Card" type="Control" parent="Container/HBoxContainer"]
+unique_name_in_owner = true
+z_index = 2
+custom_minimum_size = Vector2(164, 257)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("2_22q2n")
+
+[node name="Artwork" type="TextureRect" parent="Container/HBoxContainer/Card"]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = SubResource("PlaceholderTexture2D_hmwet")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/HBoxContainer/Card"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="ColorRect" parent="Container/HBoxContainer/Card/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0.588235, 0.588235, 0.588235, 1)
+
+[node name="Name" type="Label" parent="Container/HBoxContainer/Card/VBoxContainer/Name"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type" type="ColorRect" parent="Container/HBoxContainer/Card/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 8
+color = Color(0.32549, 0.631373, 0.768627, 1)
+
+[node name="Label" type="Label" parent="Container/HBoxContainer/Card/VBoxContainer/Type"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Type Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cost" type="ColorRect" parent="Container/HBoxContainer/Card"]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+color = Color(0.47451, 0.207843, 0.592157, 1)
+
+[node name="KarmaCost" type="Label" parent="Container/HBoxContainer/Card/Cost"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "-100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KarmaCost2" type="Label" parent="Container/HBoxContainer/Card/Cost"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 1.0
+offset_right = 60.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 18
+text = "Karma"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="ColorRect" parent="Container/HBoxContainer/Card"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 45.0
+grow_vertical = 0
+color = Color(0.909804, 0.541176, 0.0745098, 0.941176)
+
+[node name="AttackCost" type="Label" parent="Container/HBoxContainer/Card/Attack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttackCost2" type="Label" parent="Container/HBoxContainer/Card/Attack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -34.0
+offset_right = -1.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 22
+text = "ATK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="ColorRect" parent="Container/HBoxContainer/Card"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.607843, 0.172549, 0.203922, 0.941176)
+
+[node name="HealthCost" type="Label" parent="Container/HBoxContainer/Card/Health"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthCost2" type="Label" parent="Container/HBoxContainer/Card/Health"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -34.0
+offset_right = -1.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 21
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyWords" type="Control" parent="Container/HBoxContainer/Card"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -66.0
+offset_right = 33.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(33, 33)
+
+[node name="KeywordIcon" parent="Container/HBoxContainer/Card/KeyWords" instance=ExtResource("3_yndjn")]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+offset_bottom = 0.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="KeywordIcon2" parent="Container/HBoxContainer/Card/KeyWords" instance=ExtResource("3_yndjn")]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="KeywordIcon3" parent="Container/HBoxContainer/Card/KeyWords" instance=ExtResource("3_yndjn")]
+visible = false
+layout_mode = 1
+
+[node name="KeywordIcon4" parent="Container/HBoxContainer/Card/KeyWords" instance=ExtResource("3_yndjn")]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_right = 0.0
+grow_horizontal = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Container/HBoxContainer/Card"]
+bus = &"Voices"
+
 [node name="CardArtwork" type="TextureRect" parent="Container/HBoxContainer"]
 unique_name_in_owner = true
 visible = false
@@ -53,6 +307,7 @@ stretch_mode = 4
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 alignment = 1
 
 [node name="CardName" type="Label" parent="Container/HBoxContainer/CardInformation"]
@@ -91,3 +346,6 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[connection signal="mouse_entered" from="Container/HBoxContainer/Card" to="Container/HBoxContainer/Card" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Container/HBoxContainer/Card" to="Container/HBoxContainer/Card" method="_on_mouse_exited"]

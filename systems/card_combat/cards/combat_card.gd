@@ -158,7 +158,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 		await get_tree().process_frame
 		for i in range(keywords.size()):
 			if keywords[i] is ActivatedKeyword and keywords[i].triggers & 1:
-				keywords[i].trigger(target, self, $KeyWords.get_child(i))
+				await keywords[i].trigger(target, self, $KeyWords.get_child(i))
 	return was_lethal
 
 

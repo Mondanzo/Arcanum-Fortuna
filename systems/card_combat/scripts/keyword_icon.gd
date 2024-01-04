@@ -6,6 +6,13 @@ extends TextureRect
 @export var descriptions : Array[KeywordDescription]
 @export var generate_tooltip := false
 
+var origin_position
+
+
+func _ready():
+	origin_position = position
+
+
 func set_icon(id: int):
 	texture = texture.duplicate()
 	if id == 0:

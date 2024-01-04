@@ -19,7 +19,7 @@ func _on_karma_decreased(source):
 	for card : CombatCard in combat.gameBoard.get_active_cards():
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 2:
-				card.keywords[i].trigger(source, card, card.get_node("KeyWords").get_child(i))
+				await card.keywords[i].trigger(source, card, card.get_node("KeyWords").get_child(i))
 
 func process_effect() -> ExitState:
 	# Create Blob

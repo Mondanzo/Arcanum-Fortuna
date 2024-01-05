@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=6 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
+[ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="2_tfb87"]
 [ext_resource type="PackedScene" uid="uid://c21gcj8wgm736" path="res://systems/ui/tooltips/show_card_tooltip.tscn" id="3_cofgw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
@@ -74,11 +75,11 @@ text = "Type Placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cost" type="ColorRect" parent="."]
+[node name="Cost" type="TextureRect" parent="."]
 layout_mode = 1
 offset_right = 35.0
 offset_bottom = 35.0
-color = Color(0.47451, 0.207843, 0.592157, 1)
+texture = ExtResource("2_tfb87")
 
 [node name="KarmaCost" type="Label" parent="Cost"]
 unique_name_in_owner = true

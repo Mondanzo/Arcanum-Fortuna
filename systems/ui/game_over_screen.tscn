@@ -71,7 +71,6 @@ text = "Go Back (Main Menu)"
 
 [node name="show-in-web" type="Node" parent="Panel/btn_main_menu2"]
 script = ExtResource("2_28eii")
-show_or_hide = 0
 
 [node name="btn_restart" type="Button" parent="Panel"]
 custom_minimum_size = Vector2(700, 0)

@@ -4,6 +4,7 @@ extends ActivatedKeyword
 @export var health_gain = 1
 @export var enable_debug_print = false
 
+var previous_health_gained := 0
 var base_decription := ""
 
 
@@ -18,7 +19,6 @@ func trigger(source, target, icon, params={}):
 	if not target is CombatCard:
 		push_error("Cannot apply HealthDrain. Invalid target ", target, ".")
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered Healthdrain." % [target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
-	target.health = target.base_health
 	if enable_debug_print:
 		print("Health Drain triggered on ", target.card_name)
 	var hit_count = 0
@@ -27,12 +27,16 @@ func trigger(source, target, icon, params={}):
 			print("Card " + card.card_name + " costs " + str(card.cost))
 		if card.cost > 0:
 			hit_count += 1
-			var print_str = str(target.attack)
-			target.health += health_gain
-			if enable_debug_print:
-				print(print_str + " + " + str(health_gain) + " = " + str(target.health))
+	var new_health_gained = hit_count * health_gain
+	var gain_difference = new_health_gained - previous_health_gained
 	if enable_debug_print:
-		print(str(target.base_health) + " => " + str(target.health))
+		print("Card health gain changed from " + str(previous_health_gained) \
+				+ " to " + str(new_health_gained) + ". Health: " + str(target.health) + \
+				" => " + str(target.health + gain_difference))
+	target.health += gain_difference
+	if target.health <= 0:
+		target.health = 1
+	previous_health_gained = new_health_gained
 	target.update_texts()
 	if base_decription.count('%d') < 2:
 		base_decription = base_decription + " (%d)"

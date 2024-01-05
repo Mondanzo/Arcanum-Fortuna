@@ -34,6 +34,6 @@ func trigger(source, target, icon, params={}):
 	if enable_debug_print:
 		print(str(target.base_attack) + " => " + str(target.attack))
 	target.update_texts()
-	if description.count('%d') < 2:
-		description += " (%d)"
+	if base_decription.count('%d') < 2:
+		base_decription += " (%d)"
 	description = base_decription % [attack_gain, hit_count]

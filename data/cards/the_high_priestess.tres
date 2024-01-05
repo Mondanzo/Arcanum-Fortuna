@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://bdbn32r8x8g4v"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://bdbn32r8x8g4v"]
 
 [ext_resource type="Texture2D" uid="uid://b14l0m0wd4e7" path="res://assets/sprites/cards/high_priestess.png" id="1_b4wyt"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_ako5p"]
-[ext_resource type="Resource" uid="uid://c1g8kv3mu0t1d" path="res://data/keyword/DrainHP1.tres" id="2_aye1w"]
+[ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/flip.tres" id="2_g8a2k"]
+[ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="3_pjkpo"]
 [ext_resource type="AudioStream" uid="uid://bqbc1gd2th44n" path="res://assets/sounds/cards/voices/the_high_priestess.ogg" id="4_es0g3"]
 
 [resource]
@@ -10,10 +11,10 @@ script = ExtResource("2_ako5p")
 name = "The High Priestess"
 description = "\"May your spirit be free.\""
 artwork = ExtResource("1_b4wyt")
-cost = -2
+cost = -3
 attack = 3
 health = 1
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_aye1w")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_g8a2k"), ExtResource("3_pjkpo")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

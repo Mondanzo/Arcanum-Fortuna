@@ -74,6 +74,8 @@ func _on_confirm_filter_pressed():
 func refresh():
 	var options = %FilterOptions.get_filter_options()
 	show_cards(filter_cards(player_data.cardStack, options))
+	%HealthCost.text = str(player_data.health)
+	%MoneyAmount.text = str(player_data.currency)
 
 
 func _on_btn_karma_pressed():

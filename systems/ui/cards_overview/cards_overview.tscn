@@ -1,17 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://crfvyvixlipuo"]
+[gd_scene load_steps=19 format=3 uid="uid://crfvyvixlipuo"]
 
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_lynxf"]
 [ext_resource type="Script" path="res://systems/ui/cards_overview/cards_overview.gd" id="1_wkcul"]
-[ext_resource type="Resource" path="res://data/cards/the_lovers.tres" id="2_le52s"]
+[ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="2_le52s"]
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="3_qwvrm"]
-[ext_resource type="Resource" uid="uid://jevuhv5svmgn" path="res://data/cards/the_fool.tres" id="4_afsyy"]
-[ext_resource type="Resource" path="res://data/cards/the_empress.tres" id="5_llrge"]
+[ext_resource type="Resource" uid="uid://knsiayub4ihe" path="res://data/cards/the_fool.tres" id="4_afsyy"]
+[ext_resource type="Resource" uid="uid://bhr4saiaj41hf" path="res://data/cards/the_empress.tres" id="5_llrge"]
 [ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="6_vkrr0"]
 [ext_resource type="Resource" uid="uid://dpspidmqwqebx" path="res://data/cards/the_world.tres" id="7_tsd3m"]
 [ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="8_h3ocv"]
 [ext_resource type="Resource" uid="uid://deonq2pnkifc2" path="res://data/cards/the_devil.tres" id="9_rfiq2"]
 [ext_resource type="Script" path="res://data/scripts/player_data.gd" id="10_xe2w8"]
 [ext_resource type="Script" path="res://systems/ui/cards_overview/filter_options_menu.gd" id="11_wj856"]
+[ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="12_s4hu7"]
 
 [sub_resource type="Resource" id="Resource_b8jln"]
 script = ExtResource("10_xe2w8")
@@ -24,6 +25,16 @@ draw_rng_seed = 1337
 currency = 0
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_kyuw6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk8i6"]
+bg_color = Color(0.745098, 0.662745, 0, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_53osk"]
+font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8ble"]
 
@@ -92,6 +103,64 @@ unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "ascending"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Your Health:  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="TextureRect" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("12_s4hu7")
+
+[node name="HealthCost" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/Health"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "    Your Coins:  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Money" type="Panel" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_xk8i6")
+
+[node name="MoneyAmount" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/Money"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 30.0
+offset_bottom = 33.0
+text = "69
+"
+label_settings = SubResource("LabelSettings_53osk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

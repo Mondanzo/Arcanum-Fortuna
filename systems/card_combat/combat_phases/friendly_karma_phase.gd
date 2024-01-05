@@ -84,7 +84,7 @@ func process_effect() -> ExitState:
 	t.play()
 	await combat.get_tree().create_timer(karma_delay).timeout
 	combat.player.modify_karma(blob.count)
-	blob.get_tree().create_timer(0.1).timeout.connect(func(): blob.queue_free())
+	blob.delete()
 	
 	if await combat.player.process_karma_overflow():
 		combat.finished.emit(combat.player.health)

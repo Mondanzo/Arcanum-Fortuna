@@ -34,6 +34,7 @@ karma_blob = ExtResource("5_11qft")
 small_blob = ExtResource("7_vptnu")
 karma_duration = 2.3
 karma_delay = 0.6
+blob_move = 20
 
 [sub_resource type="Resource" id="Resource_d62ed"]
 script = ExtResource("5_lslbq")
@@ -101,10 +102,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.833
-offset_bottom = -75.6401
+offset_top = 51.0
+offset_bottom = 51.36
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 91
 alignment = 1
 script = ExtResource("2_2jjg6")
 combat_card_prefab = ExtResource("3_1hhbj")
@@ -296,11 +298,14 @@ theme_override_font_sizes/font_size = 19
 [node name="BattleLog" parent="." instance=ExtResource("16_kecnr")]
 layout_mode = 1
 anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 12.0
 offset_top = 11.0
 offset_right = -1577.0
 offset_bottom = -1037.0
 grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]

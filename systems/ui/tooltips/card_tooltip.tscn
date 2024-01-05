@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7qbbf3idp0cf"]
+[gd_scene load_steps=15 format=3 uid="uid://c7qbbf3idp0cf"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
 [ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://assets/sprites/cards/chariot.png" id="1_nnqwu"]
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="2_22q2n"]
 [ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="3_ewx55"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="3_yndjn"]
+[ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="4_dw4cm"]
+[ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="5_5o7m8"]
+[ext_resource type="Texture2D" uid="uid://c3mveorhm0h1n" path="res://assets/ui/icons/atk_placeholder.png" id="6_pte6t"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
 size = Vector2(200, 100)
@@ -118,131 +121,6 @@ text = "Type Placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cost" type="ColorRect" parent="Container/HBoxContainer/Control/Card"]
-layout_mode = 0
-offset_right = 35.0
-offset_bottom = 35.0
-color = Color(0.47451, 0.207843, 0.592157, 1)
-
-[node name="KarmaCost" type="Label" parent="Container/HBoxContainer/Control/Card/Cost"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 18
-text = "-100"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="KarmaCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Cost"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 37.0
-offset_top = 1.0
-offset_right = 60.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 18
-text = "Karma"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Attack" type="ColorRect" parent="Container/HBoxContainer/Control/Card"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -45.0
-offset_right = 45.0
-grow_vertical = 0
-color = Color(0.909804, 0.541176, 0.0745098, 0.941176)
-
-[node name="AttackCost" type="Label" parent="Container/HBoxContainer/Control/Card/Attack"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 22
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AttackCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Attack"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -34.0
-offset_right = -1.0
-offset_bottom = -34.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 22
-text = "ATK"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Health" type="ColorRect" parent="Container/HBoxContainer/Control/Card"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-color = Color(0.607843, 0.172549, 0.203922, 0.941176)
-
-[node name="HealthCost" type="Label" parent="Container/HBoxContainer/Control/Card/Health"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 21
-text = "100"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HealthCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Health"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -34.0
-offset_right = -1.0
-offset_bottom = -34.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 21
-text = "HP"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="KeyWords" type="Control" parent="Container/HBoxContainer/Control/Card"]
 unique_name_in_owner = true
 visible = false
@@ -304,6 +182,127 @@ grow_horizontal = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Container/HBoxContainer/Control/Card"]
 bus = &"Voices"
+
+[node name="Cost" type="TextureRect" parent="Container/HBoxContainer/Control/Card"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.505
+offset_top = -58.0
+offset_right = 65.505
+grow_vertical = 0
+texture = ExtResource("4_dw4cm")
+
+[node name="KarmaCost" type="Label" parent="Container/HBoxContainer/Control/Card/Cost"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "-100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KarmaCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Cost"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 51.8283
+offset_top = 1.0
+offset_right = 53.8283
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 21
+text = "Karma"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="TextureRect" parent="Container/HBoxContainer/Control/Card"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 46.455
+offset_top = -24.3
+offset_right = 110.455
+offset_bottom = 36.7
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_5o7m8")
+
+[node name="HealthCost" type="Label" parent="Container/HBoxContainer/Control/Card/Health"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Health"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.681267
+offset_top = 45.375
+offset_right = 0.681259
+offset_bottom = 45.375
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 21
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="TextureRect" parent="Container/HBoxContainer/Control/Card"]
+offset_top = -41.755
+offset_right = 64.0
+offset_bottom = 53.245
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_pte6t")
+
+[node name="AttackCost" type="Label" parent="Container/HBoxContainer/Control/Card/Attack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttackCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Attack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.985419
+offset_top = 51.2083
+offset_right = -0.985424
+offset_bottom = 51.2083
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 21
+text = "ATK"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CardArtwork" type="TextureRect" parent="Container/HBoxContainer"]
 unique_name_in_owner = true

@@ -108,6 +108,8 @@ func try_move_enemy_card_to_front(tile_idx):
 		return false
 	await enemy_tiles_back.get_child(tile_idx).get_child(0).animate_move(get_enemy_tile_pos(1, tile_idx))
 	enemy_tiles_back.get_child(tile_idx).get_child(0).reparent(enemy_tiles_front.get_child(tile_idx))
+	await get_tree().process_frame
+	_on_active_cards_changed(enemy_tiles_front.get_child(tile_idx).get_child(0))
 	return true
 	
 func place_enemy_card_back(cardData : CardData, tile_idx) -> bool:

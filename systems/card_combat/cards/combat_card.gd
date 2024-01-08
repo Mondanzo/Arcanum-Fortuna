@@ -39,7 +39,7 @@ func make_enemy():
 
 
 func flip():
-	%Artwork.flip_v = !%Artwork.flip_v
+	%Artwork.flip_h = !%Artwork.flip_h
 	var flipped_name = ""
 	for c in card_name:
 		flipped_name = flipped_name.insert(0, c)

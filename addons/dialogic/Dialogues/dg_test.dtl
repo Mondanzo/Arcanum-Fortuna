@@ -1,8 +1,8 @@
-join the_fool 1
+join the_fool 0
 the_fool: hello. test. 1, 2, 3. print hello world or whatever
 the_fool (rose1): hmm.
 [wait time="0.3"]
-join the_dog 3
+join the_dog 4
 the_dog: homie, you good?
 - yeah
 	the_dog: we can change that
@@ -12,6 +12,6 @@ the_fool (rose1): crigne
 the_fool (rose2): ...
 leave the_dog
 the_fool (awoken): e
-join the_empress 3
+join the_empress 4
 the_empress (default): bingus
 [end_timeline]

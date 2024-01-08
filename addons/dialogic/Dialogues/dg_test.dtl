@@ -12,6 +12,6 @@ the_fool (rose1): crigne
 the_fool (rose2): ...
 leave the_dog
 the_fool (awoken): e
-join the_empress 4
-the_empress (default): bingus
+join the_emperor (default_2) 4
+the_emperor (default_2): bingus
 [end_timeline]

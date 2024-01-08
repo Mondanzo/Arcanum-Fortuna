@@ -13,7 +13,7 @@
 "display_name": "The Emperor",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(-150, 200),
 "portraits": {
 "default": {
 "export_overrides": {
@@ -43,5 +43,5 @@
 "scene": ""
 }
 },
-"scale": 1.0
+"scale": 1.3
 }

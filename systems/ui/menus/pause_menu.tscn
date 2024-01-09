@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://7s6ukggf8o7q"]
+
+[ext_resource type="Script" path="res://systems/ui/menus/pause_menu.gd" id="1_qdilc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fy8l"]
+bg_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 50
+script = ExtResource("1_qdilc")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fy8l")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "The game is PAUSED"
+
+[node name="btnContinue" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="btnBackToMenu" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back to Menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/btnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/btnBackToMenu" to="." method="_on_btn_back_to_menu_pressed"]

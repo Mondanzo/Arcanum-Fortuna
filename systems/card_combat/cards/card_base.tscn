@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=8 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
+[ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://assets/sprites/cards/emperor.png" id="2_pcclt"]
+[ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="2_tfb87"]
+[ext_resource type="Texture2D" uid="uid://c3mveorhm0h1n" path="res://assets/ui/icons/atk_placeholder.png" id="3_5dpjl"]
 [ext_resource type="PackedScene" uid="uid://c21gcj8wgm736" path="res://systems/ui/tooltips/show_card_tooltip.tscn" id="3_cofgw"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
-size = Vector2(200, 100)
+[ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="4_y50ar"]
 
 [node name="Card" type="Control"]
 z_index = 2
@@ -19,7 +20,7 @@ script = ExtResource("1_04ic4")
 
 [node name="Artwork" type="TextureRect" parent="."]
 unique_name_in_owner = true
-texture_filter = 2
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-texture = SubResource("PlaceholderTexture2D_hmwet")
+texture = ExtResource("2_pcclt")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -74,11 +75,16 @@ text = "Type Placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cost" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 35.0
-offset_bottom = 35.0
-color = Color(0.47451, 0.207843, 0.592157, 1)
+[node name="Cost" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.505
+offset_top = -58.0
+offset_right = 65.505
+grow_vertical = 0
+texture = ExtResource("2_tfb87")
 
 [node name="KarmaCost" type="Label" parent="Cost"]
 unique_name_in_owner = true
@@ -93,41 +99,15 @@ text = "-100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Attack" type="ColorRect" parent="."]
+[node name="Health" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -45.0
-offset_right = 45.0
-grow_vertical = 0
-color = Color(0.909804, 0.541176, 0.0745098, 0.941176)
-
-[node name="AttackCost" type="Label" parent="Attack"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 22
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Health" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-color = Color(0.607843, 0.172549, 0.203922, 0.941176)
+anchors_preset = -1
+offset_left = 46.455
+offset_top = -24.3
+offset_right = 110.455
+offset_bottom = 36.7
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_y50ar")
 
 [node name="HealthCost" type="Label" parent="Health"]
 unique_name_in_owner = true
@@ -139,6 +119,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 21
 text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -41.755
+offset_right = 64.0
+offset_bottom = 53.245
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_5dpjl")
+
+[node name="AttackCost" type="Label" parent="Attack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -166,6 +167,7 @@ anchor_bottom = 1.0
 offset_top = -33.0
 offset_bottom = 0.0
 grow_vertical = 0
+pivot_offset = Vector2(16, 16)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
@@ -183,10 +185,12 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
+pivot_offset = Vector2(16, 16)
 
 [node name="KeywordIcon3" parent="KeyWords" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
+pivot_offset = Vector2(16, 16)
 
 [node name="KeywordIcon4" parent="KeyWords" instance=ExtResource("2_bo1pm")]
 visible = false
@@ -197,10 +201,12 @@ anchor_right = 1.0
 offset_left = -33.0
 offset_right = 0.0
 grow_horizontal = 0
+pivot_offset = Vector2(16, 16)
 
 [node name="ShowCardTooltip" parent="." instance=ExtResource("3_cofgw")]
 unique_name_in_owner = true
 layout_mode = 1
+tooltip_template = "res://systems/ui/tooltips/card_tooltip.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Voices"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://hmyvbrv26ucs"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dwx1jg5fmwy31"]
 
 [ext_resource type="Texture2D" uid="uid://njoowroeki2j" path="res://assets/sprites/cards/card_coins_1.png" id="1_ax5vj"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_v2k8c"]
@@ -6,12 +6,12 @@
 [resource]
 script = ExtResource("1_v2k8c")
 name = "Ace of Pentacles"
-description = "It doesn't do stuff."
+description = "\"May you find happiness in abundance.\""
 artwork = ExtResource("1_ax5vj")
 cost = 2
 attack = 2
 health = 1
 keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
-spawn_frequency = 0
+spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

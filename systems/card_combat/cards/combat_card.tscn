@@ -6,6 +6,7 @@
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
 script = ExtResource("1_3lxv2")
+is_auto_flip = true
 attack_speed = 0.2
 attack_rewind = 0.3
 attack_delay = 0.5

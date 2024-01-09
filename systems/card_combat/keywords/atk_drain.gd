@@ -8,12 +8,13 @@ var base_decription := ""
 
 
 func init(id = 4):
-	if description.count('%d') == 2:
+	if description.count('%d') == 1:
 		base_decription = description
-		description = description % [attack_gain, 0]
+		description = description % attack_gain
 	super.init(id)
 
-func trigger(source, target, params={}):
+func trigger(source, target, icon, params={}):
+	await super(source, target, icon, params)
 	if not target is CombatCard:
 		push_error("Cannot apply ATKDrain. Invalid target ", target, ".")
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered ATKdrain." % [target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
@@ -33,4 +34,6 @@ func trigger(source, target, params={}):
 	if enable_debug_print:
 		print(str(target.base_attack) + " => " + str(target.attack))
 	target.update_texts()
+	if base_decription.count('%d') < 2:
+		base_decription += " (%d)"
 	description = base_decription % [attack_gain, hit_count]

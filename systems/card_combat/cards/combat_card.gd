@@ -1,5 +1,6 @@
 class_name CombatCard extends Card
 
+
 ## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
 @export var is_auto_flip = true
 
@@ -38,7 +39,7 @@ func make_enemy():
 
 
 func flip():
-	%Artwork.flip_v = !%Artwork.flip_v
+	%Artwork.flip_h = !%Artwork.flip_h
 	var flipped_name = ""
 	for c in card_name:
 		flipped_name = flipped_name.insert(0, c)
@@ -57,9 +58,6 @@ func get_target_offsets():
 	placed_position = global_position
 	for i in range(keywords.size()):
 		if not keywords[i] is ActivatedKeyword and keywords[i].has_method("get_new_targets"):
-			$KeyWords.get_child(i).scale = Vector2(1.2, 1.2)
-			await get_tree().create_timer(keywords[i].highlight_duration).timeout
-			$KeyWords.get_child(i).scale = Vector2.ONE
 			target_offsets = keywords[i].get_new_targets(target_offsets)
 	return target_offsets
 
@@ -160,10 +158,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 		await get_tree().process_frame
 		for i in range(keywords.size()):
 			if keywords[i] is ActivatedKeyword and keywords[i].triggers & 1:
-				keywords[i].trigger(target, self)
-				$KeyWords.get_child(i).scale = Vector2(1.2, 1.2)
-				await get_tree().create_timer(keywords[i].highlight_duration).timeout
-				$KeyWords.get_child(i).scale = Vector2.ONE
+				await keywords[i].trigger(target, self, $KeyWords.get_child(i))
 	return was_lethal
 
 

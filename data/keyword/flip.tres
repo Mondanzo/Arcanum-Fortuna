@@ -15,8 +15,11 @@ region = Rect2(66, 0, 66, 66)
 
 [resource]
 script = ExtResource("1_ekhnk")
+rotation_duration = 0.8
+icon_rotation = 1.0
 combat_phase_triggers = Array[ExtResource("1_nhvvg")]([SubResource("Resource_74j2r")])
 triggers = 0
+scale_speed = 0.6
 title = "Flip"
 description = "A card with this keyword will swap its current attack and health at the end of the turn."
 icon = SubResource("AtlasTexture_hi8d7")

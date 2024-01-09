@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtsq8f16xru85"]
+
+[ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_igsnp"]
+
+[node name="OverviewCard" instance=ExtResource("1_igsnp")]

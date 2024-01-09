@@ -6,8 +6,10 @@ signal finished(remaining_health : int)
 
 var player_data : PlayerData
 
+
 ## Each turn consits of the phases in the order they appear here
 @export var phases : Array[CombatPhase] = []
+
 ## Will be used as the intital phase
 @export var phase_idx = 0
 @export var phase_end_delay = 0.5
@@ -122,15 +124,16 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 func move_enemies():
 	for y in range(enemy_board.size() - 1):
 		for x in range(enemy_board[y].size()):
-			if (enemy_board[y][x] == null &&  enemy_board[y+1][x] != null):
-				if y == 1:
-					gameBoard.place_enemy_card_back(enemy_board[y+1][x], x)
-				elif y == 0:
-					if await gameBoard.try_move_enemy_card_to_front(x):
-						enemy_board[y+1][x] = null
-					continue
-				enemy_board[y][x] = enemy_board[y+1][x]
-				enemy_board[y+1][x] = null
+			if (enemy_board[y][x] != null || enemy_board[y+1][x] == null):
+				continue
+			if y == 1:
+				gameBoard.place_enemy_card_back(enemy_board[y+1][x], x)
+			elif y == 0:
+				if await gameBoard.try_move_enemy_card_to_front(x):
+					enemy_board[y+1][x] = null
+				continue
+			enemy_board[y][x] = enemy_board[y+1][x]
+			enemy_board[y+1][x] = null
 
 
 func update_enemy_card_placement():

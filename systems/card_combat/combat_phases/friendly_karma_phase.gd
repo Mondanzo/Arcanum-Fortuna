@@ -5,6 +5,7 @@ extends CombatPhase
 @export var small_blob = preload("res://assets/vfx/karma_particle.tscn")
 @export var karma_duration := 2.3
 @export var karma_delay := 0.6
+@export var blob_move := 20
 
 
 static func get_class_name():
@@ -19,12 +20,23 @@ func _on_karma_decreased(source):
 	for card : CombatCard in combat.gameBoard.get_active_cards():
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 2:
-				card.get_node("KeyWords").get_child(i).scale = Vector2(1.2, 1.2)
-				await Engine.get_main_loop().create_timer(card.keywords[i].highlight_duration).timeout
-				card.get_node("KeyWords").get_child(i).scale = Vector2.ONE
-				card.keywords[i].trigger(source, card)
+				await card.keywords[i].trigger(source, card, card.get_node("KeyWords").get_child(i))
+
+func get_relevant_cards():
+	return combat.gameBoard.get_friendly_cards().filter(
+			func(card: Card):
+				return card.cost != 0
+				)
+
+func get_karma_modify_target():
+	return combat.player
 
 func process_effect() -> ExitState:
+	var relevant_cards = get_relevant_cards()
+	if len(relevant_cards) <= 0:
+		return ExitState.DEFAULT
+	
+	var target = get_karma_modify_target()
 	# Create Blob
 	var blob = karma_blob.instantiate()
 	combat.gameBoard.add_child(blob)
@@ -32,8 +44,8 @@ func process_effect() -> ExitState:
 	
 	var total_wait_count = 0.0
 
-	for card : CombatCard in combat.gameBoard.get_friendly_cards():
-		var health_slot = await card.animate_karma(combat.player)
+	for card : CombatCard in relevant_cards:
+		var health_slot = await card.animate_karma(target)
 		var small_pearl = small_blob.instantiate()
 		combat.gameBoard.add_child(small_pearl)
 		small_pearl.global_position = health_slot.global_position
@@ -44,13 +56,13 @@ func process_effect() -> ExitState:
 		tween.set_ease(Tween.EASE_IN)
 		tween.set_trans(Tween.TRANS_EXPO)
 		
-		tween.tween_property(small_pearl, "global_position", blob.global_position, karma_delay)
+		tween.tween_property(small_pearl, "global_position", blob.original_position, karma_delay)
 		
 		tween.finished.connect(func():
 			blob.update_number(card.cost)
 			small_pearl.emitting = false
 			small_pearl.queue_free()
-			blob.global_position += card.global_position.direction_to(blob.global_position) * 20
+			blob.global_position += health_slot.global_position.direction_to(blob.original_position) * blob_move * abs(card.cost)
 		)
 		
 		tween.play()
@@ -73,16 +85,16 @@ func process_effect() -> ExitState:
 	t.set_ease(Tween.EASE_IN)
 	t.set_trans(Tween.TRANS_EXPO)
 	
-	t.tween_property(blob, "global_position", combat.player.get_node("%Karma").global_position + Vector2.DOWN * 30, karma_delay)
+	t.tween_property(blob, "global_position", target.get_node("%Karma").global_position + Vector2.DOWN * 30, karma_delay)
 	t.tween_property(blob, "scale", Vector2.ZERO, karma_delay)
 	
 	t.play()
 	await combat.get_tree().create_timer(karma_delay).timeout
-	combat.player.modify_karma(blob.count)
-	blob.get_tree().create_timer(0.1).timeout.connect(func(): blob.queue_free())
+	target.modify_karma(blob.count)
+	blob.delete()
 	
-	if await combat.player.process_karma_overflow():
-		combat.finished.emit(combat.player.health)
+	if await target.process_karma_overflow():
+		combat.finished.emit(target.health)
 		return ExitState.ABORT
 	return ExitState.DEFAULT
 

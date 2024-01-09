@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx7fy3hybiabj"]
+[gd_scene load_steps=8 format=3 uid="uid://c3n1r6lr76psq"]
 
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_quohb"]
 [ext_resource type="Script" path="res://systems/shop/shop_card.gd" id="2_xx82y"]
@@ -31,7 +31,6 @@ corner_radius_bottom_right = 64
 corner_radius_bottom_left = 64
 
 [node name="ShopCard" instance=ExtResource("1_quohb")]
-scale = Vector2(1.28, 1.28)
 script = ExtResource("2_xx82y")
 discount = 0.3
 

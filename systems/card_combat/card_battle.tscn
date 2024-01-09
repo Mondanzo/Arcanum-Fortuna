@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=36 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="7_g0vvg"]
 [ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="7_vptnu"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="8_qbqvo"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="10_5pdmy"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
@@ -34,12 +35,21 @@ karma_blob = ExtResource("5_11qft")
 small_blob = ExtResource("7_vptnu")
 karma_duration = 2.3
 karma_delay = 0.6
+blob_move = 20
 
 [sub_resource type="Resource" id="Resource_d62ed"]
 script = ExtResource("5_lslbq")
 
 [sub_resource type="Resource" id="Resource_4sdqi"]
 script = ExtResource("5_7hc2v")
+
+[sub_resource type="Resource" id="Resource_5dgv3"]
+script = ExtResource("10_5pdmy")
+karma_blob = ExtResource("5_11qft")
+small_blob = ExtResource("7_vptnu")
+karma_duration = 2.3
+karma_delay = 0.6
+blob_move = 20
 
 [sub_resource type="Resource" id="Resource_3vjfy"]
 script = ExtResource("8_qbqvo")
@@ -83,7 +93,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7dv5d")
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_3vjfy")])
+phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_3vjfy")])
 phase_end_delay = 0.2
 debug_player_data = ExtResource("2_42xvr")
 
@@ -101,10 +111,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.833
-offset_bottom = -75.6401
+offset_top = 51.0
+offset_bottom = 51.36
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 91
 alignment = 1
 script = ExtResource("2_2jjg6")
 combat_card_prefab = ExtResource("3_1hhbj")
@@ -296,11 +307,14 @@ theme_override_font_sizes/font_size = 19
 [node name="BattleLog" parent="." instance=ExtResource("16_kecnr")]
 layout_mode = 1
 anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 12.0
 offset_top = 11.0
 offset_right = -1577.0
 offset_bottom = -1037.0
 grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]

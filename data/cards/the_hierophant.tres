@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://dct4oouah3euj"]
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://wx2v5wr88lof"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nwcwr"]
 [ext_resource type="Texture2D" uid="uid://vy0ulm2qucxw" path="res://assets/sprites/cards/hierophant.png" id="1_tibtj"]
-[ext_resource type="Resource" uid="uid://b3l4p3l10d7ru" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_7h18q"]
+[ext_resource type="Resource" uid="uid://bp5p7q43w8i5p" path="res://data/keyword/ConsumeATK0HP1.tres" id="2_a8yrn"]
 [ext_resource type="AudioStream" uid="uid://biapfu538sjhj" path="res://assets/sounds/cards/voices/the_hierophant.ogg" id="3_fhnuy"]
 
 [resource]
@@ -10,10 +10,10 @@ script = ExtResource("1_nwcwr")
 name = "The Hierophant"
 description = "\"May you find trust in connections.\""
 artwork = ExtResource("1_tibtj")
-cost = -4
+cost = -2
 attack = 3
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_7h18q")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_a8yrn")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

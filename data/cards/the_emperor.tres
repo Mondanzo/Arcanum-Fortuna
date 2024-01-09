@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://bmrjp8nkbwfga"]
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://d388ib31p5qsn"]
 
 [ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://assets/sprites/cards/emperor.png" id="1_02swp"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u4j5u"]
@@ -9,7 +9,7 @@ script = ExtResource("2_u4j5u")
 name = "The Emperor"
 description = "\"May you take control over your live.\""
 artwork = ExtResource("1_02swp")
-cost = -3
+cost = -4
 attack = 4
 health = 5
 keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])

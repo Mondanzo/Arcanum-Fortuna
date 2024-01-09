@@ -16,3 +16,4 @@ mono_crash.*.json
 
 # Lock-Error Based temp files
 *.tmp
+addons/dialogic/Characters/the_empress.dch

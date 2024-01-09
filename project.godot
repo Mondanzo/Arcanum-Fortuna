@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalLog="*res://utils/autoload/global_log.tscn"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
+PauseMenu="*res://systems/ui/menus/pause_menu.tscn"
 
 [dialogic]
 

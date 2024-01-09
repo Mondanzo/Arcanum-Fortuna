@@ -46,8 +46,11 @@ func _exit_tree():
 func init(player_data, enemy_data):
 	self.player_data = player_data
 	player.init(player_data)
+	enemy_data.setup_brain(enemy, self)
 	enemy.init(enemy_data)
-	enemy_board = enemy.get_rows()
+	var test : Array[int] = [1, 2, 4]
+	enemy.data.brain.get_possible_moves(test)
+	#enemy_board = enemy.get_rows()
 	for phase in phases:
 		phase.init(self)
 

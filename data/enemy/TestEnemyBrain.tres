@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=6 format=3 uid="uid://wyb2qp5gbdd7"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_3nupx"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="1_bv34b"]
+
+[sub_resource type="Resource" id="Resource_sw7t3"]
+script = ExtResource("1_3nupx")
+name = "A"
+description = "It can do stuff."
+cost = 1
+attack = 1
+health = 1
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 100
+shop_cost = 5
+trade_override = 0
+
+[sub_resource type="Resource" id="Resource_drklg"]
+script = ExtResource("1_3nupx")
+name = "B"
+description = "It can do stuff."
+cost = 1
+attack = 1
+health = 1
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 100
+shop_cost = 5
+trade_override = 0
+
+[sub_resource type="Resource" id="Resource_cmm6y"]
+script = ExtResource("1_3nupx")
+name = "C"
+description = "It can do stuff."
+cost = 1
+attack = 1
+health = 1
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 100
+shop_cost = 5
+trade_override = 0
+
+[resource]
+script = ExtResource("1_bv34b")
+available_cards = Array[ExtResource("1_3nupx")]([SubResource("Resource_sw7t3"), SubResource("Resource_drklg"), SubResource("Resource_cmm6y")])
+strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([])

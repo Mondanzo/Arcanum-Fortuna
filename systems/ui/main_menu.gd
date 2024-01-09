@@ -37,3 +37,7 @@ func _on_start_button_button_down():
 
 func _on_tutorial_button_button_down():
 	get_tree().change_scene_to_packed(tutorial_scene)
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()

@@ -24,10 +24,12 @@ PauseMenu="*res://systems/ui/menus/pause_menu.tscn"
 [dialogic]
 
 directories/dch_directory={
+"the_chariot": "res://addons/dialogic/Characters/the_chariot.dch",
 "the_dog": "res://addons/dialogic/Characters/the_dog.dch",
 "the_emperor": "res://addons/dialogic/Characters/the_emperor.dch",
 "the_empress": "res://addons/dialogic/Characters/the_empress.dch",
-"the_fool": "res://addons/dialogic/Characters/the_fool.dch"
+"the_fool": "res://addons/dialogic/Characters/the_fool.dch",
+"the_magician": "res://addons/dialogic/Characters/the_magician.dch"
 }
 directories/dtl_directory={
 "dg_test": "res://addons/dialogic/Dialogues/dg_test.dtl"
@@ -45,6 +47,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position_type=2
 window/size/initial_screen=1
+window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
@@ -61,6 +64,25 @@ com.timothyqiu.godot-csv-importer={
 "detect_numbers": true,
 "force_float": false,
 "headers": true
+}
+texture={
+"compress/channel_pack": 0,
+"compress/hdr_compression": 1,
+"compress/high_quality": false,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d/compress_to": 0,
+"mipmaps/generate": true,
+"mipmaps/limit": -1,
+"process/fix_alpha_border": true,
+"process/hdr_as_srgb": false,
+"process/hdr_clamp_exposure": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"process/size_limit": 0,
+"roughness/mode": 0,
+"roughness/src_normal": ""
 }
 
 [input]
@@ -126,7 +148,10 @@ dialogic_default_action={
 
 [rendering]
 
+shader_compiler/shader_cache/compress=false
+shader_compiler/shader_cache/use_zstd_compression=false
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+anti_aliasing/quality/msaa_2d=3
 viewport/hdr_2d=true
 lights_and_shadows/size/viewport_height=800
 lights_and_shadows/size/viewport_width=1920

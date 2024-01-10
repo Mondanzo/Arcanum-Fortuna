@@ -9,14 +9,12 @@ var karma = 0
 @export var active_color : Color = Color.GRAY
 @export var positive_effect_color : Color = Color.GREEN
 
-var data
+var data : EnemyData
 
 
 func init(enemy_data):
 	data = enemy_data
-	if data is EnemyData:
-		data.init()
-	set_health(data.health)
+	set_health(data.get_random_health())
 
 
 func set_health(value):
@@ -26,6 +24,10 @@ func set_health(value):
 
 func get_rows():
 	return data.get_rows()
+
+
+func calc_card_placements() -> Array[EnemyBrain.CardPlacement]:
+	return data.brain.calc_card_placements()
 
 
 #region damage function

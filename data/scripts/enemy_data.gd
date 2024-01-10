@@ -10,10 +10,7 @@ extends Resource
 @export_category("Debug")
 @export var level = 0
 
-var rng_seed := 0
-var health :
-	get:
-		brain.get_random_health()
+var rng_seed := -1
 
 
 func init():
@@ -21,6 +18,10 @@ func init():
 		push_warning("Enemy Level was set to ", str(level), \
 			" but no stats are set above level ", stats_per_level.size() - 1, ".")
 		level = stats_per_level.size() - 1
+
+
+func get_random_health():
+	return brain.get_random_health()
 
 
 func setup_brain(owner : EnemyPlayer, combat : CardBattle):

@@ -81,7 +81,7 @@ func fill_rows():
 	for y in range(stats.max_row):
 		rows.push_back([])
 		for x in range(row_width):
-			var spawn_chance = stats.spawn_chance_by_row.sample((y + 1) / stats.max_row)
+			var spawn_chance = stats.spawn_chance_by_row.sample((y + 1.0) / stats.max_row)
 			rows[y].push_back(null if rng.randf_range(0, 1) > spawn_chance else get_random_card())
 		var enemy_count_in_row = row_width - rows[y].count(null)
 		while enemy_count_in_row < stats.min_enemies_per_row:
@@ -109,7 +109,7 @@ func clear_rows_to_fit_total_max(current_total, total_max):
 		for x in range(row_width):
 			if current_total <= total_max:
 				return
-			var despawn_chance = 1 - stats.spawn_chance_by_row.sample((y + 1) / stats.max_row)
+			var despawn_chance = 1.0 - stats.spawn_chance_by_row.sample((y + 1.0) / stats.max_row)
 			if despawn_chance <= rng.randf_range(0, 1):
 				rows[y][x] = null
 				current_total -= 1
@@ -122,7 +122,7 @@ func fill_rows_to_fit_total_min(current_total, total_min):
 		for x in range(row_width):
 			if current_total >= total_min:
 				return
-			var spawn_chance = stats.spawn_chance_by_row.sample((y + 1) / stats.max_row)
+			var spawn_chance = stats.spawn_chance_by_row.sample((y + 1.0) / stats.max_row)
 			if spawn_chance <= rng.randf_range(0, 1):
 				rows[y][x] = get_random_card()
 				current_total += 1

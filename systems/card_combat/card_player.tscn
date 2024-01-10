@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cnw2n821p8qt8" path="res://systems/card_combat/card_stack.tscn" id="10_n68ae"]
 
 [node name="CardPlayer" type="ReferenceRect"]
-visible = false
 custom_minimum_size = Vector2(300, 650)
 anchors_preset = 15
 anchor_right = 1.0

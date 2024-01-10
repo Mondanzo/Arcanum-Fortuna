@@ -11,5 +11,9 @@ func get_corresponding_trigger():
 
 
 func process_effect() -> ExitState:
-	await combat.move_enemies()
+	var back_row = combat.gameBoard.get_enemy_back_row()
+	
+	for i in range(back_row.size()):
+		if back_row[i] != null:
+			combat.gameBoard.try_move_enemy_card_to_front(i)
 	return ExitState.DEFAULT

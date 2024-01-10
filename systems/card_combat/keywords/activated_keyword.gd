@@ -7,9 +7,12 @@ extends Keyword
 @export_flags("OnKill", "OnKarmaDecrease", "OnActiveCardsChanged") var triggers := 0
 
 @export_category("Animation")
+@export var is_animated := true
 @export var scale_speed = 0.6
 
 func trigger(source, target, icon, params={}):
+	if not is_animated:
+		return
 	await animate(source, target, icon, params)
 
 

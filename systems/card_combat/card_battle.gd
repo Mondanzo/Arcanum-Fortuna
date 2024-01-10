@@ -24,9 +24,10 @@ var player_data : PlayerData
 @onready var player : CardPlayer = $CardPlayer
 @onready var enemy : EnemyPlayer = $EnemyPlayer
 
-var enemy_board : Array[Array]
-var board_width : int = 5
+#var enemy_board : Array[Array]
+#var board_width : int = 5
 var is_battle_over = false
+var turn = 0
 
 func _ready():
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
@@ -46,8 +47,9 @@ func _exit_tree():
 func init(player_data, enemy_data):
 	self.player_data = player_data
 	player.init(player_data)
+	enemy_data.init()
+	enemy_data.setup_brain(enemy, self)
 	enemy.init(enemy_data)
-	enemy_board = enemy.get_rows()
 	for phase in phases:
 		phase.init(self)
 
@@ -78,6 +80,7 @@ func _on_phase_completed():
 	await get_tree().create_timer(phase_end_delay).timeout
 	phase_idx += 1
 	if phase_idx >= phases.size():
+		turn += 1
 		phase_idx = 0
 	process_next_phase()
 
@@ -121,32 +124,32 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	return true
 
 
-func move_enemies():
-	for y in range(enemy_board.size() - 1):
-		for x in range(enemy_board[y].size()):
-			if (enemy_board[y][x] != null || enemy_board[y+1][x] == null):
-				continue
-			if y == 1:
-				gameBoard.place_enemy_card_back(enemy_board[y+1][x], x)
-			elif y == 0:
-				if await gameBoard.try_move_enemy_card_to_front(x):
-					enemy_board[y+1][x] = null
-				continue
-			enemy_board[y][x] = enemy_board[y+1][x]
-			enemy_board[y+1][x] = null
-
-
-func update_enemy_card_placement():
-	for x in range(board_width):
-		if enemy_board.size() > 0 && enemy_board[0][x] != null:
-			gameBoard.place_enemy_card_front(enemy_board[0][x], x)
-			enemy_board[0][x] = null # front board row can only be set once via EnemyData
-		if enemy_board.size() > 1 && enemy_board[1][x] != null:
-			gameBoard.place_enemy_card_back(enemy_board[1][x], x)
+#func move_enemies():
+	#for y in range(enemy_board.size() - 1):
+		#for x in range(enemy_board[y].size()):
+			#if (enemy_board[y][x] != null || enemy_board[y+1][x] == null):
+				#continue
+			#if y == 1:
+				#gameBoard.place_enemy_card_back(enemy_board[y+1][x], x)
+			#elif y == 0:
+				#if await gameBoard.try_move_enemy_card_to_front(x):
+					#enemy_board[y+1][x] = null
+				#continue
+			#enemy_board[y][x] = enemy_board[y+1][x]
+			#enemy_board[y+1][x] = null
+#
+#
+#func update_enemy_card_placement():
+	#for x in range(board_width):
+		#if enemy_board.size() > 0 && enemy_board[0][x] != null:
+			#gameBoard.place_enemy_card_front(enemy_board[0][x], x)
+			#enemy_board[0][x] = null # front board row can only be set once via EnemyData
+		#if enemy_board.size() > 1 && enemy_board[1][x] != null:
+			#gameBoard.place_enemy_card_back(enemy_board[1][x], x)
 
 
 func handle_enemy_attacks():
-	await move_enemies()
+	#await move_enemies()
 	for i in range(gameBoard.enemy_tiles_front.get_child_count()):
 		if gameBoard.enemy_tiles_front.get_child(i).get_child_count() == 0:
 			continue

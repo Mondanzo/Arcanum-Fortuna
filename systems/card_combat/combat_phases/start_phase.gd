@@ -3,6 +3,7 @@ extends CombatPhase
 
 var was_already_invoked = false
 
+@export var place_enemy_cards_before_first_turn = true
 
 static func get_class_name():
 	return "Start Phase"
@@ -13,7 +14,11 @@ func get_corresponding_trigger():
 
 func process_effect() -> ExitState:
 	if not was_already_invoked:
-		combat.update_enemy_card_placement()
+		if place_enemy_cards_before_first_turn:
+			var enemy_placement_phase = EnemyPlacementPhase.new()
+			enemy_placement_phase.init(combat)
+			enemy_placement_phase.execute()
+			await enemy_placement_phase.completed
 		for i in range(combat.player_data.start_hand_size):
 			await combat.player.draw_card()
 		was_already_invoked = true

@@ -17,6 +17,7 @@ var hovered_tile = null
 @onready var enemy_tiles_back = $EnemyTiles/Row1
 @onready var enemy_tiles_front = $EnemyTiles/Row2
 
+const width = 5
 
 func _ready():
 	for tile in $EnemyTiles.get_child(0).get_children():
@@ -157,10 +158,30 @@ func get_front_enemies() -> Array[CombatCard]:
 
 
 func get_back_enemies() -> Array[CombatCard]:
-	var res : Array[CombatCard]
+	var res : Array[CombatCard] = []
 	for tile in enemy_tiles_back.get_children():
 		if tile.get_child_count() != 0 && tile.get_child(0) is CombatCard:
 			res.push_back(tile.get_child(0))
+	return res
+
+
+func get_enemy_front_row() -> Array[CombatCard]:
+	var res : Array[CombatCard] = []
+	for tile in enemy_tiles_front.get_children():
+		if tile.get_child_count() >= 1 && tile.get_child(0) is CombatCard:
+			res.push_back(tile.get_child(0))
+		else:
+			res.push_back(null)
+	return res
+
+
+func get_enemy_back_row() -> Array[CombatCard]:
+	var res : Array[CombatCard] = []
+	for tile in enemy_tiles_back.get_children():
+		if tile.get_child_count() != 0 && tile.get_child(0) is CombatCard:
+			res.push_back(tile.get_child(0))
+		else:
+			res.push_back(null)
 	return res
 
 

@@ -96,6 +96,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
 text = "confirm"
 
 [node name="SkipButton" type="Button" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

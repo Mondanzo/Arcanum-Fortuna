@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nwcwr"]
 [ext_resource type="Texture2D" uid="uid://vy0ulm2qucxw" path="res://assets/sprites/cards/hierophant.png" id="1_tibtj"]
-[ext_resource type="Resource" uid="uid://bp5p7q43w8i5p" path="res://data/keyword/ConsumeATK0HP1.tres" id="2_a8yrn"]
+[ext_resource type="Resource" uid="uid://dad1dhkw7ls7g" path="res://data/keyword/DeathrattleSacrifice3.tres" id="2_unwwk"]
 [ext_resource type="AudioStream" uid="uid://biapfu538sjhj" path="res://assets/sounds/cards/voices/the_hierophant.ogg" id="3_fhnuy"]
 
 [resource]
@@ -13,7 +13,7 @@ artwork = ExtResource("1_tibtj")
 cost = -2
 attack = 3
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_a8yrn")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_unwwk")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

@@ -38,6 +38,7 @@ func animate(source, target, icon_to_animate, params={}):
 	tween.set_parallel(false)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(card, "scale", Vector2.ONE, rotation_duration / 2.0)
+	tween.finished.connect(func(): icon.is_animating = false)
 	tween.play()
 	await card.get_tree().create_timer(rotation_duration / 2).timeout
 	target.flip()

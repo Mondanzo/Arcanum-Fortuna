@@ -34,5 +34,6 @@ func animate(source, owner: CombatCard, icon_to_animate, params):
 		tween.tween_property(icon_to_animate, "scale", Vector2.ONE, scale_speed)
 		tween.set_parallel(true)
 		tween.tween_property(icon_to_animate, "position", icon_to_animate.origin_position, scale_speed)
+		tween.finished.connect(func(): icon.is_animating = false)
 		tween.play()
 		await icon_to_animate.get_tree().create_timer(scale_speed).timeout

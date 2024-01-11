@@ -1,7 +1,7 @@
 class_name Tutorial
 extends CardBattle
 
-@export var enemy_data: EnemyData
+@export var enemy_data: OldEnemyData
 @export var tutorial_steps: Node
 @export_file("*.tscn") var next_scene := ""
 

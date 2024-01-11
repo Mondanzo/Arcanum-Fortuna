@@ -9,12 +9,15 @@ var karma = 0
 @export var active_color : Color = Color.GRAY
 @export var positive_effect_color : Color = Color.GREEN
 
-var data : EnemyData
+var data
 
 
 func init(enemy_data):
 	data = enemy_data
-	set_health(data.get_random_health())
+	if data is OldEnemyData:
+		health = data.health
+	else:
+		set_health(data.get_random_health())
 
 
 func set_health(value):

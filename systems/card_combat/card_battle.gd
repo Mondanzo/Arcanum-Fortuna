@@ -47,8 +47,9 @@ func _exit_tree():
 func init(player_data, enemy_data):
 	self.player_data = player_data
 	player.init(player_data)
-	enemy_data.init()
-	enemy_data.setup_brain(enemy, self)
+	if not enemy_data is OldEnemyData: 
+		enemy_data.init()
+		enemy_data.setup_brain(enemy, self)
 	enemy.init(enemy_data)
 	for phase in phases:
 		phase.init(self)

@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt4d5c3p5t43v"]
+[gd_scene load_steps=11 format=3 uid="uid://dt4d5c3p5t43v"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/keyword_info.gd" id="1_01h56"]
 [ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="1_yy5ck"]
-[ext_resource type="Shader" path="res://shaders/invert.gdshader" id="2_dniia"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="3_a3e81"]
+[ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="3_hn61a"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nftiq"]
 
@@ -16,9 +16,6 @@ noise = SubResource("FastNoiseLite_nftiq")
 shader = ExtResource("1_yy5ck")
 shader_parameter/strength = 0.5
 shader_parameter/noise = SubResource("NoiseTexture2D_it2lc")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yjpao"]
-shader = ExtResource("2_dniia")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dvw8w"]
 atlas = ExtResource("3_a3e81")
@@ -46,7 +43,7 @@ theme_override_constants/separation = 8
 
 [node name="icon" type="TextureRect" parent="header"]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_yjpao")
+material = ExtResource("3_hn61a")
 layout_mode = 2
 texture = SubResource("AtlasTexture_dvw8w")
 

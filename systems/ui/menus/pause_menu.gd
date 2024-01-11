@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @export_category("Pause Menu")
 @export var can_pause = true
+@export var options_scene: PackedScene
 
 
 var pre_paused = false
@@ -44,3 +45,8 @@ func _on_btn_back_to_menu_pressed():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		toggle_pause_menu()
+
+
+func _on_btn_options_pressed():
+	var options = options_scene.instantiate()
+	add_child(options)

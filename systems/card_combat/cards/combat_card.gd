@@ -105,9 +105,10 @@ func flip():
 
 func get_target_offsets():
 	placed_position = global_position
+	target_offsets = [0]
 	for i in range(keywords.size()):
 		if not keywords[i] is ActivatedKeyword and keywords[i].has_method("get_new_targets"):
-			target_offsets = keywords[i].get_new_targets(target_offsets)
+			target_offsets = keywords[i].get_new_targets(target_offsets, self)
 	return target_offsets
 
 

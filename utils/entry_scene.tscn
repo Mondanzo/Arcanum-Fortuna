@@ -4,11 +4,19 @@
 script/source = "extends Node
 
 @export_file(\"*.tscn\") var main_scene = \"\"
+@export_file(\"*.tscn\") var web_scene = \"\"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	await get_parent().ready
+	
+	if OS.has_feature(\"web\"):
+		if not web_scene.is_empty():
+			var instance = load(web_scene).instantiate() as Node
+			add_child(instance)
+			await instance.complete
+	
 	if not main_scene.is_empty():
 		get_tree().change_scene_to_file(main_scene)
 "
@@ -16,3 +24,4 @@ func _ready():
 [node name="EntryScene" type="Node"]
 script = SubResource("GDScript_gwrei")
 main_scene = "res://systems/ui/main_menu.tscn"
+web_scene = "res://utils/web_loading.tscn"

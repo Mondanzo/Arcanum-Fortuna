@@ -1,59 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://b84sklippd45m"]
+[gd_scene load_steps=4 format=3 uid="uid://b84sklippd45m"]
 
 [ext_resource type="Texture2D" uid="uid://jtvvnc2og5w7" path="res://assets/sprites/vfx/vfx_karma_blob.png" id="1_en6sn"]
-
-[sub_resource type="Curve" id="Curve_fseqy"]
-_data = [Vector2(0, 0.873541), 0.0, 0.0, 0, 0, Vector2(0.494924, 0.987354), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.05246, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_3k1ei"]
-curve = SubResource("Curve_fseqy")
-
-[sub_resource type="Curve" id="Curve_e6slv"]
-_data = [Vector2(0, 0), 0.0, 10.4528, 0, 0, Vector2(0.261421, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.57835, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_r0vbo"]
-curve = SubResource("Curve_e6slv")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_07o5n"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.0
-angle_max = 360.0
-angular_velocity_min = -26.25
-angular_velocity_max = 36.65
-radial_velocity_min = -5.0
-radial_velocity_max = 3.0
-radial_velocity_curve = SubResource("CurveTexture_3k1ei")
-gravity = Vector3(0, 0, 0)
-scale_min = 0.2
-scale_curve = SubResource("CurveTexture_r0vbo")
-color = Color(0.588235, 0.00392157, 0.996078, 1)
-
-[sub_resource type="Curve" id="Curve_7iqbc"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.42737, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_uv18a"]
-curve = SubResource("Curve_7iqbc")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mutxv"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 9.0
-angle_max = 360.0
-gravity = Vector3(0, 9.8, 0)
-scale_min = 0.0
-scale_max = 0.25
-scale_curve = SubResource("CurveTexture_uv18a")
-turbulence_enabled = true
+[ext_resource type="Material" uid="uid://n67jhv3xv2db" path="res://assets/vfx/materials/karma_particle.tres" id="1_xq6yt"]
+[ext_resource type="Material" uid="uid://bvhyxtr0b6ktj" path="res://assets/vfx/materials/trail.tres" id="3_nt8vu"]
 
 [node name="KarmaParticle" type="GPUParticles2D"]
 modulate = Color(0.47451, 0.207843, 0.592157, 1)
-z_index = 1
+z_index = 5
 amount = 100
-process_material = SubResource("ParticleProcessMaterial_07o5n")
+process_material = ExtResource("1_xq6yt")
 texture = ExtResource("1_en6sn")
 lifetime = 3.0
 visibility_rect = Rect2(-42.6722, -41.149, 83.2858, 82.9271)
@@ -61,8 +16,9 @@ local_coords = true
 
 [node name="trail" type="GPUParticles2D" parent="."]
 z_index = -1
+scale = Vector2(0.185, 0.185)
 amount = 32
-process_material = SubResource("ParticleProcessMaterial_mutxv")
+process_material = ExtResource("3_nt8vu")
 texture = ExtResource("1_en6sn")
 lifetime = 0.65
 trail_sections = 2

@@ -2,6 +2,7 @@ extends Control
 
 @export var node_map_scene : PackedScene
 @export var tutorial_scene : PackedScene
+@export var options_scene : PackedScene
 var node_map : NodeMapGenerator
 var seed := 0
 
@@ -41,3 +42,8 @@ func _on_tutorial_button_button_down():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_options_button_pressed():
+	var options = options_scene.instantiate()
+	add_child(options)

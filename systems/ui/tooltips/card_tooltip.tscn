@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7qbbf3idp0cf"]
+[gd_scene load_steps=12 format=3 uid="uid://c7qbbf3idp0cf"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
 [ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://assets/sprites/cards/chariot.png" id="1_nnqwu"]
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="2_22q2n"]
-[ext_resource type="Shader" path="res://shaders/blob_background.gdshader" id="3_ewx55"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="3_yndjn"]
 [ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="4_dw4cm"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="5_5o7m8"]
 [ext_resource type="Texture2D" uid="uid://c3mveorhm0h1n" path="res://assets/ui/icons/atk_placeholder.png" id="6_pte6t"]
+[ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="8_25ce2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
 size = Vector2(200, 100)
@@ -17,17 +17,6 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_mnpa1"]
 font_size = 24
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_bsonu"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fov2i"]
-seamless = true
-noise = SubResource("FastNoiseLite_bsonu")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cibef"]
-shader = ExtResource("3_ewx55")
-shader_parameter/strength = 2.3
-shader_parameter/noise = SubResource("NoiseTexture2D_fov2i")
 
 [node name="CardTooltip" type="Control"]
 layout_mode = 3
@@ -267,6 +256,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Attack" type="TextureRect" parent="Container/HBoxContainer/Control/Card"]
+layout_mode = 0
 offset_top = -41.755
 offset_right = 64.0
 offset_bottom = 53.245
@@ -344,7 +334,7 @@ layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="Container/Control"]
 show_behind_parent = true
-material = SubResource("ShaderMaterial_cibef")
+material = ExtResource("8_25ce2")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0

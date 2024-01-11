@@ -115,7 +115,9 @@ func restore_default_color():
 
 func process_death() -> bool:
 	if health <= 0:
-		#$VBoxContainer/Name/Label.text = "The DEAD!"
+		await get_tree().process_frame
+		if is_animating:
+			await animation_finished
 		modulate = attacked_color
 		await get_tree().create_timer(death_delay).timeout
 		print("Card '", card_name, "' died!")

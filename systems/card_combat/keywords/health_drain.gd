@@ -14,8 +14,8 @@ func init(id = 4):
 		description = description % health_gain
 	super.init(id)
 
-func trigger(source, owner, target, icon, params={}):
-	await super(source, owner, target, icon, params)
+func trigger(source, owner, target, icon_to_animate, params={}):
+	await super(source, owner, target, icon_to_animate, params)
 	if not target is CombatCard:
 		push_error("Cannot apply HealthDrain. Invalid target ", target, ".")
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered Healthdrain." % [target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])

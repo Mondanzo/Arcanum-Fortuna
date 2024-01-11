@@ -120,7 +120,7 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 			finished.emit(player.health)
 			is_battle_over = true
 		else:
-			target.trigger_keywords(attacker, target, 8, self)
+			await target.trigger_keywords(attacker, target, 8, self)
 			await target.process_death()
 	gameBoard.end_tile_highlight(column_idx, friendly)
 	await get_tree().process_frame

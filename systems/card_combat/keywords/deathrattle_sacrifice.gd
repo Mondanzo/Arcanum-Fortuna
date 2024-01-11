@@ -19,8 +19,8 @@ func get_target(source, owner, combat = null):
 	return combat.enemy if owner.is_enemy else combat.player
 
 
-func trigger(source, owner, target, icon, params={}):
-	await super(source, owner, target, icon, params)
+func trigger(source, owner, target, icon_to_animate, params={}):
+	await super(source, owner, target, icon_to_animate, params)
 	if not target.has_method("heal"):
 		push_error("Cannot apply DeathrattleSacrifice: target '" + str(target) + "' has no heal method!")
 		return

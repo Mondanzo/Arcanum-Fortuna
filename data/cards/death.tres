@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://h0448sn65e2l" path="res://assets/sprites/cards/death.png" id="1_lancp"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_4eh3m"]
-[ext_resource type="Resource" uid="uid://b3l4p3l10d7ru" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_nat0g"]
+[ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_nat0g"]
 [ext_resource type="AudioStream" uid="uid://17snb76pndmu" path="res://assets/sounds/cards/voices/death.ogg" id="4_xmg1h"]
 
 [resource]

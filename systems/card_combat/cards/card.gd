@@ -5,8 +5,8 @@ class_name Card extends Control
 var artwork_texture : Texture2D
 var card_name : String
 var cost : int
-var attack : int
-var health: int
+var attack : int : set = set_attack, get = get_attack
+var health: int : set = set_health, get = get_health
 var keywords : Array[Keyword] = []
 
 var is_hovered := false
@@ -16,6 +16,25 @@ func _ready():
 	if card_data != null:
 		load_from_data(card_data)
 	setup()
+
+
+func set_attack(value):
+	attack = value
+	%AttackCost.text = str(attack)
+
+
+func get_attack():
+	return attack
+
+
+
+func set_health(value):
+	health = value
+	%HealthCost.text = str(health)
+
+
+func get_health():
+	return health
 
 
 func scale_to_fit(new_size):

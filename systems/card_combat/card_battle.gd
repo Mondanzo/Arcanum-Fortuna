@@ -20,7 +20,7 @@ var player_data : PlayerData
 @export var debug_player_data : PlayerData
 @export var debug_enemy_data : DebugEnemyData
 
-@onready var gameBoard : GameBoard = $GameBoard
+@onready var game_board : GameBoard = $GameBoard
 @onready var player : CardPlayer = $CardPlayer
 @onready var enemy : EnemyPlayer = $EnemyPlayer
 
@@ -34,7 +34,7 @@ func _ready():
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
 	if is_debug:
-		await get_tree().process_frame # gameBoard needs to be ready first lol
+		await get_tree().process_frame # game_board needs to be ready first lol
 		init(debug_player_data, debug_enemy_data)
 		start_combat()
 
@@ -109,20 +109,20 @@ func handle_attacks(attacker, column, is_source_friendly):
 
 
 func try_attack(attacker, column_idx, friendly = false) -> bool:
-	var target = gameBoard.get_target(column_idx, friendly)
+	var target = game_board.get_target(column_idx, friendly)
 	var was_target_player = target is CardPlayer or target is EnemyPlayer
 	if target == null:
 		return false
-	gameBoard.highlight_tile(column_idx, friendly)
-	if await attacker.animate_attack(target, column_idx, gameBoard.get_tile(column_idx, friendly)):
-		gameBoard._on_active_cards_changed(target)
+	game_board.highlight_tile(column_idx, friendly)
+	if await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly)):
+		game_board._on_active_cards_changed(target)
 		if was_target_player:
 			finished.emit(player.health)
 			is_battle_over = true
 		else:
 			await target.trigger_keywords(attacker, target, 8, self)
 			await target.process_death()
-	gameBoard.end_tile_highlight(column_idx, friendly)
+	game_board.end_tile_highlight(column_idx, friendly)
 	await get_tree().process_frame
 	return true
 
@@ -133,9 +133,9 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 			#if (enemy_board[y][x] != null || enemy_board[y+1][x] == null):
 				#continue
 			#if y == 1:
-				#gameBoard.place_enemy_card_back(enemy_board[y+1][x], x)
+				#game_board.place_enemy_card_back(enemy_board[y+1][x], x)
 			#elif y == 0:
-				#if await gameBoard.try_move_enemy_card_to_front(x):
+				#if await game_board.try_move_enemy_card_to_front(x):
 					#enemy_board[y+1][x] = null
 				#continue
 			#enemy_board[y][x] = enemy_board[y+1][x]
@@ -145,26 +145,26 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 #func update_enemy_card_placement():
 	#for x in range(board_width):
 		#if enemy_board.size() > 0 && enemy_board[0][x] != null:
-			#gameBoard.place_enemy_card_front(enemy_board[0][x], x)
+			#game_board.place_enemy_card_front(enemy_board[0][x], x)
 			#enemy_board[0][x] = null # front board row can only be set once via EnemyData
 		#if enemy_board.size() > 1 && enemy_board[1][x] != null:
-			#gameBoard.place_enemy_card_back(enemy_board[1][x], x)
+			#game_board.place_enemy_card_back(enemy_board[1][x], x)
 
 
 func handle_enemy_attacks():
 	#await move_enemies()
-	for i in range(gameBoard.enemy_tiles_front.get_child_count()):
-		if gameBoard.enemy_tiles_front.get_child(i).get_child_count() == 0:
+	for i in range(game_board.enemy_tiles_front.get_child_count()):
+		if game_board.enemy_tiles_front.get_child(i).get_child_count() == 0:
 			continue
-		await handle_attacks(gameBoard.enemy_tiles_front.get_child(i).get_child(0), i, false)
+		await handle_attacks(game_board.enemy_tiles_front.get_child(i).get_child(0), i, false)
 		if is_battle_over:
 			return
 
 
 func handle_friendly_attacks():
-	for i in range(gameBoard.player_tiles.get_child_count()):
-		if gameBoard.player_tiles.get_child(i).get_child_count() == 0:
+	for i in range(game_board.player_tiles.get_child_count()):
+		if game_board.player_tiles.get_child(i).get_child_count() == 0:
 			continue
-		await handle_attacks(gameBoard.player_tiles.get_child(i).get_child(0), i, true)
+		await handle_attacks(game_board.player_tiles.get_child(i).get_child(0), i, true)
 		if is_battle_over:
 			return

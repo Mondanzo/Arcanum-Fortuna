@@ -1,5 +1,7 @@
 class_name CombatCard extends Card
 
+@export var buff_color := Color.GREEN
+@export var debuff_color := Color.RED
 
 ## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
 @export var is_auto_flip = true
@@ -35,15 +37,32 @@ var is_animating: bool:
 		return __is_animating
 
 
-func check_if_animations_finished():
-	if not is_animating:
-		animation_finished.emit()
+func set_attack(value):
+	super.set_attack(value)
+	if attack > base_attack:
+		%AttackCost.self_modulate = buff_color
+	elif attack < base_attack:
+		%AttackCost.self_modulate = debuff_color
+	else:
+		%AttackCost.self_modulate = Color.WHITE
+
+
+func set_health(value):
+	super.set_health(value)
+	if health > base_health:
+		%HealthCost.self_modulate = buff_color
+	elif health < base_health:
+		%HealthCost.self_modulate = debuff_color
+	else:
+		%HealthCost.self_modulate = Color.WHITE
 
 
 func setup():
 	super.setup()
 	base_attack = attack
 	base_health = health
+	attack = base_attack
+	health = base_health
 	for keyword in %KeyWords.get_children():
 		keyword.animation_finished.connect(check_if_animations_finished)
 
@@ -61,6 +80,11 @@ func trigger_keywords(source, owner, trigger : int, combat = null):
 		if keywords[i] is ActivatedKeyword and keywords[i].triggers & trigger:
 			await keywords[i].trigger(source, owner, keywords[i].get_target(source, owner, combat), \
 					get_node("KeyWords").get_child(i))
+
+
+func check_if_animations_finished():
+	if not is_animating:
+		animation_finished.emit()
 
 
 func flip():

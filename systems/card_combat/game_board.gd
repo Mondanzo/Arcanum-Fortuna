@@ -1,4 +1,5 @@
-class_name GameBoard extends VBoxContainer
+class_name GameBoard
+extends VBoxContainer
 
 @export var combat_card_prefab : PackedScene
 

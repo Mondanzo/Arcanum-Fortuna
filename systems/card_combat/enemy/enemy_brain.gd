@@ -19,7 +19,7 @@ func init(stats: EnemyBrainStats, new_owner : EnemyPlayer, combat_context : Card
 	self.stats = stats
 	rng.seed = seed if seed != -1 else randi()
 	combat = combat_context
-	board = combat.gameBoard
+	board = combat.game_board
 
 
 func get_random_health():

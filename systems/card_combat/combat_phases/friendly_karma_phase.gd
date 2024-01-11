@@ -94,7 +94,7 @@ func process_effect() -> ExitState:
 	blob.delete()
 	
 	if await target.process_karma_overflow():
-		combat.finished.emit(target.health)
+		combat.finished.emit(combat.player.health)
 		return ExitState.ABORT
 	return ExitState.DEFAULT
 

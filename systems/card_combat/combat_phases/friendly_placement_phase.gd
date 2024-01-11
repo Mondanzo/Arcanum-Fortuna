@@ -13,7 +13,7 @@ static func get_class_name():
 
 func execute():
 	GlobalLog.add_entry(get_class_name() + " started.")
-	await process_start_keywords(self, combat.gameBoard.get_active_cards())
+	await process_start_keywords(self, combat.game_board.get_active_cards())
 	return await process_effect()
 
 
@@ -27,8 +27,8 @@ func process_effect() -> ExitState:
 
 
 func _on_player_turn_ended():
-	combat.gameBoard.lock_friendly_cards()
-	await process_end_keywords(self, combat.gameBoard.get_active_cards())
+	combat.game_board.lock_friendly_cards()
+	await process_end_keywords(self, combat.game_board.get_active_cards())
 	combat.lock_player_actions()
 	completed.emit(ExitState.DEFAULT)
 	GlobalLog.add_entry(get_class_name() + " finished.")

@@ -17,14 +17,14 @@ func get_corresponding_trigger():
 
 
 func _on_karma_decreased(source):
-	for card : CombatCard in combat.gameBoard.get_active_cards():
+	for card : CombatCard in combat.game_board.get_active_cards():
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 2:
 				await card.keywords[i].trigger(source, card.keywords[i].get_target(source, card, combat), \
 						card.get_node("KeyWords").get_child(i), card.get_node("KeyWords").get_child(i))
 
 func get_relevant_cards():
-	return combat.gameBoard.get_friendly_cards().filter(
+	return combat.game_board.get_friendly_cards().filter(
 			func(card: Card):
 				return card.cost != 0
 				)
@@ -40,7 +40,7 @@ func process_effect() -> ExitState:
 	var target = get_karma_modify_target()
 	# Create Blob
 	var blob = karma_blob.instantiate()
-	combat.gameBoard.add_child(blob)
+	combat.game_board.add_child(blob)
 	blob.global_position = Vector2(1920 / 2, 1080 / 2)
 	
 	var total_wait_count = 0.0
@@ -48,7 +48,7 @@ func process_effect() -> ExitState:
 	for card : CombatCard in relevant_cards:
 		var health_slot = await card.animate_karma(target)
 		var small_pearl = small_blob.instantiate()
-		combat.gameBoard.add_child(small_pearl)
+		combat.game_board.add_child(small_pearl)
 		small_pearl.global_position = health_slot.global_position
 		
 		await combat.get_tree().create_timer(karma_delay).timeout

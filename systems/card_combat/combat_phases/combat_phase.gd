@@ -33,9 +33,9 @@ func reset():
 
 func execute():
 	GlobalLog.add_entry(get_class_name() + " started.")
-	await process_start_keywords(self, combat.gameBoard.get_active_cards())
+	await process_start_keywords(self, combat.game_board.get_active_cards())
 	var exit_state = await process_effect()
-	await process_end_keywords(self, combat.gameBoard.get_active_cards())
+	await process_end_keywords(self, combat.game_board.get_active_cards())
 	await Engine.get_main_loop().process_frame
 	completed.emit(exit_state)
 	GlobalLog.add_entry(get_class_name() + " finished.")

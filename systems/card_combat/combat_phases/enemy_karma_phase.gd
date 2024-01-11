@@ -9,7 +9,7 @@ func get_corresponding_trigger():
 	return CombatPhaseTrigger.SourcePhases.ENEMY_KARMA
 
 func get_relevant_cards():
-	return combat.gameBoard.get_front_enemies().filter(
+	return combat.game_board.get_front_enemies().filter(
 			func(card: Card):
 				return card.cost != 0
 				)

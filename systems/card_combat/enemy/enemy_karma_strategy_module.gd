@@ -5,7 +5,7 @@ extends EnemyBrainStrategyModule
 
 func add_points_to_possible_moves(possible_moves, combat : CardBattle):
 	var base_potential_karma = combat.enemy.karma
-	for card in combat.gameBoard.get_front_enemies():
+	for card in combat.game_board.get_front_enemies():
 		base_potential_karma += card.cost
 	for move in possible_moves:
 		var potential_karma : float = base_potential_karma

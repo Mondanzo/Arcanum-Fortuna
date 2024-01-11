@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://systems/ui/game_over_screen.gd" id="1_gllgb"]
 [ext_resource type="Texture2D" uid="uid://clotsnwomvrm8" path="res://assets/sprites/cards/star.png" id="2_h6kti"]
 [ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="2_ttak2"]
-[ext_resource type="PackedScene" uid="uid://jn77ec80jhq5" path="res://utils/anti_pause_node.tscn" id="4_rgtd4"]
+[ext_resource type="PackedScene" path="res://utils/anti_pause_node.tscn" id="4_rgtd4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j67a8"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)

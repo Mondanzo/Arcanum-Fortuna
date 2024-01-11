@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://systems/ui/game_over_screen.gd" id="1_04l8t"]
 [ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="2_28eii"]
 [ext_resource type="Texture2D" uid="uid://h0448sn65e2l" path="res://assets/sprites/cards/death.png" id="2_uawat"]
-[ext_resource type="PackedScene" uid="uid://jn77ec80jhq5" path="res://utils/anti_pause_node.tscn" id="4_mvbqs"]
+[ext_resource type="PackedScene" path="res://utils/anti_pause_node.tscn" id="4_mvbqs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j67a8"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -56,6 +56,7 @@ script = ExtResource("2_28eii")
 show_or_hide = 0
 
 [node name="btn_main_menu2" type="Button" parent="Panel"]
+visible = false
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 1
 anchors_preset = -1

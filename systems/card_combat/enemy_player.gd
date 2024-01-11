@@ -1,8 +1,5 @@
 class_name EnemyPlayer extends Control
 
-var health = 20
-var karma = 0
-
 @export_category("Animation")
 @export var animation_delay = 1
 @export var attacked_color : Color = Color.RED
@@ -10,6 +7,9 @@ var karma = 0
 @export var positive_effect_color : Color = Color.GREEN
 
 var data
+var health = 20
+var max_health
+var karma = 0
 
 
 func init(enemy_data):
@@ -18,6 +18,7 @@ func init(enemy_data):
 		health = data.health
 	else:
 		set_health(data.get_random_health())
+	max_health = health
 
 
 func set_health(value):
@@ -34,6 +35,13 @@ func calc_card_placements() -> Array[EnemyBrain.CardPlacement]:
 
 
 #region damage function
+func heal(amount):
+	if amount < 0:
+		push_error("Heal must be positive!")
+		return
+	health += amount
+	health = min(health, max_health)
+
 func take_damage(amount):
 	$Health/Label.text = "Health: " + str(health) + " (" + str(-amount) + ")"
 	health -= amount
@@ -46,7 +54,7 @@ func restore_default_color():
 	$Health.modulate = Color.WHITE
 	%Karma.modulate = Color.WHITE
 
-func proccess_death() -> bool:
+func process_death() -> bool:
 	if health < 0:
 		GlobalLog.add_entry("The enemy died!")
 	return health <= 0
@@ -71,10 +79,10 @@ func process_karma_overflow() -> bool:
 		take_damage(-karma)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
-	var is_lethal = await proccess_death()
+	var was_lethal = process_death()
 	%Karma/Label.text = "Karma: " + str(karma)
 	restore_default_color()
-	return is_lethal
+	return was_lethal
 	
 
 func set_karma(value):

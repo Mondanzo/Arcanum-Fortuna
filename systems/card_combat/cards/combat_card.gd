@@ -38,6 +38,13 @@ func make_enemy():
 		flip()
 
 
+func trigger_keywords(source, owner, trigger : int, combat = null):
+	for i in range(keywords.size()):
+		if keywords[i] is ActivatedKeyword and keywords[i].triggers & trigger:
+			await keywords[i].trigger(source, owner, keywords[i].get_target(source, owner, combat), \
+					get_node("KeyWords").get_child(i))
+
+
 func flip():
 	%Artwork.flip_h = !%Artwork.flip_h
 	var flipped_name = ""
@@ -62,14 +69,11 @@ func get_target_offsets():
 	return target_offsets
 
 
-func apply_consume():
-	#attack += sigils.count(Card.Sigil.Consume)
-	#health += sigils.count(Card.Sigil.Consume)
-	%AttackCost.text = str(attack)
-	%HealthCost.text = str(health)
-
-
 #region damage functions
+
+func heal(amount : int):
+	pass
+
 func take_damage(amount : int):
 	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
@@ -91,7 +95,7 @@ func restore_default_color():
 	$Cost.modulate = Color.WHITE
 
 
-func proccess_death() -> bool:
+func process_death() -> bool:
 	if health <= 0:
 		#$VBoxContainer/Name/Label.text = "The DEAD!"
 		modulate = attacked_color
@@ -150,15 +154,13 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 		z_index -= 1
 	)
 	
-	var was_lethal = await target.proccess_death()
+	var was_lethal = target.health <= 0
 	var is_battle_over = false
 	if was_lethal and (target is EnemyPlayer or target is CardPlayer):
 		is_battle_over = true
 	if was_lethal:
 		await get_tree().process_frame
-		for i in range(keywords.size()):
-			if keywords[i] is ActivatedKeyword and keywords[i].triggers & 1:
-				await keywords[i].trigger(target, self, $KeyWords.get_child(i))
+		trigger_keywords(target, self, 1)
 	return was_lethal
 
 

@@ -19,6 +19,7 @@ rotation_duration = 0.8
 icon_rotation = 1.0
 combat_phase_triggers = Array[ExtResource("1_nhvvg")]([SubResource("Resource_74j2r")])
 triggers = 0
+is_animated = true
 scale_speed = 0.6
 title = "Flip"
 description = "A card with this keyword will swap its current attack and health at the end of the turn."

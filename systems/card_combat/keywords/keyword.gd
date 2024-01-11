@@ -7,5 +7,6 @@ extends Resource
 @export var highlight_duration := 0.5
 var id : int
 
+
 func init(id = 0):
 	self.id = id

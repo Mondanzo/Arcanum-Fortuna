@@ -9,23 +9,23 @@ func init(id = 2):
 	super.init(id)
 
 
-func trigger(source, target, icon, params={}):
+func trigger(source, owner, target, icon_to_animate, params={}):
 	if not target.has_method("flip"):
 		push_error("Keyword Flip was triggered from ", source, \
 		", but target '", target, "' has no flip method!")
 		return
-	await super(source, target, icon, params)
+	await await super(source, owner, target, icon, params)
 
 
-func animate(source, target, icon, params={}):
+func animate(source, target, icon_to_animate, params={}):
 	if not target is Card:
 		push_error("Can't animate a non-card!")
 		return
 	
 	var card = target as Card
 	
-	if icon is Control:
-		var icon_tween = icon.create_tween() as Tween
+	if icon_to_animate is Control:
+		var icon_tween = icon_to_animate.create_tween() as Tween
 		icon_tween.set_ease(Tween.EASE_IN_OUT)
 		icon_tween.set_trans(Tween.TRANS_BACK)
 		icon_tween.tween_property(icon, "rotation", deg_to_rad(360), icon_rotation)

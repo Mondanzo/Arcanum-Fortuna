@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
 [ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_wtojk"]
-[ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="3_wssit"]
 [ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="5_dpvki"]
-[ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="8_unrg5"]
+[ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="7_3menk"]
+[ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="9_5boo4"]
 [ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="9_mciwm"]
-[ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_cups.tres" id="9_rh45t"]
-[ext_resource type="Resource" uid="uid://bhr4saiaj41hf" path="res://data/cards/the_empress.tres" id="10_jbfgc"]
-[ext_resource type="Resource" uid="uid://dwx1jg5fmwy31" path="res://data/cards/ace_of_pentacles.tres" id="10_jdld8"]
-[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="11_duwfb"]
-[ext_resource type="Resource" uid="uid://dfad3qo3mi3uh" path="res://data/cards/ace_of_swords.tres" id="12_ivtxt"]
+[ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_cups.tres" id="10_byhqk"]
+[ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="10_jbfgc"]
+[ext_resource type="Resource" uid="uid://dcn0mphx2qg0v" path="res://data/cards/page_of_wands.tres" id="11_rt6qa"]
+[ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_pentacles.tres" id="12_5h8ov"]
 [ext_resource type="Resource" uid="uid://wx2v5wr88lof" path="res://data/cards/the_hierophant.tres" id="14_n23su"]
+[ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="15_5fchr"]
 [ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="16_mhl86"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="17_37lf3"]
 
@@ -30,9 +30,8 @@ bg_color = Color(0.545098, 0.388235, 0.658824, 1)
 
 [node name="LootEvent" type="Node"]
 script = ExtResource("1_dmmsx")
-possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("3_wssit"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("8_unrg5"), ExtResource("9_rh45t"), ExtResource("10_jdld8"), ExtResource("11_duwfb"), ExtResource("12_ivtxt")])
+possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_5boo4"), ExtResource("10_byhqk"), ExtResource("11_rt6qa"), ExtResource("12_5h8ov")])
 cardTemplate = ExtResource("1_panx4")
-seed = 550
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -78,7 +77,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ConfirmButton" type="Button" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -99,17 +97,17 @@ text = "confirm"
 
 [node name="SkipButton" type="Button" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(150, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_right = -128.0
-offset_bottom = -64.0
-grow_horizontal = 0
+offset_left = 164.0
+offset_top = -137.0
+offset_right = 346.0
+offset_bottom = -72.0
+grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 41
 theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")

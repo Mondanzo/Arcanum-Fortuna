@@ -17,6 +17,7 @@ var hovered_tile = null
 @onready var enemy_tiles_back = $EnemyTiles/Row1
 @onready var enemy_tiles_front = $EnemyTiles/Row2
 
+const width = 5
 
 func _ready():
 	for tile in $EnemyTiles.get_child(0).get_children():
@@ -157,10 +158,30 @@ func get_front_enemies() -> Array[CombatCard]:
 
 
 func get_back_enemies() -> Array[CombatCard]:
-	var res : Array[CombatCard]
+	var res : Array[CombatCard] = []
 	for tile in enemy_tiles_back.get_children():
 		if tile.get_child_count() != 0 && tile.get_child(0) is CombatCard:
 			res.push_back(tile.get_child(0))
+	return res
+
+
+func get_enemy_front_row() -> Array[CombatCard]:
+	var res : Array[CombatCard] = []
+	for tile in enemy_tiles_front.get_children():
+		if tile.get_child_count() >= 1 && tile.get_child(0) is CombatCard:
+			res.push_back(tile.get_child(0))
+		else:
+			res.push_back(null)
+	return res
+
+
+func get_enemy_back_row() -> Array[CombatCard]:
+	var res : Array[CombatCard] = []
+	for tile in enemy_tiles_back.get_children():
+		if tile.get_child_count() != 0 && tile.get_child(0) is CombatCard:
+			res.push_back(tile.get_child(0))
+		else:
+			res.push_back(null)
 	return res
 
 
@@ -169,10 +190,8 @@ func _on_active_cards_changed(source):
 	for card : CombatCard in active_cards:
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
-				await card.keywords[i].trigger(source, card, card.get_node("KeyWords").get_child(i), {"active_cards": active_cards})
-				#card.get_node("KeyWords").get_child(i).scale = Vector2(1.2, 1.2)
-				#await get_tree().create_timer(card.keywords[i].highlight_duration).timeout
-				#card.get_node("KeyWords").get_child(i).scale = Vector2.ONE
+				await card.keywords[i].trigger(source, card.keywords[i].get_target(self, card), \
+						card.get_node("KeyWords").get_child(i), {"active_cards": active_cards})
 
 
 func get_active_cards() -> Array[CombatCard]:

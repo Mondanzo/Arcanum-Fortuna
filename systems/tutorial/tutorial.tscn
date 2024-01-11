@@ -1,18 +1,18 @@
-[gd_scene load_steps=46 format=3 uid="uid://bxifydx1hdpwf"]
+[gd_scene load_steps=47 format=3 uid="uid://bxifydx1hdpwf"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_lco5q"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial.gd" id="2_xmauc"]
-[ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_fi5ux"]
-[ext_resource type="Script" path="res://data/scripts/enemy_stats.gd" id="4_e0ixd"]
+[ext_resource type="Resource" uid="uid://dc3rsjy1lbvrd" path="res://data/enemy/old/basic_enemy.tres" id="3_c0ejg"]
 [ext_resource type="Script" path="res://data/scripts/player_data.gd" id="4_qmnt7"]
-[ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="5_r05du"]
 [ext_resource type="Script" path="res://systems/tutorial/steps/tutorial_step.gd" id="5_txu6s"]
+[ext_resource type="Script" path="res://data/scripts/debug_enemy_data.gd" id="6_lxqc0"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_tutorial_chat.gd" id="8_lf455"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_visiblity.gd" id="8_r3c85"]
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tc_button_pressed.gd" id="8_ubcot"]
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tc_no_cards.gd" id="10_c5ygj"]
 [ext_resource type="PackedScene" uid="uid://d2hl78obwhmmt" path="res://systems/tutorial/tutorial_box.tscn" id="10_ni5w3"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_draw_card.gd" id="10_u046w"]
+[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="10_wm3gc"]
 [ext_resource type="Texture2D" uid="uid://chn0s2w1mnhj0" path="res://assets/sprites/magician.png" id="10_x770v"]
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tcd_delayed.gd" id="11_xqb1o"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_enabled.gd" id="12_ojt8p"]
@@ -29,33 +29,12 @@
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_play_out_turn.gd" id="22_o7xjc"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="23_mj0yg"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_process_mode.gd" id="23_s0rud"]
+[ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="24_46t30"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="24_allw1"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="25_nrcpb"]
+[ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="26_clcvc"]
 [ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="26_s5xfr"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_swap_scene.gd" id="26_t18aa"]
-
-[sub_resource type="Resource" id="Resource_7133d"]
-script = ExtResource("4_e0ixd")
-card_level_1_frequency = 0.0
-card_level_2_frequency = 0.0
-card_level_3_frequency = 0.0
-max_row = 0
-min_enemies_per_row = 0
-max_enemies_per_row = 0
-min_total_enemies = 0
-max_total_enemies = 0
-min_health = 10
-max_health = 10
-
-[sub_resource type="Resource" id="Resource_7as0j"]
-script = ExtResource("3_fi5ux")
-level1_cards = Array[ExtResource("20_yi4lx")]([])
-level2_cards = Array[ExtResource("20_yi4lx")]([])
-level3_cards = Array[ExtResource("20_yi4lx")]([])
-gold_reward = 4
-stats_per_level = Array[ExtResource("4_e0ixd")]([SubResource("Resource_7133d")])
-level = 0
-rng_seed = 0
 
 [sub_resource type="Resource" id="Resource_wj3g8"]
 script = ExtResource("4_qmnt7")
@@ -66,6 +45,11 @@ draw_amount = 1
 karma = 0
 draw_rng_seed = 1337
 currency = 0
+
+[sub_resource type="Resource" id="Resource_6hp1s"]
+script = ExtResource("6_lxqc0")
+health = 0.0
+rows = Array[Array]([])
 
 [sub_resource type="Resource" id="Resource_3wse5"]
 script = ExtResource("13_y6t7h")
@@ -88,6 +72,11 @@ script = ExtResource("23_mj0yg")
 
 [sub_resource type="Resource" id="Resource_43ql8"]
 script = ExtResource("24_allw1")
+karma_blob = ExtResource("24_46t30")
+small_blob = ExtResource("26_clcvc")
+karma_duration = 2.3
+karma_delay = 0.6
+blob_move = 20
 
 [sub_resource type="Resource" id="Resource_wlrrh"]
 script = ExtResource("25_nrcpb")
@@ -97,6 +86,11 @@ script = ExtResource("23_mj0yg")
 
 [sub_resource type="Resource" id="Resource_hfuxg"]
 script = ExtResource("24_allw1")
+karma_blob = ExtResource("24_46t30")
+small_blob = ExtResource("26_clcvc")
+karma_duration = 2.3
+karma_delay = 0.6
+blob_move = 20
 
 [sub_resource type="Resource" id="Resource_1upqg"]
 script = ExtResource("25_nrcpb")
@@ -116,10 +110,11 @@ trade_override = 0
 
 [node name="Tutorial" node_paths=PackedStringArray("tutorial_steps") instance=ExtResource("1_lco5q")]
 script = ExtResource("2_xmauc")
-enemy_data = SubResource("Resource_7as0j")
+enemy_data = ExtResource("3_c0ejg")
 tutorial_steps = NodePath("Steps")
 next_scene = "res://systems/ui/main_menu.tscn"
 debug_player_data = SubResource("Resource_wj3g8")
+debug_enemy_data = SubResource("Resource_6hp1s")
 
 [node name="Panel" parent="GameBoard/EnemyTiles/Row1" index="0"]
 visible = false
@@ -198,7 +193,7 @@ script = ExtResource("5_txu6s")
 
 [node name="DrawCard" type="Node" parent="Steps/TutorialStep2" index="0" node_paths=PackedStringArray("card_player")]
 script = ExtResource("10_u046w")
-card_to_draw = ExtResource("5_r05du")
+card_to_draw = ExtResource("10_wm3gc")
 card_player = NodePath("../../../CardPlayer")
 
 [node name="ChatPlayChariotCard" type="Node" parent="Steps/TutorialStep2" index="1" node_paths=PackedStringArray("tutorial_box")]

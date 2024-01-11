@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="1_neq4c"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/nodes/combat_node.gd" id="2_itd2s"]
 [ext_resource type="Texture2D" uid="uid://dy7tcnyepo7yq" path="res://assets/sprites/nodemap/combat.png" id="3_b4kjy"]
-[ext_resource type="Resource" uid="uid://dc3rsjy1lbvrd" path="res://data/enemy/basic_enemy.tres" id="3_vxnwv"]
+[ext_resource type="Resource" uid="uid://bv3cnrhc3av4j" path="res://data/enemy/enemy_test.tres" id="3_f2lra"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="6_fu8cw"]
 [ext_resource type="PackedScene" uid="uid://bml43x2miuf00" path="res://systems/dungeon_events/battle_event.tscn" id="11_ent3l"]
 
 [node name="CombatNode" instance=ExtResource("1_neq4c")]
 script = ExtResource("2_itd2s")
-potential_enemies = Array[Resource("res://data/scripts/enemy_data.gd")]([ExtResource("3_vxnwv")])
+potential_enemies = Array[Resource("res://data/scripts/enemy_data.gd")]([ExtResource("3_f2lra")])
 level = 0
 lookahead = 2
 no_card_overview = true

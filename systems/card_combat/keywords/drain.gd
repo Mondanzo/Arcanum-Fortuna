@@ -11,8 +11,8 @@ func init(id = 4):
 		description = description % [attack_gain, health_gain]
 	super.init(id)
 
-func trigger(source, target, icon, params={}):
-	await super(source, target, icon, params)
+func trigger(source, owner, target, icon_to_animate, params={}):
+	await super(source, owner, target, icon_to_animate, params)
 	if not target is CombatCard:
 		push_error("Cannot apply Drain. Invalid target ", target, ".")
 		

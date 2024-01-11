@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://diuvft4miq3c7"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_xuxc3"]
-[ext_resource type="Resource" uid="uid://bucp7s5xyq334" path="res://data/enemy/debug/debug_enemy.tres" id="2_6qelf"]
+[ext_resource type="Resource" uid="uid://bucp7s5xyq334" path="res://data/enemy/old/debug_enemy.tres" id="2_vdswc"]
 
 [node name="CardBattle_Debug" instance=ExtResource("1_xuxc3")]
 is_debug = true
-debug_enemy_data = ExtResource("2_6qelf")
+debug_enemy_data = ExtResource("2_vdswc")
 
 [node name="GameBoard" parent="." index="1"]
 offset_bottom = 0.0

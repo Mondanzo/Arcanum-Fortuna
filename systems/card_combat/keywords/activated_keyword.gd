@@ -15,6 +15,7 @@ func trigger(source, target, icon, params={}):
 
 func animate(source, target: CombatCard, icon, params):
 	if icon:
+		icon.is_animating = true
 		var tween = icon.create_tween()
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.set_ease(Tween.EASE_IN)
@@ -26,5 +27,6 @@ func animate(source, target: CombatCard, icon, params):
 		tween.tween_property(icon, "scale", Vector2.ONE, scale_speed)
 		tween.set_parallel(true)
 		tween.tween_property(icon, "position", icon.origin_position, scale_speed)
+		tween.finished.connect(func(): icon.is_animating = false)
 		tween.play()
 		await icon.get_tree().create_timer(scale_speed).timeout

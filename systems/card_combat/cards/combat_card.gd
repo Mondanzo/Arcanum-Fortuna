@@ -15,6 +15,7 @@ class_name CombatCard extends Card
 @export var active_color : Color
 @export var move_speed = 0.5
 
+signal animation_finished
 
 var target_offsets : Array[int] = [0]
 var is_enemy := false
@@ -23,11 +24,28 @@ var base_attack : int
 var base_health : int
 var placed_position: Vector2
 
+var __is_animating := false
+var is_animating: bool:
+	set(new_value):
+		__is_animating = new_value
+	get:
+		for keyword in %KeyWords.get_children():
+			if keyword.is_animating:
+				return true
+		return __is_animating
+
+
+func check_if_animations_finished():
+	if not is_animating:
+		animation_finished.emit()
+
 
 func setup():
 	super.setup()
 	base_attack = attack
 	base_health = health
+	for keyword in %KeyWords.get_children():
+		keyword.animation_finished.connect(check_if_animations_finished)
 
 
 func make_enemy():

@@ -6,7 +6,16 @@ extends TextureRect
 @export var descriptions : Array[KeywordDescription]
 @export var generate_tooltip := false
 
+signal animation_finished
+
 var origin_position
+var __is_animating := false
+var is_animating: bool:
+	set(new_value):
+		__is_animating = new_value
+		animation_finished.emit()
+	get:
+		return __is_animating
 
 
 func _ready():

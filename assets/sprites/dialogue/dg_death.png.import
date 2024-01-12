@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://butokrctqx3wq"
-path="res://.godot/imported/sigils_black.png-79b3deacfd57db93ff7bfd71e42bda24.ctex"
+uid="uid://bucumwgpc0sty"
+path="res://.godot/imported/dg_death.png-f034682c0300c5e13cf74b04d2977667.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/sigils_black.png"
-dest_files=["res://.godot/imported/sigils_black.png-79b3deacfd57db93ff7bfd71e42bda24.ctex"]
+source_file="res://assets/sprites/dialogue/dg_death.png"
+dest_files=["res://.godot/imported/dg_death.png-f034682c0300c5e13cf74b04d2977667.ctex"]
 
 [params]
 

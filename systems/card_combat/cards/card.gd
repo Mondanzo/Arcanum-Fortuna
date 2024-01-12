@@ -68,6 +68,7 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 		card_data.keywords = keywords
 	for keyword in keywords:
 		keyword.init()
+	%KeyWords.modulate = card_data.keyword_color
 	if has_node("%ShowCardTooltip"):
 		%ShowCardTooltip.init(card_data)
 	if card_data.sound_effect:

@@ -25,6 +25,7 @@ func try_import_cards():
 func import_cards(cards_table):
 	var cards_data = load(cards_table)
 	for card_data in cards_data.records:
+		cards_data.ResourceName = cards_data.ResourceName.strip_edges()
 		var card_path = "res://data/cards/" + card_data.ResourceName + ".tres"
 		if not ResourceLoader.exists(card_path):
 			push_error("Cannot load card '" + card_data.ResourceName +\
@@ -39,6 +40,7 @@ func import_cards(cards_table):
 		card_resource.keywords.clear()
 		
 		for keyword_name in card_data.Keywords.split(';'):
+			keyword_name = keyword_name.strip_edges()
 			if keyword_name == "":
 				continue
 			var keyword_path = "res://data/keyword/" + keyword_name + ".tres"

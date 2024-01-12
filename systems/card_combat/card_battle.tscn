@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=39 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_placement_phase.gd" id="9_j03le"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="10_5pdmy"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
+[ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="18_mrpnm"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -246,18 +247,22 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
 
 [node name="CardPlayer" parent="." instance=ExtResource("6_tn8rr")]
 layout_mode = 1
-mouse_filter = 2
 
 [node name="CardDeletionButton" type="CheckButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 27.0
-offset_top = 632.0
-offset_right = 229.0
-offset_bottom = 663.0
+offset_left = 28.0
+offset_top = 651.0
+offset_right = 230.0
+offset_bottom = 682.0
 scale = Vector2(1.3, 1.3)
 shortcut = SubResource("Shortcut_udv11")
 text = "Card Deletion Mode"
+
+[node name="ShowTooltip" parent="CardDeletionButton" instance=ExtResource("18_mrpnm")]
+layout_mode = 1
+text = "Toggle the delete button on all active cards of your side of the board.
+ When deleting a card via their delete button you will gain their karma value once and then the card will be permanently deleted."
 
 [node name="EndTurnButton" type="Button" parent="."]
 unique_name_in_owner = true

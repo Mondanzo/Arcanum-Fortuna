@@ -1,5 +1,7 @@
 class_name CombatCard extends Card
 
+signal deleted(card : CombatCard)
+
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
 
@@ -246,4 +248,5 @@ func set_delete_mode(value : bool):
 
 
 func _on_delete_button_pressed():
+	deleted.emit(self)
 	queue_free()

@@ -144,3 +144,9 @@ func _on_bonus_draw_button_button_down():
 	await draw_card()
 	if len(%CardStack.cardStack) > 0 && %Hand.enabled:
 		$BonusDrawButton.disabled = false
+
+func _on_friendly_card_deleted(card : CombatCard):
+	modify_karma(card.cost)
+	await get_tree().create_timer(animation_delay).timeout
+	await process_karma_overflow()
+	restore_default_color()

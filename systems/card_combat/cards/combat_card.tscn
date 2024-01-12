@@ -8,7 +8,7 @@
 script = ExtResource("1_3lxv2")
 buff_color = Color(0, 1, 0, 1)
 debuff_color = Color(1, 0, 0, 1)
-is_auto_flip = true
+is_auto_flip = false
 attack_speed = 0.2
 attack_rewind = 0.3
 attack_delay = 0.5

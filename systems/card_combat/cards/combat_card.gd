@@ -4,7 +4,7 @@ class_name CombatCard extends Card
 @export var debuff_color := Color.RED
 
 ## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
-@export var is_auto_flip = true
+@export var is_auto_flip = false
 
 @export_category("Animation Settings")
 @export var attack_speed = 0.2

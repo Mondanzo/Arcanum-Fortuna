@@ -36,16 +36,16 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered Companionship ATK." % [owner.card_data.name, owner.tile_coordinate.x, owner.tile_coordinate.y])
 	
-	if not buffed_cards_lookup.has(owner.get_instance_id()):
-		buffed_cards_lookup[owner.get_instance_id()] = []
+	if not buffed_cards_lookup.has(owner):
+		buffed_cards_lookup[owner] = []
 	
 	if owner.health <= 0:
 		print("[Keyword] Card " + str(owner) + " died and removed their Companionship ATK.")
-		for card in buffed_cards_lookup[owner.get_instance_id()]:
+		for card in buffed_cards_lookup[owner]:
 			if is_instance_valid(card):
 				card.attack -= attack_gain
 		return
 	for card : CombatCard in target:
-		if not card in buffed_cards_lookup[owner.get_instance_id()]:
+		if not card in buffed_cards_lookup[owner]:
 			card.attack += attack_gain
-	buffed_cards_lookup[owner.get_instance_id()] = target
+	buffed_cards_lookup[owner] = target

@@ -26,22 +26,22 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 		print("Health Drain triggered on ", target.card_name)
 	var hit_count = 0
 	if not granted_bufffs.has(owner):
-		granted_bufffs[owner.get_instance_id()] = 0
+		granted_bufffs[owner] = 0
 	else:
-		target.health -= granted_bufffs[owner.get_instance_id()]
-		granted_bufffs[owner.get_instance_id()] = 0 
+		target.health -= granted_bufffs[owner]
+		granted_bufffs[owner] = 0 
 	for card : CombatCard in params.active_cards:
 		if enable_debug_print:
 			print("Card '" + card.card_name + "' costs " + str(card.cost))
 		if card.cost > 0 and (!scale_from_same_side_only or card.is_enemy == owner.is_enemy):
 			hit_count += 1
-			var print_str = str(granted_bufffs[owner.get_instance_id()])
-			granted_bufffs[owner.get_instance_id()] += health_gain
+			var print_str = str(granted_bufffs[owner])
+			granted_bufffs[owner] += health_gain
 			if enable_debug_print:
-				print(print_str + " + " + str(health_gain) + " = " + str(granted_bufffs[owner.get_instance_id()]))
+				print(print_str + " + " + str(health_gain) + " = " + str(granted_bufffs[owner]))
 	if enable_debug_print:
-		print(str(target.health) + " => " + str(target.health + granted_bufffs[owner.get_instance_id()]))
-	target.health = max(1, target.health + granted_bufffs[owner.get_instance_id()])
+		print(str(target.health) + " => " + str(target.health + granted_bufffs[owner]))
+	target.health = max(1, target.health + granted_bufffs[owner])
 	if base_decription.count('%d') < 2:
 		base_decription += " (%d)"
 	description = base_decription % [health_gain, hit_count]

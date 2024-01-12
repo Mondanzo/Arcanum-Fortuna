@@ -25,7 +25,7 @@ func try_import_cards():
 func import_cards(cards_table):
 	var cards_data = load(cards_table)
 	for card_data in cards_data.records:
-		cards_data.ResourceName = cards_data.ResourceName.strip_edges()
+		card_data.ResourceName = card_data.ResourceName.strip_edges()
 		var card_path = "res://data/cards/" + card_data.ResourceName + ".tres"
 		if not ResourceLoader.exists(card_path):
 			push_error("Cannot load card '" + card_data.ResourceName +\

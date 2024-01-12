@@ -15,11 +15,6 @@ func _ready():
 	GlobalLog.add_entry("Main Menu loaded.")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_seed_input_text_changed(new_text : String):
 	seed = 0
 	for i in range(new_text.length()):

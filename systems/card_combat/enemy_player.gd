@@ -7,7 +7,12 @@ class_name EnemyPlayer extends Control
 @export var positive_effect_color : Color = Color.GREEN
 
 var data
-var health = 20
+var health := 20 : 
+	get:
+		return health
+	set(value):
+		health = value
+		$Health/Label.text = "Health: " + str(health)
 var max_health
 var karma = 0
 

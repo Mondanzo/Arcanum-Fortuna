@@ -23,7 +23,13 @@ signal card_drag_ended(card)
 @export var is_debug = false 
 @export var debug_data : PlayerData 
 
-var health : int
+var health : int : 
+	get:
+		return health
+	set(value):
+		health = value
+		%Health/Label.text = "Health: " + str(health)
+
 var max_health : int
 var karma : int
 
@@ -35,7 +41,6 @@ func init(data: PlayerData):
 	health = data.health
 	max_health = health
 	karma = data.karma
-	%Health/Label.text = "Health: " + str(health)
 
 
 func _ready():
@@ -50,7 +55,7 @@ func heal(amount):
 		return
 	health += amount
 	health = min(health, max_health)
-
+	
 
 func take_damage(amount):
 	%Health/Label.text = "Health: " + str(health) + " (" + str(-amount) + ")"

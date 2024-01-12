@@ -39,7 +39,8 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	if owner.health <= 0:
 		print("[Keyword] Card " + str(owner) + " died and removed their Companionship Health.")
 		for card in buffed_cards:
-			card.health = max(1, card.health - health_gain)
+			if is_instance_valid(card):
+				card.health = max(1, card.health - health_gain)
 		return
 	for card : CombatCard in target:
 		if not card in buffed_cards:

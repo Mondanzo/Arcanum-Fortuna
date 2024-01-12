@@ -7,4 +7,4 @@ func init(id = 5):
 	super.init(id)
 
 func get_new_targets(target_offsets, attacker) -> Array[int]:
-	return [-1, 1]
+	return [-1, 0, 1]

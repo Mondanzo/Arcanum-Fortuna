@@ -1,13 +1,13 @@
 ResourceName,Name,Cost,Attack,Health,Keywords
-the_magician,The Magician,-1,1,4,DrainATK1
-the_high_priestess,The High Priestess,-3,3,2,ConsumeATK1HP1;flip
-the_empress,The Empress,-3,2,4,DeathrattleSacrifice3;flip
-the_emperor,The Emperor,-3,4,5,
-the_hierophant,The Hierophant,-1,2,2,DeathrattleSacrifice3
-the_lovers,The Lovers,-3,3,3,SplitAttack
-the_chariot,The Chariot,-4,2,3,TripleAttack
-death,Death,-3,3,3,ConsumeATK1HP1
-page_of_cups,Page of Cups,3,0,2,
-page_of_pentacles,Page of Pentacles,4,1,0,
-page_of_wands,Page of Wands,4,0,1,
-page_of_swords,Page of Swords,5,0,0,
+the_magician,The Magician,-3,3,2,companionship_ATK1
+the_high_priestess,The High Priestess,-3,2,3,companionship_HP1
+the_empress,The Empress,-2,1,3,DrainATK1
+the_emperor,The Emperor,-2,4,5,slow;flip
+the_hierophant,The Hierophant,-1,2,2,DeathrattleSacrifice3;flip
+the_lovers,The Lovers,-4,3,2,SplitAttack
+the_chariot,The Chariot,-4,2,2,TripleAttack
+death,Death,-4,3,3,ConsumeATK1HP1
+page_of_cups,Page of Cups,4,1,2,
+page_of_pentacles,Page of Pentacles,4,2,1,
+page_of_wands,Page of Wands,3,0,2,deathrattle_heal1
+page_of_swords,Page of Swords,3,2,0,deathrattle_ATK1

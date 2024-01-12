@@ -5,7 +5,7 @@ extends ActivatedKeyword
 @export var enable_debug_print = false
 
 var base_decription := ""
-var granted_buff := 0
+var granted_bufffs : Dictionary = {}
 
 func init(id = 4):
 	if description.count('%d') == 1:
@@ -18,8 +18,11 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	if not target is CombatCard:
 		push_error("Cannot apply ATKDrain. Invalid target ", target, ".")
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered ATKdrain." % [target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
-	target.attack -= granted_buff
-	granted_buff = 0 
+	if not granted_bufffs.has(owner):
+		granted_bufffs[owner] = 0
+	else:
+		target.attack -= granted_bufffs[owner]
+		granted_bufffs[owner] = 0 
 	if enable_debug_print:
 		print("ATK Drain triggered on ", target.card_name)
 	var hit_count = 0
@@ -28,13 +31,13 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 			print("Card '" + card.card_name + "' costs " + str(card.cost))
 		if card.cost > 0:
 			hit_count += 1
-			var print_str = str(granted_buff)
-			granted_buff += attack_gain
+			var print_str = str(granted_bufffs[owner])
+			granted_bufffs[owner] += attack_gain
 			if enable_debug_print:
-				print(print_str + " + " + str(attack_gain) + " = " + str(granted_buff))
+				print(print_str + " + " + str(attack_gain) + " = " + str(granted_bufffs[owner]))
 	if enable_debug_print:
-		print(str(target.attack) + " => " + str(target.attack + granted_buff))
-	target.attack += granted_buff
+		print(str(target.attack) + " => " + str(target.attack + granted_bufffs[owner]))
+	target.attack += granted_bufffs[owner]
 	if base_decription.count('%d') < 2:
 		base_decription += " (%d)"
 	description = base_decription % [attack_gain, hit_count]

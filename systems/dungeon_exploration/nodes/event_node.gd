@@ -122,11 +122,3 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	hovering = false
-
-
-func _on_background_mouse_entered():
-	hovering = true
-
-
-func _on_background_mouse_exited():
-	hovering = false

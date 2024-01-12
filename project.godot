@@ -24,6 +24,7 @@ PauseMenu="*res://systems/ui/menus/pause_menu.tscn"
 [dialogic]
 
 directories/dch_directory={
+"death": "res://addons/dialogic/Characters/death.dch",
 "the_chariot": "res://addons/dialogic/Characters/the_chariot.dch",
 "the_dog": "res://addons/dialogic/Characters/the_dog.dch",
 "the_emperor": "res://addons/dialogic/Characters/the_emperor.dch",

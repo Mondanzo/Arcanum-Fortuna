@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dsvokssfcwugn" path="res://assets/sprites/cards/empress.png" id="1_kqrjl"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_hwoqx"]
-[ext_resource type="Resource" uid="uid://dad1dhkw7ls7g" path="res://data/keyword/DeathrattleSacrifice3.tres" id="2_oh4v0"]
+[ext_resource type="Resource" path="res://data/keyword/DeathrattleSacrifice3.tres" id="2_oh4v0"]
 [ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/flip.tres" id="3_ew8yc"]
 [ext_resource type="AudioStream" uid="uid://cuhllynyw5t2u" path="res://assets/sounds/cards/voices/the_empress.ogg" id="6_lw6mj"]
 

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Slow" load_steps=4 format=3 uid="uid://l23udqkfbm1c"]
+
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_lv6id"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/slow.gd" id="1_v7xas"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3iwep"]
+atlas = ExtResource("1_lv6id")
+region = Rect2(66, 198, 66, 66)
+
+[resource]
+script = ExtResource("1_v7xas")
+turns_to_skip = 1
+attack_on_first_turn = true
+title = "Slow %d"
+description = "This card has to skip %d turn(s) after each attack."
+icon = SubResource("AtlasTexture_3iwep")
+highlight_duration = 0.5

@@ -53,11 +53,21 @@ func init(player_data, enemy_data):
 	enemy.init(enemy_data)
 	for phase in phases:
 		phase.init(self)
+	game_board.active_cards_changed.connect(_on_active_cards_changed)
 
 
 func _input(event):
 	if not OS.has_feature("no-cheat") && event.is_action_pressed("debug_quit"):
 		finished.emit(player.health)
+
+
+func _on_active_cards_changed(source):
+	var active_cards = game_board.get_active_cards()
+	for card : CombatCard in active_cards:
+		for i in range(card.keywords.size()):
+			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
+				await card.keywords[i].trigger(source, card, card.keywords[i].get_target(source, card, self), \
+						card.get_node("KeyWords").get_child(i), {"active_cards": active_cards})
 
 
 func start_combat():
@@ -115,7 +125,7 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 		return false
 	game_board.highlight_tile(column_idx, friendly)
 	if await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly)):
-		game_board._on_active_cards_changed(target)
+		_on_active_cards_changed(target)
 		if was_target_player:
 			finished.emit(player.health)
 			is_battle_over = true

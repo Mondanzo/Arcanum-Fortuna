@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://lldlqve4ummu"]
+
+[ext_resource type="Script" path="res://GD_Test.gd" id="1_lo4i3"]
+[ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="2_igwb0"]
+[ext_resource type="PackedScene" uid="uid://vmliqn78631u" path="res://Audio/sfx_other.tscn" id="3_8j0fb"]
+[ext_resource type="PackedScene" uid="uid://2jbrg4k8rquv" path="res://Audio/sfx_bg.tscn" id="4_v6uwt"]
+[ext_resource type="Texture2D" uid="uid://reaj8dus61mk" path="res://icon.svg" id="5_3ugdg"]
+[ext_resource type="Script" path="res://GD_ButtonTest.gd" id="45_vitgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi05f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51hjh"]
+size = Vector2(104, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnhpx"]
+size = Vector2(62, 64)
+
+[node name="TestNode" type="Node2D"]
+script = ExtResource("1_lo4i3")
+
+[node name="SFXCard" parent="." instance=ExtResource("2_igwb0")]
+
+[node name="LoopRumble" parent="SFXCard" index="0"]
+volume_db = -64.0
+
+[node name="SFXOther" parent="." instance=ExtResource("3_8j0fb")]
+
+[node name="SFXBG" parent="." instance=ExtResource("4_v6uwt")]
+
+[node name="Ambience" parent="SFXBG" index="0"]
+autoplay = false
+
+[node name="Music" parent="SFXBG" index="1"]
+autoplay = false
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(297, 472)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("5_3ugdg")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
+position = Vector2(577, 1)
+texture = ExtResource("5_3ugdg")
+flip_h = true
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(6.34, 6.34)
+shape = SubResource("RectangleShape2D_pi05f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(577, 0)
+scale = Vector2(6.34, 6.34)
+shape = SubResource("RectangleShape2D_pi05f")
+
+[node name="Hand" type="Area2D" parent="."]
+position = Vector2(474, 570)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Hand"]
+position = Vector2(-88, 45)
+texture = ExtResource("5_3ugdg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Hand"]
+position = Vector2(44, 45)
+texture = ExtResource("5_3ugdg")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Hand"]
+position = Vector2(176, 45)
+texture = ExtResource("5_3ugdg")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Hand"]
+position = Vector2(308, 45)
+texture = ExtResource("5_3ugdg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hand"]
+position = Vector2(176, 42.5)
+shape = SubResource("RectangleShape2D_51hjh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand"]
+position = Vector2(-88, 45)
+shape = SubResource("RectangleShape2D_51hjh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hand"]
+position = Vector2(44, 45)
+shape = SubResource("RectangleShape2D_51hjh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Hand"]
+position = Vector2(308, 45)
+shape = SubResource("RectangleShape2D_51hjh")
+
+[node name="UiButton" type="Area2D" parent="."]
+position = Vector2(1100, 50)
+
+[node name="Sprite2D2" type="Sprite2D" parent="UiButton"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_3ugdg")
+script = ExtResource("45_vitgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UiButton"]
+shape = SubResource("RectangleShape2D_gnhpx")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Hand" to="." method="_on_deck_mouse_entered"]
+[connection signal="mouse_entered" from="UiButton" to="." method="_on_ui_button_mouse_entered"]
+
+[editable path="SFXCard"]
+[editable path="SFXOther"]
+[editable path="SFXBG"]

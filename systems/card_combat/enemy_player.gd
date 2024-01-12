@@ -48,6 +48,7 @@ func heal(amount):
 	health = min(health, max_health)
 
 func take_damage(amount):
+	SfxOther._SFX_Damage()
 	$Health/Label.text = "Health: " + str(health) + " (" + str(-amount) + ")"
 	health -= amount
 	$Health.modulate = attacked_color

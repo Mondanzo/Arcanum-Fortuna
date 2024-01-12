@@ -92,9 +92,7 @@ func setup():
 
 func _on_mouse_entered():
 	is_hovered = true
-	$AudioStreamPlayer.play()
 
 
 func _on_mouse_exited():
 	is_hovered = false
-	$AudioStreamPlayer.stop()

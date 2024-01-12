@@ -27,7 +27,7 @@ func _process(delta):
 
 func mouse_entered_event():
 	isHovered = true
-	$HoverSound.play()
+
 
 func mouse_exited_event():
 	isHovered = false
@@ -35,5 +35,4 @@ func mouse_exited_event():
 
 func _input(event):
 	if isHovered and event.is_action_pressed("pickUpCard"):
-		$ClickSound.play()
 		clicked.emit(self)

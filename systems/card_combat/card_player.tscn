@@ -18,10 +18,12 @@ script = ExtResource("1_ifl70")
 
 [node name="Hand" parent="." instance=ExtResource("1_cbbcf")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 0)
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 1
-offset_top = 0.0
 mouse_filter = 2
+show_rect = null
+hide_rect = null
+render_rects = null
 
 [node name="Deck" type="ReferenceRect" parent="."]
 unique_name_in_owner = true

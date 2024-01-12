@@ -65,6 +65,10 @@ func setup():
 	health = base_health
 	for keyword in %KeyWords.get_children():
 		keyword.animation_finished.connect(check_if_animations_finished)
+	
+	if card_data.sound_effect:
+		%SFXCard.SFX_CardSignature = card_data.sound_effect
+		%SFXCard._SFX_Signature()
 
 
 func make_enemy():
@@ -154,6 +158,7 @@ func process_death() -> bool:
 
 
 func animate_attack(target, tile_idx, tile: Control) -> bool:
+	%SFXCard._SFX_Attack()
 	var target_position
 	var half_card = get_rect().size.x / 2
 	if target is CombatCard:

@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxphpuocbhbrg"]
+[gd_scene load_steps=8 format=3 uid="uid://dxphpuocbhbrg"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/select_card.gd" id="1_gup87"]
-[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="1_vxo3i"]
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_xraf4"]
-[ext_resource type="AudioStream" uid="uid://csn44i17fqgdd" path="res://assets/sounds/card_pick.ogg" id="2_lu1ut"]
 [ext_resource type="Shader" path="res://shaders/noise_walk.gdshader" id="3_1n1oj"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="4_0aol1"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vw3vf"]
 noise_type = 0
@@ -44,8 +43,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.968627, 0.509804, 0, 1)
 
-[node name="HoverSound" type="AudioStreamPlayer" parent="." index="7"]
-stream = ExtResource("1_vxo3i")
+[node name="SingletonInteractor" parent="." index="9" instance=ExtResource("4_0aol1")]
+singleton = 1
+method_to_call = "_SFX_HandCardHover"
 
-[node name="ClickSound" type="AudioStreamPlayer" parent="." index="8"]
-stream = ExtResource("2_lu1ut")
+[connection signal="mouse_entered" from="." to="SingletonInteractor" method="execute"]

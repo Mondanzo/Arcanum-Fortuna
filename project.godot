@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Tarot Dungeon"
+config/tags=PackedStringArray("s4g")
 run/main_scene="res://utils/entry_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
@@ -20,6 +21,8 @@ config/icon="res://icon.svg"
 GlobalLog="*res://utils/autoload/global_log.tscn"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 PauseMenu="*res://systems/ui/menus/pause_menu.tscn"
+SfxBg="*res://Audio/sfx_bg.tscn"
+SfxOther="*res://Audio/sfx_other.tscn"
 
 [dialogic]
 

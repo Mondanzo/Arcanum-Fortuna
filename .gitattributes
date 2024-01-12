@@ -7,3 +7,4 @@
 *.cfg text eol=lf
 *.dtl text eol=lf
 project.godot text eol=lf
+*.json text eol=lf

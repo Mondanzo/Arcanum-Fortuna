@@ -1,8 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://blifmtx3ipelv"]
+[gd_scene load_steps=4 format=3 uid="uid://blifmtx3ipelv"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/hand_card.gd" id="1_85cwi"]
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_g1h4l"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="3_msu6w"]
 
 [node name="HandCard" instance=ExtResource("1_g1h4l")]
 scale = Vector2(1.1, 1.1)
 script = ExtResource("1_85cwi")
+
+[node name="DrawSound" parent="." index="8" instance=ExtResource("3_msu6w")]
+singleton = 1
+method_to_call = "_SFX_Draw"
+on_ready = true
+
+[node name="HoverSound" parent="." index="9" instance=ExtResource("3_msu6w")]
+singleton = 1
+method_to_call = "_SFX_HandCardHover"
+connect_signal = "mouse_entered"
+
+[node name="DragStart" parent="." index="10" instance=ExtResource("3_msu6w")]
+singleton = 1
+method_to_call = "_SFX_HandCardHover"
+connect_signal = "drag_started"

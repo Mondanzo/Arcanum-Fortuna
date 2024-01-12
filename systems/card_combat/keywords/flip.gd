@@ -34,6 +34,7 @@ func animate(source, target, icon_to_animate, params={}):
 		icon_tween.play()
 	
 	var tween = card.create_tween()
+	target.get_node("%SFXCard")._SFX_Flip()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(card, "scale", Vector2.DOWN, rotation_duration / 2.0)

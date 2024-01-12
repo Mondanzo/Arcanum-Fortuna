@@ -39,6 +39,7 @@ mouse_force_pass_scroll_events = false
 texture = ExtResource("2_7pmo2")
 
 [node name="icon" type="TextureRect" parent="background"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgdblxt0g8doq"]
+[gd_scene load_steps=5 format=3 uid="uid://dgdblxt0g8doq"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/combat_card.gd" id="1_3lxv2"]
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_8u6ck"]
 [ext_resource type="Texture2D" uid="uid://j8o1whwr6cmm" path="res://assets/ui/icons/ui_icon_delete_forever.svg" id="3_dlei7"]
+[ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="4_ynbjm"]
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
 script = ExtResource("1_3lxv2")
@@ -29,5 +30,9 @@ offset_right = 164.0
 offset_bottom = 34.0
 icon = ExtResource("3_dlei7")
 icon_alignment = 1
+
+[node name="SFXCard" parent="." index="9" instance=ExtResource("4_ynbjm")]
+unique_name_in_owner = true
+SFX_CardSignature = null
 
 [connection signal="pressed" from="DeleteButton" to="." method="_on_delete_button_pressed"]

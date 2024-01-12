@@ -77,6 +77,7 @@ func _input(event: InputEvent):
 		click()
 
 func click():
+	SfxOther._SFX_UIButtonPress()
 	on_stepped_on.emit()
 	player.update_target(self)
 	for c in connectedFrom:
@@ -117,6 +118,8 @@ func _generated(node_index: int, level: int, _rng: RandomNumberGenerator):
 
 
 func _on_mouse_entered():
+	if selectable:
+		SfxOther._SFX_UIButtonHover()
 	hovering = true
 
 

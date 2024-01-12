@@ -25,6 +25,7 @@ func update_number(mod_number: int):
 	count += mod_number
 	%Count.text = str(count)
 	
+	SfxOther._SFX_Blip(count)
 	target = bad_modulate.lerp(
 		good_modulate,
 		float(clamp(count, worse_digit, best_digit) + abs(worse_digit))

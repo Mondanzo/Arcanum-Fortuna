@@ -100,7 +100,7 @@ func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
 	GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 	[new_combat_card.card_data.name, tile_idx, 1])
 	await get_tree().process_frame
-	active_cards_changed.emit(new_combat_card)
+	# active_cards_changed.emit(new_combat_card)
 	return true
 
 
@@ -113,7 +113,6 @@ func try_move_enemy_card_to_front(tile_idx):
 	await enemy_tiles_back.get_child(tile_idx).get_child(0).animate_move(get_enemy_tile_pos(1, tile_idx))
 	enemy_tiles_back.get_child(tile_idx).get_child(0).reparent(enemy_tiles_front.get_child(tile_idx))
 	await get_tree().process_frame
-	active_cards_changed.emit(enemy_tiles_front.get_child(tile_idx).get_child(0))
 	return true
 	
 func place_enemy_card_back(cardData : CardData, tile_idx) -> bool:

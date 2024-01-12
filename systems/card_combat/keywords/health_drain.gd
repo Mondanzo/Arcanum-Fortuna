@@ -6,7 +6,7 @@ extends ActivatedKeyword
 
 var previous_health_gained := 0
 var base_decription := ""
-var granted_buff := 0
+var granted_bufffs : Dictionary = {}
 
 func init(id = 4):
 	if description.count('%d') == 1:
@@ -22,20 +22,23 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	if enable_debug_print:
 		print("Health Drain triggered on ", target.card_name)
 	var hit_count = 0
-	target.health -= granted_buff
-	granted_buff = 0
+	if not granted_bufffs.has(owner):
+		granted_bufffs[owner] = 0
+	else:
+		target.health -= granted_bufffs[owner]
+		granted_bufffs[owner] = 0 
 	for card : CombatCard in params.active_cards:
 		if enable_debug_print:
 			print("Card '" + card.card_name + "' costs " + str(card.cost))
 		if card.cost > 0:
 			hit_count += 1
-			var print_str = str(granted_buff)
-			granted_buff += health_gain
+			var print_str = str(granted_bufffs[owner])
+			granted_bufffs[owner] += health_gain
 			if enable_debug_print:
-				print(print_str + " + " + str(health_gain) + " = " + str(granted_buff))
+				print(print_str + " + " + str(health_gain) + " = " + str(granted_bufffs[owner]))
 	if enable_debug_print:
-		print(str(target.health) + " => " + str(target.health + granted_buff))
-	target.health = max(1, target.health + granted_buff)
+		print(str(target.health) + " => " + str(target.health + granted_bufffs[owner]))
+	target.health = max(1, target.health + granted_bufffs[owner])
 	if base_decription.count('%d') < 2:
 		base_decription += " (%d)"
 	description = base_decription % [health_gain, hit_count]

@@ -18,7 +18,7 @@ func _process(delta):
 	self_modulate = self_modulate.lerp(target, 0.1)
 	$trail.self_modulate = self_modulate
 	
-	global_position = global_position.lerp(Vector2(1920 / 2, 1080 / 2), 0.1)
+	global_position = global_position.lerp(original_position, 0.1)
 
 
 func update_number(mod_number: int):
@@ -35,5 +35,6 @@ func update_number(mod_number: int):
 func delete():
 	emitting = false
 	$trail.emitting = false
+	$Count.visible = false
 	await get_tree().create_timer(2).timeout
 	queue_free()

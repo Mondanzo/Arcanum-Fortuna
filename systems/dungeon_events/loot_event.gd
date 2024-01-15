@@ -8,8 +8,11 @@ extends Node
 @export var card_animation_speed = 0.66
 @export var card_interpolation_option := Tween.TRANS_CUBIC
 
+@export_category("Alternative Reward")
 ## the {placeholder} will get replaced with the actual reward gained.
 @export var alternative_reward_string := "You gained {placeholder} coins instead!"
+@export var min_coins = 1
+@export var max_coins = 10
 
 var rng := RandomNumberGenerator.new()
 
@@ -117,7 +120,7 @@ func _on_confirm_button_pressed():
 
 
 func calculate_alternative_reward():
-	for i in range(rng.randi_range(1, 10)):
+	for i in range(rng.randi_range(min_coins, max_coins)):
 		$CanvasLayer/BigBlob.update_number(1)
 		$CanvasLayer/BigBlob.global_position += Vector2(randf() - 0.5, randf() - 0.5) * randf_range(100, 200)
 		await get_tree().create_timer(0.5).timeout

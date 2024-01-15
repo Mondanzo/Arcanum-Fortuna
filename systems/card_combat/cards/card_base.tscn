@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=13 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
@@ -7,6 +7,23 @@
 [ext_resource type="Texture2D" uid="uid://c3mveorhm0h1n" path="res://assets/ui/icons/atk_placeholder.png" id="3_5dpjl"]
 [ext_resource type="PackedScene" uid="uid://c21gcj8wgm736" path="res://systems/ui/tooltips/show_card_tooltip.tscn" id="3_cofgw"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="4_y50ar"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_4kaqf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
+atlas = ExtResource("6_4kaqf")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vo4j"]
+atlas = ExtResource("6_4kaqf")
+region = Rect2(0, 92, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ati"]
+atlas = ExtResource("6_4kaqf")
+region = Rect2(0, 184, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0j57"]
+atlas = ExtResource("6_4kaqf")
+region = Rect2(0, 276, 80, 80)
 
 [node name="Card" type="Control"]
 z_index = 2
@@ -146,32 +163,45 @@ vertical_alignment = 1
 [node name="KeyWords" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -33.0
-offset_top = -66.0
-offset_right = 33.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 66.0
 pivot_offset = Vector2(33, 33)
 
-[node name="KeywordIcon" parent="KeyWords" instance=ExtResource("2_bo1pm")]
+[node name="KeywordSlot1" type="TextureRect" parent="KeyWords"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 34.0
+offset_right = 225.0
+offset_bottom = 114.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_yop51")
+
+[node name="KeywordIcon" parent="KeyWords/KeywordSlot1" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -33.0
-offset_bottom = 0.0
+offset_left = -372.751
+offset_top = -82.5707
+offset_right = -339.751
+offset_bottom = -49.5707
 grow_vertical = 0
 pivot_offset = Vector2(16, 16)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="KeywordIcon2" parent="KeyWords" instance=ExtResource("2_bo1pm")]
+[node name="KeywordSlot2" type="TextureRect" parent="KeyWords"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 69.0
+offset_right = 225.0
+offset_bottom = 149.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_4vo4j")
+
+[node name="KeywordIcon2" parent="KeyWords/KeywordSlot2" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -179,27 +209,51 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -33.0
-offset_top = -33.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = -367.918
+offset_top = -82.5707
+offset_right = -334.918
+offset_bottom = -49.5707
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset = Vector2(16, 16)
 
-[node name="KeywordIcon3" parent="KeyWords" instance=ExtResource("2_bo1pm")]
+[node name="KeywordSlot3" type="TextureRect" parent="KeyWords"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 104.0
+offset_right = 225.0
+offset_bottom = 184.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_40ati")
+
+[node name="KeywordIcon3" parent="KeyWords/KeywordSlot3" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
+offset_left = -372.751
+offset_top = -87.4036
+offset_right = -339.751
+offset_bottom = -54.4036
 pivot_offset = Vector2(16, 16)
 
-[node name="KeywordIcon4" parent="KeyWords" instance=ExtResource("2_bo1pm")]
+[node name="KeywordSlot4" type="TextureRect" parent="KeyWords"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 139.0
+offset_right = 225.0
+offset_bottom = 219.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_f0j57")
+
+[node name="KeywordIcon4" parent="KeyWords/KeywordSlot4" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -33.0
-offset_right = 0.0
+offset_left = -367.918
+offset_top = -87.4036
+offset_right = -334.918
+offset_bottom = -54.4036
 grow_horizontal = 0
 pivot_offset = Vector2(16, 16)
 

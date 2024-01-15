@@ -15,6 +15,15 @@
 "nicknames": ["cool_hat"],
 "offset": Vector2(0, 0),
 "portraits": {
+"": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "awoken": {
 "export_overrides": {
 "image": "\"res://assets/sprites/dialogue/fool_awoken.png\""

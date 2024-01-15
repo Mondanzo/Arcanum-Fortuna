@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vy0ulm2qucxw"
-path="res://.godot/imported/hierophant.png-8c7150c807b148201133bce83069e0a8.ctex"
+uid="uid://3r76vpu14k8h"
+path="res://.godot/imported/Hierophant.png-04c4414bcffd1449ff3bd1eaaa0f4e63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/hierophant.png"
-dest_files=["res://.godot/imported/hierophant.png-8c7150c807b148201133bce83069e0a8.ctex"]
+source_file="res://Hierophant.png"
+dest_files=["res://.godot/imported/Hierophant.png-04c4414bcffd1449ff3bd1eaaa0f4e63.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

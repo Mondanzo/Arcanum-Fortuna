@@ -123,18 +123,25 @@ func get_target_offsets():
 func heal(amount : int):
 	pass
 
+
 func take_damage(amount : int):
 	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
+	for keyword in keywords:
+		if keyword.has_method("get_reduced_damage"):
+			amount = keyword.get_reduced_damage(self, amount)
 	health -= amount
+	modulate = attacked_color if amount > 0 else active_color
+	await animate_damage()
+
+
+func animate_damage():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property(self, "rotation", rotation + deg_to_rad(-5), 0.2)
 	tween.tween_property(self, "rotation", rotation, 0.1)
 	tween.play()
-	%HealthCost.text = str(health)
-	modulate = attacked_color
 
 
 func restore_default_color():

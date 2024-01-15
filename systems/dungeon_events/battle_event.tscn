@@ -12,3 +12,4 @@ winEvent = ExtResource("3_ukc1v")
 loseEvent = ExtResource("4_ig2d4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true

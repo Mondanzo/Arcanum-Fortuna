@@ -378,7 +378,7 @@ bad_modulate = Color(0.627451, 0.592157, 0.423529, 1)
 
 [node name="skip_reward" type="Label" parent="CanvasLayer"]
 visible = false
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_top = -512.0

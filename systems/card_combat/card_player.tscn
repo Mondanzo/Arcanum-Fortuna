@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://eo8nyis4kslg"]
+[gd_scene load_steps=9 format=3 uid="uid://eo8nyis4kslg"]
 
 [ext_resource type="PackedScene" uid="uid://d11sabcwtgmsp" path="res://systems/card_combat/hand.tscn" id="1_cbbcf"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_ifl70"]
 [ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="2_yo3i5"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="5_bxaiy"]
+[ext_resource type="Texture2D" uid="uid://by4v5aq6yrqoh" path="res://assets/sprites/vfx/overlays/hurt_overlay.png" id="6_xofxq"]
+[ext_resource type="Script" path="res://systems/effects/screenshake_cam.gd" id="7_lms71"]
 [ext_resource type="PackedScene" uid="uid://cnw2n821p8qt8" path="res://systems/card_combat/card_stack.tscn" id="10_n68ae"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fq2da"]
 
 [node name="CardPlayer" type="ReferenceRect"]
 custom_minimum_size = Vector2(300, 650)
@@ -13,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_ifl70")
 
 [node name="Hand" parent="." instance=ExtResource("1_cbbcf")]
@@ -21,9 +25,6 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 1
 mouse_filter = 2
-show_rect = null
-hide_rect = null
-render_rects = null
 
 [node name="Deck" type="ReferenceRect" parent="."]
 unique_name_in_owner = true
@@ -133,5 +134,22 @@ offset_right = 266.0
 offset_bottom = 783.0
 theme_override_font_sizes/font_size = 18
 text = "Draw Extra Card (-2 Karma)"
+
+[node name="HurtOverlay" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_xofxq")
+
+[node name="ScreenshakeCamera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+script = ExtResource("7_lms71")
+noise = SubResource("FastNoiseLite_fq2da")
+intensity = 10.0
 
 [connection signal="button_down" from="BonusDrawButton" to="." method="_on_bonus_draw_button_button_down"]

@@ -33,6 +33,7 @@ directories/dch_directory={
 "the_emperor": "res://addons/dialogic/Characters/the_emperor.dch",
 "the_empress": "res://addons/dialogic/Characters/the_empress.dch",
 "the_fool": "res://addons/dialogic/Characters/the_fool.dch",
+"the_hierophant": "res://addons/dialogic/Characters/the_hierophant.dch",
 "the_magician": "res://addons/dialogic/Characters/the_magician.dch"
 }
 directories/dtl_directory={

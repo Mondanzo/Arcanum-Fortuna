@@ -49,7 +49,7 @@ func process_effect() -> ExitState:
 		var health_slot = await card.animate_karma(target)
 		var small_pearl = small_blob.instantiate()
 		combat.game_board.add_child(small_pearl)
-		small_pearl.global_position = health_slot.global_position
+		small_pearl.global_position = health_slot.get_global_rect().get_center()
 		
 		await combat.get_tree().create_timer(karma_delay).timeout
 		var tween = combat.create_tween()

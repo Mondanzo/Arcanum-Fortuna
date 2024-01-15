@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DebuffKeyword" load_steps=4 format=3 uid="uid://bjb4gweuy63un"]
+
+[ext_resource type="Script" path="res://systems/card_combat/keywords/debuff_keyword.gd" id="1_roctg"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_sm5kf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i28ef"]
+atlas = ExtResource("1_sm5kf")
+region = Rect2(66, 198, 66, 66)
+
+[resource]
+script = ExtResource("1_roctg")
+target_options = 2
+attack_debuff = 1
+health_debuff = 0
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 4
+is_animated = false
+scale_speed = 0.6
+title = "Atk Nerf"
+description = "While this card is alive the opposing card with the highest attack loses %d attack."
+icon = SubResource("AtlasTexture_i28ef")
+highlight_duration = 0.5

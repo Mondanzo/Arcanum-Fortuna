@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DebuffKeyword" load_steps=4 format=3 uid="uid://bfl0f12s8s3v6"]
+
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_jqphi"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/debuff_keyword.gd" id="1_kuj4i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vju0"]
+atlas = ExtResource("1_jqphi")
+region = Rect2(66, 198, 66, 66)
+
+[resource]
+script = ExtResource("1_kuj4i")
+target_options = 1
+attack_debuff = 1
+health_debuff = 0
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 4
+is_animated = false
+scale_speed = 0.6
+title = "Keyword"
+description = "While this card is alive the opposing card in front of it loses %d attack."
+icon = SubResource("AtlasTexture_7vju0")
+highlight_duration = 0.5

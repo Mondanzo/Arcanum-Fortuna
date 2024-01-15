@@ -188,6 +188,16 @@ func get_enemy_back_row() -> Array[CombatCard]:
 	return res
 
 
+func get_friendly_row() -> Array[CombatCard]:
+	var res : Array[CombatCard] = []
+	for tile in player_tiles.get_children():
+		if tile.get_child_count() != 0 && tile.get_child(0) is CombatCard:
+			res.push_back(tile.get_child(0))
+		else:
+			res.push_back(null)
+	return res
+
+
 func get_active_cards() -> Array[CombatCard]:
 	return get_friendly_cards() + get_front_enemies()
 

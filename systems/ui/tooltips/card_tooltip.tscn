@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7qbbf3idp0cf"]
+[gd_scene load_steps=17 format=3 uid="uid://c7qbbf3idp0cf"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
 [ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://assets/sprites/cards/chariot.png" id="1_nnqwu"]
@@ -7,10 +7,27 @@
 [ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="4_dw4cm"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="5_5o7m8"]
 [ext_resource type="Texture2D" uid="uid://c3mveorhm0h1n" path="res://assets/ui/icons/atk_placeholder.png" id="6_pte6t"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_wcvh1"]
 [ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="8_25ce2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
 size = Vector2(200, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl773"]
+atlas = ExtResource("6_wcvh1")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2setv"]
+atlas = ExtResource("6_wcvh1")
+region = Rect2(0, 92, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jru05"]
+atlas = ExtResource("6_wcvh1")
+region = Rect2(0, 184, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmwtw"]
+atlas = ExtResource("6_wcvh1")
+region = Rect2(0, 276, 80, 80)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fh8de"]
 font_size = 32
@@ -109,65 +126,6 @@ grow_vertical = 2
 text = "Type Placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="KeyWords" type="Control" parent="Container/HBoxContainer/Control/Card"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -33.0
-offset_top = -108.505
-offset_right = 33.0
-offset_bottom = -42.505
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(2.25, 2.25)
-pivot_offset = Vector2(33, 33)
-
-[node name="KeywordIcon" parent="Container/HBoxContainer/Control/Card/KeyWords" instance=ExtResource("3_yndjn")]
-visible = false
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -33.0
-offset_bottom = 0.0
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="KeywordIcon2" parent="Container/HBoxContainer/Control/Card/KeyWords" instance=ExtResource("3_yndjn")]
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -33.0
-offset_top = -33.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="KeywordIcon3" parent="Container/HBoxContainer/Control/Card/KeyWords" instance=ExtResource("3_yndjn")]
-visible = false
-layout_mode = 1
-
-[node name="KeywordIcon4" parent="Container/HBoxContainer/Control/Card/KeyWords" instance=ExtResource("3_yndjn")]
-visible = false
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -33.0
-offset_right = 0.0
-grow_horizontal = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Container/HBoxContainer/Control/Card"]
 bus = &"Voices"
@@ -293,6 +251,107 @@ theme_override_font_sizes/font_size = 21
 text = "ATK"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeyWordSlots" type="Control" parent="Container/HBoxContainer/Control/Card"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 66.0
+pivot_offset = Vector2(33, 33)
+
+[node name="KeywordSlot1" type="TextureRect" parent="Container/HBoxContainer/Control/Card/KeyWordSlots"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 34.0
+offset_right = 225.0
+offset_bottom = 114.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_pl773")
+
+[node name="KeywordIcon" parent="Container/HBoxContainer/Control/Card/KeyWordSlots/KeywordSlot1" instance=ExtResource("3_yndjn")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5758
+offset_top = -22.0051
+offset_right = 25.4242
+offset_bottom = 27.9949
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="KeywordSlot2" type="TextureRect" parent="Container/HBoxContainer/Control/Card/KeyWordSlots"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 69.0
+offset_right = 225.0
+offset_bottom = 149.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_2setv")
+
+[node name="KeywordIcon2" parent="Container/HBoxContainer/Control/Card/KeyWordSlots/KeywordSlot2" instance=ExtResource("3_yndjn")]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.5758
+offset_top = -62.0051
+offset_right = -14.5758
+offset_bottom = -12.0051
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(16, 16)
+
+[node name="KeywordSlot3" type="TextureRect" parent="Container/HBoxContainer/Control/Card/KeyWordSlots"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 104.0
+offset_right = 225.0
+offset_bottom = 184.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_jru05")
+
+[node name="KeywordIcon3" parent="Container/HBoxContainer/Control/Card/KeyWordSlots/KeywordSlot3" instance=ExtResource("3_yndjn")]
+visible = false
+layout_mode = 1
+offset_left = 15.4242
+offset_top = 17.9949
+offset_right = 65.4242
+offset_bottom = 67.9949
+pivot_offset = Vector2(16, 16)
+
+[node name="KeywordSlot4" type="TextureRect" parent="Container/HBoxContainer/Control/Card/KeyWordSlots"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 139.0
+offset_right = 225.0
+offset_bottom = 219.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_pmwtw")
+
+[node name="KeywordIcon4" parent="Container/HBoxContainer/Control/Card/KeyWordSlots/KeywordSlot4" instance=ExtResource("3_yndjn")]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.5758
+offset_top = 17.9949
+offset_right = -14.5758
+offset_bottom = 67.9949
+grow_horizontal = 0
+pivot_offset = Vector2(16, 16)
 
 [node name="CardArtwork" type="TextureRect" parent="Container/HBoxContainer"]
 unique_name_in_owner = true

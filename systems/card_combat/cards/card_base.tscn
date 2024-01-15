@@ -160,7 +160,7 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="KeyWords" type="Control" parent="."]
+[node name="KeyWordSlots" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 0
@@ -168,7 +168,7 @@ offset_right = 66.0
 offset_bottom = 66.0
 pivot_offset = Vector2(33, 33)
 
-[node name="KeywordSlot1" type="TextureRect" parent="KeyWords"]
+[node name="KeywordSlot1" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
 offset_left = 145.0
 offset_top = 34.0
@@ -177,22 +177,25 @@ offset_bottom = 114.0
 scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_yop51")
 
-[node name="KeywordIcon" parent="KeyWords/KeywordSlot1" instance=ExtResource("2_bo1pm")]
+[node name="KeywordIcon" parent="KeyWordSlots/KeywordSlot1" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -372.751
-offset_top = -82.5707
-offset_right = -339.751
-offset_bottom = -49.5707
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5758
+offset_top = -22.0051
+offset_right = 25.4242
+offset_bottom = 27.9949
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset = Vector2(16, 16)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="KeywordSlot2" type="TextureRect" parent="KeyWords"]
+[node name="KeywordSlot2" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
 offset_left = 145.0
 offset_top = 69.0
@@ -201,7 +204,7 @@ offset_bottom = 149.0
 scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_4vo4j")
 
-[node name="KeywordIcon2" parent="KeyWords/KeywordSlot2" instance=ExtResource("2_bo1pm")]
+[node name="KeywordIcon2" parent="KeyWordSlots/KeywordSlot2" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -209,15 +212,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -367.918
-offset_top = -82.5707
-offset_right = -334.918
-offset_bottom = -49.5707
+offset_left = -64.5758
+offset_top = -62.0051
+offset_right = -14.5758
+offset_bottom = -12.0051
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset = Vector2(16, 16)
 
-[node name="KeywordSlot3" type="TextureRect" parent="KeyWords"]
+[node name="KeywordSlot3" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
 offset_left = 145.0
 offset_top = 104.0
@@ -226,16 +229,16 @@ offset_bottom = 184.0
 scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_40ati")
 
-[node name="KeywordIcon3" parent="KeyWords/KeywordSlot3" instance=ExtResource("2_bo1pm")]
+[node name="KeywordIcon3" parent="KeyWordSlots/KeywordSlot3" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
-offset_left = -372.751
-offset_top = -87.4036
-offset_right = -339.751
-offset_bottom = -54.4036
+offset_left = 15.4242
+offset_top = 17.9949
+offset_right = 65.4242
+offset_bottom = 67.9949
 pivot_offset = Vector2(16, 16)
 
-[node name="KeywordSlot4" type="TextureRect" parent="KeyWords"]
+[node name="KeywordSlot4" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
 offset_left = 145.0
 offset_top = 139.0
@@ -244,16 +247,16 @@ offset_bottom = 219.0
 scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_f0j57")
 
-[node name="KeywordIcon4" parent="KeyWords/KeywordSlot4" instance=ExtResource("2_bo1pm")]
+[node name="KeywordIcon4" parent="KeyWordSlots/KeywordSlot4" instance=ExtResource("2_bo1pm")]
 visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -367.918
-offset_top = -87.4036
-offset_right = -334.918
-offset_bottom = -54.4036
+offset_left = -64.5758
+offset_top = 17.9949
+offset_right = -14.5758
+offset_bottom = 67.9949
 grow_horizontal = 0
 pivot_offset = Vector2(16, 16)
 
@@ -264,6 +267,11 @@ tooltip_template = "res://systems/ui/tooltips/card_tooltip.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Voices"
+
+[node name="KeywordSlots" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -65,8 +65,8 @@ func setup():
 	base_health = health
 	attack = base_attack
 	health = base_health
-	for keyword in %KeyWords.get_children():
-		keyword.animation_finished.connect(check_if_animations_finished)
+	for keyword_slot in %KeyWordSlots.get_children():
+		keyword_slot.get_child(0).animation_finished.connect(check_if_animations_finished)
 	
 	if card_data.sound_effect:
 		%SFXCard.SFX_CardSignature = card_data.sound_effect

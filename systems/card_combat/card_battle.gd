@@ -67,7 +67,7 @@ func _on_active_cards_changed(source):
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
 				await card.keywords[i].trigger(source, card, card.keywords[i].get_target(source, card, self), \
-						card.get_node("KeyWords").get_child(i), {"active_cards": active_cards})
+						card.get_node("KeyWordSlots").get_child(i).get_child(0), {"active_cards": active_cards})
 
 
 func start_combat():

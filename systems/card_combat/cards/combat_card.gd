@@ -33,8 +33,8 @@ var is_animating: bool:
 	set(new_value):
 		__is_animating = new_value
 	get:
-		for keyword in %KeyWords.get_children():
-			if keyword.is_animating:
+		for keyword_slot in %KeyWordSlots.get_children():
+			if keyword_slot.get_child(0).is_animating:
 				return true
 		return __is_animating
 
@@ -85,7 +85,7 @@ func trigger_keywords(source, owner, trigger : int, combat = null):
 	for i in range(keywords.size()):
 		if keywords[i] is ActivatedKeyword and keywords[i].triggers & trigger:
 			await keywords[i].trigger(source, owner, keywords[i].get_target(source, owner, combat), \
-					get_node("KeyWords").get_child(i))
+					get_node("KeyWordSlots").get_child(i).get_child(0))
 
 
 func check_if_animations_finished():

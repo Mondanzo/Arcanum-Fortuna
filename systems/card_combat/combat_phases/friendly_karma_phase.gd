@@ -20,8 +20,8 @@ func _on_karma_decreased(source):
 	for card : CombatCard in combat.game_board.get_active_cards():
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 2:
-				await card.keywords[i].trigger(source, card.keywords[i].get_target(source, card, combat), \
-						card.get_node("KeyWords").get_child(i), card.get_node("KeyWords").get_child(i))
+				await card.keywords[i].trigger(source, card, card.keywords[i].get_target(source, card, combat), \
+						card.get_node("KeyWordSlots").get_child(i).get_child(0))
 
 func get_relevant_cards():
 	return combat.game_board.get_friendly_cards().filter(

@@ -58,11 +58,20 @@ func heal(amount):
 	
 
 func take_damage(amount):
-	SfxOther._SFX_Damage()
+	animate_take_damage_feedback(amount)
+	
 	%Health/Label.text = "Health: " + str(health) + " (" + str(-amount) + ")"
 	health -= amount
 	%Health.modulate = attacked_color
 	GlobalLog.add_entry("You took %d damage." % amount)
+
+
+func animate_take_damage_feedback(amount):
+	SfxOther._SFX_Damage()
+	$HurtOverlay.visible = true
+	$ScreenshakeCamera2D.add_trauma(0.15 * amount)
+	await get_tree().create_timer(amount * 0.20).timeout
+	$HurtOverlay.visible = false
 
 
 func restore_default_color():
@@ -97,6 +106,7 @@ func process_karma_overflow() -> bool:
 	if karma < 0:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
 		take_damage(-karma)
+		$ScreenshakeCamera2D.add_trauma(0.1)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
 	var is_lethal = process_death()
@@ -112,11 +122,11 @@ func set_karma(value):
 
 
 func _on_card_dragged():
-	emit_signal("card_drag_started")
+	card_drag_started.emit()
 
 
 func _on_card_released(card):
-	emit_signal("card_drag_ended", card)
+	card_drag_ended.emit(card)
 
 
 func draw_card():

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dix6q87wh3fsk"
-path="res://.godot/imported/high_priestess.png-49cbd87e51cb3636ada5ea9a756d38d5.ctex"
+uid="uid://b7t3if66e4rqb"
+path="res://.godot/imported/dg_high_priestess.png-48aa053503b702c09892522066a20037.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/high_priestess.png"
-dest_files=["res://.godot/imported/high_priestess.png-49cbd87e51cb3636ada5ea9a756d38d5.ctex"]
+source_file="res://assets/sprites/dialogue/dg_high_priestess.png"
+dest_files=["res://.godot/imported/dg_high_priestess.png-48aa053503b702c09892522066a20037.ctex"]
 
 [params]
 

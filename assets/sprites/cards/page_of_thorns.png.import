@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5gdt1gdtvuea"
-path="res://.godot/imported/page_of_cups.png-562568f9976f77f5bad5bbe563673ca2.ctex"
+uid="uid://qysj1kw6xmlr"
+path="res://.godot/imported/page_of_thorns.png-54d997cc2e35f598aa39e30d528c1deb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/page_of_cups.png"
-dest_files=["res://.godot/imported/page_of_cups.png-562568f9976f77f5bad5bbe563673ca2.ctex"]
+source_file="res://assets/sprites/cards/page_of_thorns.png"
+dest_files=["res://.godot/imported/page_of_thorns.png-54d997cc2e35f598aa39e30d528c1deb.ctex"]
 
 [params]
 

@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="5_0huhq"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="5_7hc2v"]
 [ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="5_11qft"]
-[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_movement_phase.gd" id="5_lslbq"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy_movement_phase.gd" id="5_lslbq"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="6_o6asy"]
 [ext_resource type="PackedScene" uid="uid://eo8nyis4kslg" path="res://systems/card_combat/card_player.tscn" id="6_tn8rr"]
 [ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="7_g0vvg"]

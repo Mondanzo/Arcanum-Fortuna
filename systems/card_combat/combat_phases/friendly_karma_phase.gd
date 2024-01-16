@@ -29,8 +29,10 @@ func get_relevant_cards():
 				return card.cost != 0
 				)
 
+
 func get_karma_modify_target():
 	return combat.player
+
 
 func process_effect() -> ExitState:
 	var relevant_cards = get_relevant_cards()
@@ -38,6 +40,14 @@ func process_effect() -> ExitState:
 		return ExitState.DEFAULT
 	
 	var target = get_karma_modify_target()
+	await animate_karma(relevant_cards, target)
+	if await target.process_karma_overflow():
+		combat.finished.emit(combat.player.health)
+		return ExitState.ABORT
+	return ExitState.DEFAULT
+
+
+func animate_karma(relevant_cards, target):
 	# Create Blob
 	var blob = karma_blob.instantiate()
 	combat.game_board.add_child(blob)
@@ -93,9 +103,3 @@ func process_effect() -> ExitState:
 	await combat.get_tree().create_timer(karma_delay).timeout
 	target.modify_karma(blob.count)
 	blob.delete()
-	
-	if await target.process_karma_overflow():
-		combat.finished.emit(combat.player.health)
-		return ExitState.ABORT
-	return ExitState.DEFAULT
-

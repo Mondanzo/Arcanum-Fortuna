@@ -55,6 +55,8 @@ func process_start_keywords(trigger_source, applicable_cards : Array[CombatCard]
 					continue
 				await card.keywords[i].trigger(self, card, card.keywords[i].get_target(self, card, combat), \
 						card.get_node("KeyWordSlots").get_child(i).get_child(0))
+				if combat.is_blocked:
+					await combat.block_lifted
 
 
 func process_end_keywords(trigger_source, applicable_cards : Array[CombatCard]):
@@ -69,3 +71,5 @@ func process_end_keywords(trigger_source, applicable_cards : Array[CombatCard]):
 					continue
 				await card.keywords[i].trigger(self, card,  card.keywords[i].get_target(self, card, combat), \
 						 card.get_node("KeyWordSlots").get_child(i).get_child(0))
+				if combat.is_blocked:
+					await combat.block_lifted

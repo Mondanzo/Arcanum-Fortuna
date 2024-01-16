@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="OldEnemyData" load_steps=21 format=3 uid="uid://dc3rsjy1lbvrd"]
 
 [ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="1_gonf5"]
-[ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_cups.tres" id="1_js8s6"]
+[ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_daggers.tres" id="1_js8s6"]
 [ext_resource type="Script" path="res://data/scripts/old_enemy_data.gd" id="1_ng5at"]
-[ext_resource type="Resource" uid="uid://dwx1jg5fmwy31" path="res://data/cards/ace_of_pentacles.tres" id="2_c80ka"]
-[ext_resource type="Resource" uid="uid://dfad3qo3mi3uh" path="res://data/cards/ace_of_swords.tres" id="3_7kcn8"]
+[ext_resource type="Resource" uid="uid://dwx1jg5fmwy31" path="res://data/cards/ace_of_thorns.tres" id="2_c80ka"]
+[ext_resource type="Resource" uid="uid://dfad3qo3mi3uh" path="res://data/cards/ace_of_flags.tres" id="3_7kcn8"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="3_taufv"]
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="4_fgctm"]
-[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="4_jhd6u"]
+[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_herbs.tres" id="4_jhd6u"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="9_7iupu"]
 [ext_resource type="Script" path="res://data/scripts/enemy_stats.gd" id="16_cryir"]
 

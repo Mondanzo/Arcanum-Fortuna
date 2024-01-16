@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="EnemyBrain" load_steps=14 format=3 uid="uid://wyb2qp5gbdd7"]
 
-[ext_resource type="Resource" uid="uid://dwx1jg5fmwy31" path="res://data/cards/ace_of_pentacles.tres" id="1_gbk5i"]
-[ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_cups.tres" id="2_724jm"]
-[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="3_v8df4"]
-[ext_resource type="Resource" uid="uid://dfad3qo3mi3uh" path="res://data/cards/ace_of_swords.tres" id="4_s6aa5"]
+[ext_resource type="Resource" uid="uid://dwx1jg5fmwy31" path="res://data/cards/ace_of_thorns.tres" id="1_gbk5i"]
+[ext_resource type="Resource" uid="uid://oeyng1ktx360" path="res://data/cards/ace_of_daggers.tres" id="2_724jm"]
+[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_herbs.tres" id="3_v8df4"]
+[ext_resource type="Resource" uid="uid://dfad3qo3mi3uh" path="res://data/cards/ace_of_flags.tres" id="4_s6aa5"]
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="5_7f2tx"]
 [ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="6_xv5wx"]
 [ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="7_i1yv1"]

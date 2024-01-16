@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tc_no_cards.gd" id="10_c5ygj"]
 [ext_resource type="PackedScene" uid="uid://d2hl78obwhmmt" path="res://systems/tutorial/tutorial_box.tscn" id="10_ni5w3"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_draw_card.gd" id="10_u046w"]
-[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_wands.tres" id="10_wm3gc"]
+[ext_resource type="Resource" uid="uid://cyeh4q64sjp70" path="res://data/cards/ace_of_herbs.tres" id="10_wm3gc"]
 [ext_resource type="Texture2D" uid="uid://chn0s2w1mnhj0" path="res://assets/sprites/magician.png" id="10_x770v"]
 [ext_resource type="Script" path="res://systems/tutorial/conditions/tcd_delayed.gd" id="11_xqb1o"]
 [ext_resource type="Script" path="res://systems/tutorial/actions/ta_change_enabled.gd" id="12_ojt8p"]

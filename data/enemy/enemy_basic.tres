@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3 uid="uid://cfo1qaoei72s6"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://cfo1qaoei72s6"]
 
 [ext_resource type="Resource" uid="uid://dvjov10ch847e" path="res://data/enemy/enemy_basic_brain.tres" id="1_bcvyx"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="2_pyg0j"]
-[ext_resource type="Resource" uid="uid://cfiqtgldipt1n" path="res://data/enemy/enemy_basic_brain_stats.tres" id="3_8whyh"]
+[ext_resource type="Resource" uid="uid://dqu25ohu65ud8" path="res://data/enemy/enemy_basic_brain_stats1.tres" id="3_nqpfd"]
+[ext_resource type="Resource" uid="uid://cfiqtgldipt1n" path="res://data/enemy/enemy_basic_brain_stats2.tres" id="4_iywpn"]
 
 [resource]
 script = ExtResource("2_pyg0j")
 brain = ExtResource("1_bcvyx")
-stats_per_level = Array[Resource("res://systems/card_combat/enemy/enemy_brain_stats.gd")]([ExtResource("3_8whyh")])
+stats_per_level = Array[Resource("res://systems/card_combat/enemy/enemy_brain_stats.gd")]([ExtResource("3_nqpfd"), ExtResource("4_iywpn")])
 gold_reward = 4
 level = 0

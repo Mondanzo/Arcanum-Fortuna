@@ -5,8 +5,6 @@ extends ActivatedKeyword
 @export var rotation_duration = 0.8
 @export var icon_rotation = 1.0
 
-var animatingicon = null
-
 func init(id = 2):
 	super.init(id)
 

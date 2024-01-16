@@ -1,6 +1,4 @@
-extends Node
-
-signal finished
+extends EventBase
 
 @export var events: Array[PackedScene]
 

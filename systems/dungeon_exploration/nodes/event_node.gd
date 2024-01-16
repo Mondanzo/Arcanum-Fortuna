@@ -94,7 +94,6 @@ func _trigger_event():
 		var instance = event.instantiate()
 		if "seed" in instance:
 			instance.seed = seed
-		add_child(instance)
 		instance.trigger(player.data, null)
 		await instance.finished
 		if no_card_overview:

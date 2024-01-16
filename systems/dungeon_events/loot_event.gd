@@ -1,4 +1,4 @@
-extends Node
+extends EventBase
 
 @export var possibleCards: Array[CardData]
 @export var cardsToReward := 1
@@ -18,8 +18,6 @@ var rng := RandomNumberGenerator.new()
 
 var pauseMovement := true
 
-signal finished
-
 var player_data_ref : PlayerData
 var selected_cards = []
 var prev_mode: bool = true
@@ -30,6 +28,7 @@ func _ready():
 
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
+	super(player_data, enemy_data)
 	prev_mode = CardsOverlay.is_available()
 	CardsOverlay.toggle(true)
 	if cardsToChooseFrom < cardsToReward:

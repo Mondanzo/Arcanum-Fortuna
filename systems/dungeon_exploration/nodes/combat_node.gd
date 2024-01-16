@@ -28,7 +28,7 @@ func _trigger_event():
 	selected_enemy.level = level
 	selected_enemy.rng_seed = combat_seed
 	player.data.draw_rng_seed = draw_seed
-	add_child(instance)
+	get_tree().root.add_child(instance)
 	instance.trigger(player.data, selected_enemy)
 	await instance.finished
 	if no_card_overview:

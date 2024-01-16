@@ -39,7 +39,7 @@ func show_tooltip():
 		tooltip_container = CanvasLayer.new()
 		tooltip_container.name = "tooltip_container"
 		tooltip_container.layer = 10
-		get_tree().root.add_child(tooltip_container)
+		SceneHandler.add_shelf_element(tooltip_container)
 
 	if not instance:
 		instance = tooltip_template.instantiate()

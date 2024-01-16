@@ -38,7 +38,7 @@ func _on_btn_continue_pressed():
 
 
 func _on_btn_back_to_menu_pressed():
-	get_tree().change_scene_to_file("res://systems/ui/main_menu.tscn")
+	SceneHandler.change_scene("res://systems/ui/main_menu.tscn")
 	hide_pause_menu()
 
 

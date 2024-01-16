@@ -18,7 +18,7 @@ func _ready():
 			await instance.complete
 	
 	if not main_scene.is_empty():
-		get_tree().change_scene_to_file(main_scene)
+		SceneHandler.change_scene(main_scene)
 "
 
 [node name="EntryScene" type="Node"]

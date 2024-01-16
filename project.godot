@@ -23,6 +23,7 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 PauseMenu="*res://systems/ui/menus/pause_menu.tscn"
 SfxBg="*res://Audio/sfx_bg.tscn"
 SfxOther="*res://Audio/sfx_other.tscn"
+SceneHandler="*res://utils/autoload/scene_handler.tscn"
 
 [dialogic]
 

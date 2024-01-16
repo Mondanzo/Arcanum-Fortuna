@@ -53,7 +53,7 @@ func process_start_keywords(trigger_source, applicable_cards : Array[CombatCard]
 					continue
 				if trigger.source_phase != get_corresponding_trigger():
 					continue
-				card.keywords[i].trigger(self, card, card.keywords[i].get_target(self, card, combat), \
+				await card.keywords[i].trigger(self, card, card.keywords[i].get_target(self, card, combat), \
 						card.get_node("KeyWordSlots").get_child(i).get_child(0))
 
 
@@ -67,5 +67,5 @@ func process_end_keywords(trigger_source, applicable_cards : Array[CombatCard]):
 					continue
 				if trigger.source_phase != get_corresponding_trigger():
 					continue
-				card.keywords[i].trigger(self, card,  card.keywords[i].get_target(self, card, combat), \
+				await card.keywords[i].trigger(self, card,  card.keywords[i].get_target(self, card, combat), \
 						 card.get_node("KeyWordSlots").get_child(i).get_child(0))

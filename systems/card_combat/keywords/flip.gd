@@ -16,7 +16,7 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 		push_error("Keyword Flip was triggered from ", source, \
 		", but target '", target, "' has no flip method!")
 		return
-	await await super(source, owner, target, icon_to_animate, params)
+	await super(source, owner, target, icon_to_animate, params)
 
 
 func animate(source, target, icon_to_animate, params={}):

@@ -6,7 +6,7 @@ extends Camera2D
 @export var speed := 1.0
 
 var trauma := 0.0
-var prev_camera
+var prev_camera: Camera2D
 
 func _ready():
 	prev_camera = get_viewport().get_camera_2d()
@@ -15,7 +15,8 @@ func _ready():
 
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
-		prev_camera.make_current()
+		if is_instance_valid(prev_camera):
+			prev_camera.make_current()
 
 
 func _process(delta):

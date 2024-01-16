@@ -6,4 +6,4 @@ signal finished
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	if not is_inside_tree():
-		Events.add_child(self)
+		SceneHandler.add_shelf_element(self)

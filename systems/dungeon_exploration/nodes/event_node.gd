@@ -27,11 +27,14 @@ var hovering = false
 var eventInProgress := false
 var passed = false
 var seed = 0
+static var nodes_counter := 0
 
 signal on_stepped_on
 
 
 func _ready():
+	nodes_counter += 1
+	name += "+" + str(nodes_counter)
 	$background/icon.visible = false
 	for n in connectsTo:
 		n.connectedFrom.append(self)
@@ -79,6 +82,8 @@ func _input(event: InputEvent):
 func click():
 	SfxOther._SFX_UIButtonPress()
 	on_stepped_on.emit()
+	GlobalLog.set_context(GlobalLog.Context.NODEMAP)
+	GlobalLog.add_entry("went to " + name)
 	player.update_target(self)
 	for c in connectedFrom:
 		c.passed = true

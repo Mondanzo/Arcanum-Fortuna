@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=8 format=3 uid="uid://d4g4cfbsmqniq"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=8 format=3 uid="uid://e0nu8lfpxbrq"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_bvdlq"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_yks7q"]

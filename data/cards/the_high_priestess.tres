@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://bdbn32r8x8g4v"]
 
-[ext_resource type="Texture2D" uid="uid://b14l0m0wd4e7" path="res://assets/sprites/cards/high_priestess.png" id="1_b4wyt"]
+[ext_resource type="Texture2D" uid="uid://dix6q87wh3fsk" path="res://assets/sprites/cards/high_priestess.png" id="1_b4wyt"]
 [ext_resource type="Resource" uid="uid://d4iohlqflx6ik" path="res://data/keyword/companionship_HP1.tres" id="2_acumw"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_ako5p"]
 [ext_resource type="AudioStream" uid="uid://bqbc1gd2th44n" path="res://assets/sounds/cards/voices/the_high_priestess.ogg" id="4_es0g3"]
@@ -18,4 +18,3 @@ spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
 sound_effect = ExtResource("4_es0g3")
-keyword_color = Color(0, 0, 0, 1)

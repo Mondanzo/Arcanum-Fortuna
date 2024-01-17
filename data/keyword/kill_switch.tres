@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=5 format=3 uid="uid://bgwxmtfn673rj"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=5 format=3 uid="uid://dw1nchd42yon2"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_ij4ct"]
 [ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_xx231"]

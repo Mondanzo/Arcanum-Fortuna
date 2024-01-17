@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://assets/sprites/cards/emperor.png" id="1_02swp"]
 [ext_resource type="Resource" uid="uid://l23udqkfbm1c" path="res://data/keyword/slow.tres" id="2_4meaj"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u4j5u"]
-[ext_resource type="Resource" uid="uid://bgwxmtfn673rj" path="res://data/keyword/kill_switch.tres" id="3_n26fx"]
+[ext_resource type="Resource" path="res://data/keyword/kill_switch.tres" id="3_n26fx"]
 [ext_resource type="AudioStream" uid="uid://vdtbxmilhgaf" path="res://assets/sounds/cards/voices/the_emperor.ogg" id="5_gfkah"]
 
 [resource]

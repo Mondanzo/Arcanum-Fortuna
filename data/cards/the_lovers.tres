@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_iyn7x"]
 [ext_resource type="Texture2D" uid="uid://bkgwwow2i6gbs" path="res://assets/sprites/cards/lovers.png" id="1_souf4"]
 [ext_resource type="Resource" uid="uid://ues1kduox2nf" path="res://data/keyword/SplitAttack.tres" id="2_j3vsg"]
-[ext_resource type="Resource" uid="uid://d4g4cfbsmqniq" path="res://data/keyword/alive2_switch.tres" id="3_g7ejj"]
+[ext_resource type="Resource" path="res://data/keyword/alive2_switch.tres" id="3_g7ejj"]
 [ext_resource type="AudioStream" uid="uid://32ci8bnoy7qx" path="res://assets/sounds/cards/voices/the_lovers.ogg" id="4_g0nw0"]
 
 [resource]

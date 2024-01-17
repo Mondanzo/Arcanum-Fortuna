@@ -86,6 +86,11 @@ func setup():
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
 	
+	for slot in %KeyWordSlots.get_children():
+		slot.texture.atlas = null
+		slot.texture = slot.texture.duplicate()
+		slot.texture.atlas = card_data.keyword_slot_texture
+	
 	for i in range(keywords.size()):
 		%KeyWordSlots.get_child(i).get_child(0).set_icon(keywords[i])
 

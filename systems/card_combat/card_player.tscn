@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://eo8nyis4kslg"]
+[gd_scene load_steps=10 format=3 uid="uid://eo8nyis4kslg"]
 
 [ext_resource type="PackedScene" uid="uid://d11sabcwtgmsp" path="res://systems/card_combat/hand.tscn" id="1_cbbcf"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_ifl70"]
 [ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="2_yo3i5"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="5_bxaiy"]
 [ext_resource type="Texture2D" uid="uid://by4v5aq6yrqoh" path="res://assets/sprites/vfx/overlays/hurt_overlay.png" id="6_xofxq"]
+[ext_resource type="Script" path="res://systems/card_combat/hurt_overlay.gd" id="7_elpg2"]
 [ext_resource type="Script" path="res://systems/effects/screenshake_cam.gd" id="7_lms71"]
 [ext_resource type="PackedScene" uid="uid://cnw2n821p8qt8" path="res://systems/card_combat/card_stack.tscn" id="10_n68ae"]
 
@@ -145,6 +146,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("6_xofxq")
+script = ExtResource("7_elpg2")
 
 [node name="ScreenshakeCamera2D" type="Camera2D" parent="."]
 ignore_rotation = false

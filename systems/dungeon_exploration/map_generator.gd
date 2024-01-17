@@ -35,11 +35,16 @@ var reattach: Array[EventNode] = []
 
 signal finished_generating(generated_nodes: Array[EventNode])
 
+static var nodes_counter := 0
 
 func _ready():
 	if name == "node-map":
 		GlobalLog.set_context(GlobalLog.Context.NODEMAP)
 		GlobalLog.add_entry(name + " loaded.")
+	else:
+		name = "side-path"
+	nodes_counter += 1
+	name += "+" + str(nodes_counter)
 
 func setup():
 	rng = RandomNumberGenerator.new()

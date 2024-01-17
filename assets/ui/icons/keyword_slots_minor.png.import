@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qysj1kw6xmlr"
-path="res://.godot/imported/page_of_coins.png-37855942f7657e7fc43fc6c0e522ded7.ctex"
+uid="uid://capdswqckmedk"
+path="res://.godot/imported/keyword_slots_minor.png-bf6897427f6e413518d3bca105b9a8b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/page_of_coins.png"
-dest_files=["res://.godot/imported/page_of_coins.png-37855942f7657e7fc43fc6c0e522ded7.ctex"]
+source_file="res://assets/ui/icons/keyword_slots_minor.png"
+dest_files=["res://.godot/imported/keyword_slots_minor.png-bf6897427f6e413518d3bca105b9a8b9.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

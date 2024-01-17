@@ -1,7 +1,7 @@
 class_name GameBoard
 extends VBoxContainer
 
-signal active_cards_changed(new_card : CombatCard)
+signal card_played(card : CombatCard)
 
 @export var combat_card_prefab : PackedScene
 
@@ -29,6 +29,10 @@ func _ready():
 		tile.self_modulate = tile_disabled_color
 	for tile in $PlayerTiles.get_children():
 		tile.self_modulate = tile_disabled_color
+
+
+func get_friendly_tile_position(x):
+	return player_tiles.get_child(x).global_position
 
 
 func get_enemy_tile_pos(y, x):
@@ -84,7 +88,8 @@ func lock_friendly_cards():
 		[new_combat_card.card_data.name, i, 0])
 		card.queue_free()
 		await get_tree().process_frame
-		active_cards_changed.emit(new_combat_card)
+		card_played.emit(new_combat_card)
+		await get_tree().process_frame
 
 
 func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
@@ -101,9 +106,22 @@ func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
 	GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 	[new_combat_card.card_data.name, tile_idx, 1])
 	await get_tree().process_frame
-	# active_cards_changed.emit(new_combat_card)
 	return true
 
+
+func try_move_card_sideways(current_tile_idx: int, target_tile_idx: int, is_friendly: bool):
+	var tiles = player_tiles if is_friendly else enemy_tiles_front
+	
+	if tiles.get_child(target_tile_idx).get_child_count() != 0:
+		return false
+	if tiles.get_child(current_tile_idx).get_child_count() == 0:
+		push_error("Tried to move card from empty tile.")
+		return false
+	await tiles.get_child(current_tile_idx).get_child(0).animate_move(
+		get_friendly_tile_position(target_tile_idx) if is_friendly else get_enemy_tile_pos(1, target_tile_idx))
+	tiles.get_child(current_tile_idx).get_child(0).tile_coordinate.x = target_tile_idx
+	tiles.get_child(current_tile_idx).get_child(0).reparent(tiles.get_child(target_tile_idx))
+	return true
 
 func try_move_enemy_card_to_front(tile_idx):
 	if enemy_tiles_front.get_child(tile_idx).get_child_count() != 0:
@@ -113,8 +131,10 @@ func try_move_enemy_card_to_front(tile_idx):
 		return false
 	await enemy_tiles_back.get_child(tile_idx).get_child(0).animate_move(get_enemy_tile_pos(1, tile_idx))
 	enemy_tiles_back.get_child(tile_idx).get_child(0).reparent(enemy_tiles_front.get_child(tile_idx))
+	enemy_tiles_front.get_child(tile_idx).get_child(0).tile_coordinate.y = 1
 	await get_tree().process_frame
 	return true
+	
 	
 func place_enemy_card_back(cardData : CardData, tile_idx) -> bool:
 	var target_tile = enemy_tiles_back.get_child(tile_idx)

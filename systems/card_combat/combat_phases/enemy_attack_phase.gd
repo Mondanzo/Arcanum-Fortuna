@@ -17,5 +17,7 @@ func process_effect() -> ExitState:
 		await combat.handle_attacks(combat.game_board.enemy_tiles_front.get_child(i).get_child(0), i, false)
 		if combat.is_battle_over:
 			return ExitState.ABORT
+	if combat.is_blocked:
+		await combat.block_lifted
 	return ExitState.DEFAULT
 

@@ -1,5 +1,5 @@
 class_name BattleEvent
-extends Node
+extends EventBase
 
 @export var battleField: PackedScene
 @export var winEvent: PackedScene
@@ -9,11 +9,8 @@ var pauseMovement := true
 var hideMap := true
 var seed := 0
 
-signal finished
-
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
-	if not is_inside_tree():
-		await tree_entered
+	super(player_data, enemy_data)
 	
 	var field = battleField.instantiate()
 	$CanvasLayer.add_child(field)

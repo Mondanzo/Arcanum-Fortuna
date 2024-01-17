@@ -68,10 +68,8 @@ func take_damage(amount):
 
 func animate_take_damage_feedback(amount):
 	SfxOther._SFX_Damage()
-	$HurtOverlay.visible = true
 	$ScreenshakeCamera2D.add_trauma(0.15 * amount)
-	await get_tree().create_timer(amount * 0.20).timeout
-	$HurtOverlay.visible = false
+	$HurtOverlay.add_cooldown(0.1 * amount)
 
 
 func restore_default_color():

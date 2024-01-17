@@ -26,13 +26,11 @@ func _on_start_button_button_down():
 	node_map.get_node("Generator").random_seed = false
 	node_map.rng_seed_text = $SeedInput.text
 	GlobalLog.add_entry("Seed used: " + $SeedInput.text)
-	get_tree().current_scene.queue_free()
-	get_tree().root.add_child(node_map)
-	get_tree().current_scene = node_map
+	SceneHandler.change_scene(node_map)
 
 
 func _on_tutorial_button_button_down():
-	get_tree().change_scene_to_packed(tutorial_scene)
+	SceneHandler.change_scene(tutorial_scene)
 
 
 func _on_quit_button_pressed():

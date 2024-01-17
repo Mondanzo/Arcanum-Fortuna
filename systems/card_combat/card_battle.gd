@@ -2,6 +2,7 @@ class_name CardBattle
 extends Control
 
 signal player_turn_ended
+signal block_lifted
 signal finished(remaining_health : int)
 
 var player_data : PlayerData
@@ -28,6 +29,14 @@ var player_data : PlayerData
 #var board_width : int = 5
 var is_battle_over = false
 var turn = 0
+var is_blocked := false :
+	set(value):
+		if value == false:
+			block_lifted.emit()
+		is_blocked = value
+	get:
+		return is_blocked
+
 
 func _ready():
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
@@ -53,7 +62,7 @@ func init(player_data, enemy_data):
 	enemy.init(enemy_data)
 	for phase in phases:
 		phase.init(self)
-	game_board.active_cards_changed.connect(_on_active_cards_changed)
+	game_board.card_played.connect(_on_card_played)
 
 
 func _input(event):
@@ -61,13 +70,33 @@ func _input(event):
 		finished.emit(player.health)
 
 
-func _on_active_cards_changed(source):
+func _on_active_cards_changed(source, block = true):
+	if block:
+		is_blocked = true
 	var active_cards = game_board.get_active_cards()
 	for card : CombatCard in active_cards:
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
 				await card.keywords[i].trigger(source, card, card.keywords[i].get_target(source, card, self), \
 						card.get_node("KeyWordSlots").get_child(i).get_child(0), {"active_cards": active_cards})
+	if block:
+		await get_tree().process_frame
+		is_blocked = false
+
+
+func _on_card_played(new_card : CombatCard):
+	is_blocked = true
+	await _on_active_cards_changed(new_card, false)
+	var active_cards = game_board.get_active_cards()
+	for card : CombatCard in active_cards:
+		if card != new_card:
+			continue
+		for i in range(card.keywords.size()):
+			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 16:
+				await card.keywords[i].trigger(card, card, card.keywords[i].get_target(card, card, self), \
+						card.get_node("KeyWordSlots").get_child(i).get_child(0), {"active_cards": active_cards})
+	await get_tree().process_frame
+	is_blocked = false
 
 
 func start_combat():
@@ -88,6 +117,8 @@ func process_next_phase():
 
 
 func _on_phase_completed():
+	if is_blocked:
+		await block_lifted
 	await get_tree().create_timer(phase_end_delay).timeout
 	phase_idx += 1
 	if phase_idx >= phases.size():

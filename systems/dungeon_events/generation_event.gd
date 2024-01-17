@@ -1,4 +1,4 @@
-extends Node
+extends EventBase
 
 @export var healthOptions: Array[int]
 @export var templateCard: PackedScene
@@ -6,15 +6,14 @@ extends Node
 var player_data_ref: PlayerData
 var rng = RandomNumberGenerator.new()
 
-signal finished
-
 
 func _ready():
 	rng.seed = seed
 
 
-func trigger(playerData: PlayerData, enemy_data: EnemyData):
-	player_data_ref = playerData
+func trigger(player_data: PlayerData, enemy_data: EnemyData):
+	super(player_data, enemy_data)
+	player_data_ref = player_data
 	print("using seed " + str(seed))
 		
 	if not is_inside_tree():
@@ -37,6 +36,7 @@ func trigger(playerData: PlayerData, enemy_data: EnemyData):
 	
 	for c in $CanvasLayer/Control/Hand.get_children():
 		c.mouse_filter = Control.MOUSE_FILTER_STOP
+
 
 func card_clicked(card: Card):
 	$CanvasLayer/Control.mouse_filter = Control.MOUSE_FILTER_IGNORE

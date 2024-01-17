@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=5 format=3 uid="uid://bgwxmtfn673rj"]
+
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_ij4ct"]
+[ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_xx231"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="4_px5lu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
+atlas = ExtResource("2_ij4ct")
+region = Rect2(0, 264, 66, 66)
+
+[resource]
+script = ExtResource("4_px5lu")
+required_trigger_count = 1
+attack_difference = 1
+health_difference = 1
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_xx231")])
+keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+tranform_delay = 1.0
+rotation_duration = 0.8
+icon_rotation = 1.0
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 1
+is_animated = true
+scale_speed = 0.6
+title = "Destiny: Perseverance"
+description = "This card will reveal it's true form once it survived %d turns on the board. "
+icon = SubResource("AtlasTexture_xuji6")
+highlight_duration = 0.5

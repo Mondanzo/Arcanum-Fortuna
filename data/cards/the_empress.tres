@@ -18,4 +18,3 @@ spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
 sound_effect = ExtResource("6_lw6mj")
-keyword_color = Color(1, 1, 1, 1)

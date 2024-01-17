@@ -15,4 +15,3 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0
-keyword_color = Color(0, 0, 0, 1)

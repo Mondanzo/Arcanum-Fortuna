@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://5p8a1flrgkh"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://5p8a1flrgkh"]
 
 [ext_resource type="Texture2D" uid="uid://dsvokssfcwugn" path="res://assets/sprites/cards/empress.png" id="1_kqrjl"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_hwoqx"]
 [ext_resource type="Resource" uid="uid://cpxcddsxlgqw6" path="res://data/keyword/DrainATK1.tres" id="2_q44ni"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_y1dfv"]
 [ext_resource type="AudioStream" uid="uid://cuhllynyw5t2u" path="res://assets/sounds/cards/voices/the_empress.ogg" id="6_lw6mj"]
 
 [resource]
@@ -18,3 +19,4 @@ spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
 sound_effect = ExtResource("6_lw6mj")
+keyword_slot_texture = ExtResource("2_y1dfv")

@@ -109,6 +109,23 @@ func flip():
 	%HealthCost.text = str(health)
 
 
+func reverse():
+	%Artwork.flip_v = !%Artwork.flip_v
+
+
+func modifiy_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[Keyword]):
+	for keyword : Keyword in keywords_to_remove:
+		if not keyword in keywords:
+			push_error("Cannot remove '%s' keywords from '%s' card, as it does not contain it." % [keyword.title, card_name])
+			continue
+		keywords.erase(keyword)
+	for keyword : Keyword in keywords_to_add:
+		keyword.init()
+		keywords.push_back(keyword)
+	for i in range(keywords.size()):
+		%KeyWordSlots.get_child(i).get_child(0).set_icon(keywords[i])
+
+
 func get_target_offsets():
 	placed_position = global_position
 	target_offsets = [0]

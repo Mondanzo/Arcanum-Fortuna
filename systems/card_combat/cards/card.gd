@@ -57,7 +57,7 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 	self.cost = cost
 	self.attack = attack
 	self.health = health
-	self.keywords = keywords
+	self.keywords = keywords.duplicate()
 	if card_data == null:
 		card_data = CardData.new()
 		card_data.artwork_texture = artwork_texture

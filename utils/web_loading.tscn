@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck2g6ko82h0ni"]
+[gd_scene load_steps=15 format=3 uid="uid://ck2g6ko82h0ni"]
 
 [ext_resource type="Script" path="res://utils/web_loading.gd" id="1_4mkkf"]
 [ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="2_2hllf"]
 [ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="3_3papl"]
 [ext_resource type="Material" uid="uid://n67jhv3xv2db" path="res://assets/vfx/materials/karma_particle.tres" id="4_t3ckx"]
 [ext_resource type="Shader" path="res://shaders/noise_walk.gdshader" id="4_ycnt1"]
+[ext_resource type="Shader" path="res://shaders/fake_3d.gdshader" id="5_ciy2d"]
 [ext_resource type="Material" uid="uid://bvhyxtr0b6ktj" path="res://assets/vfx/materials/trail.tres" id="5_mjaw6"]
 [ext_resource type="Material" uid="uid://x5u303jd0gal" path="res://assets/vfx/materials/big_blob.tres" id="6_6xlt5"]
 
@@ -42,6 +43,14 @@ shader_parameter/noise_speed = 0.1
 shader_parameter/noise_threshold = 0.2
 shader_parameter/noise_falloff = 0.1
 shader_parameter/bleed_strength = 1.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvd56"]
+shader = ExtResource("5_ciy2d")
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
 
 [node name="WebLoading" type="Control"]
 layout_mode = 3
@@ -150,6 +159,21 @@ grow_vertical = 2
 
 [node name="ColorRect5" type="ColorRect" parent="LoadAssets"]
 material = SubResource("ShaderMaterial_0v0vi")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect6" type="ColorRect" parent="LoadAssets"]
+material = SubResource("ShaderMaterial_yvd56")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

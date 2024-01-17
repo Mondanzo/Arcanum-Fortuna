@@ -33,8 +33,9 @@ signal on_stepped_on
 
 
 func _ready():
-	nodes_counter += 1
-	name += "+" + str(nodes_counter)
+	if not Engine.is_editor_hint():
+		nodes_counter += 1
+		name += "+" + str(nodes_counter)
 	$background/icon.visible = false
 	for n in connectsTo:
 		n.connectedFrom.append(self)

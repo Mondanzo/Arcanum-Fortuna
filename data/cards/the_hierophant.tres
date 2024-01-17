@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://wx2v5wr88lof"]
+[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://wx2v5wr88lof"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nwcwr"]
 [ext_resource type="Texture2D" uid="uid://vy0ulm2qucxw" path="res://assets/sprites/cards/hierophant.png" id="1_tibtj"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_3e7kw"]
 [ext_resource type="Resource" uid="uid://cpyd5jcb4kdm" path="res://data/keyword/DeathrattleSacrifice3.tres" id="2_unwwk"]
 [ext_resource type="AudioStream" uid="uid://biapfu538sjhj" path="res://assets/sounds/cards/voices/the_hierophant.ogg" id="3_fhnuy"]
 [ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/flip.tres" id="3_g73ps"]
@@ -19,3 +20,4 @@ spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
 sound_effect = ExtResource("3_fhnuy")
+keyword_slot_texture = ExtResource("2_3e7kw")

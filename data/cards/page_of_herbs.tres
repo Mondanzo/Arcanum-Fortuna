@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://dcn0mphx2qg0v"]
 
-[ext_resource type="Texture2D" uid="uid://dmpj07u16csye" path="res://assets/sprites/cards/page_of_wands.png" id="1_bauew"]
+[ext_resource type="Texture2D" uid="uid://dmpj07u16csye" path="res://assets/sprites/cards/page_of_herbs.png" id="1_bauew"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_id6c3"]
-[ext_resource type="Resource" uid="uid://dv0ag3x7lmh2b" path="res://data/keyword/deathrattle_HP1.tres" id="2_2wnpk"]
+[ext_resource type="Resource" path="res://data/keyword/deathrattle_HP1.tres" id="2_2wnpk"]
 [ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_7fkng"]
 
 [resource]

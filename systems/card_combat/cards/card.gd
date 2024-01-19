@@ -57,7 +57,7 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 	self.cost = cost
 	self.attack = attack
 	self.health = health
-	self.keywords = keywords
+	self.keywords = keywords.duplicate()
 	if card_data == null:
 		card_data = CardData.new()
 		card_data.artwork_texture = artwork_texture
@@ -85,6 +85,11 @@ func setup():
 	%KarmaCost.text = str(cost)
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
+	
+	for slot in %KeyWordSlots.get_children():
+		slot.texture.atlas = null
+		slot.texture = slot.texture.duplicate()
+		slot.texture.atlas = card_data.keyword_slot_texture
 	
 	for i in range(keywords.size()):
 		%KeyWordSlots.get_child(i).get_child(0).set_icon(keywords[i])

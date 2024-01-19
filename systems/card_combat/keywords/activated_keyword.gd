@@ -5,7 +5,7 @@ extends Keyword
 @export var combat_phase_triggers : Array[CombatPhaseTrigger] = []
 ## Setup other events that should trigger this keyword
 @export_flags("OnKill", "OnKarmaDecrease", "OnActiveCardsChanged", "OnDeath", \
-		"OnPlayed") var triggers := 0
+		"OnPlayed", "OnAttack") var triggers := 0
 
 @export_category("Animation")
 @export var is_animated := true

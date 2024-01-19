@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://ws4saswnfnxg"]
 
 [ext_resource type="Script" path="res://systems/shop/healing_card.gd" id="1_rqc3o"]
-[ext_resource type="Texture2D" uid="uid://bcey14hlnd63d" path="res://assets/sprites/cards/health_card.png" id="2_njsvs"]
 [ext_resource type="Shader" path="res://shaders/noise_walk.gdshader" id="3_te2xs"]
+[ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="3_xqc64"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nvb4k"]
 noise_type = 0
@@ -67,7 +67,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_njsvs")
+texture = ExtResource("3_xqc64")
 expand_mode = 1
 
 [node name="HealingAmount" type="Label" parent="TextureRect"]

@@ -16,3 +16,4 @@ class_name CardData extends Resource
 ## If a value greater than zero is used the cards trade discount will be overriden with this value.
 @export var trade_override := 0
 @export var sound_effect: AudioStream
+@export var keyword_slot_texture : Texture = preload("res://assets/ui/icons/keyword_slots.png")

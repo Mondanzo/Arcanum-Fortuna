@@ -17,6 +17,6 @@ triggers = 4
 is_animated = false
 scale_speed = 0.6
 title = "ATK Drain"
-description = "This gains %d attack for each card on the board with a positve karma value."
+description = "This gains %d attack for each allied card on the board with a positve karma value."
 icon = SubResource("AtlasTexture_1o6as")
 highlight_duration = 0.5

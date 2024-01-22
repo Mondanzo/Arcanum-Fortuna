@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhks1grxrynox"
-path="res://.godot/imported/card_king_of_coins.png-0285bde0d94e5130ff85a4a8bd94572f.ctex"
+path="res://.godot/imported/card_king_of_thorns.png-12fc970d7e4e0c79fafd9717ad3f6ac4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_king_of_coins.png"
-dest_files=["res://.godot/imported/card_king_of_coins.png-0285bde0d94e5130ff85a4a8bd94572f.ctex"]
+source_file="res://assets/sprites/cards/card_king_of_thorns.png"
+dest_files=["res://.godot/imported/card_king_of_thorns.png-12fc970d7e4e0c79fafd9717ad3f6ac4.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cj012pap0dc6w"
-path="res://.godot/imported/card_king_of_daggers.png-e1dedebb5ac4fbbce52cf78a771c3b87.ctex"
+path="res://.godot/imported/Card_King_of_Daggers.png-b8fbfe35575a15a2c58671973fd5c155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_king_of_daggers.png"
-dest_files=["res://.godot/imported/card_king_of_daggers.png-e1dedebb5ac4fbbce52cf78a771c3b87.ctex"]
+source_file="res://assets/sprites/cards/Card_King_of_Daggers.png"
+dest_files=["res://.godot/imported/Card_King_of_Daggers.png-b8fbfe35575a15a2c58671973fd5c155.ctex"]
 
 [params]
 

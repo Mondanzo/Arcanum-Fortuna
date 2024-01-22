@@ -9,10 +9,10 @@ offset_bottom = 81.0
 size_flags_horizontal = 0
 script = ExtResource("1_bcv1h")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 2
 theme_override_font_sizes/font_size = 19
-text = "- The Bad Guy -"
+text = "- %s -"
 horizontal_alignment = 1
 vertical_alignment = 1
 

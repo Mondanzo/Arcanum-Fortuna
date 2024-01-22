@@ -24,6 +24,9 @@ func init(enemy_data):
 	else:
 		set_health(data.get_random_health())
 	max_health = health
+	var name_label = get_node_or_null("Title")
+	if (name_label):
+		name_label.text = name_label.text % enemy_data.title
 
 
 func set_health(value):

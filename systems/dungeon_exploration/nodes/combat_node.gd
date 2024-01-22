@@ -22,8 +22,9 @@ func _trigger_event():
 		CardsOverlay.toggle(false)
 	var instance = event.instantiate() as BattleEvent
 	instance.seed = combat_seed
-	var idx = rng.randi_range(0, len(potential_enemies) - 1)
-	var selected_enemy = potential_enemies[idx]
+	var enemy_pool = potential_enemies.filter(func(enemy): 
+		return (enemy.max_level < 0 or level <= enemy.max_level) and level >= enemy.min_level)
+	var selected_enemy = enemy_pool[rng.randi_range(0, len(enemy_pool) - 1)]
 	print("Using level " + str(level))
 	selected_enemy.level = level
 	selected_enemy.rng_seed = combat_seed

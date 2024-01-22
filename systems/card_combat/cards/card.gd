@@ -27,7 +27,6 @@ func get_attack():
 	return attack
 
 
-
 func set_health(value):
 	health = value
 	%HealthCost.text = str(health)

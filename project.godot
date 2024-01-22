@@ -37,6 +37,7 @@ directories/dch_directory={
 "the_hermit": "res://addons/dialogic/Characters/the_hermit.dch",
 "the_hierophant": "res://addons/dialogic/Characters/the_hierophant.dch",
 "the_high_priestess": "res://addons/dialogic/Characters/the_high_priestess.dch",
+"the_lovers": "res://addons/dialogic/Characters/the_lovers.dch",
 "the_magician": "res://addons/dialogic/Characters/the_magician.dch"
 }
 directories/dtl_directory={

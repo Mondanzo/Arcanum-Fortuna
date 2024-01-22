@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://nr5du58leen5"]
 
-[ext_resource type="Texture2D" uid="uid://bhks1grxrynox" path="res://assets/sprites/cards/card_king_of_coins.png" id="1_5t04l"]
+[ext_resource type="Texture2D" uid="uid://bhks1grxrynox" path="res://assets/sprites/cards/card_king_of_thorns.png" id="1_5t04l"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_uako4"]
 
 [resource]

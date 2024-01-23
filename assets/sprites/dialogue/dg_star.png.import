@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj012pap0dc6w"
-path="res://.godot/imported/card_king_of_daggers.png-e1dedebb5ac4fbbce52cf78a771c3b87.ctex"
+uid="uid://c015vihbf4kuh"
+path="res://.godot/imported/dg_star.png-79672334c98879f6b5ce9399ee45feeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_king_of_daggers.png"
-dest_files=["res://.godot/imported/card_king_of_daggers.png-e1dedebb5ac4fbbce52cf78a771c3b87.ctex"]
+source_file="res://assets/sprites/dialogue/dg_star.png"
+dest_files=["res://.godot/imported/dg_star.png-79672334c98879f6b5ce9399ee45feeb.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

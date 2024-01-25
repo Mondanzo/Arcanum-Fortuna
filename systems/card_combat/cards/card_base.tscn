@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=28 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://c21gcj8wgm736" path="res://systems/ui/tooltips/show_card_tooltip.tscn" id="3_cofgw"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="4_y50ar"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_4kaqf"]
+[ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
+[ext_resource type="Material" uid="uid://d4dyg8c8m6yp8" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="11_mto8i"]
 [ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="8_coke3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
@@ -25,6 +28,172 @@ region = Rect2(0, 184, 80, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0j57"]
 atlas = ExtResource("6_4kaqf")
 region = Rect2(0, 276, 80, 80)
+
+[sub_resource type="Curve" id="Curve_enjfs"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.105, 0.987572), 0.0, 0.0, 0, 0, Vector2(0.66, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_svhri"]
+curve = SubResource("Curve_enjfs")
+
+[sub_resource type="Gradient" id="Gradient_y4aia"]
+colors = PackedColorArray(0.129558, 0.129558, 0.129558, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6cdoa"]
+gradient = SubResource("Gradient_y4aia")
+
+[sub_resource type="Curve" id="Curve_h0ckp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_tx4q8"]
+curve = SubResource("Curve_h0ckp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8onbq"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -20, 0)
+emission_shape = 3
+emission_box_extents = Vector3(60, 5, 0)
+direction = Vector3(0, -1, 0)
+angular_velocity_min = -29.3
+angular_velocity_max = 53.25
+radial_velocity_max = 20.0
+gravity = Vector3(0, -98, 0)
+radial_accel_max = 10.0
+tangential_accel_min = 5.0
+tangential_accel_max = 5.0
+damping_max = 50.0
+attractor_interaction_enabled = false
+color = Color(1, 0.478431, 0.0823529, 1)
+color_initial_ramp = SubResource("GradientTexture1D_6cdoa")
+alpha_curve = SubResource("CurveTexture_svhri")
+emission_curve = SubResource("CurveTexture_tx4q8")
+
+[sub_resource type="Animation" id="Animation_xmpfi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArtworkClip/ParticleAnchor/buff_particles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fhgog"]
+resource_name = "buff"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArtworkClip/ParticleAnchor/buff_particles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_hnrs5"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [0.0, -0.523599]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(2, 1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.682353, 0.027451, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SingletonInteractor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"execute"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrceq"]
+_data = {
+"RESET": SubResource("Animation_xmpfi"),
+"buff": SubResource("Animation_fhgog"),
+"die": SubResource("Animation_hnrs5")
+}
 
 [node name="Card" type="Control"]
 z_index = 2
@@ -166,6 +335,7 @@ vertical_alignment = 1
 
 [node name="KeyWordSlots" type="Control" parent="."]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 1
 anchors_preset = 0
 offset_right = 66.0
@@ -182,7 +352,6 @@ scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_yop51")
 
 [node name="KeywordIcon" parent="KeyWordSlots/KeywordSlot1" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -195,7 +364,7 @@ offset_right = 25.4242
 offset_bottom = 27.9949
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(16, 16)
+pivot_offset = Vector2(25, 25)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
@@ -277,8 +446,75 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ArtworkClip" type="ColorRect" parent="."]
+clip_children = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 20.0
+offset_right = -8.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ParticleAnchor" type="Control" parent="ArtworkClip"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="buff_particles" type="GPUParticles2D" parent="ArtworkClip/ParticleAnchor"]
+emitting = false
+amount = 256
+process_material = SubResource("ParticleProcessMaterial_8onbq")
+texture = ExtResource("9_lhvyd")
+lifetime = 2.0
+speed_scale = 2.0
+visibility_rect = Rect2(-153.868, -279.532, 315.949, 311.532)
+local_coords = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wrceq")
+}
+
+[node name="CenterAnchor" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeywordParticles" type="GPUParticles2D" parent="CenterAnchor"]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+emitting = false
+amount = 1024
+process_material = ExtResource("10_yfr0r")
+texture = ExtResource("9_lhvyd")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.15
+local_coords = true
+
+[node name="SingletonInteractor" parent="." instance=ExtResource("11_mto8i")]
+singleton = 1
+method_to_call = "_SFX_Damage"
 [node name="SFXCard" parent="." instance=ExtResource("8_coke3")]
 unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+
+[editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]

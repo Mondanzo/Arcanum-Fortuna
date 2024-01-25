@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CompanionshipATK" load_steps=4 format=3 uid="uid://c4uyl7eso8d1k"]
+[gd_resource type="Resource" script_class="CompanionshipATK" load_steps=5 format=3 uid="uid://c4uyl7eso8d1k"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_ktoxc"]
+[ext_resource type="Texture2D" uid="uid://dgavgpeeqh57c" path="res://assets/sprites/keywords/karma_drain_emission.tres" id="1_rtnms"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/companionship_atk.gd" id="2_vga47"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjbs4"]
@@ -17,4 +18,5 @@ scale_speed = 0.6
 title = "Companionship ATK %d"
 description = "While this card is alive cards to its left and right are granted +%d attack."
 icon = SubResource("AtlasTexture_xjbs4")
+emission_icon = ExtResource("1_rtnms")
 highlight_duration = 0.5

@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="SelfBuff" load_steps=6 format=3 uid="uid://b3o4pul7snaue"]
+[gd_resource type="Resource" script_class="SelfBuff" load_steps=7 format=3 uid="uid://b6pi70e0771u6"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/self_buff.gd" id="1_70lsu"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_d6cbs"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_2np3q"]
+[ext_resource type="Texture2D" uid="uid://boqh0bqwlf6kd" path="res://assets/sprites/keywords/enrage_emission.tres" id="2_b05jw"]
 
 [sub_resource type="Resource" id="Resource_8gtvk"]
 script = ExtResource("1_d6cbs")
@@ -24,4 +25,5 @@ scale_speed = 0.6
 title = "Self Buff %d"
 description = "This card gains %d attack at the end of every turn."
 icon = SubResource("AtlasTexture_hns7q")
+emission_icon = ExtResource("2_b05jw")
 highlight_duration = 0.5

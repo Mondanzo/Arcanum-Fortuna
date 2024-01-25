@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v72xo"]
 atlas = ExtResource("1_gkoes")
-region = Rect2(0, 0, 66, 66)
+region = Rect2(0, 132, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmcby"]
 atlas = ExtResource("1_gkoes")

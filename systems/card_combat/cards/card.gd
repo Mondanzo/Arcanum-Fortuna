@@ -100,3 +100,14 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	is_hovered = false
+
+
+func play_animation(animation):
+	if $AnimationPlayer.has_animation(animation):
+		$AnimationPlayer.play(animation)
+
+
+func animate_icon(emission_texture):
+	%KeywordParticles.emitting = true
+	%KeywordParticles.process_material.emission_point_texture = emission_texture
+	await %KeywordParticles.finished

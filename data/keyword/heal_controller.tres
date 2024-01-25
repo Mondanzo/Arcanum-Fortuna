@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="HealController" load_steps=6 format=3 uid="uid://btdf07pcug2j4"]
+[gd_resource type="Resource" script_class="HealController" load_steps=7 format=3 uid="uid://pqwne5au8trv"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/heal_controller.gd" id="1_dyk3t"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_ectoa"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_gdbct"]
+[ext_resource type="Texture2D" uid="uid://bx278u6mm5mux" path="res://assets/sprites/keywords/life_steal_emission.tres" id="2_k4t6h"]
 
 [sub_resource type="Resource" id="Resource_32oaa"]
 script = ExtResource("1_ectoa")
@@ -23,4 +24,5 @@ scale_speed = 0.6
 title = "End-of-turn Heal %d"
 description = "This Card heals its controller by %d health at the end of every turn."
 icon = SubResource("AtlasTexture_pxpd0")
+emission_icon = ExtResource("2_k4t6h")
 highlight_duration = 0.5

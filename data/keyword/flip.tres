@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Flip" load_steps=6 format=3 uid="uid://b7si7oceraga6"]
+[gd_resource type="Resource" script_class="Flip" load_steps=7 format=3 uid="uid://b7si7oceraga6"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/flip.gd" id="1_ekhnk"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_nhvvg"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_5jhxw"]
+[ext_resource type="Texture2D" uid="uid://bxck3rfnpybrm" path="res://assets/sprites/keywords/flip_emission.tres" id="2_q7yre"]
 
 [sub_resource type="Resource" id="Resource_74j2r"]
 script = ExtResource("1_nhvvg")
@@ -24,4 +25,5 @@ scale_speed = 0.6
 title = "Flip"
 description = "A card with this keyword will swap its current attack and health at the end of the turn."
 icon = SubResource("AtlasTexture_hi8d7")
+emission_icon = ExtResource("2_q7yre")
 highlight_duration = 1.0

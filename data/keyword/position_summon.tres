@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="MoveOtherCardKeyword" load_steps=4 format=3 uid="uid://brc0cecmp05sp"]
+[gd_resource type="Resource" script_class="MoveOtherCardKeyword" load_steps=5 format=3 uid="uid://brc0cecmp05sp"]
 
+[ext_resource type="Texture2D" uid="uid://cche4b42pk5fs" path="res://assets/sprites/keywords/unknown_emission.tres" id="1_4h0b8"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/move_other_card_keyword.gd" id="1_bntlq"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_w8rj2"]
 
@@ -17,4 +18,5 @@ scale_speed = 0.6
 title = "Position Summon"
 description = "When this card is played opposite to an empty tile it will move the oppsing card with the lowest health to it."
 icon = SubResource("AtlasTexture_0e4w5")
+emission_icon = ExtResource("1_4h0b8")
 highlight_duration = 0.5

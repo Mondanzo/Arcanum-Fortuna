@@ -23,6 +23,9 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 
 
 func animate(source, owner: CombatCard, icon_to_animate, params):
+	if emission_icon:
+		await owner.animate_icon(emission_icon)
+	return
 	if icon_to_animate:
 		var tween = icon_to_animate.create_tween()
 		tween.set_trans(Tween.TRANS_CUBIC)

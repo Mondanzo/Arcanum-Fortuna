@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyBrainStats" load_steps=5 format=3 uid="uid://rr48mkrfmct4"]
+[gd_resource type="Resource" script_class="EnemyBrainStats" load_steps=5 format=3 uid="uid://bp1pw7psbi2it"]
 
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="1_b2idr"]
 

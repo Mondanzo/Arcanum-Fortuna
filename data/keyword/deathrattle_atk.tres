@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="DeathrattleAtk" load_steps=4 format=3 uid="uid://dxq384p6yl4mh"]
+[gd_resource type="Resource" script_class="DeathrattleAtk" load_steps=5 format=3 uid="uid://d1j06ynqlhmg"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/deathrattle_atk.gd" id="1_02agc"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_m8u20"]
+[ext_resource type="Texture2D" uid="uid://dgavgpeeqh57c" path="res://assets/sprites/keywords/karma_drain_emission.tres" id="1_w1hkn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eb1ww"]
 atlas = ExtResource("1_m8u20")
@@ -17,4 +18,5 @@ scale_speed = 0.6
 title = "Deathrattle ATK %d"
 description = "When this card dies the cards to its left and right will gain %d attack."
 icon = SubResource("AtlasTexture_eb1ww")
+emission_icon = ExtResource("1_w1hkn")
 highlight_duration = 0.5

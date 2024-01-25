@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="HealthDrain" load_steps=4 format=3 uid="uid://c1g8kv3mu0t1d"]
+[gd_resource type="Resource" script_class="HealthDrain" load_steps=5 format=3 uid="uid://c1g8kv3mu0t1d"]
 
+[ext_resource type="Texture2D" uid="uid://bx278u6mm5mux" path="res://assets/sprites/keywords/life_steal_emission.tres" id="1_8wjfa"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_mweut"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/health_drain.gd" id="2_x23tg"]
 
@@ -10,6 +11,7 @@ region = Rect2(66, 132, 66, 66)
 [resource]
 script = ExtResource("2_x23tg")
 health_gain = 1
+scale_from_same_side_only = false
 enable_debug_print = false
 combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
 triggers = 4
@@ -18,4 +20,5 @@ scale_speed = 0.6
 title = "Health Drain"
 description = "This gains %d health for each card on the board with a positve karma value."
 icon = SubResource("AtlasTexture_r2kef")
+emission_icon = ExtResource("1_8wjfa")
 highlight_duration = 0.5

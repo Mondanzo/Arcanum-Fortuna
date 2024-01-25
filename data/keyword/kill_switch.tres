@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=5 format=3 uid="uid://dw1nchd42yon2"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=6 format=3 uid="uid://wpalmtimjg5e"]
 
+[ext_resource type="Texture2D" uid="uid://d7mv6gjyqdp5" path="res://assets/sprites/keywords/switch_emission.tres" id="1_fd8h7"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_ij4ct"]
 [ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_xx231"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="4_px5lu"]
@@ -25,4 +26,5 @@ scale_speed = 0.6
 title = "Destiny: Surmont"
 description = "This card will reveal it's true form once it killed %d enemy cards. "
 icon = SubResource("AtlasTexture_xuji6")
+emission_icon = ExtResource("1_fd8h7")
 highlight_duration = 0.5

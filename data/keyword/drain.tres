@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Drain" load_steps=4 format=3 uid="uid://cdie0qb10eba1"]
+[gd_resource type="Resource" script_class="Drain" load_steps=5 format=3 uid="uid://cdie0qb10eba1"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_0vvdu"]
+[ext_resource type="Texture2D" uid="uid://boqh0bqwlf6kd" path="res://assets/sprites/keywords/enrage_emission.tres" id="1_s4djj"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/drain.gd" id="1_tgv33"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a6owf"]
@@ -18,4 +19,5 @@ scale_speed = 0.6
 title = "Drain %d/%d"
 description = "Whenever your karma gets decreased, a card with this sigils will gains %d Attack and %d Health."
 icon = SubResource("AtlasTexture_a6owf")
+emission_icon = ExtResource("1_s4djj")
 highlight_duration = 1.0

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="HealthDrain" load_steps=4 format=3 uid="uid://bs81iqn8h3y65"]
+[gd_resource type="Resource" script_class="HealthDrain" load_steps=5 format=3 uid="uid://bs81iqn8h3y65"]
 
+[ext_resource type="Texture2D" uid="uid://boqh0bqwlf6kd" path="res://assets/sprites/keywords/enrage_emission.tres" id="1_10ey4"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_h0ixl"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/health_drain.gd" id="1_ud0cd"]
 
@@ -19,4 +20,5 @@ scale_speed = 0.6
 title = "Health Drain"
 description = "This gains %d health for each card on the board with a positve karma value."
 icon = SubResource("AtlasTexture_r2kef")
+emission_icon = ExtResource("1_10ey4")
 highlight_duration = 0.5

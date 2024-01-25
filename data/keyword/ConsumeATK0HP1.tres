@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Consume" load_steps=4 format=3 uid="uid://bp5p7q43w8i5p"]
+[gd_resource type="Resource" script_class="Consume" load_steps=5 format=3 uid="uid://bp5p7q43w8i5p"]
 
+[ext_resource type="Texture2D" uid="uid://dsadt5l5ifnbp" path="res://assets/sprites/keywords/consume_emission.tres" id="1_h3nd7"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_yqm88"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/consume.gd" id="2_3qo6q"]
 
@@ -18,4 +19,5 @@ scale_speed = 0.6
 title = "Consume %d/%d"
 description = "Whenever a card with this keyword attacks and kills a card it gains %d Attack and %d Health."
 icon = SubResource("AtlasTexture_tssjv")
+emission_icon = ExtResource("1_h3nd7")
 highlight_duration = 1.0

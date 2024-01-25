@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SplitAttack" load_steps=4 format=3 uid="uid://ues1kduox2nf"]
+[gd_resource type="Resource" script_class="SplitAttack" load_steps=5 format=3 uid="uid://ues1kduox2nf"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_5ao10"]
+[ext_resource type="Texture2D" uid="uid://n2im8mil5qgm" path="res://assets/sprites/keywords/split_attack_emission.tres" id="1_206h8"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/split_attack.gd" id="1_qg2bb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8tp8"]
@@ -12,4 +13,5 @@ script = ExtResource("1_qg2bb")
 title = "SplitAttack"
 description = "A card with this keyword will attack diagonally instead of straight."
 icon = SubResource("AtlasTexture_e8tp8")
+emission_icon = ExtResource("1_206h8")
 highlight_duration = 1.0

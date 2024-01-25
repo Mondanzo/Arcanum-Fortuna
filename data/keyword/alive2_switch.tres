@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=8 format=3 uid="uid://e0nu8lfpxbrq"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=9 format=3 uid="uid://bux1upr74kbw4"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_bvdlq"]
+[ext_resource type="Texture2D" uid="uid://d7mv6gjyqdp5" path="res://assets/sprites/keywords/switch_emission.tres" id="2_pl3ad"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_yks7q"]
 [ext_resource type="Resource" uid="uid://dvt6vrtfufa0t" path="res://data/keyword/TripleAttack.tres" id="3_4u5nj"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="4_r8x1c"]
@@ -32,4 +33,5 @@ scale_speed = 0.6
 title = "Destiny: Perseverance"
 description = "This card will reveal it's true form once it survived %d turns on the board. "
 icon = SubResource("AtlasTexture_xuji6")
+emission_icon = ExtResource("2_pl3ad")
 highlight_duration = 0.5

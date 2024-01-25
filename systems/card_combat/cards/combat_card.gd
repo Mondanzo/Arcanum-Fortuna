@@ -18,6 +18,7 @@ signal deleted(card : CombatCard)
 @export var highlight_color : Color
 @export var active_color : Color
 @export var move_speed = 0.5
+@export var damage_dealt := preload("res://systems/effects/damage_effect.tscn")
 
 signal animation_finished
 
@@ -173,10 +174,10 @@ func process_death() -> bool:
 		await get_tree().process_frame
 		if is_animating:
 			await animation_finished
-		modulate = attacked_color
-		await get_tree().create_timer(death_delay).timeout
 		print("Card '", card_name, "' died!")
 		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
+		play_animation("die")
+		await $AnimationPlayer.animation_finished
 		queue_free()
 		return true
 	return false
@@ -186,7 +187,7 @@ func process_death() -> bool:
 func animate_attack(target, tile_idx, tile: Control) -> bool:
 	%SFXCard._SFX_Attack()
 	var target_position
-	var half_card = get_rect().size.x / 2
+	var half_card = get_rect().size / 2
 	if target is CombatCard:
 		GlobalLog.add_entry(
 				"'%s' at position %d-%d attacked '%s' at position %d-%d." %
@@ -222,6 +223,13 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	await get_tree().create_timer(attack_speed + wait_mod).timeout
 	
 	target.take_damage(attack)
+	
+	if attack > 0:
+		var effect = damage_dealt.instantiate()
+		effect.setup(attack)
+		get_parent().add_child(effect)
+		effect.global_position = target_position + half_card
+	
 	$Attack.modulate = active_color
 	modulate = highlight_color
 	get_tree().create_timer(max(attack_delay - wait_mod, 0)).timeout.connect(func():

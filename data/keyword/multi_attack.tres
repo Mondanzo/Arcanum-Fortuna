@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="MultiAttack" load_steps=4 format=3 uid="uid://bdignyyamxcm3"]
+[gd_resource type="Resource" script_class="MultiAttack" load_steps=5 format=3 uid="uid://fvab8xjppdba"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/multi_attack.gd" id="1_68ao5"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_djq58"]
+[ext_resource type="Texture2D" uid="uid://cche4b42pk5fs" path="res://assets/sprites/keywords/unknown_emission.tres" id="1_s8r5l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e4w5"]
 atlas = ExtResource("1_djq58")
@@ -13,4 +14,5 @@ extra_attacks = 1
 title = "MultiAttack %d"
 description = "Whenever this card attacks it gains %d extra attacks."
 icon = SubResource("AtlasTexture_0e4w5")
+emission_icon = ExtResource("1_s8r5l")
 highlight_duration = 0.5

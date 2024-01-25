@@ -26,6 +26,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 1
 mouse_filter = 2
+show_rect = null
+hide_rect = null
+render_rects = null
 
 [node name="Deck" type="ReferenceRect" parent="."]
 unique_name_in_owner = true

@@ -283,7 +283,6 @@ connect_signal = "pressed"
 [node name="HideInWeb" type="Node" parent="TabContainer/Video"]
 script = ExtResource("3_wit75")
 show_or_hide = 0
-delete = true
 
 [node name="Accessibilty" type="Control" parent="TabContainer"]
 visible = false
